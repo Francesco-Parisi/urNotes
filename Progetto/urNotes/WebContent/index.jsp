@@ -3,8 +3,10 @@
 <!DOCTYPE html>
 <html lang = "it">
 
+<head>
 <%@ include file="/partials/head.jsp" %>
-
+<title>urNotes | Appunti e Dispense per Studenti Universitari</title>
+</head>
 
 <body>
 <%@ include file="/partials/header.jsp" %>		

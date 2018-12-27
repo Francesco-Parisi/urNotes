@@ -1,7 +1,5 @@
 <head>
 
-<title>urNotes | Appunti e Dispense per Studenti Universitari</title>
-
 <meta charset="UTF-8">
 <meta name="description" content="">
 <meta name="keywords" content="">
