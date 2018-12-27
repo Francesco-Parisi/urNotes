@@ -1,3 +1,7 @@
+<head>
+
+<title>urNotes | Appunti e Dispense per Studenti Universitari</title>
+
 <meta charset="UTF-8">
 <meta name="description" content="">
 <meta name="keywords" content="">
@@ -19,4 +23,4 @@
 		var absolutePath = "<%=request.getContextPath()%>";
 	</script>
 	<script src="<%=request.getContextPath()%>/js/scripts.js"></script>
-	
+</head>
