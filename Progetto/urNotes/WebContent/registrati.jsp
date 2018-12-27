@@ -1,17 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-
-<html>
+<html lang = "it">
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon"  type="image/png" href="/urNotes/images/logo.png">
-<link href="accedi.css" rel="stylesheet" type="text/css">
+<%@ include file="/partials/head-accesso.jsp" %>
 <title>urNotes | Registrati</title>
 </head>
-
 
 <body>
 
