@@ -3,7 +3,7 @@
     pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
-<!-- ciao --> 
+
 <head>
 <link rel="stylesheet" href="stile.css">
 <link rel="stylesheet" type="text/css" href="engine1/style.css" />
