@@ -1,0 +1,53 @@
+$(document).ready(function(){	
+	$(document).on('submit', '#formAccedi', function(e){
+		var Username = $("#Username").val();
+		var Password = $("#Paswd").val();
+		
+		var continua = 1;
+		if(Username == undefined || Username == "" || !checkEmail(Username)){			
+			showAlert(1, "Inserire un Nome Utente valido");
+			continua *= 0;
+		}
+		if(Password == undefined || Password == "" || Password.length < 3){			
+			showAlert(1, "Inserire una password valida");
+			continua *= 0;
+		}
+
+		if(continua){
+			$("#loader").show();
+
+			$.ajax({
+				url: absolutePath+"/Accedi",
+				type: "POST",
+				dataType: 'JSON',
+				async: false,
+				data: {
+					"Username": Username,
+					"Paswd": Paswd
+				},
+				success:function(msg){
+					if(!msg.risultato){
+						showAlert(1, msg.errore);
+					}
+					else{
+						window.location.href = msg.redirect;
+					}
+				},
+				error: function(msg){
+					showAlert(1, "Impossibile Recuperare i dati.");
+				}
+			});
+			
+			$("#loader").hide();
+			return false;
+		}
+		else{			
+			return false;
+		}				
+	});	
+	
+	
+	
+	
+	
+});

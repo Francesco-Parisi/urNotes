@@ -1,11 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="model.ConnessioneDB, java.sql.*"%>
 <!DOCTYPE html>
-
-<html>
+<html lang = "it">
 
 <head>
-<%@ include file="/partials/head-accesso.jsp" %>			
+<%@ include file="/partials/head-accesso.jsp" %>	
+<script src="<%=request.getContextPath()%>/js/scripts_accedi.js"></script>				
 <title>urNotes | Accedi</title>
 </head>
 
@@ -14,24 +13,19 @@
 <div class="loginbox">
 
 
-<form action="#" method="POST">
+<form action="#" method="POST" id="formAccedi">					
+				    <fieldset>
+				        <legend>Username</legend>
+				        <input type="text" id="Username" name="Username" class="campoForm" />
+				    </fieldset>					
 
-<img src="images/menu_logo3.png" class="avatar">
- 
-<fieldset>
-
-     <p>Username</p>
-     <input id="username" required type="text" name="username" placeholder="Inserisci Username.." autocomplete="off"> 
-     <br><br>
-     <p>Password</p>
-     <input id="password" required type="password" name="password" placeholder="Inserisci Password.." autocomplete="off"> 
-     <br><br>
-     <input type="submit" value="Accedi"/>
-     <br><br>
-     <a href="index.jsp">Torna alla Home</a> 
-     
-</fieldset>
-</form>
+				    <fieldset>
+				        <legend>Password</legend>
+				        <input type="password" id="Password" name="Password" class="campoForm" />
+				    </fieldset>					
+				    
+					<input type="submit" id="submitForm" name="submitForm" class="campoForm submitForm" value="Accedi" />				
+				</form>
  
 </div>
 
