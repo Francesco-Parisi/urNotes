@@ -9,7 +9,7 @@ $(document).ready(function(){
 			continua *= 0;
 		}
 		if(Password == undefined || Password == "" || Password.length < 3){			
-			showAlert(1, "Inserire una password valida");
+			showAlert(1, "Inserire una Password valida");
 			continua *= 0;
 		}
 

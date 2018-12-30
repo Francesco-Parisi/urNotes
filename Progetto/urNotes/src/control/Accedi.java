@@ -58,9 +58,9 @@ public class Accedi extends HttpServlet {
 				String sql = "";
 				new MD5();
 				sql = ""
-						+ "SELECT u.id_utente, u.tipo_utente, u.Nome, u.Cognome "
-						+ "FROM utente u "
-						+ "WHERE u.id_utente = 0 AND TRIM(u.Email) = TRIM('"+Username+"') AND u.Paswd = '"+MD5.crypt(Password)+"';";
+						+ "SELECT id_utente, tipo_utente, Nome, Cognome "
+						+ "FROM utente AS u "
+						+ "WHERE u.id_utente = 1 AND TRIM(u.Email) = TRIM('"+Username+"') AND u.Paswd = '"+MD5.crypt(Password)+"';";
 				ResultSet result = stmt.executeQuery(sql);
 				if(result.wasNull()) {
 					errore = "Errore esecuzione Query.";
@@ -72,8 +72,6 @@ public class Accedi extends HttpServlet {
 						session.setAttribute("Username", result.getString("Username"));
 						session.setAttribute("Nome", result.getString("Nome"));
 						session.setAttribute("Cognome", result.getString("Cognome"));
-						session.setAttribute("Email", result.getString("Email"));
-						session.setAttribute("Paswd", result.getString("Paswd"));
 						session.setAttribute("tipo_utente", Integer.parseInt(result.getString("tipo_utente")));
 						session.setAttribute("id_utente", Integer.parseInt(result.getString("id_utente")));
 						session.setAttribute("carrello", new Carrello(Integer.parseInt(result.getString("id_utente"))));

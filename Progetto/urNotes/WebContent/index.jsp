@@ -59,7 +59,7 @@ Ogni Documento sarà commentabile e visionabile in anteprima senza doverlo acqui
  Cerca l'appunto che ti serve, leggi la sua descrizione e acquista!
  <img class="image-section1" alt="icon" src="/urNotes/images/icon2.png">
 <br>
-<a id="button" href="/urNotes/come_funziona.jsp">Come Funziona</a>
+<a id="button" href="/urNotes/comeFunziona.jsp">Come Funziona</a>
 </div>
 
 </div>       
