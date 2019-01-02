@@ -1,7 +1,7 @@
 $(document).ready(function(){	
 	$(document).on('submit', '#formAccedi', function(e){
 		var Username = $("#Username").val();
-		var Password = $("#Paswd").val();
+		var Password = $("#Password").val();
 		
 		var continua = 1;
 		if(Username == undefined || Username == "" || !checkEmail(Username)){			
@@ -23,7 +23,7 @@ $(document).ready(function(){
 				async: false,
 				data: {
 					"Username": Username,
-					"Paswd": Paswd
+					"Password": Password
 				},
 				success:function(msg){
 					if(!msg.risultato){

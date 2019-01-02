@@ -41,7 +41,7 @@ public class Accedi extends HttpServlet {
 	@SuppressWarnings({ "unchecked" })
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String Username = request.getParameter("Username");
-        String Password = request.getParameter("Paswd");
+        String Password = request.getParameter("Password");
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		HttpSession session = request.getSession();
