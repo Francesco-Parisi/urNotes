@@ -345,7 +345,169 @@ border:none;
 }
 
 
+/*Accesso e Regisrazione-----------------------------------*/
 
+.loginbox{
+	width:400px;
+	height:400px;
+	background:#1ea4ca;
+	color:white;
+	text-shadow:1px 1px black;
+	top:50%;
+	left:50%;
+	position:absolute;
+	transform:translate(-50%,-50%);
+	opacity:0.9;
+	box-sizing:border-box;
+	border-radius:10px;
+	padding:70px 30px;
+	box-shadow:1px 1px grey;
+	
+}
+
+.loginbox-reg{
+	width:400px;
+    height:550px;
+	background:#1ea4ca;
+	color:white;
+	text-shadow:1px 1px black;
+	top:50%;
+	left:50%;
+	position:absolute;
+	transform:translate(-50%,-50%);
+	opacity:0.9;
+	box-sizing:border-box;
+	border-radius:10px;
+	padding:70px 30px;
+	box-shadow:1px 1px grey;
+	
+}
+
+.avatar{
+	width:200px;
+	height:70px;
+	margin-top:10px;
+	position:absolute;
+	top:0px;
+    left:calc(35% - 50px);
+}
+
+fieldset{
+	padding-top:30px;
+	border:none;
+}
+
+.box{
+	margin-left:50px;
+}
+
+p{
+	margin:0;
+	padding:0;
+	font-size:18px;
+}
+
+.loginbox p, .loginbox-reg p{
+	margin:0;
+	padding:0;
+	font-weight:bold;
+}
+
+.loginbox input{
+	width:100%;
+	margin-bottom:20px;
+}
+
+.loginbox-reg input[type="text"],input[type="password"], .loginbox input[type="text"],input[type="password"]{
+	border:none;
+	border-bottom:1px solid black;
+	background:transparent;
+	outline:none;
+	height:30px;
+	color:white;
+	text-shadow:1px 1px black;
+	font-size:18px;
+	
+	
+}	
+	
+.loginbox input[type="submit"]{
+	border:none;
+	outline:none;
+	margin-left:110px;
+	width:100px;
+	height:30px;
+	font-size:18px;
+	border-radius:10px;
+	color:#1ea4ca;
+	text-shadow:1px 1px black;
+	background-color:white;
+}
+
+.loginbox-reg input[type="submit"],input[type="reset"]{
+	border:none;
+	outline:none;
+	height:30px;
+	background:#f5f5f0;
+	font-size:16px;
+	border-radius:10px;	
+	color:#1ea4ca;
+	margin-left:25px;
+	text-shadow:1px 1px black;
+		
+}
+
+ .loginbox input[type="submit"]:hover{
+	cursor:pointer;
+	background:#f5f5f0;
+	color:#1ea4ca;
+	text-shadow:1px 1px black;
+	box-shadow:1px 1px black;
+}
+
+.loginbox-reg input[type="submit"],input[type="reset"]:hover{
+	cursor:pointer;
+	box-shadow:1px 1px black;	
+}
+
+a{
+	text-align:center;
+}
+
+.loginbox a{
+	text-decoration:none;
+	font-size:14px;
+	font-weight:bold;
+	line-height:20px;
+	color:white;
+	text-shadow:1px 1px black;
+	margin-left:100px;
+	
+}
+
+.loginbox-reg a{
+	text-decoration:none;
+	font-size:14px;
+	line-height:20px;
+	color:white;
+	text-shadow:1px 1px black;
+	margin-left:60px;
+}
+
+.loginbox a:hover{
+	text-decoration:underline;
+}
+
+
+.loginbox-reg a:hover{
+	text-decoration:underline;
+}
+
+::placeholder {
+	font-size:14px;
+	opacity:0.7;
+
+	}
 
 
 /*Footer-----------------------------------*/
@@ -358,7 +520,7 @@ border:none;
 	color:#fff;
 	background-color:#1ea4ca;
 	margin-top:20%;
-	padding:30px;
+	padding:20px;
 	border-radius:5px 5px 0px 0px;
 	text-decoration:none;
 	
@@ -368,27 +530,35 @@ border:none;
 .image-footer {
 	vertical-align:bottom;
 	text-align:left;
-	margin:0;
-	padding:0;	
+	margin-bottom:-90px;
+	padding:0px;	
 }
 
 .container-footer{
+	font-weight:600;
+	font-size:15px;
 	padding:0;
-	margin-top:-100px;
+	margin-top:-75px;
 	text-decoration:none;
 	text-shadow:1px 1px black;
 }
 
 .copyright {
+	font-size:15px;
+	margin-bottom:10px;
 	vertical-align:top;
 	text-align:right;
 	text-decoration:none;
 	color:#fff;
 	
+	
 }	
 
 
 .footer-terms{
+	font-weight:600;
+	font-size:15px;
+	margin-bottom:10px;
 	vertical-align:top;
 	text-align:right;
 	text-decoration:none;
@@ -401,6 +571,8 @@ border:none;
 	text-decoration:none;
 	color:#fff;
 }
+
+
 
 /*Responsive*/
 

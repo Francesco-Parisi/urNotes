@@ -1,14 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="model.ConnessioneDB, java.sql.*"%>
 <!DOCTYPE html>
 <html lang = "it">
-	<head>
+<head>
 <%@ include file="/partials/head.jsp" %>		
 <script src="<%=request.getContextPath()%>/js/scripts_accedi.js"></script>			
 <title>urNotes | Accedi</title>
 </head>
 
 <body>
-<%@ include file="/partials/header.jsp" %>	
 <div class="loginbox">
 
 

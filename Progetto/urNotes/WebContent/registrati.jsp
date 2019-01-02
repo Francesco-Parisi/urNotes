@@ -4,7 +4,7 @@
 <html lang = "it">
 
 <head>
-<%@ include file="/partials/head-accesso.jsp" %>
+<%@ include file="/partials/head.jsp" %>
 <title>urNotes | Registrati</title>
 </head>
 

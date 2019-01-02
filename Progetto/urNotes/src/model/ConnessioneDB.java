@@ -11,8 +11,8 @@ public class ConnessioneDB {
 		this.server = "localhost";
 		this.porta  = 3306;
 		this.nomeDB = "appunti";
-		this.userDB = "ProgIS";
-		this.passDB = "Fr6108pr";	
+		this.userDB = "root";
+		this.passDB = "fr6108pr";	
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
