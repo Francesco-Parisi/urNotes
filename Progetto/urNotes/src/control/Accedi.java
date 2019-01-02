@@ -40,8 +40,8 @@ public class Accedi extends HttpServlet {
 	 */
 	@SuppressWarnings({ "unchecked" })
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String Username = request.getParameter("Username");
-        String Password = request.getParameter("Password");
+		String username = request.getParameter("username");
+        String password = request.getParameter("password");
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		HttpSession session = request.getSession();
@@ -58,9 +58,9 @@ public class Accedi extends HttpServlet {
 				String sql = "";
 				new MD5();
 				sql = ""
-						+ "SELECT id_utente, tipo_utente, Nome, Cognome "
-						+ "FROM utente AS u "
-						+ "WHERE u.id_utente = 1 AND TRIM(u.Email) = TRIM('"+Username+"') AND u.Paswd = '"+MD5.crypt(Password)+"';";
+						+ "SELECT id_utente, tipo_utente, nome, cognome "
+						+ "FROM utenti AS u "
+						+ "WHERE u.attivo = 1 AND TRIM(u.username) = TRIM('"+username+"') AND u.paswd = '"+password+"';";
 				ResultSet result = stmt.executeQuery(sql);
 				if(result.wasNull()) {
 					errore = "Errore esecuzione Query.";
@@ -68,12 +68,12 @@ public class Accedi extends HttpServlet {
 				}
 				else {
 					int rowCount = result.last() ? result.getRow() : 0;
-					if(rowCount == 1) {												
-						session.setAttribute("Username", result.getString("Username"));
-						session.setAttribute("Nome", result.getString("Nome"));
-						session.setAttribute("Cognome", result.getString("Cognome"));
-						session.setAttribute("tipo_utente", Integer.parseInt(result.getString("tipo_utente")));
+					if(rowCount == 1) {			
 						session.setAttribute("id_utente", Integer.parseInt(result.getString("id_utente")));
+						session.setAttribute("nome", result.getString("nome"));
+						session.setAttribute("cognome", result.getString("cognome"));
+						session.setAttribute("tipo_utente", Integer.parseInt(result.getString("tipo_utente")));
+						session.setAttribute("nome_utente", username);	
 						session.setAttribute("carrello", new Carrello(Integer.parseInt(result.getString("id_utente"))));
 						
 						if((int) session.getAttribute("tipo_utente") == 1) {

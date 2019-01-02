@@ -1,14 +1,14 @@
 $(document).ready(function(){	
 	$(document).on('submit', '#formAccedi', function(e){
-		var Username = $("#Username").val();
-		var Password = $("#Password").val();
+		var username = $("#username").val();
+		var password = $("#password").val();
 		
 		var continua = 1;
-		if(Username == undefined || Username == "" || !checkEmail(Username)){			
+		if(username == undefined || username == ""){			
 			showAlert(1, "Inserire un Nome Utente valido");
 			continua *= 0;
 		}
-		if(Password == undefined || Password == "" || Password.length < 3){			
+		if(password == undefined || password == "" || password.length < 3){			
 			showAlert(1, "Inserire una Password valida");
 			continua *= 0;
 		}
@@ -22,8 +22,8 @@ $(document).ready(function(){
 				dataType: 'JSON',
 				async: false,
 				data: {
-					"Username": Username,
-					"Password": Password
+					"username": username,
+					"password": password
 				},
 				success:function(msg){
 					if(!msg.risultato){
