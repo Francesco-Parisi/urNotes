@@ -51,9 +51,7 @@
 <%@ include file="/partials/footer.jsp" %>	
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script>
-<%@ include file="/js/script_menu.js" %>	
-</script>
+
 
 </body>
 </html>
