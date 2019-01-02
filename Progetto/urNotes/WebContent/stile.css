@@ -465,7 +465,7 @@ p{
 	box-shadow:1px 1px black;
 }
 
-.loginbox-reg input[type="submit"],input[type="reset"]:hover{
+.loginbox-reg input[type="submitForm"],input[type="reset"]:hover{
 	cursor:pointer;
 	box-shadow:1px 1px black;	
 }
