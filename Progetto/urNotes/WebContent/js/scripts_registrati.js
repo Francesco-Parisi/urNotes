@@ -11,7 +11,7 @@ $(document).ready(function(){
 		var email = $("#email").val();
 		var password = $("#password").val();
 		var confermaPassword = $("#confermaPassword").val();
-		var tipoUtente = $("#tipo_utente").val();
+		var tipo_utente = $("#tipo_utente").val();
 
 		
 		var continua = 1;
@@ -39,7 +39,7 @@ $(document).ready(function(){
 			showAlert(1, "Controllare che le due password coincidano");
 			continua *= 0;
 		}
-		if(tipoUtente == undefined || tipoUtente > 2 || tipoUtente < 1){			
+		if(tipo_utente == undefined || tipo_utente > 2 || tipo_utente < 1){			
 			showAlert(1, "Inserire un Tipo Utente valido");
 			continua *= 0;
 		}
@@ -58,7 +58,7 @@ $(document).ready(function(){
 					"cognome": cognome,
 					"email": email,
 					"password": password,
-					"tipoUtente": tipoUtente
+					"tipo_utente": tipo_utente
 				},
 				success:function(msg){
 					if(!msg.risultato){

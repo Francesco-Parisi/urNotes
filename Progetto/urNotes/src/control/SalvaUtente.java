@@ -52,7 +52,6 @@ public class SalvaUtente extends HttpServlet {
 		String cognome = request.getParameter("cognome");
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		Integer tipoUtente = Integer.parseInt(request.getParameter("tipo_utente"));
 		
         Integer risultato = 0;
         String errore = "";
@@ -66,23 +65,23 @@ public class SalvaUtente extends HttpServlet {
 				sql = ""
 						+ "SELECT id_utente "
 						+ "FROM utenti "
-						+ "WHERE attivo = 1 AND (TRIM(email) = TRIM('"+email+"')); ";
+						+ "WHERE attivo = 1 AND (TRIM(email) = TRIM('"+email+"') OR TRIM(username) = TRIM('"+username.toUpperCase()+"')); ";
 				ResultSet result = stmt0.executeQuery(sql);				
 				if(!result.wasNull()) {
 					int rowCount = result.last() ? result.getRow() : 0;
 					if(rowCount > 0) {
-						errore = "Esiste gi&agrave; un utente con questa email.";
+						errore = "Esiste gi&agrave; un utente con questa email o con questa username.";
 						risultato = 0;
 					}					
 					else {
-						sql = "INSERT INTO utenti (username, nome, cognome,email, password, tipo_utente, attivo) VALUES (?, ?, ?, ?, ?, ?, ?);";
+						sql = "INSERT INTO utenti (username, nome, cognome,email, paswd, tipo_utente, attivo) VALUES (?, ?, ?, ?, ?, ?, ?);";
 						PreparedStatement  stmt = connDB.getConn().prepareStatement(sql);
 						stmt.setString(1, username);
 						stmt.setString(2, nome);
 						stmt.setString(3, cognome);
 						stmt.setString(4, email.trim());
 						stmt.setString(5, MD5.crypt(password));
-						stmt.setInt(6, tipoUtente);				
+						stmt.setInt(6, 2);				
 						stmt.setInt(7, 1);				
 						if(stmt.executeUpdate() == 1) {
 							contenuto = "Registrazione Effettuata con Successo";

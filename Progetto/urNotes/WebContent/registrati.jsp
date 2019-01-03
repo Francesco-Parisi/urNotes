@@ -8,25 +8,7 @@
     </head>
 
 <body>
-<div id="content">
-			<div id="content-content">
-				<%
-					String output = "";
-					String titolo = "";
-					int tipoUtente = 0;
-					if(request.getSession().getAttribute("tipo_utente") != null){
-						tipoUtente = (int)request.getSession().getAttribute("tipo_utente");
-					}
-					
-					if(tipoUtente == 1){
-						titolo = "Compila i campi seguenti per registrare un nuovo Admin";
-						output = "<input type='hidden' id='tipoUtente' name='tipoUtente' class='campoForm' value='1' />";							
-					}
-					else{
-						titolo = "Compila i campi seguenti per registrarti al nostro e-commerce";
-						output = "<input type='hidden' id='tipoUtente' name='tipoUtente' class='campoForm' value='2' />";							
-					}					
-				%>
+
 			
 <div class="loginbox-reg">
 <img src="images/menu_logo3.png" class="avatar">
@@ -63,19 +45,16 @@
 				        <input type="password" id="confermaPassword" name="confermaPassword" class="campoForm" />
 				  </fieldset>					
 
-				    <%=output %>	
-
 				    			    			    				
 					<input type="submit" id="submitForm" name="submitForm" class="campoForm submitForm" value="Registrati" />				
 				    <input type="reset" value="Reset"/>
 				
-				<br><br><br>
+				    <br><br><br>
      
-<a href="index.jsp">Torna alla Home</a> 
-</div>
+                    <a href="index.jsp">Torna alla Home</a> 
+                    
+                    </div>
 				</form>
 			</div>
-		</div>
-	</div>
-	</body>
+	  </body>
 </html>
