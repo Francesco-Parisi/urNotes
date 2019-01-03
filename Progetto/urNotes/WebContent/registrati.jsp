@@ -13,36 +13,35 @@
 <div class="loginbox-reg">
 <img src="images/menu_logo3.png" class="avatar">
 
-<form action="#" method="POST" id="formRegistrati">					
-                    
+<form action="#" method="POST" id="formRegistrati">					                
 <div class="box">
               		 <fieldset>					        
 				        <p>Username</p>
-				        <input type="text" id="username" name="username" class="campoForm" />
+				        <input required type="text" id="username" name="username" class="campoForm" />
 				     </fieldset>					
 
 				    <fieldset>
 				        <p>Nome</p>
-				        <input type="text" id="nome" name="nome" class="campoForm" />
+				        <input required type="text" id="nome" name="nome" class="campoForm" />
 				    </fieldset>					
 
 				    <fieldset>
 				        <p>Cognome</p>
-				        <input type="text" id="cognome" name="cognome" class="campoForm" />
+				        <input required type="text" id="cognome" name="cognome" class="campoForm" />
 				    </fieldset>	
                     <fieldset>
 				        <p>Email</p>
-				        <input type="text" id="email" name="email" class="campoForm" />
+				        <input required type="text" id="email" name="email" class="campoForm" />
 				    </fieldset>					
 
 				    <fieldset>
 				        <p>Password</p>
-				        <input type="password" id="password" name="password" class="campoForm" />
+				        <input required type="password" id="password" name="password" class="campoForm" />
 				    </fieldset>					
 
 				  <fieldset>
 				        <p>Conferma Password</p>
-				        <input type="password" id="confermaPassword" name="confermaPassword" class="campoForm" />
+				        <input required type="password" id="confermaPassword" name="confermaPassword" class="campoForm" />
 				  </fieldset>					
 
 				    			    			    				

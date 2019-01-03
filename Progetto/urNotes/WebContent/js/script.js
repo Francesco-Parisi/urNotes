@@ -7,6 +7,17 @@ $(document).ready(function(){
 	 });
 
 
+//checkEmail('prova@email.it');
+function checkEmail(email){
+	var $email = email;
+	var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
+	if ($email == '' || !re.test($email)){
+		return false;
+	}
+	else{
+		return true;
+	}
+}
 
 function showAlert(flag, descrizione){
 	toastr.options = {

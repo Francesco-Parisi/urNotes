@@ -1,9 +1,4 @@
 $(document).ready(function(){
-	
-	
-	
-	
-	
 	$(document).on('submit', '#formRegistrati', function(e){
 		var username = $("#username").val();
 		var nome = $("#nome").val();
@@ -11,7 +6,6 @@ $(document).ready(function(){
 		var email = $("#email").val();
 		var password = $("#password").val();
 		var confermaPassword = $("#confermaPassword").val();
-		var tipo_utente = $("#tipo_utente").val();
 
 		
 		var continua = 1;
@@ -39,10 +33,7 @@ $(document).ready(function(){
 			showAlert(1, "Controllare che le due password coincidano");
 			continua *= 0;
 		}
-		if(tipo_utente == undefined || tipo_utente > 2 || tipo_utente < 1){			
-			showAlert(1, "Inserire un Tipo Utente valido");
-			continua *= 0;
-		}
+		
 	
 		if(continua){
 			$("#loader").show();
@@ -57,8 +48,7 @@ $(document).ready(function(){
 					"nome": nome,
 					"cognome": cognome,
 					"email": email,
-					"password": password,
-					"tipo_utente": tipo_utente
+					"password": password
 				},
 				success:function(msg){
 					if(!msg.risultato){

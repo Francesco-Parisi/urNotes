@@ -65,7 +65,7 @@ public class SalvaUtente extends HttpServlet {
 				sql = ""
 						+ "SELECT id_utente "
 						+ "FROM utenti "
-						+ "WHERE attivo = 1 AND (TRIM(email) = TRIM('"+email+"') OR TRIM(username) = TRIM('"+username.toUpperCase()+"')); ";
+						+ "WHERE attivo = 1 AND (TRIM(email) = TRIM('"+email+"') OR TRIM(username) = TRIM('"+username+"')); ";
 				ResultSet result = stmt0.executeQuery(sql);				
 				if(!result.wasNull()) {
 					int rowCount = result.last() ? result.getRow() : 0;
@@ -74,15 +74,15 @@ public class SalvaUtente extends HttpServlet {
 						risultato = 0;
 					}					
 					else {
-						sql = "INSERT INTO utenti (username, nome, cognome,email, paswd, tipo_utente, attivo) VALUES (?, ?, ?, ?, ?, ?, ?);";
+						sql = "INSERT INTO utenti(username, nome, cognome,email, paswd, tipo_utente, attivo) VALUES (?, ?, ?, ?, ?, 2, 1);";
 						PreparedStatement  stmt = connDB.getConn().prepareStatement(sql);
 						stmt.setString(1, username);
 						stmt.setString(2, nome);
 						stmt.setString(3, cognome);
 						stmt.setString(4, email.trim());
 						stmt.setString(5, MD5.crypt(password));
-						stmt.setInt(6, 2);				
-						stmt.setInt(7, 1);				
+						//stmt.setInt(6, 2);				
+						//stmt.setInt(7, 1);				
 						if(stmt.executeUpdate() == 1) {
 							contenuto = "Registrazione Effettuata con Successo";
 							risultato = 1;					
