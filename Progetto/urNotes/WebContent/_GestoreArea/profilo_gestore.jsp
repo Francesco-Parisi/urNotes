@@ -17,6 +17,10 @@
 <title>urNotes | Gestore</title>
 </head>
 <body>
+<%@ include file="/partials/header.jsp" %>
 <p> Accesso Effettuato da Gestore</p>
+<p>Ciao <%=request.getSession().getAttribute("nome") %> <%=request.getSession().getAttribute("cognome") %>
+
+<%@ include file="/partials/footer.jsp" %>	
 </body>
 </html>
