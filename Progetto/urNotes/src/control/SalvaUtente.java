@@ -56,7 +56,8 @@ public class SalvaUtente extends HttpServlet {
         Integer risultato = 0;
         String errore = "";
         String contenuto = "";
-		
+        String redirect = "";
+        
         ConnessioneDB connDB = new ConnessioneDB();
 		if(connDB.getConn() != null) {
 			try {				
@@ -84,8 +85,9 @@ public class SalvaUtente extends HttpServlet {
 						//stmt.setInt(6, 2);				
 						//stmt.setInt(7, 1);				
 						if(stmt.executeUpdate() == 1) {
+							redirect = request.getContextPath()+"/accedi.jsp";
 							contenuto = "Registrazione Effettuata con Successo";
-							risultato = 1;					
+							risultato = 1;		
 						}
 						else {
 							errore = "Errore registrazione.";
@@ -117,6 +119,7 @@ public class SalvaUtente extends HttpServlet {
 		res.put("risultato", risultato);
 		res.put("errore", errore);
 		res.put("contenuto", contenuto);
+		res.put("redirect", redirect);
 		out.println(res);
 		
 	}
