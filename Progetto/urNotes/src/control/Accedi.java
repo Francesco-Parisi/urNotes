@@ -60,7 +60,7 @@ public class Accedi extends HttpServlet {
 				sql = ""
 						+ "SELECT id_utente, tipo_utente, nome, cognome "
 						+ "FROM utenti AS u "
-						+ "WHERE u.attivo = 1 AND TRIM(u.username) = TRIM('"+username+"') AND u.paswd = '"+password+"';";
+						+ "WHERE u.attivo = 1 AND TRIM(u.username) = TRIM('"+username+"') AND u.paswd = '"+MD5.crypt(password)+"';";
 				ResultSet result = stmt.executeQuery(sql);
 				if(result.wasNull()) {
 					errore = "Errore esecuzione Query.";
