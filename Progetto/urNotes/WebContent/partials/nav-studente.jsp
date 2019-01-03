@@ -16,8 +16,9 @@
 <li class="header_item"><a href="/urNotes/contatti.jsp">Contatti</a></li>
 
 <ul class="header_menu_dx">
-<li class=header_item_dx><a href="/urNotes/accedi.jsp">Accedi</a></li>
-<li class=header_item_dx><a href="/urNotes/registrati.jsp">Registrati</a></li>
+<li class=header_item_dx><a href="/urNotes/_StudenteArea/profilo_studente.jsp">
+<p>Ciao <%=request.getSession().getAttribute("nome") %></p></a></li>
+<li class=header_item_dx><a href="/urNotes/logout.jsp">Logout</a></li>
 </ul>
 
 </ul>

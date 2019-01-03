@@ -1,16 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="model.CheckSession, javax.servlet.http.HttpSession, model.ConnessioneDB, java.sql.*" %>
-
 <!DOCTYPE html>
 <html lang = "it">
 	<head>
 		<% 	
 			CheckSession ck = new CheckSession(0, request.getSession());	
 			if(ck.getRedirect()){
-				String path = request.getContextPath()+ck.getUrlRedirect();		
-				%>		
+				String path = request.getContextPath()+ck.getUrlRedirect();
+				%>
 					<script>
 						window.location.href = '<%=path%>';
-					</script>			
+					</script>
 				<%	
 			} 
 		%>
@@ -18,6 +17,9 @@
 <title>urNotes | Studente</title>
 </head>
 <body>
+<%@ include file="/partials/header.jsp" %>
 <p> Accesso Effettuato da Studente</p>
+
+<%@ include file="/partials/footer.jsp" %>	
 </body>
 </html>

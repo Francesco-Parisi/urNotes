@@ -10,6 +10,8 @@
 		<title>Logout</title>		
 	</head>
 	<body>
+	<%@ include file="/partials/header.jsp" %>		
+	
 		<div id="content">
 			<div id="content-content">
 				<p style="text-align: center;">Logout Effettuato con successo</p>
