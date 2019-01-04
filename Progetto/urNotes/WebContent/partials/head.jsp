@@ -14,6 +14,7 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/toastr/toastr.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/datatable/jquery.dataTables.min.css">
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/dropzone/filesystem_dropzone.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
 
 <script type="text/javascript" src="engine1/jquery.js"></script>
 <script src="<%=request.getContextPath()%>/js/jquery-3.3.1.js"></script>

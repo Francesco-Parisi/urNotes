@@ -600,4 +600,431 @@ a{
 	height:160px; 
 	overflow: auto;
 }
+
+
+
+	
+	/*************************************************************************/
+	/*******************************  CONTENT ********************************/
+	/*************************************************************************/
+	#content{
+		margin: 0;
+		padding: 0;
+		width: 95%;
+		min-height: 600px;
+		position: relative;
+		
+		max-width: 1300px;
+		float: none;
+		margin: 0 auto;		
+		
+		padding-left: 2.5%;
+		padding-right: 2.5%;				
+	}
+	
+	#content #content-content{
+		max-width: 1300px;
+		float: none;
+		margin: 0 auto;		
+		margin-bottom: 20px;
+	}
+	
+	#content .left{
+		display: inline-block;
+		float:left;
+		width: 50%;
+		height: 100%;
+		padding-top: 10px;
+	}
+	#content .left .product{
+		width: 30%;
+		display: inline-block;	
+		margin-bottom: 3.3%;
+		border: solid 1px #FFF;
+		cursor: pointer;
+	}
+	
+	#content .left .product:hover{
+		border: solid 1px #777;
+		border-radius: 5px;
+	}
+	#content .left .product .product-image{
+		height: 150px;		
+		padding: 10px;
+		background-color: #eee; 
+		border-radius: 5px;
+	}
+	#content .left .product .product-image img{
+		width: 100%;
+		height: auto;
+		max-height: 150px;
+		vertical-align: top; 	
+	}
+	#content .left .product .product-title{
+		height: 25px;
+		text-align: center;
+		padding-top: 5px;
+	}
+	#content .left .product:hover .product-title{
+		background-color: #276274;	
+		color: #FFF;	
+	}
+	#content .left .product .product-price{	
+		height: 25px;
+		text-align: center;
+		font-weight: bold;	
+		color: #276274;
+	}
+	#content .left .product .product-button{	
+		visibility: hidden;
+		height: 40px;
+		text-align: center;
+		background-color: #ffcc00;
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;	
+	}
+	#content .left .product:hover .product-button{
+		visibility: visible;	
+	}
+	#content .left .product .product-button a{
+		line-height: 36px;
+		color: #fff;
+		text-decoration: none;	
+	}
+	#content .left .product:hover .product-button a{
+		color: #276274;
+	}
+	
+	#content .right{
+		display: inline-block;
+		float:left;
+		width: 50%;
+		height: 100%;
+		padding-top: 10px;
+	}
+	#content .right .top-picture{
+		display: inline-block;
+		width: 100%;	
+	}
+	#content .right .top-picture img{
+		width: 100%;
+		height: auto;
+		border-radius: 15px;
+	}
+	#content .right .bottom-content{
+		display: inline-block;
+		height: 50%;
+		width: 100%;
+		text-align: center;
+	}
+	#content .right .bottom-content h2{	
+		color: #ffcc00;
+		display: inline-block;
+	}
+	#content .right .bottom-content h2:first-child{
+		color: #276274;
+	}
+	#content .right .bottom-content p{
+		margin-top: -10px;
+	}
+	
+		/************************************************************/
+	/***********************PAGINE ADMIN************************/
+	/************************************************************/	
+	#content #content-content .adminTitoloPagina{
+		font-size: 30px;
+		font-weight: bold;
+		color: #276274;
+	}	
+	
+	#content #content-content .adminTitoloPagina span{
+		display: block;
+		font-size: 16px;		
+	}
+	
+	#content #content-content .adminTitoloPagina span a{	
+		color: #ffcc00;
+		margin-top: 8px;
+		text-decoration: none;	
+	}	
+
+	#content #content-content .dataTables_wrapper{
+		border: solid 1px #ffcc00;
+		border-radius: 5px;
+		padding: 10px;
+		color: #276274;
+		overflow-x: auto;
+	}
+	
+	#content #content-content .dataTables_wrapper .dataTables_length, #content #content-content .dataTables_wrapper .dataTables_filter, #content #content-content .dataTables_wrapper .dataTables_info, #content #content-content .dataTables_wrapper .dataTables_paginate{
+		color: #000;
+	}
+	
+	#content #content-content .dataTables_wrapper .dataTables_paginate .paginate_button{
+		color: #000;			
+	}
+	 
+	#content #content-content .dataTables_wrapper .dataTables_paginate .paginate_button:hover{
+		background-color: none;			
+	}
+	
+	#content #content-content .adminBodyDataTable tr td, #content #content-content .adminHeadDataTable tr td, #content #content-content .userBodyDataTable tr td, #content #content-content .userHeadDataTable tr td{
+		text-align: center;
+	}
+	
+	#content #content-content .adminBodyDataTable tr td img, #content #content-content .userBodyDataTable tr td img{
+		max-width: 60px;
+		cursor: pointer;
+	}
+	
+	#content #content-content .adminBodyDataTable tr td i.elimina{
+		color: #DC483E;
+	}
+
+	#content #content-content .adminBodyDataTable tr td i.foto{
+		color: #000;
+	}
+
+	#content #content-content .adminBodyDataTable tr td i.modificaQuantita{
+		color: #000;
+	}
+
+	#content #content-content .adminBodyDataTable tr td i.modificaPrezzo{
+		color: #000;
+	}
+
+	#content #content-content .adminBodyDataTable tr td i.visualizza.nonLetto{
+		color: #DC483E;
+	}
+
+	#content #content-content .adminBodyDataTable tr td i.visualizza.letto{
+		color: #00cc00;
+	}
+		
+	#content #content-content .adminAggiungi{
+		text-align: center;	
+		margin-top: 10px;
+	}
+	
+	#content #content-content .adminButtonAggiungi{
+		background-color: #276274;
+		border: 0;
+		border-radius: 20px;	
+		width: 80px;		
+		height: 40px;		
+		color: #FFF;
+		font-size: 25px;
+		cursor: pointer;
+		margin-top: 40px;
+	}
+	
+	#content #content-content .adminButtonAggiungi i.fa-plus{
+		font-size: 25px;
+		cursor: pointer;
+	}
+	
+	#content #content-content .adminFormAggiungi{
+		border: solid 1px #ffcc00;
+		border-radius: 5px;
+		margin-top: 10px;
+		padding: 10px;
+	}
+	
+	#content #content-content .adminFormAggiungi .adminFormField{
+		border: 0;
+		height: 30px;	
+		border: solid 1px #276274;
+		margin-left: 1%;	
+	}
+	
+	#content #content-content .adminFormAggiungi .adminButtonConfermaAggiungi{	
+		background-color: #276274;
+		border: solid 1px #276274;
+		height: 30px;		
+		color: #FFF;
+		text-transform: uppercase;		
+		margin-left: 1%;
+		width: 7%;	
+		cursor: pointer;	
+	}
+	
+	#content #content-content .adminFormAggiungi #nomeAliquota, #content #content-content .adminFormAggiungi #valoreAliquota{
+		width: 44%;
+	}
+	
+	#content #content-content .adminFormAggiungi #nomeCategoria{
+		width: 90%;
+	}
+
+	#content #content-content .adminFormAggiungi #nomeUnita, #content #content-content .adminFormAggiungi #siglaUnita{
+		width: 44%;
+	}
+
+	#content #content-content .adminFormAggiungi #daSconto, #content #content-content .adminFormAggiungi #aSconto{
+		width: 12%;
+	}
+	
+	#content #content-content .adminFormAggiungi #prezzoSconto{
+		width: 7%;
+	}	
+	
+	#content #content-content .adminFormAggiungi #prodottoSconto{
+		width: 56%;
+	}		
+	
+	
+	
+	
+	#content #content-content .adminFormAggiungi #categoriaProdotto{
+		width: 23%;
+		margin-bottom: 20px;
+	}		
+	#content #content-content .adminFormAggiungi #nomeProdotto{
+		width: 19%;
+		margin-bottom: 20px;
+	}	
+	#content #content-content .adminFormAggiungi #descrizioneProdotto{
+		width: 54%;
+		margin-bottom: 20px;
+	}
+	#content #content-content .adminFormAggiungi #descrizioneAbbreviataProdotto{
+		width: 46%;
+	}
+	#content #content-content .adminFormAggiungi #unitaProdotto, #content #content-content .adminFormAggiungi #aliquotaProdotto{
+		width: 13%;
+	}
+	#content #content-content .adminFormAggiungi #quantitaProdotto, #content #content-content .adminFormAggiungi #prezzoProdotto{
+		width: 7%;
+	}
+	
+	
+	
+	#content #content-content .adminFormAggiungi #containerDefaultImmagine{	
+		width: 100%;
+		text-align: center;		
+	}	
+	#content #content-content .adminFormAggiungi #containerDefaultImmagine #defaultImmagine, #content #content-content .adminFormAggiungi #containerDefaultImmagine label{
+		vertical-align: middle;
+	}	
+	#content #content-content .adminFormAggiungi #confirmAggiungiImmagine{
+		margin-left: 47%;
+	}	
+	#content #content-content .adminFormAggiungi .dropzoneImmagineProdotto{
+		min-height: 100px;
+		background-color: #eee;
+		margin-bottom: 20px;
+		cursor: pointer;
+		position: relative;
+		padding: 15px;
+	}	
+	#content #content-content .adminFormAggiungi .dropzoneImmagineProdotto:after {
+    	content: 'Sposta qui l\'immagine da caricare';
+    	position: absolute;
+    	top: 40%;
+    	left: 42%;
+    	width: 20%;
+    	height: 5%;
+	}		
+	#content #content-content .adminFormAggiungi .dz-started.dropzoneImmagineProdotto:after {
+		display: none;
+	}	
+	#content #content-content .adminFormAggiungi .dropzoneImmagineProdotto .dz-error-mark, #content #content-content .adminFormAggiungi .dropzoneImmagineProdotto .dz-error-message, #content #content-content .adminFormAggiungi .dropzoneImmagineProdotto .dz-success-mark{
+		display: none;		
+	}	
+	#content #content-content .adminFormAggiungi .dropzoneImmagineProdotto .dz-remove{
+		background-color: #DC483E;
+		border: solid 1px #DC483E;
+		height: 30px;		
+		color: #FFF;
+		text-transform: uppercase;		
+		width: 7%;	
+		cursor: pointer;
+		text-decoration: none;
+		font-size: 12px;
+		padding: 5px;		
+	}		
+	#content #content-content .adminFormAggiungi .dropzoneImmagineProdotto .dz-image img{
+		border-radius: 10px;
+	}			
+	#content #content-content .adminFormAggiungi #nomemetodoPagamento{	
+		width: 30%;
+    	margin-bottom: 20px;
+	}	
+	#content #content-content .adminFormAggiungi #descrizionemetodoPagamento{
+		width: 54%;
+		margin-bottom: 20px;
+	}
+	
+	#modalContatti{
+		display: none;
+		height: 50%;
+		width: 80%;
+		left: 10%;
+		top: 10%;
+		overflow: hidden;
+		position: fixed;
+		z-index: 99999;
+		background-color: #fff;
+		opacity: 1;
+		text-align: center;
+		padding-top: 15%;
+		border-radius: 20px;
+		border: solid 4px #ffcc00;		
+	}
+	
+	#modalContatti #modalContattiNav{
+		position: absolute;
+		left: 97%;
+		width: 1%;
+		top: 3%;
+		cursor: pointer;
+	}	
+	#modalContatti #modalContattiBody{
+		position: absolute;
+		width: 100%;
+		top: 5%;	
+	}	
+	#modalContatti #modalContattiBody h2{
+		color: #276274;
+	}
+	#modalContatti #modalContattiBody textarea{	
+		width: 95%;
+		border: solid 1px #276274;
+		border-radius: 15px;
+		padding: 15px;
+		height: 250px;
+		margin-top: 20px;
+	}
+	
+	#modalContatti #modalContattiBody .fieldContatto{
+		width: 30%;
+		display: inline;
+		margin-left: 5%;
+	}
+	
+	#content #content-content .adminFormAggiungi #nomeVettore{	
+		width: 30%;    	
+	}	
+	#content #content-content .adminFormAggiungi #descrizioneVettore{
+		width: 45%;		
+	}
+	#content #content-content .adminFormAggiungi #costoVettore{
+		width: 8%;
+	}
+	#content #content-content .adminFormAggiungi #contrassegnoVettore{
+		width: 4%;
+	}
+	
+	
+	#content #content-content .adminFormAggiungi #nomeStato{	
+		width: 82%;    	
+	}	
+	#content #content-content .adminFormAggiungi #ordineAnnullabileStato{
+		width: 3%;		
+	}
+	#content #content-content .adminFormAggiungi #primoStato{
+		width: 3%;		
+	}
+	
+	
 }

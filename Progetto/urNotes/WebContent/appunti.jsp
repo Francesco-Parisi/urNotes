@@ -5,10 +5,11 @@
 <html lang = "it">
 
 <head>
-<%@ include file="/partials/head.jsp" %>			
+<%@ include file="/partials/head.jsp" %>	
+<script src="<%=request.getContextPath()%>/js/scripts_appunti.js"></script>			
 <title>urNotes | Appunti</title>
 </head>
-
+<!--  
 <body>
 <%@ include file="/partials/header.jsp" %>		
 
@@ -18,7 +19,49 @@
 
 <section class="container_appunti">
 <div class="titolo-sezione">Appunti</div>
+-->
+<body onLoad="getProdotti()">
+		<%@ include file="/partials/header.jsp" %>				
+		<div id="content">
+			<div id="content-content">
+				<p class="adminTitoloPagina">Gestione Prodotti</p> 
+				<table id="prodottiTable">
+					<thead class="adminHeadDataTable">
+						<tr>
+							<th>ID</th>
+							<th>Categoria</th>
+							<th>Nome</th>
+							<th>Descrizione</th>
+							<th>Descrizione Abbreviata</th>
+							<th>Qt&agrave; Disp.</th>
+							<th>Unit&agrave;</th>
+							<th>Prezzo</th>
+							<th>Aliquota</th>							
+							<th>Azioni</th>
+						</tr>	
+					</thead>
+					<tbody id="bodyAppunti" class="adminBodyDataTable">
+						
+					</tbody>
+				</table>
+				
+				<div id="aggiungiAppunto" class="adminAggiungi">
+					<button id="buttonAggiungiAppunto" class="adminButtonAggiungi"><i class="fas fa-plus"></i></button>
+				</div>
+				
+				<div id="formAggiungiAppunto" class="adminFormAggiungi" style="display: none;">
+					
+				</div>
 
+
+
+
+
+
+
+
+
+<!--
 <table>
 
 <tr>
@@ -125,8 +168,9 @@
 </table>
 
 </section>
-
-
+-->
+</div>
+</div>
 
 
 
