@@ -1,6 +1,6 @@
 <header class="header clear">
 
-<div><a class="header_logo" href="/urNotes/index.jsp"><img src="/urNotes/images/menu_logo3.png" height="45" width="150" alt="copertina"></a></div>
+<div><a class="header_logo" href="<%=request.getContextPath()%>/index.jsp"><img src="<%=request.getContextPath()%>/images/menu_logo3.png" height="45" width="150" alt="copertina"></a></div>
 <a class="header_icon" href="">
 <span></span>
 <span></span>

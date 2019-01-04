@@ -40,7 +40,7 @@
 <div class="section-text">
 Sarà possibile per ogni insegnamento caricare e visualizzare dispense e appunti.
 Ogni Documento sarà commentabile e visionabile in anteprima senza doverlo acquistare.
-<img class="image-section1" alt="icon" src="/urNotes/images/icon1.png">
+<img class="image-section1" alt="icon" src="/urNotes/images/icon.png">
 <br>
 <a id="button" href="/urNotes/appunti.jsp">Appunti</a>
 </div>
@@ -86,6 +86,5 @@ Acquistali in modo semplice e veloce.
 <%@ include file="/partials/footer.jsp" %>	
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
 </body>
 </html>
