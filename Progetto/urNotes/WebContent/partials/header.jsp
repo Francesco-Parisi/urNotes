@@ -6,7 +6,6 @@
 <span></span>
 <span></span>
 </a>
-
 <%		
 	if((Integer) request.getSession().getAttribute("tipo_utente") == null){
 		%><%@ include file="/partials/nav-ospite.jsp" %><%

@@ -321,7 +321,7 @@ ul li a:hover{
 	box-shadow:1px 1px grey;
 	
 }
-
+/*
 table{
 	font-family: monospace, sans-serif;
     border-collapse: collapse;
@@ -353,7 +353,7 @@ tr{
 
 .tabella{
 	padding:5px;
-}
+}*/
 
 
 /*FAQ-------------------------------*/
@@ -675,7 +675,7 @@ a{
 		padding: 0;
 		width: 95%;
 		min-height: 600px;
-		position: relative;
+		position: absolute;
 		
 		max-width: 1300px;
 		float: none;
@@ -728,7 +728,7 @@ a{
 		text-align: center;
 		padding-top: 5px;
 	}
-	#content .left .product:hover .product-title{
+	 #content .left .product:hover .product-title{
 		background-color: #276274;	
 		color: #FFF;	
 	}
@@ -927,7 +927,7 @@ a{
 		width: 12%;
 	}
 	
-	#content #content-content .adminFormAggiungi #prezzoSconto{
+	.container_appunti#content #content-content .adminFormAggiungi #prezzoSconto{
 		width: 7%;
 	}	
 	
@@ -938,7 +938,7 @@ a{
 	
 	
 	
-	#content #content-content .adminFormAggiungi #categoriaProdotto{
+	.container_appunti #content #content-content .adminFormAggiungi #categoriaProdotto{
 		width: 23%;
 		margin-bottom: 20px;
 	}		

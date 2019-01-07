@@ -4,9 +4,23 @@ $(document).ready(function(){
 				$(".header_menu").toggleClass('is-open');
 				e.preventDefault();
 			});
+			
+			
+			resizeContent();
+			$( window ).resize(function() {
+				resizeContent();
+			});	
 	 });
 
+$(document).ready(function(){
 
+	$(".header_icon").click(function(e){
+
+		$(".header_menu").toggleClass('is-open');
+		e.preventDefault();
+
+	});
+});
 //checkEmail('prova@email.it');
 function checkEmail(email){
 	var $email = email;
@@ -18,6 +32,14 @@ function checkEmail(email){
 		return true;
 	}
 }
+
+
+
+function resizeContent(){
+	$("#content").css("min-height", ($(window).height() - $("#header").height() - $("#footer").height())+"px");	
+}
+
+
 
 function showAlert(flag, descrizione){
 	toastr.options = {

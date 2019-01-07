@@ -97,7 +97,7 @@ $(document).ready(function(){
 						showAlert(0, msg.contenuto);
 						$("#formAggiungiAppunto").html("");
 						$("#formAggiungiAppunto").css("display", "none");
-						getProdotti();
+						getAppuinti();
 					}
 				},
 				error: function(msg){
@@ -133,7 +133,7 @@ $(document).ready(function(){
 						}
 						else{
 							showAlert(0, msg.contenuto);
-							getProdotti();
+							getAppunti();
 						}
 					},
 					error: function(msg){

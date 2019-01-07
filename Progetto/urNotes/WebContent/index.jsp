@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="model.ConnessioneDB,java.sql.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="model.CheckSession, javax.servlet.http.HttpSession, model.ConnessioneDB, java.sql.*" %>
 
 <!DOCTYPE html>
 <html lang = "it">
@@ -65,7 +65,7 @@ Ogni Documento sarà commentabile e visionabile in anteprima senza doverlo acqui
 </div>       
 </section>
 
-
+<% if((Integer) request.getSession().getAttribute("tipo_utente") == null){ %>
 <section class="container-section">
 <div class="section-image">
 <div class="title-section">Studia quando e dove vuoi</div>
@@ -81,7 +81,10 @@ Acquistali in modo semplice e veloce.
 <a id="button" href="/urNotes/registrati.jsp">Registrati</a>
 </div>
 </div>       
-</section>
+</section>		
+<% } %>
+
+
 
 <%@ include file="/partials/footer.jsp" %>	
 
