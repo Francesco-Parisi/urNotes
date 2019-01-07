@@ -9,7 +9,8 @@
 		<title>Appunti</title>		
 	</head>
 	<body onLoad="getAppunti()">
-		<%@ include file="/partials/header.jsp" %>				
+		<%@ include file="/partials/header.jsp" %>		
+		<section class="container_appunti">	
 		<div id="content">
 			<div id="content-content">
 				<p class="adminTitoloPagina">Gestione Appunti</p> 
@@ -28,14 +29,14 @@
 							<th>Azioni</th>
 						</tr>	
 					</thead>
-					<tbody id="bodyProdotti" class="adminBodyDataTable">
+					<tbody id="bodyAppunti" class="adminBodyDataTable">
 						
 					</tbody>
 				</table>
 				
 			</div>
 		</div>
-
+</section>	
 
 <%@ include file="/partials/footer.jsp" %>	
 

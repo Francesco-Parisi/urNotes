@@ -18,7 +18,8 @@
 		<title>Appunti</title>		
 	</head>
 	<body onLoad="getAppunti()">
-		<%@ include file="/partials/header.jsp" %>				
+		<%@ include file="/partials/header.jsp" %>
+		<section class="container_appunti"> 				
 		<div id="content">
 			<div id="content-content">
 				<p class="adminTitoloPagina">Gestione Appunti</p> 
@@ -37,21 +38,22 @@
 							<th>Azioni</th>
 						</tr>	
 					</thead>
-					<tbody id="bodyProdotti" class="adminBodyDataTable">
+					<tbody id="bodyAppunti" class="adminBodyDataTable">
 						
 					</tbody>
 				</table>
 				
-				<div id="aggiungiProdotto" class="adminAggiungi">
+				<div id="aggiungiAppunto" class="adminAggiungi">
 					<button id="buttonAggiungiProdotto" class="adminButtonAggiungi"><i class="fas fa-plus"></i></button>
 				</div>
 				
-				<div id="formAggiungiProdotto" class="adminFormAggiungi" style="display: none;">
+				<div id="formAggiungiAppunto" class="adminFormAggiungi" style="display: none;">
 					
 				</div>
 				
 			</div>
 		</div>
+		</section>
 		<%@ include file="/partials/footer.jsp" %>	
 	</body>
 </html>
