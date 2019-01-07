@@ -6,7 +6,7 @@
 <head>
 <%@ include file="/partials/head.jsp" %>				
 		<script src="<%=request.getContextPath()%>/js/scripts_appunti.js"></script>					
-		<title>Appunti</title>		
+		<title>urNotes | Catalogo Materie</title>		
 	</head>
 	<body onLoad="getAppunti()">
 		<%@ include file="/partials/header.jsp" %>		
