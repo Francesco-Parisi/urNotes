@@ -1,6 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html lang = "it">
 
@@ -25,9 +22,9 @@
 </div>
 </div>
 
-<div class="faq_item"><a>In che modo saranno visibili i documenti che caricher√≤ su urNotes?</a>
+<div class="faq_item"><a>In che modo saranno visibili i documenti che caricherÚ su urNotes?</a>
 <div class="faq_item_content">
-<a>I tuo documenti caricati avranno la massima visibilit√† su urNotes</a>
+<a>I tuo documenti caricati avranno la massima visibilit‡ su urNotes</a>
 </div>
 </div>
 
@@ -39,7 +36,7 @@
 
 <div class="faq_item"><a>Posso rimuovere un appunto caricato su urNotes?</a>
 <div class="faq_item_content">
-<a>Certo, ti basta contattare il gestore tramite email e in 48/72 ore verr√† rimosso.</a>
+<a>Certo, ti basta contattare il gestore tramite email e in 48/72 ore verr‡ rimosso.</a>
 </div>
 </div>
 

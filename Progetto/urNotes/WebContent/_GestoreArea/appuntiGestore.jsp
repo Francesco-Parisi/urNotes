@@ -13,29 +13,22 @@
 				<%	
 			} 
 		%>
-		<%@ include file="/partials/head.jsp" %>		
-		<script src="<%=request.getContextPath()%>/js/scripts_appunti.js"></script>					
-		<title>urNotes | Catalogo Materie</title>		
+<%@ include file="/partials/head.jsp" %>				
+		<script src="<%=request.getContextPath()%>/js/scripts_materie.js"></script>					
+		<title>urNotes | Materie</title>		
 	</head>
-	<body onLoad="getAppunti()">
-		<%@ include file="/partials/header.jsp" %>
-		<section class="container_appunti"> 				
+	<body onLoad="getMaterie()">
+		<%@ include file="/partials/header.jsp" %>		
+		<section class="container_appunti">	
 		<div id="content">
 			<div id="content-content">
-				<p class="adminTitoloPagina">Gestione Appunti</p> 
 				<table id="prodottiTable">
 					<thead class="adminHeadDataTable">
 						<tr>
-							<th>ID</th>
-							<th>Categoria</th>
-							<th>Nome</th>
-							<th>Descrizione</th>
-							<th>Descrizione Abbreviata</th>
-							<th>Qt&agrave; Disp.</th>
-							<th>Unit&agrave;</th>
-							<th>Prezzo</th>
-							<th>Aliquota</th>							
-							<th>Azioni</th>
+							<th>A</th>
+							<th>B</th>
+							<th>C</th>
+							<th>D</th>
 						</tr>	
 					</thead>
 					<tbody id="bodyAppunti" class="adminBodyDataTable">
@@ -43,17 +36,11 @@
 					</tbody>
 				</table>
 				
-				<div id="aggiungiAppunto" class="adminAggiungi">
-					<button id="buttonAggiungiProdotto" class="adminButtonAggiungi"><i class="fas fa-plus"></i></button>
-				</div>
-				
-				<div id="formAggiungiAppunto" class="adminFormAggiungi" style="display: none;">
-					
-				</div>
-				
 			</div>
 		</div>
-		</section>
-		<%@ include file="/partials/footer.jsp" %>	
-	</body>
+</section>	
+
+<%@ include file="/partials/footer.jsp" %>	
+
+</body>
 </html>
