@@ -12,7 +12,7 @@ import org.json.simple.JSONObject;
 
 import model.ConnessioneDB;
 /**
- * Servlet implementation class GetProdotti
+ * Servlet implementation class GetMaterie
  */
 @WebServlet("/GetMaterie")
 public class GetMaterie extends HttpServlet {
@@ -53,18 +53,21 @@ public class GetMaterie extends HttpServlet {
 				Statement stmt = connDB.getConn().createStatement();
 				String sql = "";
 				sql = ""
-						+ "SELECT m.nome"
+						+ "SELECT m.nome "
 						+ "FROM materie  AS m "
 						+ "WHERE m.flag = 1; ";
 				
 				//System.out.println(sql);
 				ResultSet result = stmt.executeQuery(sql);				
 				if(!result.wasNull()) {
+					int i = 1;
+					int n = 0;
 					while(result.next()) {
-						contenuto += "<tr>";
-							contenuto += "<td>"+result.getString("nome")+"</td>";	
-					   		contenuto += "</tr>";
-					}					
+							contenuto += "<tr>";
+							contenuto += "<td>"+result.getString("nome")+"</td>";
+							contenuto += "</tr>";
+					}
+					
 				}				 
 
 				risultato = 1;
