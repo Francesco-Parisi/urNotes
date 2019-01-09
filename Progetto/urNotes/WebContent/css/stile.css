@@ -321,7 +321,7 @@ ul li a:hover{
 	box-shadow:1px 1px grey;
 	
 }
-/*
+
 table{
 	font-family: monospace, sans-serif;
     border-collapse: collapse;
@@ -331,29 +331,22 @@ table{
 }
 
 th {
-    border: 1px solid #dddddd;
     text-align: center;
     text-shadow:1px 1px black;
-    padding: 8px;    
+    font-size:22px;
+    padding: 30px;    
 }
 
-th a{
-	color:white;
-   	text-decoration:none;
-	
-}
-
-th a:hover{
-	text-decoration:underline;
-}
 tr{
-	padding:5px;
+	border-radius:10px;
+	text-shadow:1px 1px black;
+	text-align:center;
+	padding:10px;
+	font-size:16px;
+	font-weight:bold;
 	
 }
 
-.tabella{
-	padding:5px;
-}*/
 
 
 /*FAQ-------------------------------*/

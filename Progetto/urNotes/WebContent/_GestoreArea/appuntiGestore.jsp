@@ -25,10 +25,10 @@
 				<table id="prodottiTable">
 					<thead class="adminHeadDataTable">
 						<tr>
-							<th>Nome</th>
-					   </tr>	
+							<th>Materie</th>
+						</tr>	
 					</thead>
-					<tbody id="bodyAppunti" class="adminBodyDataTable">
+					<tbody id="bodyMaterie" class="adminBodyDataTable">
 						
 					</tbody>
 				</table>

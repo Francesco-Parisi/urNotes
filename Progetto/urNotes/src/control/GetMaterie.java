@@ -56,7 +56,7 @@ public class GetMaterie extends HttpServlet {
 						+ "SELECT m.nome "
 						+ "FROM materie  AS m "
 						+ "WHERE m.flag = 1 "
-						+ "ORDER BY m.nome DESC;";
+						+ "ORDER BY m.nome ASC;";
 				
 				//System.out.println(sql);
 				ResultSet result = stmt.executeQuery(sql);				

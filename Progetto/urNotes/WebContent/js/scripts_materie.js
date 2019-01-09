@@ -1,14 +1,5 @@
 $(document).ready(function(){
-	$('#prodottiTable').DataTable( {
-        "order": [[ 0, "asc" ]],
-        "paging":   false,
-        "info":     false,
-        "oAria": {
-			        "sSortAscending":  ": attiva per ordinare la colonna in ordine crescente",
-			        "sSortDescending": ": attiva per ordinare la colonna in ordine decrescente"
-			    }       
-    } );
-	
+
 	$(document).on('click', '#buttonAggiungiMateria', function(e){
 		
 		if($("#formAggiungiMateria").css("display") == "block"){

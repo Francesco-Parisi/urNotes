@@ -16,7 +16,7 @@
 				<table id="prodottiTable">
 					<thead class="adminHeadDataTable">
 						<tr>
-							<th>Nome</th>
+							<th>Materie</th>
 						</tr>	
 					</thead>
 					<tbody id="bodyMaterie" class="adminBodyDataTable">
