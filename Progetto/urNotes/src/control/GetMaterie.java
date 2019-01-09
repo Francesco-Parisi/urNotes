@@ -55,13 +55,12 @@ public class GetMaterie extends HttpServlet {
 				sql = ""
 						+ "SELECT m.nome "
 						+ "FROM materie  AS m "
-						+ "WHERE m.flag = 1; ";
+						+ "WHERE m.flag = 1 "
+						+ "ORDER BY m.nome DESC;";
 				
 				//System.out.println(sql);
 				ResultSet result = stmt.executeQuery(sql);				
 				if(!result.wasNull()) {
-					int i = 1;
-					int n = 0;
 					while(result.next()) {
 							contenuto += "<tr>";
 							contenuto += "<td>"+result.getString("nome")+"</td>";
