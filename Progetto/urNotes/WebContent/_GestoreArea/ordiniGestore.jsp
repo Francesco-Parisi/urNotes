@@ -14,7 +14,7 @@
 			} 
 		%>
 		<%@ include file="/partials/head.jsp" %>
-<title>urNotes | Aggiungi Documento</title>
+<title>urNotes | Ordini</title>
 </head>
 
 <body>

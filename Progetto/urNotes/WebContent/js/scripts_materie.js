@@ -101,7 +101,7 @@ $(document).ready(function(){
 	$(document).on('click', '.eliminaMateria', function(e){		
 		var nome = $(this).data("nome");
 		
-		if(codice != undefined && codice > 0){		
+		if(nome != undefined && nome.length > 1){		
 			if(confirm("Conferma la cancellazione della materia con Nome"+nome+"?")){
 				$("#loader").show();			
 				$.ajax({
@@ -154,10 +154,10 @@ function getMaterie(){
 			}
 			else{				
 				if(msg.contenuto.length > 0){
-					$("#bodyAppunti").html(msg.contenuto);
+					$("#bodyMaterie").html(msg.contenuto);
 				}											
 				else{
-					$("#bodyAppunti").html("<tr><td colspan='10'>Nessuna Materia Presente</td></tr>");
+					$("#bodyMaterie").html("<tr><td colspan='10'>Nessuna Materia Presente</td></tr>");
 				}
 				
 			}

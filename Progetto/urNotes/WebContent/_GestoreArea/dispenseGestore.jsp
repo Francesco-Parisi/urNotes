@@ -1,13 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="UTF-8"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="model.CheckSession, javax.servlet.http.HttpSession" %>
 <!DOCTYPE html>
 <html lang = "it">
-
-<head>
-<%@ include file="/partials/head.jsp" %>			
-<title>urNotes | Dispense</title>
-</head>
+	<head>
+		<% 
+			CheckSession ck = new CheckSession(1, request.getSession());
+			if(ck.getRedirect()){
+				String path = request.getContextPath()+ck.getUrlRedirect();
+				%>
+					<script>
+						window.location.href = '<%=path%>';
+					</script>
+				<%	
+			} 
+		%>
+<%@ include file="/partials/head.jsp" %>				
+		<script src="<%=request.getContextPath()%>/js/scripts_materie.js"></script>					
+		<title>urNotes | Materie</title>		
+		</head>
 <body>
 <%@ include file="/partials/header.jsp" %>		
 

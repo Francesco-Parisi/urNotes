@@ -5,32 +5,32 @@ import java.math.BigDecimal;
 public class SystemInformation {
 	
 	public SystemInformation() {
-		this.setPathImmaginiProdotto("C:\\Users\\maiom\\eclipse-workspace-jee\\BUCCELLA_MACELLARO_MAIORANO\\WebContent\\images\\prodotti\\");		
-		this.setPathImmaginiProdottoHTML("/BUCCELLA_MACELLARO_MAIORANO/images/prodotti/");		
-		this.setPathImmaginiProdottoDefault("/BUCCELLA_MACELLARO_MAIORANO/images/prodotti/prodotto_blank.png");
+		this.setPathImmaginiDocumento("C:\\Users\\maiom\\eclipse-workspace-jee\\BUCCELLA_MACELLARO_MAIORANO\\WebContent\\images\\prodotti\\");		
+		this.setPathImmaginiDocumentoHTML("/BUCCELLA_MACELLARO_MAIORANO/images/prodotti/");		
+		this.setPathImmaginiDocumentoDefault("/BUCCELLA_MACELLARO_MAIORANO/images/prodotti/prodotto_blank.png");
 		this.setUrlRedirect("/accedi.jsp");				
-		this.setLimiteProdottiIndex(9);
+		this.setLimiteDocumentiIndex(9);
 	}
 
-	public String getPathImmaginiProdottoHTML() {		
-		return pathImmaginiProdottoHTML; 
+	public String getPathImmaginiDocumentoHTML() {		
+		return pathImmaginiDocumentoHTML; 
 	}	
-	public void setPathImmaginiProdottoHTML(String pathImmaginiProdotto) {
-		this.pathImmaginiProdottoHTML = pathImmaginiProdotto;
+	public void setPathImmaginiDocumentoHTML(String pathImmaginiDocumento) {
+		this.pathImmaginiDocumentoHTML = pathImmaginiDocumento;
 	}
 	
-	public String getPathImmaginiProdotto() {		
-		return pathImmaginiProdotto; 
+	public String getPathImmaginiDocumento() {		
+		return pathImmaginiDocumento; 
 	}
-	public void setPathImmaginiProdotto(String pathImmaginiProdotto) {
-		this.pathImmaginiProdotto = pathImmaginiProdotto;
+	public void setPathImmaginiDocumento(String pathImmaginiDocumento) {
+		this.pathImmaginiDocumento = pathImmaginiDocumento;
 	}
 	
-	public String getPathImmaginiProdottoDefault() {
-		return pathImmaginiProdottoDefault;
+	public String getPathImmaginiDocumentoDefault() {
+		return pathImmaginiDocumentoDefault;
 	}
-	public void setPathImmaginiProdottoDefault(String pathImmaginiProdottoDefault) {
-		this.pathImmaginiProdottoDefault = pathImmaginiProdottoDefault;
+	public void setPathImmaginiDocumentoDefault(String pathImmaginiDocumentoDefault) {
+		this.pathImmaginiDocumentoDefault = pathImmaginiDocumentoDefault;
 	}
 	
 	public String getUrlRedirect() {
@@ -40,11 +40,11 @@ public class SystemInformation {
 		this.urlRedirect = urlRedirect;
 	}
 
-	public Integer getLimiteProdottiIndex() {
-		return limiteProdottiIndex;
+	public Integer getLimiteDocumentiIndex() {
+		return getLimiteDocumentiIndex();
 	}
-	public void setLimiteProdottiIndex(Integer limite) {
-		this.limiteProdottiIndex = limite;
+	public void setLimiteDocumentiIndex(Integer limite) {
+		this.limiteDocumentiIndex = limite;
 	}
 	
 	@SuppressWarnings("deprecation")
@@ -57,9 +57,9 @@ public class SystemInformation {
 	}
 	
 
-	private String pathImmaginiProdotto;
-	private String pathImmaginiProdottoHTML;
-	private String pathImmaginiProdottoDefault;
+	private String pathImmaginiDocumento;
+	private String pathImmaginiDocumentoHTML;
+	private String pathImmaginiDocumentoDefault;
 	private String urlRedirect;
-	private Integer limiteProdottiIndex;
+	private Integer limiteDocumentiIndex;
 }

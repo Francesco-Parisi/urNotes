@@ -23,5 +23,5 @@
 <script src="<%=request.getContextPath()%>/js/dropzone/filesystem_dropzone.js"></script>
 <script>
 		var absolutePath = "<%=request.getContextPath()%>";
-	</script>
-	<script src="<%=request.getContextPath()%>/js/script.js"></script>
+</script>
+<script src="<%=request.getContextPath()%>/js/script.js"></script>

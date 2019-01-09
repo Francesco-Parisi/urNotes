@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="model.CheckSession, javax.servlet.http.HttpSession" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html lang = "it">
@@ -16,10 +16,7 @@
 				<table id="prodottiTable">
 					<thead class="adminHeadDataTable">
 						<tr>
-							<th>A</th>
-							<th>B</th>
-							<th>C</th>
-							<th>D</th>
+							<th>Nome</th>
 						</tr>	
 					</thead>
 					<tbody id="bodyAppunti" class="adminBodyDataTable">

@@ -16,7 +16,7 @@
 <%@ include file="/partials/head.jsp" %>				
 		<script src="<%=request.getContextPath()%>/js/scripts_materie.js"></script>					
 		<title>urNotes | Materie</title>		
-	</head>
+		</head>
 	<body onLoad="getMaterie()">
 		<%@ include file="/partials/header.jsp" %>		
 		<section class="container_appunti">	
@@ -25,11 +25,8 @@
 				<table id="prodottiTable">
 					<thead class="adminHeadDataTable">
 						<tr>
-							<th>A</th>
-							<th>B</th>
-							<th>C</th>
-							<th>D</th>
-						</tr>	
+							<th>Nome</th>
+					   </tr>	
 					</thead>
 					<tbody id="bodyAppunti" class="adminBodyDataTable">
 						
