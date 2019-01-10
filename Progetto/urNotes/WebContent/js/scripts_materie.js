@@ -1,5 +1,10 @@
 $(document).ready(function(){
 
+	$(document).on('click', '#submitForm', function(e){
+		$("#materieTable").attr('id','prodottiTable');
+	});
+
+	    
 	$(document).on('click', '#buttonAggiungiMateria', function(e){
 		
 		if($("#formAggiungiMateria").css("display") == "block"){
