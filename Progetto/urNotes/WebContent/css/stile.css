@@ -929,9 +929,6 @@ a{
 		width: 56%;
 	}		
 	
-	
-	
-	
 	.container_appunti .container_appunti #content #content-content .adminFormAggiungi #categoriaProdotto{
 		width: 23%;
 		margin-bottom: 20px;
@@ -1083,5 +1080,67 @@ a{
 		width: 3%;		
 	}
 	
+	#content .categoriaProdotto{
+		margin-top: 20px;
+	}
+	#content .categoriaProdotto .product{
+		width: 30%;
+		display: inline-block;	
+		margin-bottom: 3.3%;
+		border: solid 1px #FFF;
+		cursor: pointer;
+	}
+	
+	#content .categoriaProdotto .product:hover{
+		border: solid 1px #777;
+		border-radius: 5px;
+	}
+	#content .categoriaProdotto .product .product-image{
+		height: 230px;		
+		padding: 10px;
+		background-color: #eee; 
+		border-radius: 5px;
+	}
+	#content .categoriaProdotto .product .product-image img{
+		width: 100%;
+		height: auto;
+		max-height: 230px;
+		vertical-align: top; 	
+	}
+	#content .categoriaProdotto .product .product-title{
+		height: 25px;
+		text-align: center;
+		padding-top: 5px;
+	}
+	#content .categoriaProdotto .product:hover .product-title{
+		background-color: #276274;	
+		color: #FFF;	
+	}
+	#content .categoriaProdotto .product .product-price{	
+		height: 25px;
+		text-align: center;
+		font-weight: bold;	
+		color: #276274;
+	}
+	#content .categoriaProdotto .product .product-button{	
+		visibility: hidden;
+		height: 40px;
+		text-align: center;
+		background-color: #ffcc00;
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;	
+	}
+	#content .categoriaProdotto .product:hover .product-button{
+		visibility: visible;	
+	}
+	#content .categoriaProdotto .product .product-button a{
+		line-height: 36px;
+		color: #fff;
+		text-decoration: none;	
+	}
+	#content .categoriaProdotto .product:hover .product-button a{
+		color: #276274;
+	}
+
 	
 }

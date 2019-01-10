@@ -5,9 +5,9 @@ import java.math.BigDecimal;
 public class SystemInformation {
 	
 	public SystemInformation() {
-		this.setPathImmaginiDocumento("C:\\Users\\maiom\\eclipse-workspace-jee\\BUCCELLA_MACELLARO_MAIORANO\\WebContent\\images\\prodotti\\");		
-		this.setPathImmaginiDocumentoHTML("/BUCCELLA_MACELLARO_MAIORANO/images/prodotti/");		
-		this.setPathImmaginiDocumentoDefault("/BUCCELLA_MACELLARO_MAIORANO/images/prodotti/prodotto_blank.png");
+		this.setPathImmaginiDocumento("C:\\Utenti\\Francesco\\Desktop\\urNotes\\WebContent\\images\\documenti\\");		
+		this.setPathImmaginiDocumentoHTML("/urNotes/images/documenti/");		
+		this.setPathImmaginiDocumentoDefault("/urNotes/images/documenti/documento_blank.png");
 		this.setUrlRedirect("/accedi.jsp");				
 		this.setLimiteDocumentiIndex(9);
 	}
