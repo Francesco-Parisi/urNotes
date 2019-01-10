@@ -64,7 +64,7 @@ public class GetMaterie extends HttpServlet {
 					while(result.next()) {
 							contenuto += "<tr>";
 							contenuto += "<td>"+result.getString("nome")+"</td>";
-							contenuto += "<td><input type='submit' id='submitForm' name='submitForm' class='campoForm submitForm' value='Seleziona' onclick='getAppunti()'></td>";
+							contenuto += "<td><input type='submit' id='idAppunto' name='submitForm' class='campoForm submitForm' value='"+result.getString("nome")+"'></td>";
 							contenuto += "</tr>";
 					}
 					

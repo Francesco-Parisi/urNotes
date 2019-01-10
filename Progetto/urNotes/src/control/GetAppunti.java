@@ -43,6 +43,11 @@ public class GetAppunti extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 	    
+		String idAppunto = request.getParameter("idAppunto");
+		System.out.println(idAppunto);
+		String value = request.getParameter("value");
+		System.out.println(value);
+		
 		Integer risultato = 0;
 	    String errore = "";
 	    String contenuto = "";
