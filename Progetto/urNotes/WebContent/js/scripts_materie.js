@@ -150,13 +150,13 @@ $(document).on('click', '#idAppunto', function(e){
 							if(msg.contenuto.length > 0){
 								$("#bodyMaterie").html(msg.contenuto+"" +
 										"<br><tr><td>" +
-										"<input type='button' onclick='location.href='appunti.jsp' value='torna alla selezione delle Materie' />" +
+										"<input type='button' onclick='location.reload()' value='Torna alle Materie' />" +
 										"</td></tr>");
 							}											
 							else{
 								$("#bodyMaterie").html("<tr><td colspan='10'>Nessuna Materia Presente</td></tr>+" +
 										"<br><tr><td>" +
-										"<input type='button' onclick='location.href='appunti.jsp' value='torna alla selezione delle Materie' />" +
+										"<input type='button' onclick='location.reload()' value='Torna alle Materie' />" +
 										"</td></tr>");
 							}
 							
