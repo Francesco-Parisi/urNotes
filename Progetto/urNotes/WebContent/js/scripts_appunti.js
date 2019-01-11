@@ -339,10 +339,10 @@ function getAppunti(){
 			}
 			else{				
 				if(msg.contenuto.length > 0){
-					$("#bodyAppunti").html(msg.contenuto);
+					$("#bodyMaterie").html(msg.contenuto);
 				}											
 				else{
-					$("#bodyAppunti").html("<tr><td colspan='10'>Nessun Appunto Presente</td></tr>");
+					$("#bodyMaterie").html("<tr><td colspan='10'>Nessun Appunto Presente</td></tr>");
 				}
 				
 			}

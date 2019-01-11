@@ -148,10 +148,16 @@ $(document).on('click', '#idAppunto', function(e){
 						else{	
 							continua *= 1;
 							if(msg.contenuto.length > 0){
-								$("#bodyMaterie").html(msg.contenuto);
+								$("#bodyMaterie").html(msg.contenuto+"" +
+										"<br><tr><td>" +
+										"<input type='button' onclick='location.href='appunti.jsp' value='torna alla selezione delle Materie' />" +
+										"</td></tr>");
 							}											
 							else{
-								$("#bodyMaterie").html("<tr><td colspan='10'>Nessuna Materia Presente</td></tr>");
+								$("#bodyMaterie").html("<tr><td colspan='10'>Nessuna Materia Presente</td></tr>+" +
+										"<br><tr><td>" +
+										"<input type='button' onclick='location.href='appunti.jsp' value='torna alla selezione delle Materie' />" +
+										"</td></tr>");
 							}
 							
 						}
@@ -179,7 +185,7 @@ $(document).on('click', '#idAppunto', function(e){
 		}
 		if(continua == 1){
 			showAlert(0, cont);
-			location.reload();
+			//location.reload();
 		}
 		return false;						
 	}

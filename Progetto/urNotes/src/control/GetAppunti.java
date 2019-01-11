@@ -81,7 +81,7 @@ public class GetAppunti extends HttpServlet {
 							contenuto += "&nbsp;<i class='modificaPrezzo fas fa-edit' style='cursor: pointer;' data-idprodotto='"+result.getInt("codice")+"' title='Modifica Prezzo Prodotto'></i>";
 							contenuto += "</td>";	
 						contenuto += "</tr>";
-					}					
+					}		
 				}				 
 
 				risultato = 1;
