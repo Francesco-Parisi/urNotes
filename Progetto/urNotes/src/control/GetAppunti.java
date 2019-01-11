@@ -58,7 +58,7 @@ public class GetAppunti extends HttpServlet {
 				Statement stmt = connDB.getConn().createStatement();
 				String sql = "";
 				sql = ""
-						+ "SELECT d.codice, d.foto, d.titolo, d.pagine, d.universita, d.nome_materia, d.descrizione, d.prezzo "
+						+ "SELECT d.codice, d.titolo, d.pagine, d.universita, d.nome_materia, d.prezzo "
 						+ "FROM documenti AS d "
 						+ "WHERE d.tipo LIKE 'appunti' AND d.nome_materia LIKE '"+value+"';";
 				//System.out.println(sql);
@@ -67,19 +67,11 @@ public class GetAppunti extends HttpServlet {
 				if(!result.wasNull()) {
 					while(result.next()) {
 						contenuto += "<tr>";
-							contenuto += "<td>"+result.getInt("codice")+"</td>";	
-							contenuto += "<td>";
-							contenuto += "<i class='foto fotoProdotto fas fa-camera' style='cursor: pointer;' data-idprodotto='"+result.getInt("codice")+"' title='Gestisci Foto'></i>";
-							contenuto += "<i class='elimina eliminaProdotto fas fa-times' style='cursor: pointer;' data-idprodotto='"+result.getInt("codice")+"' title='Elimina Prodotto'></i>";
-							contenuto += "</td>";							
-							contenuto += "<td>"+result.getString("titolo")+"</td>";		
-							contenuto += "<td>"+result.getInt("pagine")+"</td>";
-							contenuto += "<td>"+result.getString("universita")+"</td>";							
-							contenuto += "<td>"+result.getString("descrizione")+"</td>";							
-							contenuto += "<td>";
-							contenuto += new SystemInformation().truncateDecimal(result.getFloat("prezzo"),2);
-							contenuto += "&nbsp;<i class='modificaPrezzo fas fa-edit' style='cursor: pointer;' data-idprodotto='"+result.getInt("codice")+"' title='Modifica Prezzo Prodotto'></i>";
-							contenuto += "</td>";	
+						contenuto += "<td>"+result.getString("titolo")+"</td>";		
+						contenuto += "<td>"+result.getInt("pagine")+"</td>";
+						contenuto += "<td>"+result.getString("universita")+"</td>";							
+						contenuto += "<td>";
+						contenuto += new SystemInformation().truncateDecimal(result.getFloat("prezzo"),2);							contenuto += "</td>";	
 						contenuto += "</tr>";
 					}		
 				}				 

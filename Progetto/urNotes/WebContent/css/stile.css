@@ -309,7 +309,7 @@ ul li a:hover{
 /*Container-Appunti------------------------*/
 
 .container_appunti{
-	width:80%;
+	width:60%;
 	height:100%;
 	margin-top:4600px;
 	margin-left:25%;
@@ -344,9 +344,21 @@ tr{
 	padding:10px;
 	font-size:16px;
 	font-weight:bold;
-	
 }
 
+#idAppunto{
+	background-color:#1ea4ca;
+	text-shadow:1px 1px black;
+	padding:5px;
+	border:none;
+	color:white;
+	font-size:17px;
+	font-weight:bold;
+}
+
+#idAppunto:hover{
+	text-decoration:underline;
+}
 
 
 /*FAQ-------------------------------*/
