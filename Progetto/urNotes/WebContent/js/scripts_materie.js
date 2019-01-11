@@ -148,12 +148,14 @@ $(document).on('click', '#idAppunto', function(e){
 						else{	
 							continua *= 1;
 							if(msg.contenuto.length > 0){
+								$("th").text("Appunti");
 								$("#bodyMaterie").html(msg.contenuto+"" +
 										"<br><tr><td>" +
 										"<input type='button' onclick='location.reload()' value='Torna alle Materie' />" +
 										"</td></tr>");
 							}											
 							else{
+								$("th").text("Appunti");
 								$("#bodyMaterie").html("<tr><td colspan='10'>Nessuna Materia Presente</td></tr>+" +
 										"<br><tr><td>" +
 										"<input type='button' onclick='location.reload()' value='Torna alle Materie' />" +

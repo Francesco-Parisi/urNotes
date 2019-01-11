@@ -43,10 +43,10 @@ public class GetAppunti extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 	    
-		String idAppunto = request.getParameter("id");
-		System.out.print(idAppunto+" ");
+		//String idAppunto = request.getParameter("id");
+		//System.out.print(idAppunto+" ");
 		String value = request.getParameter("value");
-		System.out.println(value);
+		//System.out.println(value);
 
 		Integer risultato = 0;
 	    String errore = "";
@@ -61,7 +61,7 @@ public class GetAppunti extends HttpServlet {
 						+ "SELECT d.codice, d.foto, d.titolo, d.pagine, d.universita, d.nome_materia, d.descrizione, d.prezzo "
 						+ "FROM documenti AS d "
 						+ "WHERE d.tipo LIKE 'appunti' AND d.nome_materia LIKE '"+value+"';";
-				System.out.println(sql);
+				//System.out.println(sql);
 				ResultSet result = stmt.executeQuery(sql);	
 				
 				if(!result.wasNull()) {
