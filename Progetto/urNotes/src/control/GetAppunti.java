@@ -43,14 +43,11 @@ public class GetAppunti extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 	    
-<<<<<<< HEAD
 		String idAppunto = request.getParameter("id");
 		System.out.println(idAppunto);
 		String value = request.getParameter("value");
 		System.out.println(value);
-		
-=======
->>>>>>> 62b4ada905a4c6103062b44722bc87b5593ca3b0
+
 		Integer risultato = 0;
 	    String errore = "";
 	    String contenuto = "";
@@ -62,9 +59,9 @@ public class GetAppunti extends HttpServlet {
 				Statement stmt = connDB.getConn().createStatement();
 				String sql = "";
 				sql = ""
-						+ "SELECT d.codice, d.foto, d.titolo, d.pagine, d.universita, d.descrizione, d.prezzo, "
+						+ "SELECT d.codice, d.foto, d.titolo, d.pagine, d.universita, d.nome_materia, d.descrizione, d.prezzo "
 						+ "FROM documenti AS d "
-						+ "WHERE d.tipo = appunti; ";
+						+ "WHERE d.tipo = 'appunti' AND d.nome_materia = '"+value+"'; ";
 				//System.out.println(sql);
 				ResultSet result = stmt.executeQuery(sql);				
 				if(!result.wasNull()) {
