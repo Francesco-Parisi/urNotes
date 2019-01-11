@@ -43,11 +43,6 @@ public class GetAppunti extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 	    
-		String idAppunto = request.getParameter("idAppunto");
-		System.out.println(idAppunto);
-		String value = request.getParameter("value");
-		System.out.println(value);
-		
 		Integer risultato = 0;
 	    String errore = "";
 	    String contenuto = "";
@@ -59,33 +54,27 @@ public class GetAppunti extends HttpServlet {
 				Statement stmt = connDB.getConn().createStatement();
 				String sql = "";
 				sql = ""
-						+ "SELECT p.id_prodotto, p.nome, p.descrizione, p.descrizione_abbreviata, p.quantita_disponibile, p.prezzo_base, (SELECT nome FROM prodotti_aliquote WHERE id_aliquota = p.id_aliquota) AS aliquota, (SELECT nome FROM prodotti_categorie WHERE id_categoria = p.id_categoria) AS categoria, (SELECT sigla FROM prodotti_unita WHERE id_unita = p.id_unita) AS unita "
-						+ "FROM prodotti  AS p "
-						+ "WHERE p.attivo = 1; ";
+						+ "SELECT d.codice, d.foto, d.titolo, d.pagine, d.universita, d.descrizione, d.prezzo, "
+						+ "FROM documenti AS d "
+						+ "WHERE d.tipo = appunti; ";
 				//System.out.println(sql);
 				ResultSet result = stmt.executeQuery(sql);				
 				if(!result.wasNull()) {
 					while(result.next()) {
 						contenuto += "<tr>";
-							contenuto += "<td>"+result.getInt("id_prodotto")+"</td>";	
-							contenuto += "<td>"+result.getString("categoria")+"</td>";
-							contenuto += "<td>"+result.getString("nome")+"</td>";							
-							contenuto += "<td title='"+result.getString("descrizione")+"'>"+((result.getString("descrizione").length() > 50) ? result.getString("descrizione").substring(0,50)+"&hellip;" : result.getString("descrizione"))+"</td>";
-							contenuto += "<td>"+result.getString("descrizione_abbreviata")+"</td>";							
+							contenuto += "<td>"+result.getInt("codice")+"</td>";	
 							contenuto += "<td>";
-							contenuto += result.getInt("quantita_disponibile");
-							contenuto += "&nbsp;<i class='modificaQuantita fas fa-edit' style='cursor: pointer;' data-idprodotto='"+result.getInt("id_prodotto")+"' title='Modifica Quantit&agrave; Prodotto'></i>";
-							contenuto += "</td>";								
-							contenuto += "<td>"+result.getString("unita")+"</td>";							
-							contenuto += "<td>";
-							contenuto += new SystemInformation().truncateDecimal(result.getFloat("prezzo_base"),2);
-							contenuto += "&nbsp;<i class='modificaPrezzo fas fa-edit' style='cursor: pointer;' data-idprodotto='"+result.getInt("id_prodotto")+"' title='Modifica Prezzo Prodotto'></i>";
+							contenuto += "	<i class='foto fotoProdotto fas fa-camera' style='cursor: pointer;' data-idprodotto='"+result.getInt("codice")+"' title='Gestisci Foto'></i>";
+							contenuto += "	<i class='elimina eliminaProdotto fas fa-times' style='cursor: pointer;' data-idprodotto='"+result.getInt("codice")+"' title='Elimina Prodotto'></i>";
 							contenuto += "</td>";							
-							contenuto += "<td>"+result.getString("aliquota")+"</td>";							
+							contenuto += "<td>"+result.getString("titolo")+"</td>";		
+							contenuto += result.getInt("pagine");
+							contenuto += "<td>"+result.getString("universita")+"</td>";							
+							contenuto += "<td>"+result.getString("descrizione")+"</td>";							
 							contenuto += "<td>";
-							contenuto += "	<i class='foto fotoProdotto fas fa-camera' style='cursor: pointer;' data-idprodotto='"+result.getInt("id_prodotto")+"' title='Gestisci Foto'></i>";
-							contenuto += "	<i class='elimina eliminaProdotto fas fa-times' style='cursor: pointer;' data-idprodotto='"+result.getInt("id_prodotto")+"' title='Elimina Prodotto'></i>";
-							contenuto += "</td>";
+							contenuto += new SystemInformation().truncateDecimal(result.getFloat("prezzo"),2);
+							contenuto += "&nbsp;<i class='modificaPrezzo fas fa-edit' style='cursor: pointer;' data-idprodotto='"+result.getInt("id_prodotto")+"' title='Modifica Prezzo Prodotto'></i>";
+							contenuto += "</td>";	
 						contenuto += "</tr>";
 					}					
 				}				 
