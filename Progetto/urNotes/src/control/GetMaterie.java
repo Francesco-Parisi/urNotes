@@ -45,7 +45,7 @@ public class GetMaterie extends HttpServlet {
 		Integer risultato = 0;
 	    String errore = "";
 	    String contenuto = "";
-	    
+	    int i = 1;
         ConnessioneDB connDB = new ConnessioneDB();
 		if(connDB.getConn() != null) {
 			
@@ -63,8 +63,9 @@ public class GetMaterie extends HttpServlet {
 				if(!result.wasNull()) {
 					while(result.next()) {
 							contenuto += "<tr>";
-							contenuto += "<td><input type='submit' id='idAppunto' name='submitForm' class='campoForm submitForm' value='"+result.getString("nome")+"'></td>";
+							contenuto += "<td><input type='submit' id='idAppunto' data-id='"+(i)+"' name='submitForm' class='campoForm submitForm' value='"+result.getString("nome")+"'></td>";
 							contenuto += "</tr>";
+							i++;
 					}
 					
 				}				 
