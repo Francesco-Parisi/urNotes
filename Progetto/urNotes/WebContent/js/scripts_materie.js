@@ -110,41 +110,9 @@ $(document).ready(function(){
 	
 			
 });
-/*
-$(document).on('click','#idAppunto', function() {
-	var value = $(this).data("id");
-	$("#loader").show();
-
-	$.ajax({
-		url: absolutePath+"/GetAppunti",
-		type: "POST",
-		dataType: 'JSON',
-		async: false,
-		data: {
-			"richiesta": 1,
-			"value": value
-		},
-		success:function(msg){
-			if(!msg.risultato){
-				showAlert(1, msg.errore);
-			}
-			else{				
-				if(msg.contenuto.length > 0){
-					$("#bodyMaterie").html(msg.contenuto);
-				}											
-				else{
-					$("#bodyMaterie").html("<tr><td colspan='10'>Nessuna Materia Presente</td></tr>");
-				}
-				
-			}
-		},
-		error: function(msg){
-			showAlert(1, "Impossibile Recuperare i dati.");
-		}
-	});
-	
-	$("#loader").hide();	
-}); */
+$(document).on('click', '#idAppunto', function(e){
+	$(document).prev('table').prop('materieTable', 'prodottiTable');
+});
 
 $(document).on('click', '#idAppunto', function(e){
 	var ids = [];
@@ -168,6 +136,7 @@ $(document).on('click', '#idAppunto', function(e){
 					dataType: 'JSON',
 					async: false,
 					data: {
+						"richiesta": 1,
 						"id": ids[i],
 						"value": values[i],			
 					},
@@ -176,15 +145,34 @@ $(document).on('click', '#idAppunto', function(e){
 							showAlert(1, msg.errore);
 							continua *= 0;
 						}
+						else{	
+							continua *= 1;
+							if(msg.contenuto.length > 0){
+								$("#bodyMaterie").html(msg.contenuto);
+							}											
+							else{
+								$("#bodyMaterie").html("<tr><td colspan='10'>Nessuna Materia Presente</td></tr>");
+							}
+							
+						}
+					},
+					/*success:function(msg){
+						if(!msg.risultato){
+							showAlert(1, msg.errore);
+							continua *= 0;
+						}
 						else{								
 							continua *= 1;
 							cont = msg.contenuto;
 						}
-					},
+					},*/
 					error: function(msg){
-						continua *= 0;
 						showAlert(1, "Impossibile Recuperare i dati.");
 					}
+					/*error: function(msg){
+						continua *= 0;
+						showAlert(1, "Impossibile Recuperare i dati.");
+					}*/
 				});			
 				$("#loader").hide();					
 			}

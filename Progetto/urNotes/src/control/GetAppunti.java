@@ -13,7 +13,7 @@ import org.json.simple.JSONObject;
 import model.ConnessioneDB;
 import model.SystemInformation;
 /**
- * Servlet implementation class GetProdotti
+ * Servlet implementation class GetAppunti
  */
 @WebServlet("/GetAppunti")
 public class GetAppunti extends HttpServlet {
@@ -44,7 +44,7 @@ public class GetAppunti extends HttpServlet {
 		response.setContentType("text/html");
 	    
 		String idAppunto = request.getParameter("id");
-		System.out.println(idAppunto);
+		System.out.print(idAppunto+" ");
 		String value = request.getParameter("value");
 		System.out.println(value);
 
@@ -54,31 +54,31 @@ public class GetAppunti extends HttpServlet {
 	    
         ConnessioneDB connDB = new ConnessioneDB();
 		if(connDB.getConn() != null) {
-			
 			try {
 				Statement stmt = connDB.getConn().createStatement();
 				String sql = "";
 				sql = ""
 						+ "SELECT d.codice, d.foto, d.titolo, d.pagine, d.universita, d.nome_materia, d.descrizione, d.prezzo "
 						+ "FROM documenti AS d "
-						+ "WHERE d.tipo = 'appunti' AND d.nome_materia = '"+value+"'; ";
-				//System.out.println(sql);
-				ResultSet result = stmt.executeQuery(sql);				
+						+ "WHERE d.tipo LIKE 'appunti' AND d.nome_materia LIKE '"+value+"';";
+				System.out.println(sql);
+				ResultSet result = stmt.executeQuery(sql);	
+				
 				if(!result.wasNull()) {
 					while(result.next()) {
 						contenuto += "<tr>";
 							contenuto += "<td>"+result.getInt("codice")+"</td>";	
 							contenuto += "<td>";
-							contenuto += "	<i class='foto fotoProdotto fas fa-camera' style='cursor: pointer;' data-idprodotto='"+result.getInt("codice")+"' title='Gestisci Foto'></i>";
-							contenuto += "	<i class='elimina eliminaProdotto fas fa-times' style='cursor: pointer;' data-idprodotto='"+result.getInt("codice")+"' title='Elimina Prodotto'></i>";
+							contenuto += "<i class='foto fotoProdotto fas fa-camera' style='cursor: pointer;' data-idprodotto='"+result.getInt("codice")+"' title='Gestisci Foto'></i>";
+							contenuto += "<i class='elimina eliminaProdotto fas fa-times' style='cursor: pointer;' data-idprodotto='"+result.getInt("codice")+"' title='Elimina Prodotto'></i>";
 							contenuto += "</td>";							
 							contenuto += "<td>"+result.getString("titolo")+"</td>";		
-							contenuto += result.getInt("pagine");
+							contenuto += "<td>"+result.getInt("pagine")+"</td>";
 							contenuto += "<td>"+result.getString("universita")+"</td>";							
 							contenuto += "<td>"+result.getString("descrizione")+"</td>";							
 							contenuto += "<td>";
 							contenuto += new SystemInformation().truncateDecimal(result.getFloat("prezzo"),2);
-							contenuto += "&nbsp;<i class='modificaPrezzo fas fa-edit' style='cursor: pointer;' data-idprodotto='"+result.getInt("id_prodotto")+"' title='Modifica Prezzo Prodotto'></i>";
+							contenuto += "&nbsp;<i class='modificaPrezzo fas fa-edit' style='cursor: pointer;' data-idprodotto='"+result.getInt("codice")+"' title='Modifica Prezzo Prodotto'></i>";
 							contenuto += "</td>";	
 						contenuto += "</tr>";
 					}					
