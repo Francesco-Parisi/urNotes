@@ -374,6 +374,33 @@ tr{
 	text-decoration:underline;
 }
 
+input[type="button"]{
+	border:none;
+	outline:none;
+	height:30px;
+	background:#f5f5f0;
+	font-size:16px;
+	border-radius:10px;	
+	color:#1ea4ca;
+	margin-left:25px;
+	text-shadow:1px 1px black;	
+}
+
+input[type="button"]:hover{
+	cursor:pointer;
+	background:#f5f5f0;
+	color:#1ea4ca;
+	text-shadow:1px 1px black;
+	box-shadow:1px 1px black;
+}
+
+#no_materie{
+	padding:15px;
+}
+
+#prova{
+	margin-left:80%;
+}
 /*FAQ-------------------------------*/
 
 .container_faq{

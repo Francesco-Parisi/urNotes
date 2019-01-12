@@ -151,7 +151,7 @@ $(document).on('click', '#idDispensa', function(e){
 								$("th").text("Dispense");
 								$("#bodyMaterie").html(msg.contenuto+"" +
 										"<br><tr><td>" +
-										"<input type='button' onclick='location.reload()' value='Torna alle Materie' />" +
+										"<input type='button' id='prova' onclick='location.reload()' value='Torna alle Materie' />" +
 										"</td></tr>");
 							}											
 							else{

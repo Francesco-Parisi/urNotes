@@ -151,15 +151,15 @@ $(document).on('click', '#idAppunto', function(e){
 								$("th").text("Appunti");
 								$("#bodyMaterie").html(msg.contenuto+"" +
 										"<br><tr><td>" +
-										"<input type='button' onclick='location.reload()' value='Torna alle Materie' />" +
-										"</td></tr>");
+										"<input type='button' id='prova' onclick='location.reload()' value='Torna alle Materie' />" +
+										"</td></tr><br>");
 							}											
 							else{
 								$("th").text("Appunti");
-								$("#bodyMaterie").html("<tr><td colspan='10'>Nessuna Materia Presente</td></tr>+" +
+								$("#bodyMaterie").html("<tr><td id='no_materie' colspan='10'>Nessuna Materia Presente</td></tr>+" +
 										"<br><tr><td>" +
 										"<input type='button' onclick='location.reload()' value='Torna alle Materie' />" +
-										"</td></tr>");
+										"</td></tr><br>");
 							}
 							
 						}

@@ -62,32 +62,30 @@ $(document).ready(function(){
 	});	
 	
 	$(document).on('click', '#confirmAggiungiAppunto', function(e){		
-		var categoriaAppunto = $("#categoriaAppunto").val();
-		var nomeAppunto = $("#nomeAppunto").val();
-		var descrizioneAppunto = $("#descrizioneAppunto").val();
-		var descrizioneAbbreviataAppunto = $("#descrizioneAbbreviataAppunto").val();
-		var quantitaAppunto = $("#quantitaAppunto").val();
-		var unitaAppunto = $("#unitaAppunto").val();
+		var titolo = $("#titolo").val();
+		var pagine = $("#pagine").val();
+		var universita = $("#universita").val();
+		var nome_materia = $("#nome_materia").val();
+		var descrizione = $("#descrizione").val();
 		var prezzoAppunto = $("#prezzoAppunto").val();
-		var aliquotaAppunto = $("#aliquotaAppunto").val();
+		var tipo = $("#tipo").val();
 		
 		
-		if(categoriaAppunto != undefined && categoriaAppunto > 0 && nomeAppunto != undefined && nomeAppunto.length > 1 && descrizioneAppunto != undefined && descrizioneAppunto.length > 1 && descrizioneAbbreviataAppunto != undefined && quantitaAppunto != undefined && quantitaAppunto >= 0 && unitaAppunto != undefined && unitaAppunto > 0 && prezzoAppunto != undefined && prezzoAppunto > 0 && aliquotaAppunto != undefined && aliquotaAppunto > 0){		
+		if(titolo != undefined && titolo.length > 1 && pagine != undefined && pagine > 0 && universita != undefined && universita.length > 1 && universita != undefined && universita.length > 1 && nome_materia != undefined && nome_materia .length > 1 && descrizione != undefined && descrizione.length > 1 && prezzoAppunto != undefined && prezzoAppunto > 0 && tipo != undefined && tipo.length > 1 ){		
 			$("#loader").show();			
 			$.ajax({
-				url: absolutePath+"/AggiungiAppunto",
+				url: absolutePath+"/AggiungiDispensa",
 				type: "POST",
 				dataType: 'JSON',
 				async: false,
 				data: {
-					"categoriaAppunto": categoriaAppunto,
-					"nomeAppunto": nomeProdotto,
-					"descrizioneAppunto": descrizioneProdotto,
-					"descrizioneAbbreviataAppunto": descrizioneAbbreviataAppunto,
-					"quantitaAppunto": quantitaAppunto,
-					"unitaAppunto": unitaAppunto,
-					"prezzoAppunto": prezzoAppunto,
-					"aliquotaAppunto": aliquotaAppunto
+					"titolo": titolo,
+					"pagine": pagine,
+					"universita": universita,
+					"nome_materia": nome_materia,
+					"descrizione": descrizione,
+					"prezzoDispensa": prezzoDispensa,
+					"tipo": tipo
 				},
 				success:function(msg){
 					if(!msg.risultato){
