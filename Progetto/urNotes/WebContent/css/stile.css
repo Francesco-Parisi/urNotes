@@ -360,6 +360,19 @@ tr{
 	text-decoration:underline;
 }
 
+#idDispensa{
+	background-color:#1ea4ca;
+	text-shadow:1px 1px black;
+	padding:5px;
+	border:none;
+	color:white;
+	font-size:17px;
+	font-weight:bold;
+}
+
+#idDispensa:hover{
+	text-decoration:underline;
+}
 
 /*FAQ-------------------------------*/
 
