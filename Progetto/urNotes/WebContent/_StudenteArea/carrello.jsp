@@ -18,11 +18,12 @@
 		<title>Carrello</title>		
 	</head>
 	<body onLoad="getCarrello()">
-		<%@ include file="/partials/header.jsp" %>		
+		<%@ include file="/partials/header.jsp" %>	
+			<section class="container_appunti">		
 		<div id="content">
 			<div id="content-content">
 
-        			<table id='carrelloTable'>
+        			<table id='materieTable'>
        					<thead class='adminHeadDataTable'>
       						<tr>
      							<th>Foto</th>
@@ -39,6 +40,7 @@
 					<button  data-href="<%=request.getContextPath()%>/_StudenteArea/checkout.jsp" class='userButtonCheckout'>Vai al Checkout</button>
 			</div>
 		</div>
+		</section>
 		<%@ include file="/partials/footer.jsp" %>	
 	</body>
 </html>
