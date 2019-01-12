@@ -5,7 +5,7 @@
 
 <div class="container-footer">
 <div class="copyright">Copyright&copy; - 2018 urNotes</div>
-<p class="footer-terms"><a href="/urNotes/index.jsp">Home</a> | <a href="/urNotes/appunti.jsp">Appunti</a> | <a href="/urNotes/dispense.jsp">Dispense</a> | <a href="/urNotes/store.jsp">Store</a> | <a href="/urNotes/contatti.jsp">Contatti</a> | <a href="/urNotes/privacy.jsp">Privacy</a></p>
+<p class="footer-terms"><a href="/urNotes/index.jsp">Home</a> | <a href="/urNotes/appunti.jsp">Appunti</a> | <a href="/urNotes/dispense.jsp">Dispense</a> | <a href="/urNotes/contatti.jsp">Contatti</a> | <a href="/urNotes/faq.jsp">FAQ</a> | <a href="/urNotes/privacy.jsp">Privacy</a></p>
 <div class="copyright">urNotes Italia S.r.l </div>
 </div>
 

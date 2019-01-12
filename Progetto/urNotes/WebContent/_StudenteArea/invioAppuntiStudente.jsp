@@ -14,7 +14,7 @@
 			} 
 		%>
 		<%@ include file="/partials/head.jsp" %>
-<title>urNotes | Studente</title>
+<title>urNotes | Invio Appunti</title>
 </head>
 <body>
 <%@ include file="/partials/header.jsp" %>		

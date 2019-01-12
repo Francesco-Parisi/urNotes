@@ -135,12 +135,34 @@ ul li a:hover{
   height: 0;
 }
 
+
 /*Account-------------------------------------*/
 
 .account_item{
 	font-family:monospace;
 	font-weight:800;
 	font-size:15px;
+}
+
+#logout{
+	color:white;
+	font-weight:bold;
+	text-align:center;
+	text-shadow:1px 1px black;
+	width:50%;
+	height:100px;
+	margin:100px auto;
+	padding-top:10px;
+	background-color:#1ea4ca;
+	border-radius:10px;
+	box-shadow:1px 1px grey;
+}
+
+.logout_button{
+	position:absolute;
+	top:34%;
+	left:42%;
+	padding:5px;
 }
 
 /*Contatti---------------------------------------*/
@@ -161,7 +183,9 @@ ul li a:hover{
 	text-decoration:none;
 }
 
-
+.contact:hover{
+	 transform: scale(1.05);
+}
 .contact-img{
 	width:100%;
 	height:auto;

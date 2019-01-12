@@ -152,7 +152,7 @@ $(document).on('click', '#idDispensa', function(e){
 								$("#bodyMaterie").html(msg.contenuto+"" +
 										"<br><tr><td>" +
 										"<input type='button' id='prova' onclick='location.reload()' value='Torna alle Materie' />" +
-										"</td></tr>");
+										"</td></tr><br>");
 							}											
 							else{
 								$("th").text("Dispense");

@@ -14,7 +14,8 @@
 	
 		<div id="content">
 			<div id="content-content">
-				<p style="text-align: center;">Logout Effettuato con successo</p>
+				<p id="logout">Logout Effettuato con successo</p>
+			<input type="button" class="logout_button" onclick="location.href='/urNotes/index.jsp'" value='Torna alla Home'>
 			</div>
 		</div>
 		<%@ include file="/partials/footer.jsp" %>	

@@ -1,7 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="model.CheckSession, javax.servlet.http.HttpSession, model.SystemInformation" %>
+
 <!DOCTYPE html>
 <html lang = "it">
 
 <head>
+	<% 
+			CheckSession ck = new CheckSession(0, request.getSession());
+			if(ck.getRedirect()){
+				String path = request.getContextPath()+ck.getUrlRedirect();
+				%>
+					<script>
+						window.location.href = '<%=path%>';
+					</script>
+				<%	
+			} 
+		%>
+		
 <%@ include file="/partials/head.jsp" %>			
 <title>urNotes | FAQ</title>
 </head>
@@ -18,25 +32,21 @@
 
 <div class="faq_item"><a>Cosa vedere su urNotes?</a>
 <div class="faq_item_content">
-<a>Su urNotes puoi vedere Appunti, Dispense e tutto cio che ti serve per prepararti agli esami.</a>
 </div>
 </div>
 
-<div class="faq_item"><a>In che modo saranno visibili i documenti che caricherò su urNotes?</a>
+<div class="faq_item"><a>In che modo saranno visibili i documenti che caricherÃ² su urNotes?</a>
 <div class="faq_item_content">
-<a>I tuo documenti caricati avranno la massima visibilità su urNotes</a>
 </div>
 </div>
 
 <div class="faq_item"><a>Come caricare un appunto su urNotes?</a>
 <div class="faq_item_content">
-<a>Ti basta andare nella sezione dedicata all'Invio Appunti e ,una volta compilati i campi richiesti, invia il documento</a>
 </div>
 </div>
 
 <div class="faq_item"><a>Posso rimuovere un appunto caricato su urNotes?</a>
 <div class="faq_item_content">
-<a>Certo, ti basta contattare il gestore tramite email e in 48/72 ore verrà rimosso.</a>
 </div>
 </div>
 

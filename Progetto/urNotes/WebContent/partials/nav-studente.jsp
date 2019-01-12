@@ -3,6 +3,7 @@
 <ul>
 <li class="drop_item"><a href="<%=request.getContextPath()%>/_StudenteArea/appuntiStudente.jsp">Appunti</a></li>
 <li class="drop_item"><a href="<%=request.getContextPath()%>/_StudenteArea/dispenseStudente.jsp">Dispense</a></li>
+<li class="drop_item"><a href="<%=request.getContextPath()%>/_StudenteArea/invioAppuntiStudente.jsp">Invio Appunti</a></li>
 </ul>
 </li>
 
