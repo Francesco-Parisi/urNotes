@@ -15,7 +15,7 @@
 		%>	
 		<%@ include file="/partials/head.jsp" %>			
 		<script src="<%=request.getContextPath()%>/js/scripts_carrello.js"></script>
-		<title>Carrello</title>		
+		<title>urNotes | Carrello</title>		
 	</head>
 	<body onLoad="getCarrello()">
 		<%@ include file="/partials/header.jsp" %>	

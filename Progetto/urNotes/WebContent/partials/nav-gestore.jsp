@@ -9,7 +9,6 @@
 
 <li class="header_item"><a>Store</a>
 <ul>
-<li class="drop_item"><a href="<%=request.getContextPath()%>/_GestoreArea/ordiniGestore.jsp">Ordini</a></li>
 <li class="drop_item"><a href="<%=request.getContextPath()%>/faq.jsp">FAQ</a></li>
 </ul>
 </li>
