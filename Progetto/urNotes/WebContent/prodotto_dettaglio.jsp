@@ -12,7 +12,7 @@
 			<div id="content-content">
 
 			        <%
-			        	Integer codice = Integer.parseInt(request.getParameter("codice"));
+			        	Integer codice = 1001;
 			        	String output = "";
 			        	String sql = "";
 			        	String filename = "";
@@ -37,9 +37,9 @@
 										+ "       d.descrizione, " 
 										+ "       d.prezzo, " 
 										+ "       (SELECT nome FROM materie WHERE nome = d.nome_materia) AS materie, "
-										+ "       (SELECT filename FROM documenti_immagini WHERE codice = d.codice AND is_default = 1 AND attivo = 1) AS filename, "
+										+ "       (SELECT filename FROM documenti_immagini WHERE codice = d.codice AND is_default = 1 AND attivo = 1) AS filename "
 										+ "FROM documenti AS d "
-										+ "WHERE d.flag = 1 AND d.codice = "+codice+"; ";
+										+ "WHERE d.flag = 1 AND d.codice = "+codice+" ";
 								ResultSet result = stmt.executeQuery(sql);								
 								if(!result.wasNull()) {
 									int rowCount = result.last() ? result.getRow() : 0;

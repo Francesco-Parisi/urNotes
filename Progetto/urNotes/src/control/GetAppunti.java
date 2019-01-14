@@ -73,7 +73,7 @@ public class GetAppunti extends HttpServlet {
 						contenuto += "<td>";
 						contenuto += new SystemInformation().truncateDecimal(result.getFloat("prezzo"),2);							
 						contenuto += "</td>";	
-						contenuto += "<td><input type='submit' id='idAppuntoDett' data-id='"+result.getString("codice")+"' name='submitForm' class='campoForm submitForm' value='Dettaglio' onclick='"++"'></td>";
+						contenuto += "<td><input type='submit' id='idAppuntoDett' data-id='"+result.getString("codice")+"' name='submitForm' class='campoForm submitForm' value='Dettaglio' onclick='"+"'></td>";
 						contenuto += "</tr>";
 						i++;
 					}		
