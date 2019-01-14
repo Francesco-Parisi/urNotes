@@ -34,9 +34,87 @@ function checkEmail(email){
 }
 
 
-
 function resizeContent(){
 	$("#content").css("min-height", ($(window).height() - $("#header").height() - $("#footer").height())+"px");	
+}
+
+
+$(document).on('click', '.product-title, .product-image', function() { //Click sul nome del prodotto vai al dettaglio
+	var idProdotto = $(this).data("idprodotto");
+	if(idProdotto != undefined && idProdotto > 0){
+		window.location.href = absolutePath+"/prodotto_dettaglio.jsp?idp="+idProdotto;
+	}
+	else{
+		showAlert(1, "Errore Parametri.");
+	}
+});
+
+$(document).on('click', '.product-button', function() { //Click su bottone giallo aggiungi al carrello
+	var idProdotto = $(this).data("idprodotto");
+	if(idProdotto != undefined && idProdotto > 0){
+		aggiungiAlCarrello(idProdotto, 1);
+	}
+	else{
+		showAlert(1, "Errore Parametri.");
+	}
+	return false;
+});
+
+$(document).on('click', '.showImmagineProdotto', function(e){		//Per vedere un'immagine del prodotto nel modal
+	var src = $(this).attr("src");
+	if(src != undefined){		
+		$("#modalImmaginiBody").html('<img src="'+src+'" alt="'+src+'" />');
+		$("#modalImmagini").css("display", "block");
+		
+		return false;
+	}
+	else{			
+		showAlert(1, "Errore Parametri.");
+	}		
+	return false;
+});	
+
+$(document).on('click', '.chiudiModalImmagini', function(e){	//Per chiudere il modal quando viene mostrata una foto
+	$("#modalImmagini").css("display", "none");
+});			
+	
+function aggiungiAlCarrello(idProdotto, quantita){
+	if(idProdotto > 0 && quantita > 0){
+		$("#loader").show();
+		
+		$.ajax({
+			url: absolutePath+"/AggiungiAlCarrello",
+			type: "POST",
+			dataType: 'JSON',
+			async: false,
+			data: {
+				"idProdotto": idProdotto,
+				"quantita": quantita
+			},
+			success:function(msg){
+				if(!msg.risultato){
+					showAlert(1, msg.errore);
+				}
+				else{
+					if(msg.redirect){
+						window.location.href = absolutePath+msg.urlRedirect;
+					}
+					else{
+						getCarrelloSmall();
+						showAlert(0, msg.contenuto);
+					}					
+				}
+			},
+			error: function(msg){
+				showAlert(1, "Impossibile Recuperare i dati.");
+			}
+		});
+		
+		$("#loader").hide();		
+	}
+	else{
+		showAlert(1, "Errore Parametri.");
+	}	
 }
 
 

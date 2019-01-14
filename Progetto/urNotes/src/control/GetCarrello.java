@@ -75,6 +75,7 @@ public class GetCarrello extends HttpServlet {
 	    					stmt = connDB.getConn().createStatement();
 		    				sql = ""
 									+ "SELECT d.titolo, d.prezzo, "
+									+ "(SELECT filename FROM documenti_immagini WHERE codice = d.codice AND is_default = 1 AND attivo = 1) AS filename, "
 									+ "FROM documenti  AS d "
 									+ "WHERE d.flag = 1 AND d.codice = "+Codice+"; ";
 	    					//System.out.println(sql);
