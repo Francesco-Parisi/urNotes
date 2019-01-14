@@ -352,20 +352,13 @@ $(document).on('click', '#idAppuntoDett', function(e){
 						else{	
 							continua *= 1;
 							if(msg.contenuto.length > 0){
+								$(location).href('prodotto_dettaglio.jsp');
 								$("th").text("Appunti");
 								$("#bodyMaterie").html(msg.contenuto+"" +
 										"<br><tr><td>" +
 										"<input type='button' id='prova' onclick='location.reload()' value='Torna alle Materie' />" +
 										"</td></tr><br>");
-							}											
-							else{
-								$("th").text("Appunti");
-								$("#bodyMaterie").html("<tr><td id='no_materie' colspan='10'>Nessuna Materia Presente</td></tr>+" +
-										"<br><tr><td>" +
-										"<input type='button' onclick='location.reload()' value='Torna alle Materie' />" +
-										"</td></tr><br>");
-							}
-							
+							}								
 						}
 					},
 					/*success:function(msg){
@@ -401,8 +394,16 @@ $(document).on('click', '#idAppuntoDett', function(e){
 
 	return false;			
 });
-});
 
+
+var cod;
+function setAppuntiDett(codice){
+	cod = codice;
+	return cod;
+}
+function getAppuntiDett(){
+	return cod;
+}
 
 function getAppunti(){ 
 	$("#loader").show();
