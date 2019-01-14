@@ -51,7 +51,7 @@ public class GetAppunti extends HttpServlet {
 		Integer risultato = 0;
 	    String errore = "";
 	    String contenuto = "";
-	    
+	    int i = 1;
         ConnessioneDB connDB = new ConnessioneDB();
 		if(connDB.getConn() != null) {
 			try {
@@ -71,8 +71,11 @@ public class GetAppunti extends HttpServlet {
 						contenuto += "<td>"+result.getInt("pagine")+"</td>";
 						contenuto += "<td>"+result.getString("universita")+"</td>";							
 						contenuto += "<td>";
-						contenuto += new SystemInformation().truncateDecimal(result.getFloat("prezzo"),2);							contenuto += "</td>";	
+						contenuto += new SystemInformation().truncateDecimal(result.getFloat("prezzo"),2);							
+						contenuto += "</td>";	
+						contenuto += "<td><input type='submit' id='idAppuntoDett' data-id='"+result.getString("codice")+"' name='submitForm' class='campoForm submitForm' value='Dettaglio' onclick='"++"'></td>";
 						contenuto += "</tr>";
+						i++;
 					}		
 				}				 
 
