@@ -16,13 +16,13 @@ import model.SystemInformation;
  * Servlet implementation class GetAppunti
  */
 @WebServlet("/GetAppunti")
-public class GetAppunti extends HttpServlet {
+public class GetAppuntiDett extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GetAppunti() {
+    public GetAppuntiDett() {
         super();
         // TODO Auto-generated constructor stub
     }
