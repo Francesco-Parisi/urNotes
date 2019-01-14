@@ -156,7 +156,7 @@ $(document).on('click', '#idDispensa', function(e){
 							}											
 							else{
 								$("th").text("Dispense");
-								$("#bodyMaterie").html("<tr><td colspan='10'>Nessuna Materia Presente</td></tr>+" +
+								$("#bodyMaterie").html("<tr><td colspan='10'>Nessuna Dispensa Presente</td></tr>+" +
 										"<br><tr><td>" +
 										"<input type='button' onclick='location.reload()' value='Torna alle Materie' />" +
 										"</td></tr>");

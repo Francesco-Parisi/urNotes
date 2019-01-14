@@ -318,7 +318,62 @@ $(document).ready(function(){
 	});			
 });
 
+$(document).on('click', '#idDispensaDett', function(e){	
+	var ids = [];
+	var values = [];
+	$(this).each(function( index ) {
+		if($(this).data("id") != undefined && $(this).data("id") > 0 && $(this).val() != undefined){			
+			ids.push($(this).data("id"));
+			values.push($(this).data("id"));
+		}
+	});		
+	
+	if(ids.length > 0 && ids.length == values.length){
+		var continua = 1;
+		var cont = "";
+		for(var i = 0; i < ids.length && continua == 1; i++){
+			if(ids[i] > 0){
+				$("#loader").show();
+				$.ajax({
+					url: absolutePath+"/GetDispenseDett",
+					type: "POST",
+					dataType: 'JSON',
+					async: false,
+					data: {
+						"richiesta": 1,
+						"id": ids[i],
+						"value": values[i],			
+					},
+					success:function(msg){
+						if(!msg.risultato){
+							showAlert(1, msg.errore);
+						}
+						else{	
+							window.location.href = msg.redirect;
+						}
+					},
+					error: function(msg){
+						showAlert(1, "Impossibile Recuperare i dati.");
+					}
+				});			
+				$("#loader").hide();	
+				}
+			else{
+				return false;
+			}
+		}
+		if(continua == 1){
+			showAlert(0, cont);
+			location.href(absolutePath +"/prodotto_dettaglio.jsp?codice="+cont);
+		}
+		return false;						
+	}
+	else{
+		showAlert(1, "Errore prelevamento valori, compilare tutti i campi correttamente.");
+	}
 
+	return false;			
+});
 
 
 function getDispense(){ 
