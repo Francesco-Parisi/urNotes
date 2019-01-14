@@ -40,9 +40,9 @@ function resizeContent(){
 
 
 $(document).on('click', '.product-title, .product-image', function() { //Click sul nome del prodotto vai al dettaglio
-	var idProdotto = $(this).data("idprodotto");
-	if(idProdotto != undefined && idProdotto > 0){
-		window.location.href = absolutePath+"/prodotto_dettaglio.jsp?idp="+idProdotto;
+	var codice = $(this).data("codice");
+	if(codice != undefined && codice > 0){
+		window.location.href = absolutePath+"/prodotto_dettaglio.jsp?codice="+codice;
 	}
 	else{
 		showAlert(1, "Errore Parametri.");
@@ -50,9 +50,9 @@ $(document).on('click', '.product-title, .product-image', function() { //Click s
 });
 
 $(document).on('click', '.product-button', function() { //Click su bottone giallo aggiungi al carrello
-	var idProdotto = $(this).data("idprodotto");
-	if(idProdotto != undefined && idProdotto > 0){
-		aggiungiAlCarrello(idProdotto, 1);
+	var codice = $(this).data("codice");
+	if(codice != undefined && codice > 0){
+		aggiungiAlCarrello(codice, 1);
 	}
 	else{
 		showAlert(1, "Errore Parametri.");
@@ -78,8 +78,8 @@ $(document).on('click', '.chiudiModalImmagini', function(e){	//Per chiudere il m
 	$("#modalImmagini").css("display", "none");
 });			
 	
-function aggiungiAlCarrello(idProdotto, quantita){
-	if(idProdotto > 0 && quantita > 0){
+function aggiungiAlCarrello(codice, quantita){
+	if(codice > 0 && quantita > 0){
 		$("#loader").show();
 		
 		$.ajax({
@@ -88,7 +88,7 @@ function aggiungiAlCarrello(idProdotto, quantita){
 			dataType: 'JSON',
 			async: false,
 			data: {
-				"idProdotto": idProdotto,
+				"codice": codice,
 				"quantita": quantita
 			},
 			success:function(msg){

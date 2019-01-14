@@ -1,8 +1,8 @@
 package model;
 
 public class Documento {
-	public Documento(Integer Codice, Integer quantita) {
-		this.setCodice(Codice);
+	public Documento(Integer codice, Integer quantita) {
+		this.setCodice(codice);
 		this.setQuantita(quantita);
 	}
 	public Integer getQuantita() {		
@@ -12,16 +12,16 @@ public class Documento {
 		this.quantita = quantita;
 	}
 	public Integer getCodice() {
-		return this.Codice;
+		return this.codice;
 	}
-	public void setCodice(Integer Codice) {
-		this.Codice = Codice;
+	public void setCodice(Integer codice) {
+		this.codice = codice;
 	}
 	
 	public String toString() {
 		return this.getClass().getName()+"["+this.getCodice()+"]["+this.getQuantita()+"]";
 	}
 
-	private Integer Codice;
+	private Integer codice;
 	private Integer quantita;
 }
