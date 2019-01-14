@@ -58,7 +58,12 @@
 											pagine = result.getInt("pagine");
 											universita = result.getString("universita");
 											descrizione = result.getString("descrizione");
-											materiaDocumento = "Materie: <a href='"+request.getContextPath()+"/appunti.jsp'>Torna alle Materie</a>";									
+											if(codice < 2000){
+												materiaDocumento = "Materie: <a href='"+request.getContextPath()+"/appunti.jsp'>Torna alle Materie</a>";
+											}
+											else
+												materiaDocumento = "Materie: <a href='"+request.getContextPath()+"/dispense.jsp'>Torna alle Materie</a>";
+																				
 																					
 											Statement stmt2 = connDB.getConn().createStatement();							
 											sql = ""
