@@ -324,7 +324,7 @@ $(document).on('click', '#idAppuntoDett', function(e){
 	$(this).each(function( index ) {
 		if($(this).data("id") != undefined && $(this).data("id") > 0 && $(this).val() != undefined){			
 			ids.push($(this).data("id"));
-			values.push($(this).val());
+			values.push($(this).data("id"));
 		}
 	});		
 	
@@ -347,44 +347,24 @@ $(document).on('click', '#idAppuntoDett', function(e){
 					success:function(msg){
 						if(!msg.risultato){
 							showAlert(1, msg.errore);
-							continua *= 0;
 						}
 						else{	
-							continua *= 1;
-							if(msg.contenuto.length > 0){
-								$(location).href('prodotto_dettaglio.jsp');
-								$("th").text("Appunti");
-								$("#bodyMaterie").html(msg.contenuto+"" +
-										"<br><tr><td>" +
-										"<input type='button' id='prova' onclick='location.reload()' value='Torna alle Materie' />" +
-										"</td></tr><br>");
-							}								
+							window.location.href = msg.redirect;
 						}
 					},
-					/*success:function(msg){
-						if(!msg.risultato){
-							showAlert(1, msg.errore);
-							continua *= 0;
-						}
-						else{								
-							continua *= 1;
-							cont = msg.contenuto;
-						}
-					},*/
 					error: function(msg){
 						showAlert(1, "Impossibile Recuperare i dati.");
 					}
-					/*error: function(msg){
-						continua *= 0;
-						showAlert(1, "Impossibile Recuperare i dati.");
-					}*/
 				});			
-				$("#loader").hide();					
+				$("#loader").hide();	
+				}
+			else{
+				return false;
 			}
 		}
 		if(continua == 1){
 			showAlert(0, cont);
-			//location.reload();
+			location.href(absolutePath +"/prodotto_dettaglio.jsp?codice="+cont);
 		}
 		return false;						
 	}

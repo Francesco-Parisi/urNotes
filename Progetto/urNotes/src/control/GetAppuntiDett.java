@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -13,9 +14,9 @@ import org.json.simple.JSONObject;
 import model.ConnessioneDB;
 import model.SystemInformation;
 /**
- * Servlet implementation class GetAppunti
+ * Servlet implementation class GetAppuntiDett
  */
-@WebServlet("/GetAppunti")
+@WebServlet("/GetAppuntiDett")
 public class GetAppuntiDett extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -43,39 +44,31 @@ public class GetAppuntiDett extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 	    
-		//String idAppunto = request.getParameter("id");
-		//System.out.print(idAppunto+" ");
+		
 		String value = request.getParameter("value");
-		//System.out.println(value);
+		/*System.out.println(value);*/
 
 		Integer risultato = 0;
 	    String errore = "";
 	    String contenuto = "";
-	    int i = 1;
+	    String redirect = "";
+	    
+	    
         ConnessioneDB connDB = new ConnessioneDB();
 		if(connDB.getConn() != null) {
 			try {
 				Statement stmt = connDB.getConn().createStatement();
 				String sql = "";
 				sql = ""
-						+ "SELECT d.codice, d.titolo, d.pagine, d.universita, d.nome_materia, d.prezzo "
+						+ "SELECT d.codice "
 						+ "FROM documenti AS d "
-						+ "WHERE d.tipo LIKE 'appunti' AND d.nome_materia LIKE '"+value+"';";
-				//System.out.println(sql);
+						+ "WHERE d.tipo LIKE 'appunti' AND d.codice = "+value+";";
+				System.out.println(sql);
 				ResultSet result = stmt.executeQuery(sql);	
 				
 				if(!result.wasNull()) {
 					while(result.next()) {
-						contenuto += "<tr>";
-						contenuto += "<td>"+result.getString("titolo")+"</td>";		
-						contenuto += "<td>"+result.getInt("pagine")+"</td>";
-						contenuto += "<td>"+result.getString("universita")+"</td>";							
-						contenuto += "<td>";
-						contenuto += new SystemInformation().truncateDecimal(result.getFloat("prezzo"),2);							
-						contenuto += "</td>";	
-						contenuto += "<td><input type='submit' id='idAppuntoDett' data-id='"+result.getString("codice")+"' name='submitForm' class='campoForm submitForm' value='Dettaglio' onclick='setAppuntiDett("+result.getString("codice")+")'></td>";
-						contenuto += "</tr>";
-						i++;
+						contenuto += value;
 					}		
 				}				 
 
@@ -84,6 +77,7 @@ public class GetAppuntiDett extends HttpServlet {
 					connDB.getConn().rollback();
 				}
 				else {
+					redirect = request.getContextPath()+"/prodotto_dettaglio.jsp?codice="+value;
 					connDB.getConn().commit();
 				}																	
 				
@@ -98,12 +92,13 @@ public class GetAppuntiDett extends HttpServlet {
 			errore = connDB.getError();
 			risultato = 0;
 		}			
-	
+		
 		
 		JSONObject res = new JSONObject();
 		res.put("risultato", risultato);
 		res.put("errore", errore);
 		res.put("contenuto", contenuto);
+		res.put("redirect", redirect);
 		out.println(res);		
 	}
 

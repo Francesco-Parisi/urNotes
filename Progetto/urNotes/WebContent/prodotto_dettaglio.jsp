@@ -12,7 +12,7 @@
 			<div id="content-content">
 
 			        <%
-			        	Integer codice = 1001;
+		        	    Integer codice = Integer.parseInt(request.getParameter("codice"));
 			        	String output = "";
 			        	String sql = "";
 			        	String filename = "";
@@ -58,7 +58,7 @@
 											pagine = result.getInt("pagine");
 											universita = result.getString("universita");
 											descrizione = result.getString("descrizione");
-											
+											materiaDocumento = "Materie: <a href='"+request.getContextPath()+"/appunti.jsp'>Torna alle Materie</a>";									
 																					
 											Statement stmt2 = connDB.getConn().createStatement();							
 											sql = ""
