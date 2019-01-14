@@ -130,7 +130,7 @@ $(document).ready(function(){
 							showAlert(1, msg.errore);
 						}
 						else{
-							showAlert(0, msg.contenuto);
+							//showAlert(0, msg.contenuto);
 							getDispense();
 						}
 					},

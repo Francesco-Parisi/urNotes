@@ -4,10 +4,11 @@
 	<head>
 		<%@ include file="/partials/head.jsp" %>			
 		<script src="<%=request.getContextPath()%>/js/scripts_prodotto_dettaglio.js"></script>
-		<title>Dettaglio</title>		
+		<title>urNotes | Dettagli</title>		
 	</head>
 	<body>
 		<%@ include file="/partials/header.jsp" %>		
+			<section class="container_appunti">	
 		<div id="content">
 			<div id="content-content">
 
@@ -112,6 +113,7 @@
 				</div>        			        
 			</div>
 		</div>
+		</section>
 		<%@ include file="/partials/footer.jsp" %>	
 	</body>
 </html>

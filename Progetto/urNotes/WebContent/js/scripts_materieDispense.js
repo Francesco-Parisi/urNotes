@@ -186,7 +186,7 @@ $(document).on('click', '#idDispensa', function(e){
 			}
 		}
 		if(continua == 1){
-			showAlert(0, cont);
+			//showAlert(0, cont);
 			//location.reload();
 		}
 		return false;						
