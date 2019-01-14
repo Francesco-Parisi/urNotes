@@ -189,7 +189,7 @@ $(document).on('click', '#idAppunto', function(e){
 			}
 		}
 		if(continua == 1){
-			showAlert(0, cont);
+			//showAlert(0, cont);
 			//location.reload();
 		}
 		return false;						
