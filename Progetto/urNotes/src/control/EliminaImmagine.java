@@ -1,8 +1,10 @@
 package control;
 
-import java.io.IOException; 
+import java.io.File;
+import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,17 +12,18 @@ import javax.servlet.http.*;
 import org.json.simple.JSONObject;
 
 import model.ConnessioneDB;
+import model.SystemInformation;
 /**
- * Servlet implementation class AggiungiDocumento
+ * Servlet implementation class EliminaImmagine
  */
-@WebServlet("/AggiungiDocumento")
-public class AggiungiDocumento extends HttpServlet {
+@WebServlet("/EliminaImmagine")
+public class EliminaImmagine extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AggiungiDocumento() {
+    public EliminaImmagine() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,14 +43,7 @@ public class AggiungiDocumento extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		
-		String titolo = request.getParameter("titolo");
-		Integer pagine = Integer.parseInt(request.getParameter("pagine"));
-		String universita = request.getParameter("universita");
-		String nome_materia = request.getParameter("nome_materia");
-		String descrizione = request.getParameter("descrizione");
-		Float prezzoDocumento = Float.parseFloat(request.getParameter("prezzoDocumento"));
-		Integer tipo = Integer.parseInt(request.getParameter("tipo"));
-		
+		int idImmagine = Integer.parseInt(request.getParameter("idImmagine"));
         
         Integer risultato = 0;
         String errore = "";
@@ -55,25 +51,38 @@ public class AggiungiDocumento extends HttpServlet {
         
         ConnessioneDB connDB = new ConnessioneDB();
 		if(connDB.getConn() != null) {
-			try {				
-				String sql = "INSERT INTO documenti (titolo,pagine,universita,nome_materia,descrizione,prezzo,tipo,id_recensione,flag) VALUES (?,?,?,?,?,?,?,null,1) ;";
-				PreparedStatement  stmt = connDB.getConn().prepareStatement(sql);
-				stmt.setString(1, titolo);
-				stmt.setInt(2, pagine);	
-				stmt.setString(3, universita);
-				stmt.setString(4, nome_materia);
-				stmt.setString(5, descrizione);
-				stmt.setFloat(6, prezzoDocumento);
-				stmt.setString(7, (tipo == 1)? "Appunti":"Dispense");			
-				if(stmt.executeUpdate() == 1) {
-					contenuto = "Documento Inserito con Successo";
-					risultato = 1;					
-				}
-				else {
-					errore = "Errore Inserimento Documento.";
-					risultato = 0;					
-				}
-				
+			try {
+				String sql = "";						
+				Statement stmt0 = connDB.getConn().createStatement();				
+				sql = ""
+						+ "SELECT codice, filename "
+						+ "FROM documenti_immagini "
+						+ "WHERE attivo = 1 AND id_immagine = "+idImmagine+"; ";
+				ResultSet result = stmt0.executeQuery(sql);				
+				if(!result.wasNull()) {
+					while(result.next()) {
+						String filePath = new SystemInformation().getPathImmaginiDocumento()+result.getString("codice")+"\\"+result.getString("filename");
+						//System.out.println(filePath);
+						File file = new File(filePath);
+			    		if(file.delete()){
+							Statement stmt = connDB.getConn().createStatement();				
+							sql = "UPDATE documenti_immagini SET attivo = 0 WHERE id_immagine = "+idImmagine+";";
+							if(stmt.executeUpdate(sql) == 1) {
+								contenuto = "Immagine Eliminata con Successo";
+								risultato = 1;			 		
+							}
+							else {
+								errore = "Errore Cancellazione Immagine.";
+								risultato = 0;					
+							}			    			
+			    		}
+			    		else{
+							errore = "Errore Cancellazione File di Immagine.";
+							risultato = 0;					
+			    		}				
+					}					
+				}			
+
 				if(risultato == 0) {
 					connDB.getConn().rollback();
 				}
@@ -83,7 +92,7 @@ public class AggiungiDocumento extends HttpServlet {
 				connDB.getConn().close();
 			}
 			catch(Exception e) {
-				errore = "Errore esecuzione Query.";
+				errore = "Errore esecuzione Query."+e.getMessage();
 				risultato = 0;
 			}
 		}

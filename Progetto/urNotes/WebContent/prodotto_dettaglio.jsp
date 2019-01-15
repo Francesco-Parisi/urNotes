@@ -104,7 +104,8 @@
 						<p class="materiaDocumento"><%=materiaDocumento %></p>
 						<p class="pagineDocumento">Pagine: <%=pagine %>
 						<p class="prezzoDocumento">Prezzo: <%=prezzoDocumento %>€</p>
-						<p class="descrizioneDocumento">Descrizione<br><%=descrizione %></p>
+						<p class="document_title">Descrizione</p>
+						<p class="descrizioneDocumento"><%=descrizione %></p>
 										
 					
 												

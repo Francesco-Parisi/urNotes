@@ -58,9 +58,10 @@ $(document).on('click', '.product-button', function() { //Click su bottone giall
 		showAlert(1, "Errore Parametri.");
 	}
 	return false;
-});
+});			
 
-$(document).on('click', '.showImmagineProdotto', function(e){		//Per vedere un'immagine del prodotto nel modal
+
+$(document).on('click', '.showImmagineDocumento', function(e){		//Per vedere un'immagine del prodotto nel modal
 	var src = $(this).attr("src");
 	if(src != undefined){		
 		$("#modalImmaginiBody").html('<img src="'+src+'" alt="'+src+'" />');
@@ -76,8 +77,33 @@ $(document).on('click', '.showImmagineProdotto', function(e){		//Per vedere un'i
 
 $(document).on('click', '.chiudiModalImmagini', function(e){	//Per chiudere il modal quando viene mostrata una foto
 	$("#modalImmagini").css("display", "none");
-});			
-	
+});	
+
+function getCarrelloSmall(){ 
+	$("#loader").show();	
+	$.ajax({
+		url: absolutePath+"/GetCarrelloSmall",
+		type: "POST",
+		dataType: 'JSON',
+		async: false,
+		data: {
+			"richiesta": 1
+		},
+		success:function(msg){
+			if(!msg.risultato){
+				showAlert(1, msg.errore);
+			}
+			else{
+				$(".numeroDocumentiCarrello").html(msg.contenuto);
+			}
+		},
+		error: function(msg){
+			showAlert(1, "Impossibile Recuperare i dati.");
+		}
+	});	
+	$("#loader").hide();		
+}
+
 function aggiungiAlCarrello(codice, quantita){
 	if(codice > 0 && quantita > 0){
 		$("#loader").show();

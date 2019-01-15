@@ -60,7 +60,7 @@ public class GetFormAggiungiDocumento extends HttpServlet {
 					sql = "";
 					sql = ""
 							+ "SELECT codice, nome "
-							+ "FROM Materie "
+							+ "FROM materie "
 							+ "WHERE flag = 1; ";
 					result = stmt.executeQuery(sql);				
 					if(!result.wasNull()) {
@@ -108,7 +108,7 @@ public class GetFormAggiungiDocumento extends HttpServlet {
 	        contenuto += materie;
 	        contenuto += "</select>";	     	        
 	        contenuto += "<input type='text' id='descrizione' class='descrizione adminFormField' name='descrizione' placeholder='Descrizione' />";	     	        
-	        contenuto += "<input type='number' step='0.01' id='prezzoDocumento' class='prezzo adminFormField' name='prezzo' placeholder='Prezzo' />";
+	        contenuto += "<input type='number' step='0.05' id='prezzoDocumento' class='prezzo adminFormField' name='prezzo' placeholder='Prezzo' />";
 	        contenuto += "<select id='tipo' class='tipo adminFormField' name='tipo'>";
 	        contenuto += "<option value='0'>Selezionare un tipo</option>";
 	        contenuto += "<option value='1'>Appunti</option>";

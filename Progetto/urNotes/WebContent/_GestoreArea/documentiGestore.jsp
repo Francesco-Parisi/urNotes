@@ -15,19 +15,19 @@
 		%>
 		<%@ include file="/partials/head.jsp" %>
 		<script src="<%=request.getContextPath()%>/js/scripts_documenti_admin.js"></script>					
-		<title>urNotes | Aggiungi Documento</title>
+		<title>urNotes | Documenti</title>
 </head>
 
 <body onLoad="getDocumenti()">
 		<%@ include file="/partials/header.jsp" %>	
-		<section class="container_appunti">				
+		<section class="container_appunti_admin">				
 		<div id="content">
 			<div id="content-content">
-				<p class="adminTitoloPagina">Gestione Documenti</p> 
-				<table id="documentiTable">
+			<p class="adminTitoloPagina">Gestione Documenti</p> 
+				<table id="materieTable">
 					<thead class="adminHeadDataTable">
 						<tr>
-							<th>Titolo Documento</th>
+							<th>Titolo</th>
 							<th>N° Pagine</th>
 							<th>Univerisit&agrave;</th>
 							<th>Nome Materia</th>
