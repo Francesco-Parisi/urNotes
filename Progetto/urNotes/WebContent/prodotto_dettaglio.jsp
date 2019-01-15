@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<%@ include file="/partials/header.jsp" %>		
-			<section class="container_appunti">	
+			<section class="container_appunti_dettaglio">	
 		<div id="content">
 			<div id="content-content">
 
@@ -59,6 +59,7 @@
 											pagine = result.getInt("pagine");
 											universita = result.getString("universita");
 											descrizione = result.getString("descrizione");
+											prezzoDocumento = result.getString("prezzo");
 											materiaDocumento = result.getString("nome_materia");									
 											Statement stmt2 = connDB.getConn().createStatement();							
 											sql = ""
@@ -98,14 +99,13 @@
 						<%=immagini %>						
 					</div>
 					<div class="right">
-						<p class="nomeProdotto"><%=titoloDocumento %></p>
-						<p class="prezzoProdotto"><%=pagine %> -
-						<p class="prezzoProdotto"><%=universita %> - 
-						<p class="descrizioneProdotto"><%=descrizione %></p>
-						<p class="prezzoProdotto"><%=prezzoDocumento %> - 
-						<p class="categoriaProdotto"><%=materiaDocumento %></p>
+						<p class="titoloDocumento"><%=titoloDocumento %></p>
+						<p class="universitaDocumento"><%=universita %> 
+						<p class="materiaDocumento"><%=materiaDocumento %></p>
+						<p class="pagineDocumento">Pagine: <%=pagine %>
+						<p class="prezzoDocumento">Prezzo: <%=prezzoDocumento %>€</p>
+						<p class="descrizioneDocumento">Descrizione<br><%=descrizione %></p>
 										
-						</p>
 					
 												
 						
