@@ -20,11 +20,12 @@
 		<title>urNotes | Documenti Immagini</title>		
 	</head>
 	<body onLoad="getImmagini()">
-		<%@ include file="/partials/header.jsp" %>				
+		<%@ include file="/partials/header.jsp" %>	
+			<section class="container_appunti_admin">	
+					
 		<div id="content">
 			<div id="content-content">
-				<p class="adminTitoloPagina">Gestione Immagini Prodotto ID:<%=codice %> <span><a href="#">Torna ai Prodotti</a></span></p> 			
-				<table id="immaginiTable">
+				<table id="prodottiTable">
 					<thead class="adminHeadDataTable">
 						<tr>
 							<th>FileName</th>
@@ -44,9 +45,10 @@
 				<div id="formAggiungiImmagine" class="adminFormAggiungi" style="display: none;">
 					
 				</div>
-				<input type="hidden" id="idProdottoImmagine" value="<%=codice %>" />
+				<input type="hidden" id="idDocumentoImmagine" value="<%=codice %>" />
 			</div>
 		</div>
+		</section>
 		<%@ include file="/partials/footer.jsp" %>	
 	</body>
 </html>

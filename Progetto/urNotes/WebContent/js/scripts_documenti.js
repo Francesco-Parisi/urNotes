@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$('#documentiTable').DataTable( {
+	$('#prodottiTable').DataTable( {
         "order": [[ 0, "desc" ]],
         "language": {
 			    "sEmptyTable":     "Nessun Documento Presente",
@@ -61,17 +61,16 @@ $(document).ready(function(){
 		}
 	});	
 	
-	$(document).on('click', '#confirmAggiungiDocumento', function(e){		
+	$(document).on('click', '#confirmAggiungiAppunto', function(e){		
 		var titolo = $("#titolo").val();
 		var pagine = $("#pagine").val();
 		var universita = $("#universita").val();
-		var nome_materia = $("#nomeMateria").val();
+		var nome_materia = $("#nome_materia").val();
 		var descrizione = $("#descrizione").val();
 		var prezzoDocumento = $("#prezzoDocumento").val();
 		var tipo = $("#tipo").val();
 		
-		
-		if(titolo != undefined && titolo.length > 1 && pagine != undefined && pagine > 0 && universita != undefined && universita.length > 1 && nome_materia != undefined && nome_materia.length > 1 && descrizione != undefined && descrizione.length > 1 && prezzoDocumento != undefined && prezzoDocumento > 0 && tipo != undefined && tipo > 0 ){		
+		if(titolo != undefined && titolo.length > 1 && pagine != undefined && pagine > 0 && universita != undefined && universita.length > 1 && universita != undefined && universita.length > 1 && nome_materia != undefined && nome_materia .length > 1 && descrizione != undefined && descrizione.length > 1 && prezzoDocumento != undefined && prezzoDocumento > 0 && tipo != undefined && tipo.length > 1 ){		
 			$("#loader").show();			
 			$.ajax({
 				url: absolutePath+"/AggiungiDocumento",
@@ -84,7 +83,7 @@ $(document).ready(function(){
 					"universita": universita,
 					"nome_materia": nome_materia,
 					"descrizione": descrizione,
-					"prezzoDocumento": prezzoDocumento,
+					"prezzoDispensa": prezzoDispensa,
 					"tipo": tipo
 				},
 				success:function(msg){
@@ -95,7 +94,7 @@ $(document).ready(function(){
 						showAlert(0, msg.contenuto);
 						$("#formAggiungiDocumento").html("");
 						$("#formAggiungiDocumento").css("display", "none");
-						getDocumenti();
+						geti();
 					}
 				},
 				error: function(msg){
@@ -115,7 +114,7 @@ $(document).ready(function(){
 		var codice = $(this).data("codice");
 		
 		if(codice != undefined && codice > 0){		
-			if(confirm("Conferma la cancellazione del documento con codice "+codice+"?")){
+			if(confirm("Conferma la cancellazione del documento con Codice "+codice+"? Tutti i relativi sconti attivi e le immagini verranno eliminati.")){
 				$("#loader").show();			
 				$.ajax({
 					url: absolutePath+"/EliminaDocumento",
@@ -279,6 +278,7 @@ $(document).ready(function(){
 
 function getDocumenti(){ 
 	$("#loader").show();
+
 	$.ajax({
 		url: absolutePath+"/GetDocumenti",
 		type: "POST",
@@ -293,10 +293,10 @@ function getDocumenti(){
 			}
 			else{				
 				if(msg.contenuto.length > 0){
-					$("#bodyDocumento").html(msg.contenuto);
+					$("#bodyDocumenti").html(msg.contenuto);
 				}											
 				else{
-					$("#bodyDocumento").html("<tr><td colspan='10'>Nessun Documento Presente</td></tr>");
+					$("#bodyDocumenti").html("<tr><td colspan='10'>Nessun Documento Presente</td></tr>");
 				}
 				
 			}

@@ -23,8 +23,7 @@
 		<section class="container_appunti_admin">				
 		<div id="content">
 			<div id="content-content">
-			<p class="adminTitoloPagina">Gestione Documenti</p> 
-				<table id="materieTable">
+				<table id="prodottiTable">
 					<thead class="adminHeadDataTable">
 						<tr>
 							<th>Titolo</th>
@@ -34,6 +33,7 @@
 							<th>Descrizione</th>
 							<th>Prezzo</th>
 							<th>Tipo</th>
+							<th>Azioni</th>
 						</tr>	
 					</thead>
 					<tbody id="bodyDocumento" class="adminBodyDataTable">

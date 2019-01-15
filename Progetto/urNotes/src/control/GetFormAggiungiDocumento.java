@@ -111,8 +111,8 @@ public class GetFormAggiungiDocumento extends HttpServlet {
 	        contenuto += "<input type='number' step='0.05' id='prezzoDocumento' class='prezzo adminFormField' name='prezzo' placeholder='Prezzo' />";
 	        contenuto += "<select id='tipo' class='tipo adminFormField' name='tipo'>";
 	        contenuto += "<option value='0'>Selezionare un tipo</option>";
-	        contenuto += "<option value='1'>Appunti</option>";
-	        contenuto += "<option value='2'>Dispense</option>";
+	        contenuto += "<option value='1'>appunti</option>";
+	        contenuto += "<option value='2'>dispense</option>";
 	        contenuto += "</select>";		        
 	        contenuto += "<button id='confirmAggiungiDocumento' class='adminButtonConfermaAggiungi'>Aggiungi</button>";
 	        risultato *= 1;

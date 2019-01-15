@@ -1020,12 +1020,7 @@ a{
 		/************************************************************/
 	/***********************PAGINE ADMIN************************/
 	/************************************************************/	
-	#content #content-content .adminTitoloPagina{
-		text-align: center;
-		font-size: 300px;
-		font-weight: bold;
-		color: #276274;
-	}	
+
 	
 	.container_appunti_admin #content #content-content .adminTitoloPagina{
 		display: block;

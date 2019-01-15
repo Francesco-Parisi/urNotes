@@ -74,7 +74,7 @@ $(document).ready(function(){
 		if(titolo != undefined && titolo.length > 1 && pagine != undefined && pagine > 0 && universita != undefined && universita.length > 1 && universita != undefined && universita.length > 1 && nome_materia != undefined && nome_materia .length > 1 && descrizione != undefined && descrizione.length > 1 && prezzoAppunto != undefined && prezzoAppunto > 0 && tipo != undefined && tipo.length > 1 ){		
 			$("#loader").show();			
 			$.ajax({
-				url: absolutePath+"/AggiungiDispensa",
+				url: absolutePath+"/AggiungiAppunto",
 				type: "POST",
 				dataType: 'JSON',
 				async: false,
