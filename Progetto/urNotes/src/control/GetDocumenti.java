@@ -13,16 +13,16 @@ import org.json.simple.JSONObject;
 import model.ConnessioneDB;
 import model.SystemInformation;
 /**
- * Servlet implementation class GetAppunti
+ * Servlet implementation class GetDocumenti
  */
-@WebServlet("/GetAppunti")
-public class GetAppunti extends HttpServlet {
+@WebServlet("/GetDocumenti")
+public class GetDocumenti extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GetAppunti() {
+    public GetDocumenti() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -45,7 +45,7 @@ public class GetAppunti extends HttpServlet {
 	    
 		//String idAppunto = request.getParameter("id");
 		//System.out.print(idAppunto+" ");
-		String value = request.getParameter("value");
+		//String value = request.getParameter("value");
 		//System.out.println(value);
 
 		Integer risultato = 0;
@@ -57,22 +57,23 @@ public class GetAppunti extends HttpServlet {
 				Statement stmt = connDB.getConn().createStatement();
 				String sql = "";
 				sql = ""
-						+ "SELECT d.codice, d.titolo, d.pagine, d.universita, d.nome_materia, d.prezzo "
-						+ "FROM documenti AS d "
-						+ "WHERE d.tipo LIKE 'appunti' AND d.nome_materia LIKE '"+value+"';";
+						+ "SELECT * "
+						+ "FROM documenti; ";
 				//System.out.println(sql);
 				ResultSet result = stmt.executeQuery(sql);	
-				
+				//prezzo,tipo,id_recensione,flag
 				if(!result.wasNull()) {
 					while(result.next()) {
 						contenuto += "<tr>";
 						contenuto += "<td>"+result.getString("titolo")+"</td>";		
 						contenuto += "<td>"+result.getInt("pagine")+"</td>";
-						contenuto += "<td>"+result.getString("universita")+"</td>";							
+						contenuto += "<td>"+result.getString("universita")+"</td>";
+						contenuto += "<td>"+result.getString("nome_materia")+"</td>";
+						contenuto += "<td>"+result.getString("descrizione")+"</td>";
 						contenuto += "<td>";
 						contenuto += new SystemInformation().truncateDecimal(result.getFloat("prezzo"),2);							
 						contenuto += "</td>";	
-						contenuto += "<td><input type='submit' id='idAppuntoDett' data-id='"+result.getString("codice")+"' name='submitForm' class='campoForm submitForm' value='Dettaglio'></td>";
+						contenuto += "<td>"+result.getString("tipo")+"</td>";
 						contenuto += "</tr>";
 					}		
 				}				 
