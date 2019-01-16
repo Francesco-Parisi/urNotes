@@ -92,7 +92,7 @@ public class GetFormAggiungiDocumento extends HttpServlet {
 					
 				}
 				catch(Exception e) {
-					errore = "Errore esecuzione Query1.";
+					errore = "Errore esecuzione Query Materie.";
 					risultato *= 0;
 				}
 						

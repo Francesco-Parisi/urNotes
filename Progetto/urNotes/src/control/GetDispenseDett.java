@@ -77,7 +77,7 @@ public class GetDispenseDett extends HttpServlet {
 					connDB.getConn().rollback();
 				}
 				else {
-					redirect = request.getContextPath()+"/prodotto_dettaglio.jsp?codice="+value;
+					redirect = request.getContextPath()+"/prodotto_dettaglio.jsp?tipo="+value;
 					connDB.getConn().commit();
 				}																	
 				

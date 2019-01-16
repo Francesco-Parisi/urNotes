@@ -13,87 +13,89 @@
 			<div id="content-content">
 
 			        <%
-		        	    Integer codice = Integer.parseInt(request.getParameter("codice"));
-			        	String output = "";
-			        	String sql = "";
-			        	String filename = "";
-			        	String immaginePrincipale = "";
-			        	String immagini = "";
-			        	String titoloDocumento = "";
-			        	Integer pagine = 0;
-			        	String universita = "";
-			        	String descrizione = "";
-			        	String prezzoDocumento = "";
-			        	String materiaDocumento = "";			        	
-			        	ConnessioneDB connDB = new ConnessioneDB();
-						if(connDB.getConn() != null) {
-							try {
-								Statement stmt = connDB.getConn().createStatement();							
-								sql = ""
-										+ "SELECT d.codice," 
-										+ "       d.titolo, "
-										+ "       d.pagine, "
-										+ "       d.universita, "									
-										+ "       d.nome_materia, "									
-										+ "       d.descrizione, " 
-										+ "       d.prezzo, " 
-										+ "       (SELECT nome FROM materie WHERE nome = d.nome_materia) AS materie, "
-										+ "       (SELECT filename FROM documenti_immagini WHERE codice = d.codice AND is_default = 1 AND attivo = 1) AS filename "
-										+ "FROM documenti AS d "
-										+ "WHERE d.flag = 1 AND d.codice = "+codice+" ";
-								ResultSet result = stmt.executeQuery(sql);								
-								if(!result.wasNull()) {
-									int rowCount = result.last() ? result.getRow() : 0;
-									if(rowCount > 0) {
-										result.beforeFirst();										
-										while(result.next()) {																
-											if(result.getString("filename") != null){
-												filename = new SystemInformation().getPathImmaginiDocumentoHTML()+result.getInt("codice")+"/"+result.getString("filename");												
-											}
-											else{
-												filename = new SystemInformation().getPathImmaginiDocumentoDefault();												
-											}																						
-											immaginePrincipale = "<img class='showImmagineProdotto' src='"+filename+"' alt='"+filename+"' />";		
-											
-											titoloDocumento = result.getString("titolo");													
-											pagine = result.getInt("pagine");
-											universita = result.getString("universita");
-											descrizione = result.getString("descrizione");
-											prezzoDocumento = result.getString("prezzo");
-											materiaDocumento = result.getString("nome_materia");									
-											Statement stmt2 = connDB.getConn().createStatement();							
-											sql = ""
-													+ "SELECT filename " 
-													+ "FROM documenti_immagini "
-													+ "WHERE codice = "+codice+" AND is_default = 0 AND attivo = 1 " 
-													+ "ORDER BY id_immagine DESC; "; 
-											ResultSet result2 = stmt2.executeQuery(sql);								
-											if(!result2.wasNull()) {
-												while(result2.next()) { 
-													filename = new SystemInformation().getPathImmaginiDocumentoHTML()+codice+"/"+result2.getString("filename");
-													immagini += "<img class='showImmagineProdotto' src='"+filename+"' alt='"+filename+"' />";
+			        String output = "";
+		        	String sql = "";
+		        	String filename = "";
+		        	String immaginePrincipale = "";
+		        	String immagini = "";
+		        	String titoloDocumento = "";
+		        	Integer pagine = 0;
+		        	String universita = "";
+		        	String descrizione = "";
+		        	String prezzoDocumento = "";
+		        	String materiaDocumento = "";
+			        try{
+			        	 Integer codice = Integer.parseInt(request.getParameter("codice"));
+			        				        	
+				        	ConnessioneDB connDB = new ConnessioneDB();
+							if(connDB.getConn() != null) {
+								try {
+									Statement stmt = connDB.getConn().createStatement();							
+									sql = ""
+											+ "SELECT d.codice," 
+											+ "       d.titolo, "
+											+ "       d.pagine, "
+											+ "       d.universita, "									
+											+ "       d.nome_materia, "									
+											+ "       d.descrizione, " 
+											+ "       d.prezzo, " 
+											+ "       (SELECT nome FROM materie WHERE nome = d.nome_materia) AS materie, "
+											+ "       (SELECT filename FROM documenti_immagini WHERE codice = d.codice AND is_default = 1 AND attivo = 1) AS filename "
+											+ "FROM documenti AS d "
+											+ "WHERE d.flag = 1 AND d.codice = "+codice+" ";
+									ResultSet result = stmt.executeQuery(sql);								
+									if(!result.wasNull()) {
+										int rowCount = result.last() ? result.getRow() : 0;
+										if(rowCount > 0) {
+											result.beforeFirst();										
+											while(result.next()) {																
+												if(result.getString("filename") != null){
+													filename = new SystemInformation().getPathImmaginiDocumentoHTML()+result.getInt("codice")+"/"+result.getString("filename");												
 												}
+												else{
+													filename = new SystemInformation().getPathImmaginiDocumentoDefault();												
+												}																						
+												immaginePrincipale = "<img class='showImmagineProdotto' src='"+filename+"' alt='"+filename+"' />";		
+												
+												titoloDocumento = result.getString("titolo");													
+												pagine = result.getInt("pagine");
+												universita = result.getString("universita");
+												descrizione = result.getString("descrizione");
+												prezzoDocumento = result.getString("prezzo");
+												materiaDocumento = result.getString("nome_materia");									
+												Statement stmt2 = connDB.getConn().createStatement();							
+												sql = ""
+														+ "SELECT filename " 
+														+ "FROM documenti_immagini "
+														+ "WHERE codice = "+codice+" AND is_default = 0 AND attivo = 1 " 
+														+ "ORDER BY id_immagine DESC; "; 
+												ResultSet result2 = stmt2.executeQuery(sql);								
+												if(!result2.wasNull()) {
+													while(result2.next()) { 
+														filename = new SystemInformation().getPathImmaginiDocumentoHTML()+codice+"/"+result2.getString("filename");
+														immagini += "<img class='showImmagineProdotto' src='"+filename+"' alt='"+filename+"' />";
+													}
+												}										
+											
+											
 											}										
-										
-										
-										}										
+										}
+										else {
+											titoloDocumento = "Documento Non Trovato.";
+										}											
 									}
-									else {
-										titoloDocumento = "Documento Non Trovato.";
-									}											
+									
+									connDB.getConn().close();
 								}
-								
-								connDB.getConn().close();
+								catch(Exception e) {
+									titoloDocumento = e.getMessage();
+								}	
 							}
-							catch(Exception e) {
-								titoloDocumento = e.getMessage();
-							}	
-						}
-						else {
-							titoloDocumento = connDB.getError();
-						}				        				        
-			        %>
-				<div class="dettaglioProdotto">	
+							else {
+								titoloDocumento = connDB.getError();
+							}
+							
+							%> <div class="dettaglioProdotto">	
 					<div class="left">
 						<%=immaginePrincipale %>
 						<%=immagini %>						
@@ -111,7 +113,15 @@
 												
 						
 					</div>
-				</div>        			        
+				</div>     
+				<%
+			        }
+			        catch(NumberFormatException e){
+			        	%> numero non valido <%
+			        }
+				        				        
+			        %>
+				   			        
 			</div>
 		</div>
 		</section>

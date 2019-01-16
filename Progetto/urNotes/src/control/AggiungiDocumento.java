@@ -48,7 +48,16 @@ public class AggiungiDocumento extends HttpServlet {
 		Float prezzoDocumento = Float.parseFloat(request.getParameter("prezzoDocumento"));
 		Integer tipo = Integer.parseInt(request.getParameter("tipo"));
 		
-        
+		
+		System.out.println(titolo);
+		System.out.println(pagine);
+		System.out.println(universita);
+		System.out.println(nome_materia);
+		System.out.println(descrizione);
+		System.out.println(prezzoDocumento);
+		System.out.println(tipo);
+		
+		
         Integer risultato = 0;
         String errore = "";
         String contenuto = "";
@@ -56,7 +65,7 @@ public class AggiungiDocumento extends HttpServlet {
         ConnessioneDB connDB = new ConnessioneDB();
 		if(connDB.getConn() != null) {
 			try {				
-				String sql = "INSERT INTO documenti (titolo,pagine,universita,nome_materia,descrizione,prezzo,tipo,id_recensione,flag) VALUES (?,?,?,?,?,?,?,null,1) ;";
+				String sql = "INSERT INTO documenti (titolo,pagine,universita,nome_materia,descrizione,prezzo,tipo,id_recensione,flag) VALUES (?,?,?,?,?,?,?,null,1);";
 				PreparedStatement  stmt = connDB.getConn().prepareStatement(sql);
 				stmt.setString(1, titolo);
 				stmt.setInt(2, pagine);	
