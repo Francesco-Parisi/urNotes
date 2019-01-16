@@ -25,7 +25,7 @@
 					
 		<div id="content">
 			<div id="content-content">
-				<table id="prodottiTable">
+				<table id="immaginiTable">
 					<thead class="adminHeadDataTable">
 						<tr>
 							<th>FileName</th>

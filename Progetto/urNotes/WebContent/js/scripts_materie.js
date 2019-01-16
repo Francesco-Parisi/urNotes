@@ -302,14 +302,18 @@ function getMaterie(){
 			"richiesta": 1
 		},
 		success:function(msg){
+			
 			if(!msg.risultato){
 				showAlert(1, msg.errore);
 			}
 			else{				
 				if(msg.contenuto.length > 0){
+					
+					$("th").text("Materie");
 					$("#bodyMaterie").html(msg.contenuto);
 				}											
 				else{
+					$("th").text("Materie");
 					$("#bodyMaterie").html("<tr><td colspan='10'>Nessuna Materia Presente</td></tr>");
 				}
 				

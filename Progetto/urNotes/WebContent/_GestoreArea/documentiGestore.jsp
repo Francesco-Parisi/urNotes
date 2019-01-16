@@ -27,9 +27,9 @@
 					<thead class="adminHeadDataTable">
 						<tr>
 							<th>Titolo</th>
-							<th>N° Pagine</th>
+							<th>Pagine</th>
 							<th>Univerisit&agrave;</th>
-							<th>Nome Materia</th>
+							<th>Materia</th>
 							<th>Descrizione</th>
 							<th>Prezzo</th>
 							<th>Tipo</th>
