@@ -17,14 +17,13 @@
 		%>
 		<%@ include file="/partials/head.jsp" %>		
 		<script src="<%=request.getContextPath()%>/js/scripts_prodotti_immagini.js"></script>					
-		<title>urNotes | Documenti Immagini</title>		
+		<title>Documenti immagini</title>		
 	</head>
 	<body onLoad="getImmagini()">
-		<%@ include file="/partials/header.jsp" %>	
-			<section class="container_appunti_admin">	
-					
+		<%@ include file="/partials/header.jsp" %>				
 		<div id="content">
 			<div id="content-content">
+				<p class="adminTitoloPagina">Gestione Immagini Documento :<%=codice %></p> 			
 				<table id="immaginiTable">
 					<thead class="adminHeadDataTable">
 						<tr>
@@ -48,7 +47,6 @@
 				<input type="hidden" id="idDocumentoImmagine" value="<%=codice %>" />
 			</div>
 		</div>
-		</section>
 		<%@ include file="/partials/footer.jsp" %>	
 	</body>
 </html>

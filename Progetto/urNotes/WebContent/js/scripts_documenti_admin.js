@@ -159,44 +159,10 @@ $(document).ready(function(){
 	});			
 	
 	
-	$(document).on('click', '.modificaQuantita', function(e){		
-		var codice = $(this).data("codice");
-		
-		if(codice != undefined && codice > 0){		
-				$("#loader").show();			
-				$.ajax({
-					url: absolutePath+"/GetFormModificaQuantitaDocumentoAdmin",
-					type: "POST",
-					dataType: 'JSON',
-					async: false,
-					data: {
-						"codice": codice
-					},
-					success:function(msg){
-						if(!msg.risultato){
-							showAlert(1, msg.errore);
-						}
-						else{														
-							$("#modalDettaglioOrdineBody").html(msg.contenuto);
-							$("#modalDettaglioOrdine").css("display", "block");
-						}
-					},
-					error: function(msg){
-						showAlert(1, "Impossibile Recuperare i dati.");
-					}
-				});
-				
-				$("#loader").hide();
-		}
-		else{			
-			showAlert(1, "Errore Parametri.");
-		}		
-	});		
-
 	
 	$(document).on('click', '.modificaPrezzo', function(e){		
 		var codice = $(this).data("codice");
-		
+
 		if(codice != undefined && codice > 0){		
 				$("#loader").show();			
 				$.ajax({
