@@ -205,7 +205,7 @@ function createDropzone(){
 			  accept: function(file, done){					    
 			    done();
 			  },
-			  init: function() {			      				      						  		    
+			  init: function() {		
 			      this.on("maxfilesexceeded", function(file){
 				  	  showAlert(1, "Allegare al massimo un file");		    	  
 			      });
@@ -213,7 +213,9 @@ function createDropzone(){
 				  this.on("success", function(file, response) {
 					  var msg = jQuery.parseJSON(response);
 				  	  if(msg.risultato){
+				  		alert(codice);
 				  		  $("#filenameImmagineDocumento").val(msg.contenuto);
+				  		  
 				  	  }    
 				  	  else{			  		  			  		 
 				  		showAlert(1, msg.errore);

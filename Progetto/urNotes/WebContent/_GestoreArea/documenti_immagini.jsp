@@ -21,7 +21,7 @@
 	</head>
 	<body onLoad="getImmagini()">
 		<%@ include file="/partials/header.jsp" %>	
-			<section class="container_appunti_admin">	
+			<div id="container_appunti_admin">	
 					
 		<div id="content">
 			<div id="content-content">
@@ -48,7 +48,7 @@
 				<input type="hidden" id="idDocumentoImmagine" value="<%=codice %>" />
 			</div>
 		</div>
-		</section>
+		</div>
 		<%@ include file="/partials/footer.jsp" %>	
 	</body>
 </html>

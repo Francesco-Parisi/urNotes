@@ -58,7 +58,8 @@ public class UploadImmagineDocumento extends HttpServlet {
         String errore = "";
         String contenuto = "";
                         
-        filePath = new SystemInformation().getPathImmaginiDocumento()+request.getSession().getAttribute("codice")+"\\";        
+        filePath = new SystemInformation().getPathImmaginiDocumento()+request.getSession().getAttribute("codice")+"\\";  
+        System.out.println(filePath);
         File file = new File(filePath);
         if (!file.exists()) {
             if (!file.mkdir()) {

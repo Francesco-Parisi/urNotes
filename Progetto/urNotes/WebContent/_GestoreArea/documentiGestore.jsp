@@ -20,7 +20,7 @@
 
 <body onLoad="getDocumenti()">
 		<%@ include file="/partials/header.jsp" %>	
-		<section class="container_appunti_admin">				
+		<div id="container_appunti_admin">				
 		<div id="content">
 			<div id="content-content">
 				<table id="prodottiTable">
@@ -51,7 +51,7 @@
 				
 			</div>
 		</div>
-		</section>
+		</div>
 	</body>
 <%@ include file="/partials/footer.jsp" %>	
 </html>
