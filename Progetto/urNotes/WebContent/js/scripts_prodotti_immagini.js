@@ -102,8 +102,8 @@ $(document).ready(function(){
 				
 				$("#loader").hide();
 			}
-			else{			
-				showAlert(1, "Controllare di aver compilato correttamente tutti i campi.");
+			else{
+				showAlert(1, "Controllare di aver compilato correttamente tutti i campi.",filenameImmagineDocumento.length);
 			}					
 		}
 		else{

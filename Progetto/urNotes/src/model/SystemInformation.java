@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 public class SystemInformation {
 	
 	public SystemInformation() {
-		this.setPathImmaginiDocumento("C:\\Users\\Francesco\\Documents\\urNotes\\Progetto\\urNotes\\WebContent\\images\\documenti");		
+		this.setPathImmaginiDocumento("C:\\Users\\Francesco\\Documents\\urNotes\\Progetto\\urNotes\\WebContent\\images\\documenti\\");		
 		this.setPathImmaginiDocumentoHTML("/urNotes/images/documenti/");		
 		this.setPathImmaginiDocumentoDefault("/urNotes/images/documenti/documento_blank.png");
 		this.setUrlRedirect("/accedi.jsp");				
