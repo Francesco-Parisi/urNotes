@@ -1195,17 +1195,17 @@ a{
 	
 	
 	
-	.container_appunti #content #content-content .adminFormAggiungi #containerDefaultImmagine{	
+	.container_appunti_admin #content #content-content .adminFormAggiungi #containerDefaultImmagine{	
 		width: 100%;
 		text-align: center;		
 	}	
-	.container_appunti #content #content-content .adminFormAggiungi #containerDefaultImmagine #defaultImmagine, .container_appunti #content #content-content .adminFormAggiungi #containerDefaultImmagine label{
+	.container_appunti_admin #content #content-content .adminFormAggiungi #containerDefaultImmagine #defaultImmagine, .container_appunti_admin #content #content-content .adminFormAggiungi #containerDefaultImmagine label{
 		vertical-align: middle;
 	}	
-	.container_appunti #content #content-content .adminFormAggiungi #confirmAggiungiImmagine{
+	.container_appunti_admin #content #content-content .adminFormAggiungi #confirmAggiungiImmagine{
 		margin-left: 47%;
 	}	
-	.container_appunti #content #content-content .adminFormAggiungi .dropzoneImmagineProdotto{
+	.container_appunti_admin #content #content-content .adminFormAggiungi .dropzoneImmagineDocumento{
 		min-height: 100px;
 		background-color: #eee;
 		margin-bottom: 20px;
@@ -1213,7 +1213,7 @@ a{
 		position: relative;
 		padding: 15px;
 	}	
-	.container_appunti #content #content-content .adminFormAggiungi .dropzoneImmagineProdotto:after {
+	.container_appunti_admin #content #content-content .adminFormAggiungi .dropzoneImmagineDocumento:after {
     	content: 'Sposta qui l\'immagine da caricare';
     	position: absolute;
     	top: 40%;
@@ -1221,13 +1221,13 @@ a{
     	width: 20%;
     	height: 5%;
 	}		
-	.container_appunti #content #content-content .adminFormAggiungi .dz-started.dropzoneImmagineProdotto:after {
+	.container_appunti_admin #content #content-content .adminFormAggiungi .dz-started.dropzoneImmagineDocumento:after {
 		display: none;
 	}	
-	.container_appunti #content #content-content .adminFormAggiungi .dropzoneImmagineProdotto .dz-error-mark, .container_appunti #content #content-content .adminFormAggiungi .dropzoneImmagineProdotto .dz-error-message, .container_appunti #content #content-content .adminFormAggiungi .dropzoneImmagineProdotto .dz-success-mark{
+	.container_appunti_admin #content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-error-mark, .container_appunti_admin #content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-error-message, .container_appunti_admin #content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-success-mark{
 		display: none;		
 	}	
-	.container_appunti #content #content-content .adminFormAggiungi .dropzoneImmagineProdotto .dz-remove{
+	.container_appunti_admin #content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-remove{
 		background-color: #DC483E;
 		border: solid 1px #DC483E;
 		height: 30px;		
@@ -1239,7 +1239,7 @@ a{
 		font-size: 12px;
 		padding: 5px;		
 	}		
-	.container_appunti #content #content-content .adminFormAggiungi .dropzoneImmagineProdotto .dz-image img{
+	.container_appunti_admin #content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-image img{
 		border-radius: 10px;
 	}			
 	.container_appunti #content #content-content .adminFormAggiungi #nomemetodoPagamento{	
