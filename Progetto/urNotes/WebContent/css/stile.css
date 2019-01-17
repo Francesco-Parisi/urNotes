@@ -479,6 +479,10 @@ border:none;
 	display:inline;
 }
 
+.showImmagineDocumento{
+	height:70%;
+}
+
 /*Dettaglio Documento*/
 
 .container_appunti_dettaglio{
@@ -536,7 +540,7 @@ border:none;
 	color:white;
 	text-align: left;
 	position:absolute;
-	top:27%;
+	top:30%;
 	left:39%;
 	text-shadow:1px 1px black;
 }

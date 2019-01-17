@@ -21,11 +21,10 @@
 <body onLoad="getDocumenti()">
 		<%@ include file="/partials/header.jsp" %>	
 		
-		
-		<div id="container_appunti_admin">				
+	<div id="container_appunti_admin">	
 		<div id="content">
 			<div id="content-content">
-				<table id="prodottiTable">
+				<table id="prodottiTable" class="tabella">
 					<thead class="adminHeadDataTable">
 						<tr>
 							<th>Titolo</th>

@@ -60,7 +60,7 @@ public class GetDispense extends HttpServlet {
 				sql = ""
 						+ "SELECT d.codice, d.titolo, d.pagine, d.universita, d.nome_materia, d.prezzo "
 						+ "FROM documenti AS d "
-						+ "WHERE d.tipo LIKE 'dispense' AND d.nome_materia LIKE '"+value+"';";
+						+ "WHERE d.tipo LIKE 'Dispense' AND d.nome_materia LIKE '"+value+"';";
 				//System.out.println(sql);
 				ResultSet result = stmt.executeQuery(sql);	
 				

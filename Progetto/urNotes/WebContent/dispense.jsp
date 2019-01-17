@@ -11,7 +11,7 @@
 </head>
 <body onLoad="getMaterieDispense()">
 	<%@ include file="/partials/header.jsp" %>		
-	<div id="container_appunti">	
+	<div id="container_appunti_admin">	
 	<div id="content">
 		<div id="content-content">
 			<table id="materieTable">

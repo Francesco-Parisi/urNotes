@@ -25,8 +25,7 @@
 					
 		<div id="content">
 			<div id="content-content">
-				<p class="adminTitoloPagina">Gestione Immagini Documento :<%=codice %></p> 			
-				<table id="immaginiTable">
+				<table id="prodottiTable">
 					<thead class="adminHeadDataTable">
 						<tr>
 							<th>FileName</th>

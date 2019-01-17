@@ -62,7 +62,7 @@ public class GetDispenseDett extends HttpServlet {
 				sql = ""
 						+ "SELECT d.codice "
 						+ "FROM documenti AS d "
-						+ "WHERE d.tipo LIKE 'dispense' AND d.codice = "+value+";";
+						+ "WHERE d.tipo LIKE 'Dispense' AND d.codice = "+value+";";
 				System.out.println(sql);
 				ResultSet result = stmt.executeQuery(sql);	
 				
@@ -77,7 +77,7 @@ public class GetDispenseDett extends HttpServlet {
 					connDB.getConn().rollback();
 				}
 				else {
-					redirect = request.getContextPath()+"/prodotto_dettaglio.jsp?tipo="+value;
+					redirect = request.getContextPath()+"/prodotto_dettaglio.jsp?codice="+value;
 					connDB.getConn().commit();
 				}																	
 				

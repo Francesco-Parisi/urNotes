@@ -55,7 +55,7 @@
 												else{
 													filename = new SystemInformation().getPathImmaginiDocumentoDefault();												
 												}																						
-												immaginePrincipale = "<img class='showImmagineProdotto' src='"+filename+"' alt='"+filename+"' />";		
+												immaginePrincipale = "<img class='showImmagineDocumento' src='"+filename+"' alt='"+filename+"' />";		
 												
 												titoloDocumento = result.getString("titolo");													
 												pagine = result.getInt("pagine");
