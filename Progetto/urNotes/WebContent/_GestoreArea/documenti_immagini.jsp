@@ -17,7 +17,7 @@
 		%>
 		<%@ include file="/partials/head.jsp" %>		
 		<script src="<%=request.getContextPath()%>/js/scripts_prodotti_immagini.js"></script>					
-		<title>urNotes | Documenti Immagini</title>		
+		<title>Documenti immagini</title>		
 	</head>
 	<body onLoad="getImmagini()">
 		<%@ include file="/partials/header.jsp" %>	
@@ -25,6 +25,7 @@
 					
 		<div id="content">
 			<div id="content-content">
+				<p class="adminTitoloPagina">Gestione Immagini Documento :<%=codice %></p> 			
 				<table id="immaginiTable">
 					<thead class="adminHeadDataTable">
 						<tr>

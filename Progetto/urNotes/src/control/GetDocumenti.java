@@ -58,7 +58,8 @@ public class GetDocumenti extends HttpServlet {
 				String sql = "";
 				sql = ""
 						+ "SELECT * "
-						+ "FROM documenti";
+						+ "FROM documenti "
+						+ "WHERE flag = 1;";
 				//System.out.println(sql);
 				ResultSet result = stmt.executeQuery(sql);	
 				//prezzo,tipo,id_recensione,flag
@@ -72,7 +73,7 @@ public class GetDocumenti extends HttpServlet {
 						contenuto += "<td>"+result.getString("descrizione")+"</td>";
 						contenuto += "<td>";
 						contenuto += new SystemInformation().truncateDecimal(result.getFloat("prezzo"),2);							
-						contenuto += "&nbsp;<i class='modificaPrezzo fas fa-edit' style='cursor: pointer;' data-codice='"+result.getInt("codice")+"' title='Modifica Prezzo Documento'></i>";
+						contenuto += "&nbsp;<i class='modificaPrezzoDocu fas fa-edit' style='cursor: pointer;' data-codice='"+result.getInt("codice")+"' title='Modifica Prezzo '></i>";
 						contenuto += "</td>";	
 						contenuto += "<td>"+result.getString("tipo")+"</td>";
 						contenuto += "<td>";

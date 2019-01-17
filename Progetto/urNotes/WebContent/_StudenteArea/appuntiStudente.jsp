@@ -25,7 +25,7 @@
 
 <body onLoad="getMaterie()">
 	<%@ include file="/partials/header.jsp" %>		
-	<section class="container_appunti">	
+	<div id="container_appunti">	
 	<div id="content">
 		<div id="content-content">
 			<table id="materieTable">
@@ -41,7 +41,7 @@
 			
 		</div>
 	</div>
-</section>	
+</div>	
 
 <%@ include file="/partials/footer.jsp" %>	
 

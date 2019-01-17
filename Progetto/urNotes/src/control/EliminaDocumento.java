@@ -111,7 +111,7 @@ public class EliminaDocumento extends HttpServlet {
 				if(continua == 1) {
 					//Cancello il documento
 					Statement stmt2 = connDB.getConn().createStatement();
-					sql = "UPDATE documenti SET attivo = 0 WHERE codice = "+codice+";";
+					sql = "UPDATE documenti SET flag = 0 WHERE codice = "+codice+";";
 					if(stmt2.executeUpdate(sql) == 1) {					
 						contenuto = "Documento Eliminato con Successo";
 						risultato = 1;			
