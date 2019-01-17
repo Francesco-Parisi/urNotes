@@ -1407,6 +1407,88 @@ a{
 	#content .categoriaProdotto .product:hover .product-button a{
 		color: #276274;
 	}
+	
+	
+	/************************************************************/
+	/*******************   PAGINA ORDINI USER    ****************/
+	/************************************************************/	
+
+	#content #content-content .userBodyDataTable tr td i.eliminaOrdine{
+		color: #DC483E;
+	} 
+	#content #content-content .userBodyDataTable tr td i.dettaglioOrdine{
+		color: #000;
+	}
+	#modalDettaglioOrdine{
+		display: none;
+		height: 50%;
+		width: 80%;
+		left: 10%;
+		top: 10%;
+		overflow: hidden;
+		position: fixed;
+		z-index: 99999;
+		background-color: #fff;
+		opacity: 1;
+		text-align: center;
+		padding-top: 15%;
+		border-radius: 20px;
+		border: solid 4px #ffcc00;		
+	}	
+	#modalDettaglioOrdine #modalDettaglioOrdineNav{
+		position: absolute;
+		left: 97%;
+		width: 1%;
+		top: 3%;
+		cursor: pointer;
+	}	
+	#modalDettaglioOrdine #modalDettaglioOrdineBody{
+		position: absolute;
+		width: 100%;
+		top: 7%;
+		overflow-x: auto;
+		height: 90%;		
+	}		
+	#content #content-content #dettaglioOrdine .left, #content #content-content #dettaglioOrdine .right{
+		width: 48%;
+		padding: 1%;
+	}
+	#content #content-content #dettaglioOrdine p, #content #content-content #dettaglioOrdine p{
+		color: #276274;		
+	}
+	#content #content-content #dettaglioOrdine .left p:first-child, #content #content-content #dettaglioOrdine .right p:first-child{
+		font-weight: bold;	
+	}
+	#content #content-content #dettaglioOrdine p.totaleOrdine{
+		color: #000;		
+	}
+	
+	/************************************************************/
+	/*******************   PAGINA ORDINI ADMIN    ****************/
+	/************************************************************/			
+	#content #content-content .adminBodyDataTable tr td i.eliminaOrdine{
+		color: #DC483E;
+	}
+	#content #content-content .adminBodyDataTable tr td i.dettaglioOrdine, #content #content-content .adminBodyDataTable tr td i.modificaStatoOrdine{
+		color: #000;
+	}
+	#modalDettaglioOrdine #modalDettaglioOrdineBody .adminFormField{
+		border: 0;
+		height: 30px;	
+		border: solid 1px #276274;
+		width: 35%;	
+	}
+	
+	#modalDettaglioOrdine #modalDettaglioOrdineBody .adminButtonConfermaAggiungi{	
+		background-color: #276274;
+		border: solid 1px #276274;
+		height: 30px;		
+		color: #FFF;
+		text-transform: uppercase;		
+		width: 35%;	
+		cursor: pointer;	
+		margin-top: 20px;
+	}
 
 	
 }
