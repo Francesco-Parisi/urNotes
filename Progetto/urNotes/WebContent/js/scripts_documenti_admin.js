@@ -159,7 +159,7 @@ $(document).ready(function(){
 	});			
 	
 	
-	
+
 	$(document).on('click', '.modificaPrezzo', function(e){		
 		var codice = $(this).data("codice");
 

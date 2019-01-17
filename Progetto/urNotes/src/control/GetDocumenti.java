@@ -73,10 +73,10 @@ public class GetDocumenti extends HttpServlet {
 						contenuto += "<td>"+result.getString("descrizione")+"</td>";
 						contenuto += "<td>";
 						contenuto += new SystemInformation().truncateDecimal(result.getFloat("prezzo"),2);							
-						contenuto += "&nbsp;<i class='modificaPrezzoDocu fas fa-edit' style='cursor: pointer;' data-codice='"+result.getInt("codice")+"' title='Modifica Prezzo '></i>";
 						contenuto += "</td>";	
 						contenuto += "<td>"+result.getString("tipo")+"</td>";
 						contenuto += "<td>";
+						contenuto += "&nbsp;<i class='modificaPrezzo fas fa-edit' style='cursor: pointer;' data-codice='"+result.getInt("codice")+"' title='Modifica Prezzo '></i>";
 						contenuto += "	<i class='fotoDocumento fas fa-camera' style='cursor: pointer;' data-codice='"+result.getInt("codice")+"' title='Gestisci Foto'></i>";
 						contenuto += "	<i class='eliminaDocumento fas fa-times' style='cursor: pointer;' data-codice='"+result.getInt("codice")+"' title='Elimina Documento'></i>";
 						contenuto += "</td>";
