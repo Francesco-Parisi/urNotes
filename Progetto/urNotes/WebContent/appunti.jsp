@@ -7,7 +7,7 @@
 <%@ include file="/partials/head.jsp" %>				
 	<script src="<%=request.getContextPath()%>/js/scripts_materie.js"></script>	
 	<script src="<%=request.getContextPath()%>/js/scripts_appunti.js"></script>				
-	<title>urNotes | Catalogo</title>		
+	<title>urNotes | Documenti</title>		
 </head>
 <body onLoad="getMaterie()">
 	<%@ include file="/partials/header.jsp" %>		
