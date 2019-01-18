@@ -32,6 +32,8 @@
 <script type="text/javascript" src="engine1/wowslider.js"></script>
 <script type="text/javascript" src="engine1/script.js"></script>
 
+
+
 <section class="container-section">
 <div class="section-image">
 
@@ -80,11 +82,14 @@ Acquistali in modo semplice e veloce.
 <br>
 <a id="button" href="/urNotes/registrati.jsp">Registrati</a>
 </div>
-</div>       
+</div>     
+  
+  
 </section>		
 <% } %>
 
 
+<a href="#" class="scrollup"><i class="fa fa-chevron-up fa-2x" style="position:fixed; left:1293px; color:white;"></i></a>
 
 <%@ include file="/partials/footer.jsp" %>	
 

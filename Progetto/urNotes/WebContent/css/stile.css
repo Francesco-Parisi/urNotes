@@ -12,6 +12,23 @@ body{
 	 transition:all 0.3 ease-out;
 }
 
+/*Scrollup------------------*/
+
+.scrollup {
+    position: fixed;
+    bottom: 19px;
+    right: 20px;
+    background: #1ea4ca;
+    border-radius:5px;
+    width: 45px;
+    height: 35px;
+    display: block;
+    text-decoration: none;
+    box-shadow:1px 1px solid black;
+    border: 1px solid black;
+}
+
+	
 /*Header------------------*/
 
 .header{
@@ -127,12 +144,12 @@ ul li a:hover{
 }
 
 .clear:after{
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
+   visibility: hidden;
+   display: block;
+   font-size: 0;
+   content: " ";
+   clear: both;
+   height: 0;
 }
 
 
@@ -159,10 +176,23 @@ ul li a:hover{
 }
 
 .logout_button{
-	position:absolute;
+	border:none;
+	outline:none;
+	height:24px;
+	font-size:16px;
+	font-weight:bold;
+	border-radius:10px;	
+	color:#1ea4ca;
+    position:absolute;
 	top:34%;
-	left:42%;
-	padding:5px;
+	left:45%;
+	padding:2px;
+	text-decoration:none;
+	background-color:#f5f5f0;
+}
+
+.logout_button:hover{
+	box-shadow:1px 1px black;
 }
 
 /*Contatti---------------------------------------*/
@@ -267,11 +297,11 @@ ul li a:hover{
 	font-family:monospace;
 	font-size:15px;
 	font-weight:800;
-	width:80px;
+	max-width:100px;
 	color:white;
 	display:block;	
 	padding:13px;
-	margin-top:50px;
+	margin-top:80px;
 	text-decoration:none;
 	text-shadow:1px 1px black;
 	border-radius:10px;
@@ -310,7 +340,8 @@ ul li a:hover{
 	color:white;
 	padding:12px;
 	text-align:center;
-	font-size:24px;
+	font-size:22px;
+	font-weight:bold;
 	font-family:monospace;	
 	text-shadow:1px 1px black;
 	
@@ -333,7 +364,7 @@ ul li a:hover{
 /*Container-Appunti------------------------*/
 
 .container_appunti{
-	width:85%;
+	width:75%;
 	height:100%;
 	margin-top:4600px;
 	margin-left:25%;
@@ -370,6 +401,10 @@ tr{
 	font-weight:bold;
 }
 
+.adminBodyDataTable{
+	padding:100px;
+}
+
 #idAppunto{
 	background-color:#1ea4ca;
 	text-shadow:1px 1px black;
@@ -398,24 +433,38 @@ tr{
 	text-decoration:underline;
 }
 
+#idQuantita{
+	background-color:#1ea4ca;
+	text-shadow:1px 1px black;
+	margin-left:-970px;
+	padding:5px;
+	border:none;
+	color:white;
+	font-size:17px;
+	font-weight:bold;
+}
+
 input[type="button"]{
 	border:none;
 	outline:none;
 	height:30px;
-	background:#f5f5f0;
+	background:#1ea4ca;
 	font-size:16px;
+	font-weight:bold;
 	border-radius:10px;	
-	color:#1ea4ca;
+	color:white;
 	margin-left:25px;
 	text-shadow:1px 1px black;	
+	box-shadow:1px 1px black;
+	
 }
 
 input[type="button"]:hover{
 	cursor:pointer;
-	background:#f5f5f0;
-	color:#1ea4ca;
+	background:#1ea4ca;
+	color:white;
 	text-shadow:1px 1px black;
-	box-shadow:1px 1px black;
+	opacity:0.85;
 }
 
 #no_materie{
@@ -423,9 +472,109 @@ input[type="button"]:hover{
 }
 
 #prova{
-	margin-left:80%;
+	position:absolute;
+	top:50%;
+	left:43%;
 }
 
+
+.row_title{
+	font-size:20px;
+}
+
+#idAppuntoDett,#idDispensaDett{
+	border:none;
+	outline:none;
+	height:24px;
+	font-size:16px;
+	font-weight:bold;
+	border-radius:10px;	
+	color:#1ea4ca;
+	background-color:#f5f5f0;
+	text-decoration:none;
+	
+}
+#idAppuntoDett:hover, #idDispensaDett:hover{
+	opacity:0.85;
+}
+
+
+/*Come Funziona---------------------------*/
+
+.container_come-funziona{
+	width:75%;
+	height:170px;
+    background:#1ea4ca;
+    margin-top: -50px;
+    margin-left:12%;
+	opacity:0.9;
+	border-radius:10px;
+	box-shadow:1px 1px grey;
+}
+
+.container-thumbnail{
+	width:75%;
+	height:200px;
+    background:#1ea4ca;
+    margin-top: 70px;
+    margin-left:12%;
+	opacity:0.9;
+	border-radius:10px;
+	box-shadow:1px 1px grey;
+}
+
+.title-section_come-funziona{
+	color:white;
+	padding:12px;
+	text-align:center;
+	font-size:30px;
+	font-weight:bold;
+	font-family:monospace;	
+	text-shadow:1px 1px black;
+}
+
+.section-text_come-funziona{
+	color:white;
+	padding:20px;
+	margin-top:0px;
+	width:100%;
+	font-size:19px;
+	font-weight:bold;
+	font-family:monospace;	
+	text-shadow:1px 1px black;
+	color:white;
+}
+
+.section-text_image{
+	width:70%;
+	padding:20px;
+	margin-top:30px;
+	font-size:19px;
+	font-weight:800;
+	font-family:monospace;	
+	text-shadow:1px 1px black;
+	color:white;
+}
+
+
+.section-image_come-funziona{
+	color:white;
+	font-weight:bold;
+	font-size:16px;
+	width:50%;
+	padding:30px;
+	margin:50px 90px;
+	margin-top:150px;
+}
+
+.image-section_come-funziona{
+	height:100px;
+	width:200px;
+	float:right;
+	margin-top:-110px;
+	padding:0px;
+	margin-right:70px;
+}
 
 /*FAQ-------------------------------*/
 
@@ -759,7 +908,7 @@ p{
 	box-shadow:1px 1px black;
 }
 
-.loginbox-reg input[type="submitForm"],input[type="reset"]:hover{
+.loginbox-reg input[type="submit"]:hover,input[type="reset"]:hover{
 	cursor:pointer;
 	box-shadow:1px 1px black;	
 }
@@ -770,18 +919,19 @@ a{
 
 .loginbox a{
 	text-decoration:none;
-	font-size:14px;
+	font-size:16px;
 	font-weight:bold;
 	line-height:20px;
 	color:white;
 	text-shadow:1px 1px black;
-	margin-left:100px;
+	margin-left:95px;
 	
 }
 
 .loginbox-reg a{
 	text-decoration:none;
-	font-size:14px;
+	font-size:16px;
+	font-weight:bold;
 	line-height:20px;
 	color:white;
 	text-shadow:1px 1px black;
@@ -900,6 +1050,8 @@ a{
 	/*************************************************************************/
 	/*******************************  CONTENT ********************************/
 	/*************************************************************************/
+	
+	#container_appunti
 	
 	#container_appunti #content{
 		margin: 0;

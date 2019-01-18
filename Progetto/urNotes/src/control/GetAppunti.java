@@ -59,15 +59,27 @@ public class GetAppunti extends HttpServlet {
 				sql = ""
 						+ "SELECT d.codice, d.titolo, d.pagine, d.universita, d.nome_materia, d.prezzo "
 						+ "FROM documenti AS d "
-						+ "WHERE d.tipo LIKE 'Appunti' AND d.nome_materia LIKE '"+value+"';";
+						+ "WHERE d.tipo LIKE 'Appunti' AND d.flag=1 AND d.nome_materia LIKE '"+value+"';";
 				//System.out.println(sql);
 				ResultSet result = stmt.executeQuery(sql);	
 				
 				if(!result.wasNull()) {
+					contenuto += "<tr>";
+					contenuto += "<td class='row_title'>"+"Titolo"+"</td>";
+					contenuto += "<td class='row_title'>"+"Pagine"+"</td>";
+					contenuto += "<td class='row_title'>"+"Prezzo"+"</td>";
+					contenuto += "<td class='row_title'>"+""+"</td>";
+					contenuto += "</tr>";
 					while(result.next()) {
-						contenuto += "<tr class='peo'>";
+						contenuto += "<tr>";
+						contenuto += "<td>"+""+"</td>";
+						contenuto += "<td>"+""+"</td>";
+						contenuto += "<td>"+""+"</td>";
+						contenuto += "<td>"+""+"</td>";
+						contenuto += "</tr>";
+						contenuto += "<tr>";
 						contenuto += "<td>"+result.getString("titolo")+"</td>";		
-						contenuto += "<td>"+"Pagine: "+result.getInt("pagine")+"</td>";
+						contenuto += "<td>"+result.getInt("pagine")+"</td>";
 						contenuto += "<td>";
 						contenuto += new SystemInformation().truncateDecimal(result.getFloat("prezzo"),2);							
 						contenuto += "€"+"</td>";	

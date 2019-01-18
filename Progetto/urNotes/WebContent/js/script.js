@@ -21,6 +21,7 @@ $(document).ready(function(){
 
 	});
 });
+
 //checkEmail('prova@email.it');
 function checkEmail(email){
 	var $email = email;
@@ -33,6 +34,26 @@ function checkEmail(email){
 	}
 }
 
+
+//Scrollup
+$(document).ready(function () {
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 800) {
+            $('.scrollup').fadeIn();
+        } else {
+            $('.scrollup').fadeOut();
+        }
+    });
+
+    $('.scrollup').click(function () {
+        $("html, body").animate({
+            scrollTop: 0
+        }, 600);
+        return false;
+    });
+
+});
 
 function resizeContent(){
 	$("#content").css("min-height", ($(window).height() - $("#header").height() - $("#footer").height())+"px");	

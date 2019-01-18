@@ -11,13 +11,13 @@
 </head>
 <body onLoad="getMaterieDispense()">
 	<%@ include file="/partials/header.jsp" %>		
-	<div id="container_appunti_admin">	
+	<section class="container_appunti">	
 	<div id="content">
 		<div id="content-content">
 			<table id="materieTable">
 				<thead class="adminHeadDataTable">
 					<tr>
-						<th>Materie</th>
+						<th>Cerca Dispense di una materia specifica</th>
 					</tr>	
 				</thead>
 				<tbody id="bodyMaterie" class="adminBodyDataTable">
@@ -27,7 +27,7 @@
 			
 		</div>
 	</div>
-</div>	
+</section>	
 
 <%@ include file="/partials/footer.jsp" %>	
 

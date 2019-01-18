@@ -17,7 +17,7 @@
 			<table id="materieTable">
 				<thead class="adminHeadDataTable">
 					<tr>
-						<th>Materie</th>
+						<th>Cerca Appunti di una materia specifica</th>
 					</tr>	
 				</thead>
 				<tbody id="bodyMaterie" class="adminBodyDataTable">

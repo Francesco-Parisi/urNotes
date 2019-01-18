@@ -22,7 +22,7 @@
      <br><br>
 	 <input type="submit" id="submitForm" name="submitForm" class="campoForm submitForm" value="Accedi" />				
      <br><br>
-     <a href="index.jsp">Torna alla Home</a> 				      
+     <a  class="link" href="index.jsp">Torna alla Home</a> 				      
 </fieldset>
 </form>
  

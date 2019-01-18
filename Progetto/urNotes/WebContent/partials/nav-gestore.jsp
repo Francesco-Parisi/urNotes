@@ -1,3 +1,4 @@
+
 <ul class="header_menu animate">
 <li class="header_item"><a>Documenti</a>
 <ul>
@@ -21,3 +22,10 @@
 </ul>
 
 </ul>
+<div id="modalDettaglioOrdine">			
+			<div id="modalDettaglioOrdineNav">
+				<i class="fas fa-times chiudiModalDettaglioOrdine"></i>
+			</div>			
+			<div id="modalDettaglioOrdineBody">				
+			</div>
+		</div>

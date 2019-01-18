@@ -148,14 +148,14 @@ $(document).on('click', '#idDispensa', function(e){
 						else{	
 							continua *= 1;
 							if(msg.contenuto.length > 0){
-								$("th").text("Dispense");
+								$("th").toggle();
 								$("#bodyMaterie").html(msg.contenuto+"" +
 										"<br><tr><td>" +
 										"<input type='button' id='prova' onclick='location.reload()' value='Torna alle Materie' />" +
 										"</td></tr><br>");
 							}											
 							else{
-								$("th").text("Dispense");
+								$("th").toggle();
 								$("#bodyMaterie").html("<tr><td colspan='10'>Nessuna Dispensa Presente</td></tr>+" +
 										"<br><tr><td>" +
 										"<input type='button' onclick='location.reload()' value='Torna alle Materie' />" +

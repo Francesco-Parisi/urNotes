@@ -53,7 +53,7 @@ public class GetMaterie extends HttpServlet {
 				Statement stmt = connDB.getConn().createStatement();
 				String sql = "";
 				sql = ""
-						+ "SELECT m.nome, (SELECT COUNT(d.codice) FROM documenti AS d WHERE d.nome_materia=m.nome AND d.tipo='appunti') AS quantita "
+						+ "SELECT m.nome, (SELECT COUNT(d.codice) FROM documenti AS d WHERE d.nome_materia=m.nome AND d.flag=1 AND d.tipo='appunti') AS quantita "
 						+ "FROM materie  AS m "
 						+ "WHERE m.flag = 1 "
 						+ "ORDER BY m.nome ASC;";
@@ -62,9 +62,8 @@ public class GetMaterie extends HttpServlet {
 				ResultSet result = stmt.executeQuery(sql);				
 				if(!result.wasNull()) {
 					while(result.next()) {
-							contenuto += "<tr>";
-							contenuto += "<td><input type='submit' id='idAppunto' data-id='"+(i)+"' name='submitForm' class='campoForm submitForm' value='"+result.getString("nome")+"'></td>";
-							contenuto += "<td>"+result.getInt("quantita")+"</td>";
+							contenuto += "<tr id=container_documenti'>";
+							contenuto += "<td><input type='submit' id='idAppunto' data-id='"+(i)+"' name='submitForm' class='campoForm submitForm' value='"+result.getString("nome")+"'>"+"("+result.getInt("quantita")+")"+"</td>";
 							contenuto += "</tr>";
 							i++;
 					}
