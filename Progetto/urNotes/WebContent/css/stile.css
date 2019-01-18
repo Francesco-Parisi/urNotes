@@ -579,22 +579,34 @@ input[type="button"]:hover{
 /*FAQ-------------------------------*/
 
 .container_faq{
-	box-sizing:border-box;
-	color:white;
-	display:block;
-	margin-top:10px;
-	font-size:18px;
-	text-shadow:1px 1px black;
-	height:930px;
-	line-height:24px;
-	text-size-adjust:100%;
-	-webkit-font-smoothing:antialiased;  
+	width:75%;
+	height:310px;
+    background:#1ea4ca;
+    margin-top: 70px;
+    margin-left:12%;
+	opacity:0.9;
+	border-radius:10px;
+	box-shadow:1px 1px grey
 }
 
-.faq_menu{
-    position: relative;
-    display: inline;
+#faq_button,#faq_button1,#faq_button2,#faq_button3,#faq_button4,#faq_button5{
+	display:block;
+	margin-top:25px;
+	margin-left:13%;
+	font-size:18px;
+	box-shadow: 1px 1px #1ea4ca;
 }
+
+.faq_content,.faq_content1,.faq_content2,.faq_content3,.faq_content4,.faq_content5{
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+   	text-shadow: 1px 1px black;
+    display: none;
+    margin-left:13.6%;
+    width:800px;
+}
+
 
 .faq_item{
 	background-color: #1ea4ca;

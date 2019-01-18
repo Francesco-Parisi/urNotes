@@ -55,6 +55,44 @@ $(document).ready(function () {
 
 });
 
+//Show FAQ
+$(document).ready(function(){
+	  $("#faq_button").click(function(){
+	    $(".faq_content").toggle();
+	  });
+	});
+
+$(document).ready(function(){
+	  $("#faq_button1").click(function(){
+	    $(".faq_content1").toggle();
+	  });
+	});
+
+$(document).ready(function(){
+	  $("#faq_button2").click(function(){
+	    $(".faq_content2").toggle();
+	  });
+	});
+
+$(document).ready(function(){
+	  $("#faq_button3").click(function(){
+	    $(".faq_content3").toggle();
+	  });
+	});
+
+$(document).ready(function(){
+	  $("#faq_button4").click(function(){
+	    $(".faq_content4").toggle();
+	  });
+	});
+
+$(document).ready(function(){
+	  $("#faq_button5").click(function(){
+	    $(".faq_content5").toggle();
+	  });
+	});
+
+
 function resizeContent(){
 	$("#content").css("min-height", ($(window).height() - $("#header").height() - $("#footer").height())+"px");	
 }
