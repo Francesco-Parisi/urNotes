@@ -1030,6 +1030,22 @@ a{
 
 
 /*Responsive*/
+@media only screen and (min-width: 1024px){
+	#loader{
+		display: none;
+		height: 100%;
+		width: 100%;
+		left: 0;
+		top: 0;
+		overflow: hidden;
+		position: fixed;
+		z-index: 99999;
+		background-color: #e5eff1;
+		opacity: 0.9;	
+		text-align: center;
+		padding-top: 15%;		
+	}	
+}
 
 @media (max-width: 998px){
 	

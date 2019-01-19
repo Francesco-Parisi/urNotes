@@ -15,14 +15,14 @@ import model.SystemInformation;
 /**
  * Servlet implementation class GetDocumenti
  */
-@WebServlet("/GetDocumenti")
-public class GetDocumenti extends HttpServlet {
+@WebServlet("/GetMaterieAdmin")
+public class GetMaterieAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GetDocumenti() {
+    public GetMaterieAdmin() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -58,7 +58,7 @@ public class GetDocumenti extends HttpServlet {
 				String sql = "";
 				sql = ""
 						+ "SELECT * "
-						+ "FROM documenti "
+						+ "FROM materie "
 						+ "WHERE flag = 1;";
 				//System.out.println(sql);
 				ResultSet result = stmt.executeQuery(sql);	
@@ -66,19 +66,9 @@ public class GetDocumenti extends HttpServlet {
 				if(!result.wasNull()) {
 					while(result.next()) {
 						contenuto += "<tr>";
-						contenuto += "<td>"+result.getString("titolo")+"</td>";		
-						contenuto += "<td>"+result.getInt("pagine")+"</td>";
-						contenuto += "<td>"+result.getString("universita")+"</td>";
-						contenuto += "<td>"+result.getString("nome_materia")+"</td>";
-						contenuto += "<td>"+result.getString("descrizione")+"</td>";
+						contenuto += "<td>"+result.getString("nome")+"</td>";	
 						contenuto += "<td>";
-						contenuto += new SystemInformation().truncateDecimal(result.getFloat("prezzo"),2);							
-						contenuto += "€"+"</td>";	
-						contenuto += "<td>"+result.getString("tipo")+"</td>";
-						contenuto += "<td>";
-						contenuto += "&nbsp;<i class='modificaPrezzo fas fa-edit' style='cursor: pointer;' data-codice='"+result.getInt("codice")+"' title='Modifica Prezzo '></i>";
-						contenuto += "	<i class='fotoDocumento fas fa-camera' style='cursor: pointer;' data-codice='"+result.getInt("codice")+"' title='Gestisci Foto'></i>";
-						contenuto += "	<i class='eliminaDocumento fas fa-times' style='cursor: pointer;' data-codice='"+result.getInt("codice")+"' title='Elimina Documento'></i>";
+						contenuto += "	<i class='eliminaMateria fas fa-times' style='cursor: pointer;' data-nome='"+result.getString("nome")+"' title='Elimina Materia'></i>";
 						contenuto += "</td>";
 						contenuto += "</tr>";
 					}		
@@ -95,6 +85,7 @@ public class GetDocumenti extends HttpServlet {
 				connDB.getConn().close();
 			}
 			catch(Exception e) {
+				System.out.println("getMaterieAdmin");
 				errore = "Errore esecuzione Query.";
 				risultato = 0;
 			}
