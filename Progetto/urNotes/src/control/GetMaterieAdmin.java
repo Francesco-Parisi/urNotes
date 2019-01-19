@@ -57,18 +57,23 @@ public class GetMaterieAdmin extends HttpServlet {
 				Statement stmt = connDB.getConn().createStatement();
 				String sql = "";
 				sql = ""
-						+ "SELECT * "
-						+ "FROM materie "
-						+ "WHERE flag = 1;";
+						+ "SELECT m.nome,(SELECT COUNT(d.codice) FROM documenti AS d WHERE d.nome_materia=m.nome AND d.flag=1 AND d.tipo='appunti') AS quantitaAppunti, "
+						+ "(SELECT COUNT(d.codice) FROM documenti AS d WHERE d.nome_materia=m.nome AND d.flag=1 AND d.tipo='dispense') AS quantitaDispense "
+						+ "FROM materie AS m "
+						+ "WHERE m.flag = 1 "
+						+ "ORDER BY m.nome ASC;";
+				
 				//System.out.println(sql);
 				ResultSet result = stmt.executeQuery(sql);	
 				//prezzo,tipo,id_recensione,flag
 				if(!result.wasNull()) {
 					while(result.next()) {
 						contenuto += "<tr>";
-						contenuto += "<td>"+result.getString("nome")+"</td>";	
+						contenuto += "<td class='row_title'>"+result.getString("nome")+"</td>";	
+						contenuto += "<td>"+result.getInt("quantitaAppunti")+"</td>";	
+						contenuto += "<td>"+result.getString("quantitaDispense")+"</td>";	
 						contenuto += "<td>";
-						contenuto += "	<i class='eliminaMateria fas fa-times' style='cursor: pointer;' data-nome='"+result.getString("nome")+"' title='Elimina Materia'></i>";
+						contenuto += "	<i class='eliminaMateria fas fa-times fa-2x' style='cursor: pointer;' data-nome='"+result.getString("nome")+"' title='Elimina Materia'></i>";
 						contenuto += "</td>";
 						contenuto += "</tr>";
 					}		

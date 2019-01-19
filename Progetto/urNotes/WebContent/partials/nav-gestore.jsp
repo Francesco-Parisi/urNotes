@@ -1,6 +1,6 @@
 
 <ul class="header_menu animate">
-<li class="header_item"><a>Documenti</a>
+<li class="header_item"><a>Gestione</a>
 <ul>
 <li class="drop_item"><a href="<%=request.getContextPath()%>/_GestoreArea/materieGestore.jsp">Materie</a></li>
 <li class="drop_item"><a href="<%=request.getContextPath()%>/_GestoreArea/documentiGestore.jsp">Documenti</a></li>

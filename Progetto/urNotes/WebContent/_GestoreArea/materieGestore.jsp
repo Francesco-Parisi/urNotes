@@ -15,7 +15,7 @@
 		%>
 		<%@ include file="/partials/head.jsp" %>
 		<script src="<%=request.getContextPath()%>/js/scripts_materie_admin.js"></script>					
-		<title>urNotes | Documenti</title>
+		<title>urNotes | Materie</title>
 </head>
 
 <body onLoad="getMaterieAdmin()">
@@ -28,6 +28,8 @@
 					<thead class="adminHeadDataTable">
 						<tr>
 							<th>Nome</th>
+							<th>Quantità Appunti</th>
+							<th>Quantità Dispense</th>
 							<th>Azioni</th>
 							
 						</tr>	
