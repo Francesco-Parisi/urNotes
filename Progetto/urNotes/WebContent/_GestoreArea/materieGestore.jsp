@@ -24,6 +24,7 @@
 	<div id="container_appunti_admin">	
 		<div id="content">
 			<div id="content-content">
+			<p class="adminTitoloPagina">Materie</p> 
 				<table id="prodottiTable">
 					<thead class="adminHeadDataTable">
 						<tr>

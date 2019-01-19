@@ -89,7 +89,7 @@ Acquistali in modo semplice e veloce.
 <% } %>
 
 
-<a href="#" class="scrollup"><i class="fa fa-chevron-up fa-2x" style="position:fixed; left:1293px; color:white;"></i></a>
+<a href="#" class="scrollup"><i class="fa fa-chevron-up fa-2x" style="position:fixed; left:1292px; color:white;"></i></a>
 
 <%@ include file="/partials/footer.jsp" %>	
 

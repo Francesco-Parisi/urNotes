@@ -65,7 +65,7 @@ public class GetDocumenti extends HttpServlet {
 				//prezzo,tipo,id_recensione,flag
 				if(!result.wasNull()) {
 					while(result.next()) {
-						contenuto += "<tr>";
+						contenuto += "<tr class='documenti'>";
 						contenuto += "<td>"+result.getString("titolo")+"</td>";		
 						contenuto += "<td>"+result.getInt("pagine")+"</td>";
 						contenuto += "<td>"+result.getString("universita")+"</td>";

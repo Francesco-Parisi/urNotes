@@ -84,7 +84,7 @@ public class GetDispense extends HttpServlet {
 						contenuto += "<td>";
 						contenuto += new SystemInformation().truncateDecimal(result.getFloat("prezzo"),2);							
 						contenuto += "€"+"</td>";	
-						contenuto += "<td><input type='submit' id='idDispensaDett' data-id='"+result.getString("codice")+"' name='submitForm' class='campoForm submitForm' value='Dettaglio'></td>";
+						contenuto += "<td><button type='submit' id='idDispensaDett' data-id='"+result.getString("codice")+"' name='submitForm'><i class='fas fa-search' style='cursor: pointer;' title='Dettagli Dispensa'></i></button</td>";
 						contenuto += "</tr>";
 					}		
 				}				 

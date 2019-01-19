@@ -68,12 +68,12 @@ public class GetMaterieAdmin extends HttpServlet {
 				//prezzo,tipo,id_recensione,flag
 				if(!result.wasNull()) {
 					while(result.next()) {
-						contenuto += "<tr>";
-						contenuto += "<td class='row_title'>"+result.getString("nome")+"</td>";	
+						contenuto += "<tr  class='materie'>";
+						contenuto += "<td>"+result.getString("nome")+"</td>";	
 						contenuto += "<td>"+result.getInt("quantitaAppunti")+"</td>";	
 						contenuto += "<td>"+result.getString("quantitaDispense")+"</td>";	
 						contenuto += "<td>";
-						contenuto += "	<i class='eliminaMateria fas fa-times fa-2x' style='cursor: pointer;' data-nome='"+result.getString("nome")+"' title='Elimina Materia'></i>";
+						contenuto += "	<i class='eliminaMateria fas fa-times' style='cursor: pointer;' data-nome='"+result.getString("nome")+"' title='Elimina Materia'></i>";
 						contenuto += "</td>";
 						contenuto += "</tr>";
 					}		

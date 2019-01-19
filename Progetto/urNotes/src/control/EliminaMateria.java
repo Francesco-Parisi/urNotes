@@ -1,7 +1,9 @@
 package control;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 import javax.servlet.ServletException;
@@ -10,6 +12,7 @@ import javax.servlet.http.*;
 import org.json.simple.JSONObject;
 
 import model.ConnessioneDB;
+import model.SystemInformation;
 /**
  * Servlet implementation class EliminaMateria
  */
@@ -41,7 +44,7 @@ public class EliminaMateria extends HttpServlet {
 		response.setContentType("text/html");
 		
 		String nome = request.getParameter("nome");
-        
+        System.out.println(nome);
         Integer risultato = 0;
         String errore = "";
         String contenuto = "";
@@ -49,17 +52,28 @@ public class EliminaMateria extends HttpServlet {
         ConnessioneDB connDB = new ConnessioneDB();
 		if(connDB.getConn() != null) {
 			try {
-				Statement stmt = connDB.getConn().createStatement();
+				Integer continua = 1;
+				
+				Statement stmt0 = connDB.getConn().createStatement();
 				String sql = "";
-				sql = "UPDATE materie SET flag = 0 WHERE nome = "+nome+";";
-				if(stmt.executeUpdate(sql) == 1) {
-					contenuto = "Materia Eliminata con Successo";
-					risultato = 1;			 		
+				sql = ""
+						+ "SELECT m.nome "
+						+ "FROM materie AS m "
+						+ "WHERE m.flag = 1 AND m.nome = "+nome+";";												
+				
+				if(continua == 1) {
+					//Cancello la materia
+					sql = "UPDATE materie SET flag = 0 WHERE nome = "+nome+";";
+					if(stmt0.executeUpdate(sql) == 1) {					
+						contenuto = "Materia Eliminata con Successo";
+						risultato = 1;			
+					}
+					else {
+						errore = "Errore Cancellazione Materia.";
+						risultato = 0;					
+					}
 				}
-				else {
-					errore = "Errore Cancellazione Materia.";
-					risultato = 0;					
-				}
+				
 				
 				if(risultato == 0) {
 					connDB.getConn().rollback();
@@ -70,7 +84,7 @@ public class EliminaMateria extends HttpServlet {
 				connDB.getConn().close();
 			}
 			catch(Exception e) {
-				System.out.println("errore");
+				System.out.println("errore in EliminaMateria");
 				errore = "Errore esecuzione Query.";
 				risultato = 0;
 			}
@@ -89,4 +103,3 @@ public class EliminaMateria extends HttpServlet {
 	}
 
 }
-

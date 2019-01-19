@@ -17,7 +17,7 @@
 		%>
 		<%@ include file="/partials/head.jsp" %>		
 		<script src="<%=request.getContextPath()%>/js/scripts_prodotti_immagini.js"></script>					
-		<title>Documenti immagini</title>		
+		<title>urNotes | Immagini</title>		
 	</head>
 	<body onLoad="getImmagini()">
 		<%@ include file="/partials/header.jsp" %>	
@@ -42,7 +42,7 @@
 					<button id="buttonAggiungiImmagine" class="adminButtonAggiungi"><i class="fas fa-plus"></i></button>
 				</div>
 				
-				<div id="formAggiungiImmagine" class="adminFormAggiungi" style="display: none;">
+				<div id="formAggiungiImmagine" class="adminFormAggiungi">
 					
 				</div>
 				<input type="hidden" id="idDocumentoImmagine" value="<%=codice %>" />
