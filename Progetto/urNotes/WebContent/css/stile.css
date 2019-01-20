@@ -1039,20 +1039,20 @@ a{
 
 /*Responsive*/
 @media only screen and (min-width: 1024px){
-	#loader{
-		display: none;
-		height: 100%;
-		width: 100%;
-		left: 0;
-		top: 0;
-		overflow: hidden;
-		position: fixed;
-		z-index: 99999;
-		background-color: #e5eff1;
-		opacity: 0.9;	
-		text-align: center;
-		padding-top: 15%;		
-	}	
+#loader{
+	display: none;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	position: fixed;
+	z-index: 99999;
+	background-color: #e5eff1;
+	opacity: 0.9;	
+	text-align: center;
+	padding-top: 15%;		
+ }	
 }
 
 
@@ -1085,8 +1085,6 @@ a{
 	font-size:30px;
 	text-shadow:1px 1px black;
 }
-
-
 
 #content #content-content .adminAggiungi{
 	text-align: center;	
@@ -1147,79 +1145,158 @@ a{
 	/************************************************************/	
 
 #modalDettaglioOrdine{
-		display: none;
-		height: 50px;
-		width: 40%;
-		left: 30%;
-		top: 30%;
-		overflow: hidden;
-		position: fixed;
-		z-index: 99999;
-		background-color: #f5f5f0;
-		opacity: 1;
-		text-align: center;
-		padding-top: 15%;
-		border-radius: 20px;
-		border: solid 4px #1abbea;		
+	display: none;
+	height: 50px;
+	width: 40%;
+	left: 30%;
+	top: 30%;
+	overflow: hidden;
+	position: fixed;
+	z-index: 99999;
+	background-color: #f5f5f0;
+	opacity: 1;
+	text-align: center;
+	padding-top: 15%;
+	border-radius: 20px;
+	border: solid 4px #1abbea;		
 }	
-	#modalDettaglioOrdine #modalDettaglioOrdineNav{
-		position: absolute;
-		left: 97%;
-		width: 1%;
-		top: 3%;
-		cursor: pointer;
+	
+#modalDettaglioOrdine #modalDettaglioOrdineNav{
+	position: absolute;
+	left: 97%;
+	width: 1%;
+	top: 3%;
+	cursor: pointer;
 }	
-	#modalDettaglioOrdine #modalDettaglioOrdineBody{
-		position: absolute;
-		width: 100%;
-		top: 45%;
-		overflow-x: auto;
-		height: 90%;			
+
+#modalDettaglioOrdine #modalDettaglioOrdineBody{
+	position: absolute;
+	width: 100%;
+	top: 45%;
+	overflow-x: auto;
+	height: 90%;			
 }		
 
 #content #content-content .adminFormAggiungi .dropzoneImmagineDocumento{
-		min-height: 100px;
-		background-color: #eee;
-		margin-bottom: 20px;
-		cursor: pointer;
-		position: relative;
-		padding: 15px;
-    	border: 4px solid #1abbea;
-    	border-radius:10px;
-		
-	}	
-	#content #content-content .adminFormAggiungi .dropzoneImmagineDocumento:after {
-    	content: 'Sposta qui l\'immagine da caricare';
-    	position: absolute;
-    	top: 40%;
-    	left: 42%;
-    	width: 20%;
-    	height: 5%;
-	}		
-	#content #content-content .adminFormAggiungi .dz-started.dropzoneImmagineDocumento:after {
-		display: none;
-	}	
-	#content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-error-mark, #content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-error-message, #content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-success-mark{
-		display: none;		
-	}	
-	#content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-remove{
-		background-color: #DC483E;
-		border: solid 1px #DC483E;
-		height: 30px;		
-		color: #FFF;
-		text-transform: uppercase;		
-		width: 7%;	
-		cursor: pointer;
-		text-decoration: none;
-		font-size: 12px;
-		padding: 5px;		
-	}		
-	#content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-image img{
-		border-radius: 10px;
-	}			
+	min-height: 100px;
+	background-color: #eee;
+	margin-bottom: 20px;
+	cursor: pointer;
+	position: relative;
+	padding: 15px;
+    border: 4px solid #1abbea;
+    border-radius:10px;		
+}	
+
+#content #content-content .adminFormAggiungi .dropzoneImmagineDocumento:after {
+   	content: 'Sposta qui l\'immagine da caricare';
+   	position: absolute;
+   	top: 40%;
+   	left: 42%;
+   	width: 20%;
+   	height: 5%;
+}		
+
+#content #content-content .adminFormAggiungi .dz-started.dropzoneImmagineDocumento:after {
+	display: none;
+}	
+
+#content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-error-mark, #content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-error-message, #content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-success-mark{
+	display: none;		
+}	
+
+#content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-remove{
+	background-color: #DC483E;
+	border: solid 1px #DC483E;
+	height: 30px;		
+	color: #FFF;
+	text-transform: uppercase;		
+	width: 7%;	
+	cursor: pointer;
+	text-decoration: none;
+	font-size: 12px;
+	padding: 5px;		
+}		
+	
+#content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-image img{
+	border-radius: 10px;
+}			
 	
 	
 
+    /************************************************************/
+	/****************PAGINA IMPOSTAZIONI ADMIN  *****************/
+	/************************************************************/	
+	
+.admin_settings{
+	font-size:20px;
+	font-weight:bold;	
+	color:white;
+	text-align:center;
+    float: none;		
+	margin: 40px auto;	
+	width:50%;
+	text-shadow:1px 1px black;
+	background-color:#1ea4ca;
+	padding:10px;
+	border-radius:10px;
+}
+	
+#content #content-content #formImpostazioniAdmin{
+	border-radius: 15px;	
+	padding: 10px;	
+	width: 50%;		
+	float: none;		
+	margin: 60px auto;	
+    background-color:#1ea4ca;
+}	
+	
+#content #content-content #formImpostazioniAdmin .campoForm{
+	width: 100%;
+}		
+
+#content #content-content #formImpostazioniAdmin legend{
+	color:white;
+    font-size:20px;
+	text-shadow:1px 1px black;
+	font-weight:bold;
+	padding:5px;
+}
+
+#content #content-content #formImpostazioniAdmin .campoForm[readonly]{
+	color:white;
+	font-size:18px;
+	text-shadow:1px 1px black;
+	font-weight:bold;
+	border: none;
+	border-radius:10px;
+    background-color:#1ea4ca;	
+}		
+
+#content #content-content #formImpostazioniAdmin .submitForm{		
+	background-color: #1abbea;
+	text-shadow: 1px 1px black;
+	text-align:center;
+	height: 30px;		
+	color: #FFF;
+	margin-left: 40%;	
+	margin-top: 1%;
+	width: 20%;	
+	border-radius: 20px;		
+	cursor: pointer;				
+}		
+
+#content #content-content .userButtonRegistraAdmin, #content #content-content .userButtonDisattivaAdmin{	
+	background-color: #276274;
+	border: solid 1px #276274;
+	height: 40px;		
+	color: #FFF;
+	text-transform: uppercase;				
+	width: 20%;	
+	cursor: pointer;
+	margin-top: 10px;
+}
+	
 	
 
 	

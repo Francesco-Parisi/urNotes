@@ -73,7 +73,7 @@
 												if(!result2.wasNull()) {
 													while(result2.next()) { 
 														filename = new SystemInformation().getPathImmaginiDocumentoHTML()+codice+"/"+result2.getString("filename");
-														immagini += "<img class='showImmagineProdotto' src='"+filename+"' alt='"+filename+"' />";
+														immagini += "<img class='showImmagineDocumento' src='"+filename+"' alt='"+filename+"' />";
 													}
 												}										
 											
