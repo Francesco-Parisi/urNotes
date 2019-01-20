@@ -59,11 +59,11 @@ public class EliminaMateria extends HttpServlet {
 				sql = ""
 						+ "SELECT m.nome "
 						+ "FROM materie AS m "
-						+ "WHERE m.flag = 1 AND m.nome = "+nome+";";												
+						+ "WHERE m.flag = 1 AND m.nome LIKE '"+nome+"';";												
 				
 				if(continua == 1) {
 					//Cancello la materia
-					sql = "UPDATE materie SET flag = 0 WHERE nome = "+nome+";";
+					sql = "UPDATE materie SET flag = 0 WHERE nome LIKE '"+nome+"';";
 					if(stmt0.executeUpdate(sql) == 1) {					
 						contenuto = "Materia Eliminata con Successo";
 						risultato = 1;			
