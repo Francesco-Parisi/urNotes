@@ -492,15 +492,6 @@ input[type="button"]:hover{
 	
 }
 
-#container_appunti_admin #content #content-content .adminTitoloPagina{
-	text-align:center;
-	color:white;
-	font-weight:bold;
-	font-size:30px;
-	text-shadow:1px 1px black;
-}
-
-
 #idAppuntoDett,#idDispensaDett{
 	border:none;
 	outline:none;
@@ -980,8 +971,7 @@ a{
 ::placeholder {
 	font-size:14px;
 	opacity:0.7;
-
-	}
+}
 
 
 /*Footer-----------------------------------*/
@@ -1065,30 +1055,6 @@ a{
 	}	
 }
 
-@media (max-width: 998px){
-	
-}
-
-@media (max-width: 767px){
-
-.header_icon{
-	display:block;
-}
-
-.header_menu{
-	width:100%;
-	height:0px;
-	overflow:hidden;
-}
-
-.header_item_dx{
-	display:none;
-}
-
-.is-open{
-	height:160px; 
-	overflow: auto;
-}
 
 
 
@@ -1097,362 +1063,146 @@ a{
 	/*******************************  CONTENT ********************************/
 	/*************************************************************************/
 	
-	#container_appunti
+
+
+#container_appunti_admin{
+    width:95%;
+	height:100%;
+	margin-top:4600px;
+	margin-left:25%;
+	padding:0;
+	margin:100px auto;
+	background-color:#1ea4ca;
+	opacity:0.9;
+	border-radius:10px;
+	box-shadow:1px 1px grey;
+}		
 	
-	#container_appunti #content{
-		margin: 0;
-		padding: 0;
-		width: 95%;
-		min-height: 600px;
-		position: absolute;
-		
-		max-width: 1300px;
-		float: none;
-		margin: 0 auto;		
-		
-		padding-left: 2.5%;
-		padding-right: 2.5%;				
-	}
+#container_appunti_admin #content #content-content .adminTitoloPagina{
+	text-align:center;
+	color:white;
+	font-weight:bold;
+	font-size:30px;
+	text-shadow:1px 1px black;
+}
+
+
+
+#content #content-content .adminAggiungi{
+	text-align: center;	
+	margin-top: 10px;
+}
 	
-	#container_appunti #content #content-content{
-		max-width: 1300px;
-		float: none;
-		margin: 0 auto;		
-		margin-bottom: 20px;
-	}
+#content #content-content .adminButtonAggiungi{
+	background-color: #1abbea;
+	border: 0;
+	border-radius: 20px;	
+	width: 80px;		
+	height:35px;		
+	color: #FFF;	
+	font-size: 25px;
+	cursor: pointer;
+	margin-top: 40px;
+}
+
+#content #content-content .adminButtonAggiungi:hover{
+	box-shadow:1px 1px black;
+}
+
+#content #content-content .adminButtonAggiungi i.fa-plus{
+	font-size: 25px;
+	cursor: pointer;
+}
 	
-	#container_appunti_admin #content{
-		margin: 0;
-		padding: 0;
-		width: 95%;
-		min-height: 600px;
-		position: absolute;
-		
-		max-width: 1300px;
-		float: none;
-		margin: 0 auto;		
-		
-		padding-left: 2.5%;
-		padding-right: 2.5%;				
-	}
-	
-	#container_appunti_admin #content #content-content{
-		max-width: 1300px;
-		float: none;
-		margin: 0 auto;		
-		margin-bottom: 20px;
-	}
-	
-	
-	#container_appunti #content .left{
-		display: inline-block;
-		float:left;
-		width: 50%;
-		height: 100%;
-		padding-top: 10px;
-	}
-	#container_appunti #content .left .product{
-		width: 30%;
-		display: inline-block;	
-		margin-bottom: 3.3%;
-		border: solid 1px #FFF;
-		cursor: pointer;
-	}
-	
-	#container_appunti #content .left .product:hover{
-		border: solid 1px #777;
-		border-radius: 5px;
-	}
-	#container_appunti #content .left .product .product-image{
-		height: 150px;		
-		padding: 10px;
-		background-color: #eee; 
-		border-radius: 5px;
-	}
-	#container_appunti #content .left .product .product-image img{
-		width: 100%;
-		height: auto;
-		max-height: 150px;
-		vertical-align: top; 	
-	}
-	#container_appunti #content .left .product .product-title{
-		height: 25px;
-		text-align: center;
-		padding-top: 5px;
-	}
-	 #container_appunti #content .left .product:hover .product-title{
-		background-color: #276274;	
-		color: #FFF;	
-	}
-	#container_appunti #content .left .product .product-price{	
-		height: 25px;
-		text-align: center;
-		font-weight: bold;	
-		color: #276274;
-	}
-	#container_appunti #content .left .product .product-button{	
-		visibility: hidden;
-		height: 40px;
-		text-align: center;
-		background-color: #ffcc00;
-		border-bottom-left-radius: 5px;
-		border-bottom-right-radius: 5px;	
-	}
-	#container_appunti #content .left .product:hover .product-button{
-		visibility: visible;	
-	}
-	#container_appunti #content .left .product .product-button a{
-		line-height: 36px;
-		color: #fff;
-		text-decoration: none;	
-	}
-	#container_appunti #content .left .product:hover .product-button a{
-		color: #276274;
-	}
-	
-	#container_appunti #content .right{
-		display: inline-block;
-		float:left;
-		width: 50%;
-		height: 100%;
-		padding-top: 10px;
-	}
-	#container_appunti #content .right .top-picture{
-		display: inline-block;
-		width: 100%;	
-	}
-	#container_appunti #content .right .top-picture img{
-		width: 100%;
-		height: auto;
-		border-radius: 15px;
-	}
-	#container_appunti #content .right .bottom-content{
-		display: inline-block;
-		height: 50%;
-		width: 100%;
-		text-align: center;
-	}
-	#container_appunti #content .right .bottom-content h2{	
-		color: #ffcc00;
-		display: inline-block;
-	}
-	#container_appunti #content .right .bottom-content h2:first-child{
-		color: #276274;
-	}
-	#container_appunti #content .right .bottom-content p{
-		margin-top: -10px;
-	}
-	
-		/************************************************************/
-	/***********************PAGINE ADMIN************************/
+#content #content-content .adminFormAggiungi{
+	border: solid 1px #1abbea;
+	border-radius: 5px;
+	margin-top: 10px;
+	padding: 10px;
+}
+
+#content #content-content .adminFormAggiungi .adminFormField{
+	border: 0;
+	height: 30px;	
+	border: solid 1px #276274;
+	border-radius: 10px;		
+	margin-left: 10px;	
+}
+
+#content #content-content .adminFormAggiungi .adminButtonConfermaAggiungi{	
+	background-color: #1abbea;
+	text-shadow: 1px 1px black;
+	text-align:center;
+	height: 30px;		
+	color: #FFF;
+	margin-left: 5px;	
+	margin-top: 1%;
+	width: 7%;	
+	border-radius: 20px;		
+	cursor: pointer;	
+}
+
+	/************************************************************/
+	/*******************   PAGINA ORDINI USER    ****************/
 	/************************************************************/	
 
-	
-
-	
-	
-	#container_appunti_admin #content #content-content .dataTables_wrapper{
-		border: solid 1px #ffcc00;
-		border-radius: 5px;
-		padding: 10px;
-		color: #276274;
-		overflow-x: auto;
-	}
-	
-	#container_appunti_admin #content #content-content .dataTables_wrapper .dataTables_length, #container_appunti_admin #content #content-content .dataTables_wrapper .dataTables_filter, #container_appunti_admin #content #content-content .dataTables_wrapper .dataTables_info, #container_appunti_admin #content #content-content .dataTables_wrapper .dataTables_paginate{
-		color: #000;
-	}
-	
-	#container_appunti_admin #content #content-content .dataTables_wrapper .dataTables_paginate .paginate_button{
-		color: #000;			
-	}
-	 
-	#container_appunti_admin #content #content-content .dataTables_wrapper .dataTables_paginate .paginate_button:hover{
-		background-color: none;			
-	}
-	
-	#container_appunti_admin #content #content-content #materieTable .adminBodyDataTable{
-	
-	}
-	
-	#container_appunti_admin #content #content-content #materieTable .adminBodyDataTable tr{
-	   margin-bottom:500px;
-	   
-	}
-	
-	#container_appunti_admin #content #content-content #materieTable .adminBodyDataTable td{
-	   width: 100%;
-	}
-	
-	#container_appunti_admin #content #content-content .adminBodyDataTable tr td, #container_appunti_admin #content #content-content .adminHeadDataTable tr td, #container_appunti_admin #content #content-content .userBodyDataTable tr td, #container_appunti_admin #content #content-content .userHeadDataTable tr td{
-		width: 100px;
+#modalDettaglioOrdine{
+		display: none;
+		height: 50px;
+		width: 40%;
+		left: 30%;
+		top: 30%;
+		overflow: hidden;
+		position: fixed;
+		z-index: 99999;
+		background-color: #f5f5f0;
+		opacity: 1;
 		text-align: center;
-	}
-	
-	#container_appunti_admin #content #content-content .adminBodyDataTable tr td img, #container_appunti_admin #content #content-content .userBodyDataTable tr td img{
-		max-width: 60px;
+		padding-top: 15%;
+		border-radius: 20px;
+		border: solid 4px #1abbea;		
+}	
+	#modalDettaglioOrdine #modalDettaglioOrdineNav{
+		position: absolute;
+		left: 97%;
+		width: 1%;
+		top: 3%;
 		cursor: pointer;
-	}
-	
-	#container_appunti_admin #content #content-content .adminBodyDataTable tr td i.elimina{
-		color: #DC483E;
-	}
-
-	#container_appunti_admin #content #content-content .adminBodyDataTable tr td i.foto{
-		color: #000;
-	}
-
-	#container_appunti_admin #content #content-content .adminBodyDataTable tr td i.modificaQuantita{
-		color: #000;
-	}
-
-	#container_appunti_admin #content #content-content .adminBodyDataTable tr td i.modificaPrezzo{
-		color: #000;
-	}
-
-	#container_appunti_admin #content #content-content .adminBodyDataTable tr td i.visualizza.nonLetto{
-		color: #DC483E;
-	}
-
-	#container_appunti_admin #content #content-content .adminBodyDataTable tr td i.visualizza.letto{
-		color: #00cc00;
-	}
-		
-	#container_appunti_admin #content #content-content .adminAggiungi{
-		text-align: center;	
-		margin-top: 10px;
-	}
-	
-	#container_appunti_admin #content #content-content .adminButtonAggiungi{
-		background-color: #276274;
-		border: 0;
-		border-radius: 20px;	
-		width: 80px;		
-		height: 40px;		
-		color: #FFF;
-		font-size: 25px;
-		cursor: pointer;
-		margin-top: 40px;
-	}
-	
-	#container_appunti_admin #content #content-content .adminButtonAggiungi i.fa-plus{
-		font-size: 125px;
-		cursor: pointer;
-	}
-	
-	#container_appunti_admin #content #content-content .adminFormAggiungi{
-		border: solid 1px #ffcc00;
-		border-radius: 5px;
-		margin-top: 10px;
-		padding: 10px;
-	}
-	
-	#container_appunti_admin #content #content-content .adminFormAggiungi .adminFormField{
-		border: 0;
-		height: 30px;	
-		border: solid 1px #276274;
-		margin-left: 1%;	
-	}
-	
-	#container_appunti_admin #content #content-content .adminFormAggiungi .adminButtonConfermaAggiungi{	
-		background-color: #276274;
-		border: solid 1px #276274;
-		height: 30px;		
-		color: #FFF;
-		text-transform: uppercase;		
-		margin-left: 1%;
-		width: 7%;	
-		cursor: pointer;	
-	}
-	
-	#container_appunti_admin #content #content-content .adminFormAggiungi #nomeAliquota, #container_appunti_admin #content #content-content .adminFormAggiungi #valoreAliquota{
-		width: 44%;
-	}
-	
-	#container_appunti_admin #content #content-content .adminFormAggiungi #nomeCategoria{
-		width: 90%;
-	}
-
-	#container_appunti_admin #content #content-content .adminFormAggiungi #nomeUnita, #container_appunti #content #content-content .adminFormAggiungi #siglaUnita{
-		width: 44%;
-	}
-
-	#container_appunti_admin #content #content-content .adminFormAggiungi #daSconto, #container_appunti #content #content-content .adminFormAggiungi #aSconto{
-		width: 12%;
-	}
-	
-	#container_appunti_admin #content #content-content .adminFormAggiungi #prezzoSconto{
-		width: 7%;
-	}	
-	
-	#container_appunti_admin #content #content-content .adminFormAggiungi #prodottoSconto{
-		width: 56%;
-	}		
-	
-	#container_appunti_admin #content #content-content .adminFormAggiungi #categoriaProdotto{
-		width: 23%;
-		margin-bottom: 20px;
-	}		
-	#container_appunti_admin #content #content-content .adminFormAggiungi #nomeProdotto{
-		width: 19%;
-		margin-bottom: 20px;
-	}	
-	#container_appunti_admin #content #content-content .adminFormAggiungi #descrizioneProdotto{
-		width: 54%;
-		margin-bottom: 20px;
-	}
-	#container_appunti_admin #content #content-content .adminFormAggiungi #descrizioneAbbreviataProdotto{
-		width: 46%;
-	}
-	#container_appunti_admin #content #content-content .adminFormAggiungi #unitaProdotto, #container_appunti_admin #content #content-content .adminFormAggiungi #aliquotaProdotto{
-		width: 13%;
-	}
-	#container_appunti_admin #content #content-content .adminFormAggiungi #quantitaProdotto, #container_appunti_admin #content #content-content .adminFormAggiungi #prezzoProdotto{
-		width: 7%;
-	}
-	
-	
-	
-	#container_appunti_admin #content #content-content .adminFormAggiungi #containerDefaultImmagine{	
+}	
+	#modalDettaglioOrdine #modalDettaglioOrdineBody{
+		position: absolute;
 		width: 100%;
-		text-align: center;		
-	}	
-	#container_appunti_admin #content #content-content .adminFormAggiungi #containerDefaultImmagine #defaultImmagine, #container_appunti_admin #content #content-content .adminFormAggiungi #containerDefaultImmagine label{
-		vertical-align: middle;
-	}	
-	#container_appunti_admin #content #content-content .adminFormAggiungi #confirmAggiungiImmagine{
-		margin-left: 47%;
-	}	
-	
-	/*--------------------------------*/
-	
-	#container_appunti_admin #content #content-content .adminFormAggiungi .dropzoneImmagineDocumento{
-		height: 1000px;
-		background-color: red;
+		top: 45%;
+		overflow-x: auto;
+		height: 90%;			
+}		
+
+#content #content-content .adminFormAggiungi .dropzoneImmagineDocumento{
+		min-height: 100px;
+		background-color: #eee;
 		margin-bottom: 20px;
 		cursor: pointer;
 		position: relative;
 		padding: 15px;
+    	border: 4px solid #1abbea;
+    	border-radius:10px;
+		
 	}	
-	
-	#container_appunti_admin #content #content-content .adminFormAggiungi .dropzoneImmagineDocumento:after {
+	#content #content-content .adminFormAggiungi .dropzoneImmagineDocumento:after {
     	content: 'Sposta qui l\'immagine da caricare';
     	position: absolute;
-    	top: 140%;
+    	top: 40%;
     	left: 42%;
     	width: 20%;
     	height: 5%;
 	}		
-	
-	#container_appunti_admin #content #content-content .adminFormAggiungi .dz-started.dropzoneImmagineDocumento:after {
+	#content #content-content .adminFormAggiungi .dz-started.dropzoneImmagineDocumento:after {
 		display: none;
 	}	
-	
-	#container_appunti_admin #content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-error-mark, #content #content-content .adminFormAggiungi .dropzoneImmagineProdotto .dz-error-message, #content #content-content .adminFormAggiungi .dropzoneImmagineProdotto .dz-success-mark{
+	#content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-error-mark, #content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-error-message, #content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-success-mark{
 		display: none;		
 	}	
-	
-	#container_appunti_admin #content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-remove{
+	#content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-remove{
 		background-color: #DC483E;
 		border: solid 1px #DC483E;
 		height: 30px;		
@@ -1464,235 +1214,15 @@ a{
 		font-size: 12px;
 		padding: 5px;		
 	}		
-#container_appunti_admin #content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-image img{
+	#content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-image img{
 		border-radius: 10px;
 	}			
 	
 	
-	/*--------------------------------*/
-	#container_appunti_admin #content #content-content .adminFormAggiungi #nomemetodoPagamento{	
-		width: 30%;
-    	margin-bottom: 20px;
-	}	
-	#container_appunti_admin #content #content-content .adminFormAggiungi #descrizionemetodoPagamento{
-		width: 54%;
-		margin-bottom: 20px;
-	}
-	
-	#modalContatti{
-		display: none;
-		height: 50%;
-		width: 80%;
-		left: 10%;
-		top: 10%;
-		overflow: hidden;
-		position: fixed;
-		z-index: 99999;
-		background-color: #fff;
-		opacity: 1;
-		text-align: center;
-		padding-top: 15%;
-		border-radius: 20px;
-		border: solid 4px #ffcc00;		
-	}
-	
-	#modalContatti #modalContattiNav{
-		position: absolute;
-		left: 97%;
-		width: 1%;
-		top: 3%;
-		cursor: pointer;
-	}	
-	#modalContatti #modalContattiBody{
-		position: absolute;
-		width: 100%;
-		top: 5%;	
-	}	
-	#modalContatti #modalContattiBody h2{
-		color: #276274;
-	}
-	#modalContatti #modalContattiBody textarea{	
-		width: 95%;
-		border: solid 1px #276274;
-		border-radius: 15px;
-		padding: 15px;
-		height: 250px;
-		margin-top: 20px;
-	}
-	
-	#modalContatti #modalContattiBody .fieldContatto{
-		width: 30%;
-		display: inline;
-		margin-left: 5%;
-	}
-	
-	#container_appunti #content #content-content .adminFormAggiungi #nomeVettore{	
-		width: 30%;    	
-	}	
-	#container_appunti #content #content-content .adminFormAggiungi #descrizioneVettore{
-		width: 45%;		
-	}
-	#container_appunti #content #content-content .adminFormAggiungi #costoVettore{
-		width: 8%;
-	}
-	#container_appunti #content #content-content .adminFormAggiungi #contrassegnoVettore{
-		width: 4%;
-	}
-	
-	
-	#container_appunti #content #content-content .adminFormAggiungi #nomeStato{	
-		width: 82%;    	
-	}	
-	#container_appunti #content #content-content .adminFormAggiungi #ordineAnnullabileStato{
-		width: 3%;		
-	}
-	#container_appunti #content #content-content .adminFormAggiungi #primoStato{
-		width: 3%;		
-	}
-	
-	#content .categoriaProdotto{
-		margin-top: 20px;
-	}
-	#content .categoriaProdotto .product{
-		width: 30%;
-		display: inline-block;	
-		margin-bottom: 3.3%;
-		border: solid 1px #FFF;
-		cursor: pointer;
-	}
-	
-	#content .categoriaProdotto .product:hover{
-		border: solid 1px #777;
-		border-radius: 5px;
-	}
-	#content .categoriaProdotto .product .product-image{
-		height: 230px;		
-		padding: 10px;
-		background-color: #eee; 
-		border-radius: 5px;
-	}
-	#content .categoriaProdotto .product .product-image img{
-		width: 100%;
-		height: auto;
-		max-height: 230px;
-		vertical-align: top; 	
-	}
-	#content .categoriaProdotto .product .product-title{
-		height: 25px;
-		text-align: center;
-		padding-top: 5px;
-	}
-	#content .categoriaProdotto .product:hover .product-title{
-		background-color: #276274;	
-		color: #FFF;	
-	}
-	#content .categoriaProdotto .product .product-price{	
-		height: 25px;
-		text-align: center;
-		font-weight: bold;	
-		color: #276274;
-	}
-	#content .categoriaProdotto .product .product-button{	
-		visibility: hidden;
-		height: 40px;
-		text-align: center;
-		background-color: #ffcc00;
-		border-bottom-left-radius: 5px;
-		border-bottom-right-radius: 5px;	
-	}
-	#content .categoriaProdotto .product:hover .product-button{
-		visibility: visible;	
-	}
-	#content .categoriaProdotto .product .product-button a{
-		line-height: 36px;
-		color: #fff;
-		text-decoration: none;	
-	}
-	#content .categoriaProdotto .product:hover .product-button a{
-		color: #276274;
-	}
-	
-	
-	/***********************DA VEDERE DOPO****************************/
-	/*******************   PAGINA ORDINI USER    ****************/
-	/************************************************************/	
-
-	#content #content-content .userBodyDataTable tr td i.eliminaOrdine{
-		color: #DC483E;
-	} 
-	#content #content-content .userBodyDataTable tr td i.dettaglioOrdine{
-		color: #000;
-	}
-	#modalDettaglioOrdine{
-		display: none;
-		height: 50%;
-		width: 80%;
-		left: 10%;
-		top: 10%;
-		overflow: hidden;
-		position: fixed;
-		z-index: 99999;
-		background-color: #fff;
-		opacity: 1;
-		text-align: center;
-		padding-top: 15%;
-		border-radius: 20px;
-		border: solid 4px #ffcc00;		
-	}	
-	#modalDettaglioOrdine #modalDettaglioOrdineNav{
-		position: absolute;
-		left: 97%;
-		width: 1%;
-		top: 3%;
-		cursor: pointer;
-	}	
-	#modalDettaglioOrdine #modalDettaglioOrdineBody{
-		position: absolute;
-		width: 100%;
-		top: 7%;
-		overflow-x: auto;
-		height: 90%;		
-	}		
-	#content #content-content #dettaglioOrdine .left, #content #content-content #dettaglioOrdine .right{
-		width: 48%;
-		padding: 1%;
-	}
-	#content #content-content #dettaglioOrdine p, #content #content-content #dettaglioOrdine p{
-		color: #276274;		
-	}
-	#content #content-content #dettaglioOrdine .left p:first-child, #content #content-content #dettaglioOrdine .right p:first-child{
-		font-weight: bold;	
-	}
-	#content #content-content #dettaglioOrdine p.totaleOrdine{
-		color: #000;		
-	}
-	
-	/************************************************************/
-	/*******************   PAGINA ORDINI ADMIN    ****************/
-	/************************************************************/			
-	#content #content-content .adminBodyDataTable tr td i.eliminaOrdine{
-		color: #DC483E;
-	}
-	#content #content-content .adminBodyDataTable tr td i.dettaglioOrdine, #content #content-content .adminBodyDataTable tr td i.modificaStatoOrdine{
-		color: #000;
-	}
-	#modalDettaglioOrdine #modalDettaglioOrdineBody .adminFormField{
-		border: 0;
-		height: 30px;	
-		border: solid 1px #276274;
-		width: 35%;	
-	}
-	
-	#modalDettaglioOrdine #modalDettaglioOrdineBody .adminButtonConfermaAggiungi{	
-		background-color: #276274;
-		border: solid 1px #276274;
-		height: 30px;		
-		color: #FFF;
-		text-transform: uppercase;		
-		width: 35%;	
-		cursor: pointer;	
-		margin-top: 20px;
-	}
 
 	
-}
+
+	
+
+	
+	

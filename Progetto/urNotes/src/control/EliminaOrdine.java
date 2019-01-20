@@ -43,7 +43,7 @@ public class EliminaOrdine extends HttpServlet {
 		response.setContentType("text/html");
 		
 		int serial_id = Integer.parseInt(request.getParameter("serial_id"));
-        
+        System.out.println(serial_id);
         Integer risultato = 0;
         String errore = "";
         String contenuto = "";
@@ -51,68 +51,40 @@ public class EliminaOrdine extends HttpServlet {
         ConnessioneDB connDB = new ConnessioneDB();
 		if(connDB.getConn() != null) {
 			try {
-				String sql; 
-    			Statement stmt0;
-    			ResultSet result;
-				stmt0 = connDB.getConn().createStatement();
+				Integer continua = 1;
+				
+				Statement stmt0 = connDB.getConn().createStatement();
+				String sql = "";
 				sql = ""
-						+ "SELECT od.quantita, od.codice " 
-						+ "FROM ordini_documenti AS od "
-						+ "WHERE od.attivo = 1 AND od.serial_id = "+serial_id+"; ";
-				result = stmt0.executeQuery(sql);				
-				if(!result.wasNull()) {	    							    					
-					int rowCount = result.last() ? result.getRow() : 0;
-					if(rowCount > 0) {
-						Integer continua = 1;	    							
-						result.beforeFirst();
-						PreparedStatement  stmt;
-						while(result.next()){
-							stmt = null;
-							sql = "UPDATE documenti SET quantita_disponibile = (quantita_disponibile + ?) WHERE codice = ?";
-							stmt = connDB.getConn().prepareStatement(sql);
-							stmt.setInt(1, result.getInt("quantita"));
-							stmt.setInt(2, result.getInt("codice"));
-							if(stmt.executeUpdate() != 1) {
-								errore += "Errore Ripristino Quantit&agrave; per il documento "+result.getInt("codice");
-								continua *= 0;																
-							}
-						}
-						
-						if(continua == 1) {
-							stmt0 = connDB.getConn().createStatement();
-							String sql0 = "";
-							sql0 = "UPDATE ordini_documenti SET attivo = 0 WHERE serial_id = "+serial_id+";";
-							if(stmt0.executeUpdate(sql0) == 1) {
-								Statement stmt1 = connDB.getConn().createStatement();
-								sql = "UPDATE ordini SET attivo = 0 WHERE serial_id = "+serial_id+";";
-								if(stmt1.executeUpdate(sql) == 1) {
-									contenuto = "Ordine Eliminato con Successo";
-									risultato = 1;			 		
-								}
-								else {
-									errore = "Errore Cancellazione Ordine.";
-									risultato = 0;					
-								}
-							}
-							else {
-								errore = "Errore Cancellazione Documenti Ordine.";
-								risultato = 0;					
-							}							
+						+ "SELECT o.serial_id, (SELECT nome FROM ordini_vettori WHERE id_vettore = o.id_vettore) AS vettore, o.data_ordine, "
+						+ "(SELECT username FROM utenti WHERE id_utente = o.id_utente) AS cliente, "
+						+ "(SELECT SUM(quantita) FROM ordini_documenti WHERE serial_id = o.serial_id) AS quantita_documenti, "
+						+ "(SELECT email FROM utenti WHERE id_utente = o.id_utente) AS email, "
+						+ "o.totale_ordine "
+						+ "FROM ordini  AS o "
+						+ "WHERE o.attivo = 1 "
+						+ "ORDER BY o.data_ordine DESC, o.serial_id DESC; ";												
+				
+				if(continua == 1) {
+					stmt0 = connDB.getConn().createStatement();
+					String sql0 = "";
+					sql0 = "UPDATE ordini_documenti SET attivo = 0 WHERE serial_id = "+serial_id+";";
+					if(stmt0.executeUpdate(sql0) == 1) {
+						Statement stmt1 = connDB.getConn().createStatement();
+						sql = "UPDATE ordini SET attivo = 0 WHERE serial_id = "+serial_id+";";
+						if(stmt1.executeUpdate(sql) == 1) {
+							contenuto = "Ordine Eliminato con Successo";
+							risultato = 1;			 		
 						}
 						else {
-							risultato = 0;
+							errore = "Errore Cancellazione Ordine.";
+							risultato = 0;					
 						}
 					}
-					else {
-						errore = "Errore Prelevamento Documenti.";
-						risultato = 0;											
-					}
+					
 				}
-				else {
-					errore = "Errore Prelevamento Documenti.";
-					risultato = 0;											
-				}
-								
+				
+				
 				if(risultato == 0) {
 					connDB.getConn().rollback();
 				}
@@ -122,6 +94,7 @@ public class EliminaOrdine extends HttpServlet {
 				connDB.getConn().close();
 			}
 			catch(Exception e) {
+				System.out.println("errore in EliminaMateria");
 				errore = "Errore esecuzione Query.";
 				risultato = 0;
 			}

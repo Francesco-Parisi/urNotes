@@ -124,7 +124,7 @@ function getOrdini(){
 					$("#bodyOrdini").html(msg.contenuto);
 				}											
 				else{
-					$("#bodyOrdini").html("<tr><td colspan='7'>Nessun Ordine Presente</td></tr>");
+					$("#bodyOrdini").html("<tr><td colspan='9'>Nessun Ordine Presente</td></tr>");
 				}
 				
 			}

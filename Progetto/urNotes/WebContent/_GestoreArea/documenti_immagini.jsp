@@ -28,7 +28,7 @@
 				<table id="prodottiTable">
 					<thead class="adminHeadDataTable">
 						<tr>
-							<th>FileName</th>
+							<th>Foto</th>
 							<th>Primaria</th>
 							<th>Elimina</th>
 						</tr>	

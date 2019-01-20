@@ -43,12 +43,24 @@
 					</tbody>
 				</table>
 				
-				<div id="aggiungiDocumento" class="adminAggiungi">
-					<button id="buttonAggiungiDocumento" class="adminButtonAggiungi"><i class="fas fa-plus"></i></button>
-				</div>
+				<div id="modalDettaglioOrdine" style="display: none;">	
+				<tr>
+				<th></th>
+			    </tr>
+			  <div id="modalDettaglioOrdineNav">
+			 <i class="fas fa-times chiudiModalDettaglioOrdine"></i>
+			   </div>			
+			<div id="modalDettaglioOrdineBody">				
+			</div>
+		</div>
 				
+				<div id="aggiungiDocumento" class="adminAggiungi">
+			
+					<button id="buttonAggiungiDocumento" class="adminButtonAggiungi"><i class="fas fa-plus" style="cursor: pointer;" title="Aggiungi Documento"></i></button>
+				</div>
+								
 				<div id="formAggiungiDocumento" class="adminFormAggiungi" style="display: none;">
-					
+				
 				</div>
 				
 			</div>

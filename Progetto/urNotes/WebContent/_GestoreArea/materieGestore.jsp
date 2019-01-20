@@ -41,7 +41,8 @@
 				</table>
 				
 				<div id="aggiungiMateria" class="adminAggiungi">
-					<button id="buttonAggiungiMateria" class="adminButtonAggiungi"><i class="fas fa-plus"></i></button>
+		    		<button id="buttonAggiungiMateria" class="adminButtonAggiungi"><i class="fas fa-plus" style="cursor: pointer;" title="Aggiungi Materia"></i></button>
+				
 				</div>
 				
 				<div id="formAggiungiMateria" class="adminFormAggiungi" style="display: none;">

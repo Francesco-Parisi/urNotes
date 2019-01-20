@@ -90,8 +90,7 @@ public class GetFormModificaPrezzoDocumentoAdmin extends HttpServlet {
 				risultato = 0;
 			}		        
 	        	        	        	       
-			contenuto += "<input type='number' step='0.05' id='prezzoDocumento' class='prezzoDocumento adminFormField' name='prezzoDocumento' value='"+new SystemInformation().truncateDecimal(prezzoDocumento,2)+"' />";	        	        	        
-	        contenuto += "<br/>";	        	        	        
+			contenuto += "<input type='number' step='0.01' id='prezzoDocumento' class='prezzoDocumento adminFormField' name='prezzoDocumento' value='"+new SystemInformation().truncateDecimal(prezzoDocumento,2)+"' />";	        	        	        
 	        contenuto += "<input type='hidden' id='codice' value='"+codice+"' />";
 	        contenuto += "<button id='confirmAggiungiPrezzoDocumento' class='adminButtonConfermaAggiungi'>Aggiorna Prezzo</button>";
 	        risultato = 1;
