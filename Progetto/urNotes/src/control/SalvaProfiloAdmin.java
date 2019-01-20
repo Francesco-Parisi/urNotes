@@ -79,7 +79,7 @@ public class SalvaProfiloAdmin extends HttpServlet {
 					stmt.setString(1, nome);
 					stmt.setString(2, cognome);
 					stmt.setString(3, username);
-					stmt.setString(4, password);
+					stmt.setString(4, MD5.crypt(password));
 					stmt.setInt(5, id_utente);	
 				}						
 			
