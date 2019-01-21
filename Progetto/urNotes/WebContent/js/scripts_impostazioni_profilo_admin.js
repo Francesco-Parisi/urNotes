@@ -52,7 +52,8 @@ $(document).ready(function(){
 					"cognome": cognome,
 					"username": username,
 					"id_utente": id_utente,
-					"tipo_utente": tipo_utente
+					"tipo_utente": tipo_utente,
+					"password": password
 				},
 				success:function(msg){
 					if(!msg.risultato){
