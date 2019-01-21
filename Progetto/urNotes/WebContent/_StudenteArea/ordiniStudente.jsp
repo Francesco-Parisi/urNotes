@@ -15,21 +15,22 @@
 		%>
 		<%@ include file="/partials/head.jsp" %>		
 		<script src="<%=request.getContextPath()%>/js/scripts_ordini_user.js"></script>					
-		<title>Ordini stati</title>		
+		<title>urNotes | Ordini</title>		
 	</head>
 	<body onLoad="getOrdini()">
-		<%@ include file="/partials/header.jsp" %>				
+		<%@ include file="/partials/header.jsp" %>
+		<div id="container_ordini_user">				
 		<div id="content">
 			<div id="content-content">
 				<p class="adminTitoloPagina">I Miei Ordini</p> 
-				<table id="ordiniTable">
+				<table id="prodottiTable">
 					<thead class="userHeadDataTable">
 						<tr>
 							<th>ID</th>
 							<th>Data</th>
 							<th>N. Prodotti</th>
 							<th>Totale</th>
-							<th>Elimina</th>
+							<th>Azioni</th>						
 						</tr>	
 					</thead>
 					<tbody id="bodyOrdini" class="userBodyDataTable">
@@ -37,6 +38,7 @@
 					</tbody>
 				</table>
 			</div>
+		</div>
 		</div>
 		<%@ include file="/partials/footer.jsp" %>	
 	</body>

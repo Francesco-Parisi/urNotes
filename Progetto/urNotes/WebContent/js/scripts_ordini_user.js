@@ -26,46 +26,11 @@ $(document).ready(function(){
         }        
     } );	
 	
-	$(document).on('click', '.eliminaOrdine', function(e){		
-		var idOrdine = $(this).data("serial_id");
-		
-		if(idOrdine != undefined && idOrdine > 0){		
-			if(confirm("Conferma la cancellazione dell'ordine N."+idOrdine+"?")){
-				$("#loader").show();			
-				$.ajax({
-					url: absolutePath+"/EliminaOrdine",
-					type: "POST",
-					dataType: 'JSON',
-					async: false,
-					data: {
-						"idOrdine": idOrdine
-					},
-					success:function(msg){
-						if(!msg.risultato){
-							showAlert(1, msg.errore);
-						}
-						else{
-							showAlert(0, msg.contenuto);
-							getOrdini();
-						}
-					},
-					error: function(msg){
-						showAlert(1, "Impossibile Recuperare i dati.");
-					}
-				});
-				
-				$("#loader").hide();
-			}
-		}
-		else{			
-			showAlert(1, "Errore Parametri.");
-		}		
-	});		
 		
 	$(document).on('click', '.dettaglioOrdine', function(e){		
-		var idOrdine = $(this).data("serial_id");
+		var serial_id = $(this).data("serial_id");
 		
-		if(idOrdine != undefined && idOrdine > 0){		
+		if(serial_id != undefined && serial_id > 0){		
 				$("#loader").show();			
 				$.ajax({
 					url: absolutePath+"/GetDettaglioOrdineUser",
@@ -73,7 +38,7 @@ $(document).ready(function(){
 					dataType: 'JSON',
 					async: false,
 					data: {
-						"idOrdine": idOrdine
+						"serial_id": serial_id
 					},
 					success:function(msg){
 						if(!msg.risultato){

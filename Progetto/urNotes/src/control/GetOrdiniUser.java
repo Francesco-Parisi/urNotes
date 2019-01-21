@@ -52,8 +52,8 @@ public class GetOrdiniUser extends HttpServlet {
 	    String contenuto = "";
 	    
     	if(request.getSession() != null){
-    		Integer idUtente = (Integer) request.getSession().getAttribute("id_utente");    		
-    		if(idUtente != null){
+    		Integer id_utente = (Integer) request.getSession().getAttribute("id_utente");    		
+    		if(id_utente != null){
 		        ConnessioneDB connDB = new ConnessioneDB();
 				if(connDB.getConn() != null) {
 					
@@ -61,9 +61,9 @@ public class GetOrdiniUser extends HttpServlet {
 						Statement stmt = connDB.getConn().createStatement();
 						String sql = "";
 						sql = ""
-								+ "SELECT o.serial_id, o.id_vettore, o.data_ordine, (SELECT SUM(quantita) FROM ordini_documenti WHERE serial_id = o.serial_id) AS numero_documenti, o.totale_ordine "
+								+ "SELECT o.serial_id, o.data_ordine, (SELECT SUM(quantita) FROM ordini_documenti WHERE serial_id = o.serial_id) AS numero_documenti, o.totale_ordine "
 								+ "FROM ordini  AS o "
-								+ "WHERE o.attivo = 1 AND o.id_utente = "+idUtente+" "
+								+ "WHERE o.attivo = 1 AND o.id_utente = "+id_utente+" "
 								+ "ORDER BY o.data_ordine DESC, o.serial_id DESC; ";
 						ResultSet result = stmt.executeQuery(sql);				
 						if(!result.wasNull()) {
@@ -71,11 +71,13 @@ public class GetOrdiniUser extends HttpServlet {
 							while(result.next()) {
 								    contenuto += "<tr>";
 								    contenuto += "<td>"+result.getInt("serial_id")+"</td>";	
-								    contenuto += "<td>"+result.getInt("id_vettore")+"</td>";	
 									contenuto += "<td>"+sdf.format(result.getDate("data_ordine"))+"</td>";
 									contenuto += "<td>"+result.getString("numero_documenti")+"</td>";							
 									contenuto += "<td>&euro;"+new SystemInformation().truncateDecimal(result.getFloat("totale_ordine"),2)+"</td>";
-								    contenuto += "</tr>";
+									contenuto += "<td>";
+									contenuto += "	<i class='dettaglioOrdine fas fa-search' style='cursor: pointer;' data-serial_id='"+result.getInt("serial_id")+"' title='Dettaglio Ordine'></i>";
+									contenuto += "</td>";
+									contenuto += "</tr>";
 							}					
 						}				 
 						

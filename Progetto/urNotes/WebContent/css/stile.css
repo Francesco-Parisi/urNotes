@@ -1068,7 +1068,18 @@ a{
 	/*******************************  CONTENT ********************************/
 	/*************************************************************************/
 	
-
+#container_ordini_user{
+    width:95%;
+	height:100%;
+	margin-top:4600px;
+	margin-left:25%;
+	padding:0;
+	margin:100px auto;
+	background-color:#1ea4ca;
+	opacity:0.9;
+	border-radius:10px;
+	box-shadow:1px 1px grey;
+}		
 
 #container_appunti_admin{
     width:95%;
@@ -1084,6 +1095,14 @@ a{
 }		
 
 #container_richieste_admin #content #content-content .adminTitoloPagina{
+	text-align:center;
+	color:white;
+	font-weight:bold;
+	font-size:30px;
+	text-shadow:1px 1px black;
+}
+
+#container_ordini_user #content #content-content .adminTitoloPagina{
 	text-align:center;
 	color:white;
 	font-weight:bold;
@@ -1157,6 +1176,7 @@ a{
 	/*******************   PAGINA ORDINI USER    ****************/
 	/************************************************************/	
 
+
 #modalDettaglioOrdine{
 	display: none;
 	height: 50px;
@@ -1188,7 +1208,31 @@ a{
 	top: 45%;
 	overflow-x: auto;
 	height: 90%;			
-}		
+}	
+
+#content #content-content #dettaglioOrdine .left, #content #content-content #dettaglioOrdine .right{
+	width: 48%;
+	padding: 1%;
+}
+
+#content #content-content #dettaglioOrdine p, #content #content-content #dettaglioOrdine p{
+	color: #276274;		
+}
+
+#content #content-content #dettaglioOrdine .left p:first-child, #content #content-content #dettaglioOrdine .right p:first-child{
+	font-weight: bold;	
+}
+
+#content #content-content #dettaglioOrdine p.totaleOrdine{
+	color: #000;		
+}
+	
+
+	/************************************************************/
+	/*******************   DROPZONE IMMAGINI     ****************/
+	/************************************************************/	
+
+
 
 #content #content-content .adminFormAggiungi .dropzoneImmagineDocumento{
 	min-height: 100px;
@@ -1237,9 +1281,179 @@ a{
 	
 	
 
+	/************************************************************/
+	/****************PAGINA IMPOSTAZIONI USER  *****************/
+	/************************************************************/	
+	
+#content #content-content #formImpostazioniUser{
+	border-radius: 15px;	
+	padding: 10px;	
+	width: 50%;		
+	float: none;		
+	margin: 60px auto;	
+    background-color:#1ea4ca;
+}	
+	
+#content #content-content #formImpostazioniUser .campoForm{
+	width: 100%;
+}		
+
+#content #content-content #formImpostazioniUser legend{
+	color:white;
+    font-size:20px;
+	text-shadow:1px 1px black;
+	font-weight:bold;
+	padding:5px;
+}
+
+
+#content #content-content #formImpostazioniUser .campoForm[readonly]{
+	color:white;
+	font-size:18px;
+	text-shadow:1px 1px black;
+	font-weight:bold;
+	border: none;
+	border-radius:10px;
+    background-color:#1ea4ca;	
+}		
+
+#content #content-content #formImpostazioniUser .submitForm{		
+	background-color: #1abbea;
+	text-shadow: 1px 1px black;
+	text-align:center;
+	height: 30px;		
+	color: #FFF;
+	margin-left: 40%;	
+	margin-top: 1%;
+	width: 20%;	
+	border-radius: 20px;		
+	cursor: pointer;				
+}	
+	
+#content #content-content .formIndirizzo{
+	border: solid 2px #1ea4ca;		
+	border-radius: 15px;	
+	padding: 10px;			
+	width: 20%;		
+	float: left;		
+	margin-top: 20px;
+	margin-bottom: 20px;
+	display: block;
+	margin-left: 2%;
+	height: 285px;		
+}	
+	
+#content #content-content .formIndirizzo .campoForm{
+	width: 100%;
+}		
+
+
+#content #content-content .formIndirizzo .submitForm{		
+	width: 100%;
+	margin-top: 15px;
+	height: 40px;		
+	background-color: #ffcc00;		
+	border: 0;		
+	color: #276274;
+	font-weight: bold;
+	cursor: pointer;			
+}	
+	
+#content #content-content .formIndirizzo .eliminaIndirizzo{		
+	color: #DC483E;
+	cursor: pointer;
+}				
+	
+	#content #content-content .addIndirizzo{
+		display: table;
+	}
+	
+	#content #content-content .formIndirizzo .aggiungiIndirizzo{		
+		display: table-cell;
+		color: #1ea4ca;
+		cursor: pointer;
+		width: 100%;	
+		height: 100%;		
+		text-align: center;		
+		font-size: 50px;			
+		vertical-align: middle;			
+	}					
+	
+	#content #content-content .formIndirizzo p{
+		overflow-y: auto;
+	}
+
+	#content #content-content .formIndirizzo .note{
+		height: 40px;
+	}		
+	
+	#content #content-content .formIndirizzo .nomeCognome, #content #content-content .formIndirizzo .indirizzo, #content #content-content .formIndirizzo .capCittaProvincia, #content #content-content .formIndirizzo .telefono, #content #content-content .formIndirizzo .cellulare{
+		height: 25px;
+	}		
+	
+	#content #content-content .userFormAggiungi{
+		border: solid 1px #ffcc00;
+		border-radius: 5px;
+		margin-top: 10px;
+		padding: 10px;
+	}
+	
+	#content #content-content .userFormAggiungi .adminFormField{
+		border: 0;
+		height: 30px;	
+		border: solid 1px #276274;
+		margin-left: 1%;	
+	}
+	
+	#content #content-content .userFormAggiungi .adminButtonConfermaAggiungi{	
+		background-color: #276274;
+		border: solid 1px #276274;
+		height: 30px;		
+		color: #FFF;
+		text-transform: uppercase;		
+		margin-left: 1%;
+		width: 7%;	
+		cursor: pointer;	
+	}
+	
+	#content #content-content .userFormAggiungi #nomeIndirizzo, #content #content-content .userFormAggiungi #cognomeIndirizzo{
+		width: 20%;
+	}
+	
+	#content #content-content .userFormAggiungi #indirizzoIndirizzo{
+		width: 55%;
+	}
+	
+	#content #content-content .userFormAggiungi #capIndirizzo{
+		width: 7.3%;
+		margin-top: 10px;
+	}
+	
+	#content #content-content .userFormAggiungi #cittaIndirizzo, #content #content-content .userFormAggiungi #provinciaIndirizzo{
+		width: 31%;
+	}
+	
+	#content #content-content .userFormAggiungi #telefonoIndirizzo, #content #content-content .userFormAggiungi #cellulareIndirizzo{
+		width: 12%;
+	}
+	
+	#content #content-content .userFormAggiungi #noteIndirizzo{
+		width: 97.7%;
+		height: 70px;		
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	
+	#content #content-content .userFormAggiungi #confirmAggiungiIndirizzo{
+		margin-left: 43%;
+	}
+
+
     /************************************************************/
 	/****************PAGINA IMPOSTAZIONI ADMIN  *****************/
 	/************************************************************/	
+	
+	
 	
 .admin_settings{
 	font-size:20px;
