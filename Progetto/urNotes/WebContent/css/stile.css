@@ -489,6 +489,10 @@ input[type="button"]:hover{
 	text-shadow:1px 1px black;
 	padding:5px;
 	border-top:1px solid grey;
+}
+
+.richieste{
+	border-top:1px solid grey;
 	
 }
 
@@ -668,8 +672,9 @@ border:none;
 	box-shadow:1px 1px grey;
 }	
 
-#container_appunti_admin{
-    width:95%;
+
+#container_richieste_admin{
+	width:100%;
 	height:100%;
 	margin-top:4600px;
 	margin-left:25%;
@@ -679,7 +684,7 @@ border:none;
 	opacity:0.9;
 	border-radius:10px;
 	box-shadow:1px 1px grey;
-}	
+}
 
 #content #content-content .dettaglioProdotto{
 	margin-top: 10px;
@@ -1077,6 +1082,14 @@ a{
 	border-radius:10px;
 	box-shadow:1px 1px grey;
 }		
+
+#container_richieste_admin #content #content-content .adminTitoloPagina{
+	text-align:center;
+	color:white;
+	font-weight:bold;
+	font-size:30px;
+	text-shadow:1px 1px black;
+}
 	
 #container_appunti_admin #content #content-content .adminTitoloPagina{
 	text-align:center;

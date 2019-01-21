@@ -30,7 +30,7 @@
 </a>
 
 
-<a class="contact" href="<%=request.getContextPath()%>/_GestoreArea/richieste.jsp">
+<a class="contact" href="<%=request.getContextPath()%>/_GestoreArea/richiesteGestore.jsp">
 <img src="https://images.unsplash.com/photo-1510070112810-d4e9a46d9e91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="contact-img" alt="email">
 <div class="contact-text">
 <h3>Richieste</h3>
