@@ -9,11 +9,11 @@ $(document).ready(function(){
 		var provincia = $("#provincia").val();
 		var telefono = $("#telefono").val();
 		var cellulare = $("#cellulare").val();
-		var id_utente = $("#id_utente").val();
+		var idUtente = $("#idUtente").val();
 		
-		if(id_utente != undefined && id_utente > 0){
+		if(idUtente != undefined && idUtente > 0){
 			if(nome != undefined && cognome != undefined && indirizzo != undefined && cap != undefined && citta != undefined && provincia != undefined && telefono != undefined && cellulare != undefined
-			   && nome.length > 1 && cognome.length > 1 && indirizzo.length > 1 && cap > 0 && citta > 0 && provincia > 0){		
+			   && nome.length > 1 && cognome.length > 1 && indirizzo.length > 1 && cap > 0 && citta.length > 1 && provincia.length > 1){		
 				$("#loader").show();			
 				$.ajax({
 					url: absolutePath+"/AggiungiIndirizzo",
@@ -28,8 +28,7 @@ $(document).ready(function(){
 						"citta": citta,
 						"provincia": provincia,
 						"telefono": telefono,
-						"cellulare": cellulare,
-						"id_utente": id_utente
+						"cellulare": cellulare
 					},
 					success:function(msg){
 						if(!msg.risultato){

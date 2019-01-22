@@ -68,7 +68,7 @@
 											
 											while(result.next()) {					
 												output += "<form action='#' method='POST' class='formIndirizzo'>";
-													output += "<i class='fas fa-times eliminaIndirizzo' data-idindirizzo='"+result.getString("id_indirizzo")+"'></i>";
+													output += "<i class='fas fa-times eliminaIndirizzo' data-id_indirizzo='"+result.getString("id_indirizzo")+"'></i>";
 													output += "<p class='nomeCognome'>";
 													output += result.getString("nome");
 													output += " ";
