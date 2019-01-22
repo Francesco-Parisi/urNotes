@@ -18,8 +18,8 @@
 		<title>urNotes | Carrello</title>		
 	</head>
 	<body onLoad="getCarrello()">
-		<%@ include file="/partials/header.jsp" %>	
-	<div id="container_appunti">	
+	<%@ include file="/partials/header.jsp" %>		
+	<div id="container_appunti_admin">	
 		<div id="content">
 			<div id="content-content">
 
@@ -40,7 +40,7 @@
 					<button  data-href="<%=request.getContextPath()%>/_StudenteArea/checkout.jsp" class='userButtonCheckout'>Vai al Checkout</button>
 			</div>
 		</div>
-		</div>
+	</div>
 		<%@ include file="/partials/footer.jsp" %>	
 	</body>
 </html>

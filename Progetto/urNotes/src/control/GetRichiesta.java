@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.text.SimpleDateFormat;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,8 +11,9 @@ import javax.servlet.http.*;
 import org.json.simple.JSONObject;
 
 import model.ConnessioneDB;
+import model.SystemInformation;
 /**
- * Servlet implementation class GetRichiesta
+ * Servlet implementation class GetDocumenti
  */
 @WebServlet("/GetRichiesta")
 public class GetRichiesta extends HttpServlet {
@@ -39,57 +39,63 @@ public class GetRichiesta extends HttpServlet {
 	 */
 	@SuppressWarnings("unchecked")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Integer id_richiesta = Integer.parseInt(request.getParameter("id_richiesta"));
+		System.out.println("ciao");
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 	    
+		//String idAppunto = request.getParameter("id");
+		//System.out.print(idAppunto+" ");
+		//String value = request.getParameter("value");
+		//System.out.println(value);
+
+		int id_utente = Integer.parseInt(request.getParameter("id_utente"));
+		System.out.println(id_utente);
+
+		
 		Integer risultato = 0;
 	    String errore = "";
 	    String contenuto = "";
-	    
         ConnessioneDB connDB = new ConnessioneDB();
 		if(connDB.getConn() != null) {
-			
 			try {
+				Statement stmt = connDB.getConn().createStatement();
 				String sql = "";
-				Statement stmt0 = connDB.getConn().createStatement();				
-				sql = "UPDATE richieste SET letta = 1 WHERE id_richiesta = "+id_richiesta+";";
-				if(stmt0.executeUpdate(sql) == 1) {
-					Statement stmt = connDB.getConn().createStatement();				
-					sql = ""
+				sql = ""
 						+ "SELECT r.id_richiesta, r.titolo, r.pagine, r.nome_materia, r.universita, r.descrizione, r.tipo, r.data_richiesta, r.letta, IFNULL((SELECT username FROM utenti WHERE id_utente = r.id_utente), '') AS studente "
 						+ "FROM richieste AS r "
-						+ "WHERE r.attivo = 1 AND r.id_richiesta = "+id_richiesta+"; ";				
-					//System.out.println(sql);
-					ResultSet result = stmt.executeQuery(sql);				
-					if(!result.wasNull()) {
-						SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-						while(result.next()) {
-							contenuto += "<h2>Richiesta N."+result.getString("id_richiesta")+"</h2>";
-							contenuto += "<p class='fieldContatto'>Data: "+sdf.format(result.getDate("data_richiesta"))+"</p>";
-							contenuto += "<p class='fieldContatto'>Studente: "+result.getString("studente")+"</p>";
-							contenuto += "<p class='fieldContatto'>Titolo: "+result.getString("titolo")+"</p>";
-							contenuto += "<p class='fieldContatto'>Pagine: "+result.getInt("pagine")+"</p>";
-							contenuto += "<p class='fieldContatto'>Materia: "+result.getString("nome_materia")+"</p>";
-							contenuto += "<p class='fieldContatto'>Università: "+result.getString("universita")+"</p>";
-							contenuto += "<p class='fieldContatto'>Descrizione: "+result.getString("descrizione")+"</p>";
-							contenuto += "<p class='fieldContatto'>Tipo: "+result.getString("tipo")+"</p>";
-						}
-						risultato = 1;
-					}				 
-				}
-				else {
-					errore = "Errore Aggiornamento Lettura.";
-					risultato = 0;					
-				}								
+						+ "WHERE r.attivo = 1; ";	
+				//System.out.println(sql);
+				System.out.println(id_utente);
 				
+				ResultSet result = stmt.executeQuery(sql);	
+				//prezzo,tipo,id_recensione,flag
+				if(!result.wasNull()) {
+					while(result.next()) {
+						contenuto += "<tr class='documenti'>";
+						contenuto += "<td>"+result.getString("titolo")+"</td>";		
+						contenuto += "<td>"+result.getInt("pagine")+"</td>";
+						contenuto += "<td>"+result.getString("universita")+"</td>";
+						contenuto += "<td>"+result.getString("nome_materia")+"</td>";
+						contenuto += "<td>"+result.getString("descrizione")+"</td>";
+						contenuto += "<td>";
+						contenuto += "€"+"</td>";	
+						contenuto += "<td>"+result.getString("tipo")+"</td>";
+						contenuto += "<td>";
+						contenuto += "	<i class='fotoRichiesta fas fa-camera' style='cursor: pointer;' data-codice='"+result.getInt("codice")+"' title='Gestisci Foto'></i>";
+						contenuto += "</td>";
+						contenuto += "</tr>";
+					}		
+				}				 
+
+				risultato = 1;
 				if(risultato == 0) {
 					connDB.getConn().rollback();
 				}
 				else {
 					connDB.getConn().commit();
-				}																
-				connDB.getConn().close();				
+				}																	
+				
+				connDB.getConn().close();
 			}
 			catch(Exception e) {
 				errore = "Errore esecuzione Query.";

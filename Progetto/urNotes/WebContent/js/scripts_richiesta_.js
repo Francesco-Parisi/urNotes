@@ -38,7 +38,7 @@ $(document).ready(function(){
 		if(id_richiesta != undefined && id_richiesta > 0){					
 			$("#loader").show();			
 			$.ajax({
-				url: absolutePath+"/GetRichieste",
+				url: absolutePath+"/GetRichiesta",
 				type: "POST",
 				dataType: 'JSON',
 				async: false,
@@ -65,52 +65,14 @@ $(document).ready(function(){
 			showAlert(1, "Errore Parametri.");
 		}		
 	});			
-	
-	
-	
-	$(document).on('click', '.eliminaRichiesta', function(e){		
-		var id_richiesta = $(this).data("id_richiesta");
 		
-		if(id_richiesta != undefined && id_richiesta > 0){		
-			if(confirm("Conferma la cancellazione della richiesta n. "+id_richiesta+"?")){
-				$("#loader").show();			
-				$.ajax({
-					url: absolutePath+"/EliminaRichiesta",
-					type: "POST",
-					dataType: 'JSON',
-					async: false,
-					data: {
-						"id_richiesta": id_richiesta
-					},
-					success:function(msg){
-						if(!msg.risultato){
-							showAlert(1, msg.errore);
-						}
-						else{
-							showAlert(0, msg.contenuto);
-							getRichieste();
-						}
-					},
-					error: function(msg){
-						showAlert(1, "Impossibile Recuperare i dati.");
-					}
-				});
-				
-				$("#loader").hide();
-			}
-		}
-		else{			
-			showAlert(1, "Errore Parametri.");
-		}		
-	});		
-	
 });
 
-function getRichieste(){ 
-	$("#loader").show();
 
+function getRichiesta(){ 
+	$("#loader").show();
 	$.ajax({
-		url: absolutePath+"/GetRichieste",
+		url: absolutePath+"/GetRichiesta",
 		type: "POST",
 		dataType: 'JSON',
 		async: false,
@@ -123,10 +85,10 @@ function getRichieste(){
 			}
 			else{				
 				if(msg.contenuto.length > 0){
-					$("#bodyContatti").html(msg.contenuto);
+					$("#bodyRichiesta").html(msg.contenuto);
 				}											
 				else{
-					$("#bodyContatti").html("<tr><td colspan='9'>Nessuna Richiesta Presente</td></tr>");
+					$("#bodyRichiesta").html("<tr><td colspan='10'>Nessuna Richiesta Presente</td></tr>");
 				}
 				
 			}

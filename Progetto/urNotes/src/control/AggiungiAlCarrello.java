@@ -48,24 +48,24 @@ public class AggiungiAlCarrello extends HttpServlet {
         String contenuto = "";
         String urlRedirect = "";
 
-		Integer Codice = Integer.parseInt(request.getParameter("Codice"));
+		Integer codice = Integer.parseInt(request.getParameter("codice"));
 		Integer quantita = Integer.parseInt(request.getParameter("quantita"));
 		
-		Integer idUtente = 0;			
+		Integer id_utente = 0;			
 		if(request.getSession().getAttribute("id_utente") != null) {
-			idUtente = (Integer) request.getSession().getAttribute("id_utente");
+			id_utente = (Integer) request.getSession().getAttribute("id_utente");
 		}		
 			
 
-        if(idUtente > 0) {
+        if(id_utente > 0) {
         	Carrello cart = (Carrello) request.getSession().getAttribute("carrello");
         	if(cart != null) {
-	        	Documento d = cart.getDocumentoByCodiceDocumento(Codice);
+	        	Documento d = cart.getDocumentoByCodiceDocumento(codice);
 	        	if(d != null) {
 	        		d.setQuantita(d.getQuantita()+1);
 	        	}
 	        	else {
-	        		cart.setDocumento(Codice, quantita);
+	        		cart.setDocumento(codice, quantita);
 	        	}
 	        	request.getSession().setAttribute("carrello", cart);
 	        	contenuto = "Documento Aggiunto con Successo";

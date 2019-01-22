@@ -60,7 +60,7 @@ public class GetCarrello extends HttpServlet {
     			String sql;
     			Statement stmt;
     			ResultSet result;
-    			Integer Codice;
+    			Integer codice;
     			Integer quantitaDocumento;
     			
     	        ConnessioneDB connDB = new ConnessioneDB();
@@ -70,33 +70,33 @@ public class GetCarrello extends HttpServlet {
 		    				sql = "";
 		    				stmt = null;
 		    				result = null;		    				
-		    				Codice = documento.getCodice();
+		    				codice = documento.getCodice();
 		    				quantitaDocumento = documento.getQuantita();
 	    					stmt = connDB.getConn().createStatement();
 		    				sql = ""
 									+ "SELECT d.titolo, d.prezzo, "
 									+ "(SELECT filename FROM documenti_immagini WHERE codice = d.codice AND is_default = 1 AND attivo = 1) AS filename, "
 									+ "FROM documenti  AS d "
-									+ "WHERE d.flag = 1 AND d.codice = "+Codice+"; ";
+									+ "WHERE d.flag = 1 AND d.codice = "+codice+"; ";
 	    					//System.out.println(sql);
 	    					result = stmt.executeQuery(sql);				
 	    					if(!result.wasNull()) {
 	    						while(result.next()) {
 	    							String filename;
 	    							if(result.getString("filename") != null){
-	    								filename = new SystemInformation().getPathImmaginiDocumentoHTML()+Codice+"/"+result.getString("filename");												
+	    								filename = new SystemInformation().getPathImmaginiDocumentoHTML()+codice+"/"+result.getString("filename");												
 	    							}
 	    							else{
 	    								filename = new SystemInformation().getPathImmaginiDocumentoDefault();												
 	    							}	    							
 	    							
 	    							contenuto += "<tr>";							
-    									contenuto += "<td>"+Codice+"</td>";							
-	    								contenuto += "<td><img class='showImmagineProdotto' src='"+filename+"' alt='"+filename+"' /></td>";
+    									contenuto += "<td>"+codice+"</td>";							
+	    								contenuto += "<td><img class='showImmagineDocumento' src='"+filename+"' alt='"+filename+"' /></td>";
 	    								contenuto += "<td>"+result.getString("titolo")+"</td>";							
-	    								contenuto += "<td><i class='fas fa-minus rimuoviQuantitaDocumentoCarrello' data-codice='"+Codice+"'></i>&nbsp;&nbsp;"+quantitaDocumento+"&nbsp;&nbsp;<i class='fas fa-plus aggiungiQuantitaDocumentoCarrello' data-codice='"+Codice+"'></i></td>";  								    							
+	    								contenuto += "<td><i class='fas fa-minus rimuoviQuantitaDocumentoCarrello' data-codice='"+codice+"'></i>&nbsp;&nbsp;"+quantitaDocumento+"&nbsp;&nbsp;<i class='fas fa-plus aggiungiQuantitaDocumentoCarrello' data-codice='"+codice+"'></i></td>";  								    							
 	    								contenuto += "<td>";
-	    								contenuto += "	<i class='elimina eliminaCodiceCarrello fas fa-times' style='cursor: pointer;' data-codice='"+Codice+"' title='Elimina Documento'></i>";
+	    								contenuto += "	<i class='elimina eliminaCodiceCarrello fas fa-times' style='cursor: pointer;' data-codice='"+codice+"' title='Elimina Documento'></i>";
 	    								contenuto += "</td>";
 	    							contenuto += "</tr>";
 	    						}					

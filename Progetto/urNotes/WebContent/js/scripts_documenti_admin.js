@@ -178,8 +178,8 @@ $(document).ready(function(){
 							showAlert(1, msg.errore);
 						}
 						else{														
-							$("#modalDettaglioOrdineBody").html(msg.contenuto);
-							$("#modalDettaglioOrdine").css("display", "block");
+							$("#modalDettaglioPrezzoBody").html(msg.contenuto);
+							$("#modalDettaglioPrezzo").css("display", "block");
 						}
 					},
 					error: function(msg){
@@ -215,7 +215,7 @@ $(document).ready(function(){
 							showAlert(1, msg.errore);
 						}
 						else{														
-							$("#modalDettaglioOrdine").css("display", "none");
+							$("#modalDettaglioPrezzo").css("display", "none");
 							getDocumenti();
 							showAlert(0, msg.contenuto);
 						}
@@ -238,8 +238,8 @@ $(document).ready(function(){
 	});		
 	
 	
-	$(document).on('click', '.chiudiModalDettaglioOrdine', function(e){
-		$("#modalDettaglioOrdine").css("display", "none");
+	$(document).on('click', '.chiudiModalDettaglioPrezzo', function(e){
+		$("#modalDettaglioPrezzo").css("display", "none");
 	});			
 });
 

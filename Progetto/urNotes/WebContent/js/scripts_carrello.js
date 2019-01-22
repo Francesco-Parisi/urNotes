@@ -79,8 +79,8 @@ $(document).ready(function(){
 			mux = -1;
 		}
 		
-		var Codice = $(this).data("codice");		
-		if(Codice != undefined && Codice > 0){		
+		var codice = $(this).data("codice");		
+		if(codice != undefined && codice > 0){		
 			$("#loader").show();			
 			$.ajax({
 				url: absolutePath+"/ModificaDalCarrello",
@@ -88,7 +88,7 @@ $(document).ready(function(){
 				dataType: 'JSON',
 				async: false,
 				data: {
-					"Codice": Codice,
+					"codice": codice,
 					"mux": mux
 				},
 				success:function(msg){

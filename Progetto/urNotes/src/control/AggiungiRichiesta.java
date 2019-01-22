@@ -3,6 +3,7 @@ package control;
 import java.io.IOException; 
 import java.io.PrintWriter;
 import java.sql.PreparedStatement;
+import java.text.SimpleDateFormat;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,16 +12,16 @@ import org.json.simple.JSONObject;
 
 import model.ConnessioneDB;
 /**
- * Servlet implementation class InviaRichiesta
+ * Servlet implementation class AggiungiRichiesta
  */
-@WebServlet("/InviaRichiesta")
-public class InviaRichiesta extends HttpServlet {
+@WebServlet("/AggiungiRichiesta")
+public class AggiungiRichiesta extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public InviaRichiesta() {
+    public AggiungiRichiesta() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,13 +43,20 @@ public class InviaRichiesta extends HttpServlet {
 		
 		String titolo = request.getParameter("titolo");
 		Integer pagine = Integer.parseInt(request.getParameter("pagine"));
-		String nome_materia = request.getParameter("nome_materia");
 		String universita = request.getParameter("universita");
+		String nome_materia = request.getParameter("nome_materia");
 		String descrizione = request.getParameter("descrizione");
-		String tipo = request.getParameter("tipo");
-
-		Integer id_utente = Integer.parseInt(request.getParameter("id_utente"));
-
+		Integer tipo = Integer.parseInt(request.getParameter("tipo"));
+		
+		
+		System.out.println(titolo);
+		System.out.println(pagine);
+		System.out.println(universita);
+		System.out.println(nome_materia);
+		System.out.println(descrizione);
+		System.out.println(tipo);
+		
+		
         Integer risultato = 0;
         String errore = "";
         String contenuto = "";
@@ -56,37 +64,34 @@ public class InviaRichiesta extends HttpServlet {
         ConnessioneDB connDB = new ConnessioneDB();
 		if(connDB.getConn() != null) {
 			try {				
-				String sql = "INSERT INTO richieste (id_utente, titolo, pagine, nome_materia, universita, descrizione, tipo, data_richiesta, letta, attivo) VALUES (?, ?, ?, ?, ?, ?, ?,  DATE(NOW()), ?, ?);";
-				PreparedStatement  stmt = connDB.getConn().prepareStatement(sql);				
-				
-				if(id_utente == 0) stmt.setNull(1, 1); else stmt.setInt(1, id_utente); 
-				stmt.setString(2, titolo);			
-				stmt.setInt(3, pagine);
+				String sql = "INSERT INTO richieste (titolo,pagine,universita,nome_materia,descrizione,tipo,data_richiesta,attivo) VALUES (?,?,?,?,?,?,DATE(NOW()),1);";
+				PreparedStatement  stmt = connDB.getConn().prepareStatement(sql);
+				stmt.setString(1, titolo);
+				stmt.setInt(2, pagine);	
+				stmt.setString(3, universita);
 				stmt.setString(4, nome_materia);
-				stmt.setString(5, universita);				
-				stmt.setString(6, descrizione);				
-				stmt.setString(7, tipo);
-				stmt.setInt(8, 0);				
-				stmt.setInt(9, 1);
+				stmt.setString(5, descrizione);
+				stmt.setString(6, (tipo == 1)? "Appunti":"Dispense");	
+				
 				if(stmt.executeUpdate() == 1) {
-					contenuto = "Grazie per aver condiviso i tuoi Documenti";
+					contenuto = "Richiesta Inserito con Successo";
 					risultato = 1;					
 				}
 				else {
 					errore = "Errore Inserimento Richiesta.";
 					risultato = 0;					
-				}				
-
+				}
+				
 				if(risultato == 0) {
 					connDB.getConn().rollback();
 				}
 				else {
 					connDB.getConn().commit();
-				}																	
+				}												
 				connDB.getConn().close();
 			}
 			catch(Exception e) {
-				errore = "Errore esecuzione Query."+e.getMessage();
+				errore = "Errore esecuzione Query.";
 				risultato = 0;
 			}
 		}

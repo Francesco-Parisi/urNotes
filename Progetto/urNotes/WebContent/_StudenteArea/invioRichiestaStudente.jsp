@@ -3,7 +3,7 @@
 <html lang = "it">
 	<head>
 		<% 	
-			CheckSession ck = new CheckSession(1, request.getSession());	
+			CheckSession ck = new CheckSession(0, request.getSession());	
 			if(ck.getRedirect()){
 				String path = request.getContextPath()+ck.getUrlRedirect();
 				%>
@@ -14,17 +14,17 @@
 			} 
 		%>
 		<%@ include file="/partials/head.jsp" %>
-		<script src="<%=request.getContextPath()%>/js/scripts_documenti_admin.js"></script>					
-		<title>urNotes | Documenti</title>
+		<script src="<%=request.getContextPath()%>/js/scripts_richiesta.js"></script>					
+		<title>urNotes | Invio Richiesta</title>
 </head>
 
-<body onLoad="getDocumenti()">
+<body onLoad="getRichiesta()">
 		<%@ include file="/partials/header.jsp" %>	
 		
 	<div id="container_appunti_admin">	
 		<div id="content">
 			<div id="content-content">
-			<p class="adminTitoloPagina">Documenti</p> 
+			<p class="adminTitoloPagina">Richieste</p> 
 				<table id="prodottiTable">
 					<thead class="adminHeadDataTable">
 						<tr>
@@ -33,23 +33,22 @@
 							<th>Univerisit&agrave;</th>
 							<th>Materia</th>
 							<th>Descrizione</th>
-							<th>Prezzo</th>
 							<th>Tipo</th>
 							<th>Azioni</th>
 						</tr>	
 					</thead>
-					<tbody id="bodyDocumento" class="adminBodyDataTable">
+					<tbody id="bodyRichiesta" class="adminBodyDataTable">
 						
 					</tbody>
 				</table>
 				
 				
-				<div id="aggiungiDocumento" class="adminAggiungi">
+				<div id="aggiungiRichiesta" class="adminAggiungi">
 			
-					<button id="buttonAggiungiDocumento" class="adminButtonAggiungi"><i class="fas fa-plus" style="cursor: pointer;" title="Aggiungi Documento"></i></button>
+					<button id="buttonAggiungiRichiesta" class="adminButtonAggiungi"><i class="fas fa-plus" style="cursor: pointer;" title="Aggiungi Richiesta"></i></button>
 				</div>
 								
-				<div id="formAggiungiDocumento" class="adminFormAggiungi" style="display: none;">
+				<div id="formAggiungiRichiesta" class="adminFormAggiungi" style="display: none;">
 				
 				</div>
 				

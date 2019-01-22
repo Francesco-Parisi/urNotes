@@ -149,7 +149,6 @@ public class GetDettaglioOrdineUser extends HttpServlet {
 					System.out.println(result);
 
 					if(!result.wasNull()) {
-						System.out.println("aaaaa");
 						while(result.next()){
 							String filename;
 							if(result.getString("filename") != null){
@@ -166,7 +165,8 @@ public class GetDettaglioOrdineUser extends HttpServlet {
     							body += "<td>"+result.getInt("codice")+"</td>";	
     							System.out.println(result.getInt("codice"));
     							body += "<td><img class='showImmagineDocumento' src='"+filename+"' alt='"+filename+"' /></td>";
-    							body += "<td>"+result.getString("nome")+"</td>";    							body += "<td>";	    					
+    							body += "<td>"+result.getString("titolo")+"</td>";    
+    							body += "<td>";	    					
     							body += "&euro; "+ new SystemInformation().truncateDecimal(result.getFloat("prezzo_totale"), 2);													
 								body += "</td>";    								    							
 							body += "</tr>";			    							
@@ -176,12 +176,12 @@ public class GetDettaglioOrdineUser extends HttpServlet {
 	       			contenuto += "<div id='content'>";
 	       			contenuto += "<div id='content-content'>";
 	       			contenuto += "<div id='dettaglioOrdine'>";
-	       			contenuto += "<table id='dettaglioOrdineTable'>";
+	       			contenuto += "<table id='prodottiTable'>";
 	       				contenuto += "<thead class='userHeadDataTable'>";
 	       					contenuto += "<tr>";
 		       					contenuto += "<th>ID</th>";
 		       					contenuto += "<th>Foto</th>";
-		       					contenuto += "<th>Nome</th>";
+		       					contenuto += "<th>Titolo</th>";
 		       					contenuto += "<th>Prezzo</th>";
 	       					contenuto += "</tr>";
 	   					contenuto += "</thead>";
