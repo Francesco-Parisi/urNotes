@@ -75,7 +75,7 @@ public class GetOrdiniUser extends HttpServlet {
 									contenuto += "<td>"+result.getString("numero_documenti")+"</td>";							
 									contenuto += "<td>&euro;"+new SystemInformation().truncateDecimal(result.getFloat("totale_ordine"),2)+"</td>";
 									contenuto += "<td>";
-									contenuto += "	<i class='dettaglioOrdine fas fa-search' style='cursor: pointer;' data-serial_id='"+result.getInt("serial_id")+"' title='Dettaglio Ordine'></i>";
+									contenuto += "	<i class='foto dettaglioOrdine fas fa-search' style='cursor: pointer;' data-serial_id='"+result.getInt("serial_id")+"' title='Dettaglio Ordine'></i>";
 									contenuto += "</td>";
 									contenuto += "</tr>";
 							}					
