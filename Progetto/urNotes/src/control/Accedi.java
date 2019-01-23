@@ -80,7 +80,7 @@ public class Accedi extends HttpServlet {
 							redirect = request.getContextPath()+"/_GestoreArea/profilo_gestore.jsp";
 						}
 						if((int) session.getAttribute("tipo_utente") == 2) {
-							redirect = request.getContextPath()+"/_StudenteArea/profilo_studente.jsp"; 														
+							redirect = request.getContextPath()+"/index.jsp"; 														
 						}	
 						
 						contenuto = "Utente Trovato";						

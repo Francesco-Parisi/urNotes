@@ -40,7 +40,7 @@
 								try {
 									String sql = "";
 									
-									sql = "SELECT email, nome, cognome, username "
+									sql = "SELECT email, nome, cognome "
 											+ "FROM utenti "
 											+ "WHERE attivo = 1 AND id_utente = "+id_utente+";";
 										Statement stmt0 = connDB.getConn().createStatement();
@@ -50,7 +50,6 @@
 												email = result0.getString("email");
 												nome = result0.getString("nome");
 												cognome = result0.getString("cognome");
-												username = result0.getString("username");
 										}
 									}									
 									
@@ -113,33 +112,37 @@
 						</fieldset>
 						<fieldset>
 							<legend>Nome</legend>
-							<input type='text' id='nomeUtente' name='nomeUtente' class='campoForm' value='<%=nome %>' />
+							<input type='text' id='nome' name='nome' class='campoForm' value='<%=nome %>' />
 						</fieldset>
 						<fieldset>
 							<legend>Cognome</legend>
-							<input type='text' id='cognomeUtente' name='cognomeUtente' class='campoForm' value='<%=cognome %>' />
+							<input type='text' id='cognome' name='cognome' class='campoForm' value='<%=cognome %>' />
 						</fieldset>
 						<fieldset>
 							<legend>Password</legend>
-							<input type='password' id='passwordUtente' name='passwordUtente' class='campoForm' value='' />
+							<input type='password' id='password' name='password' class='campoForm' value='' />
 						</fieldset>
 
 						<fieldset>
 							<legend>Ripeti Password</legend>
 							<input type='password' id='ripetiPasswordUtente' name='ripetiPasswordUtente' class='campoForm' value='' />
 						</fieldset>
-						<input type='hidden' id='idUtente' value='<%=id_utente %>' />
+						<input type='hidden' id='id_utente' value='<%=id_utente %>' />
 						<input type='submit' id='submitForm' name='submitForm' class='submitForm' value='Salva' />
 					</form>	
-
+						
+					<p class="admin_settings">Aggiungi o elimina il tuo indirizzo. <br/></p>						
+						
 					<div id="formAggiungiIndirizzo" class="userFormAggiungi" style="display: none;">
 						
 					</div>
 					
+					<div class="container_indirizzo">
 					<form action="#" method="POST" class="formIndirizzo addIndirizzo">
 						<i id="buttonAggiungiIndirizzo" class="fas fa-plus aggiungiIndirizzo" data-idindirizzo="5"></i>
-					</form>										
-					<%= output %>																						        				      
+					</form>	
+					</div>									
+					<%= output %>																        				      
 			</div>
 		</div>
 		<%@ include file="/partials/footer.jsp" %>	

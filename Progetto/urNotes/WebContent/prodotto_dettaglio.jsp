@@ -108,14 +108,7 @@
 						<p class="prezzoDocumento">Prezzo: <%=prezzoDocumento %>€</p>
 						<p class="document_title">Descrizione</p>
 						<p class="descrizioneDocumento"><%=descrizione %></p>
-								
-	<%
-							if(pagine > 0){
-								%>
-								<button class='userButtonAggiungiAlCarrello product-button' data-codice='<%=codice%>'>Aggiungi Al Carrello</button>
-								<%												
-							}
-						%>											
+																		
 						
 					</div>
 				</div>     

@@ -59,10 +59,8 @@ public class GetOrdiniAdmin extends HttpServlet {
 				Statement stmt = connDB.getConn().createStatement();
 				String sql = "";
 				sql = ""
-						+ "SELECT o.serial_id, (SELECT nome FROM ordini_vettori WHERE id_vettore = o.id_vettore) AS vettore, o.data_ordine, "
-						+ "(SELECT username FROM utenti WHERE id_utente = o.id_utente) AS cliente, "
+						+ "SELECT o.serial_id, o.data_ordine, "
 						+ "(SELECT SUM(quantita) FROM ordini_documenti WHERE serial_id = o.serial_id) AS quantita_documenti, "
-						+ "(SELECT email FROM utenti WHERE id_utente = o.id_utente) AS email, "
 						+ "o.totale_ordine "
 						+ "FROM ordini  AS o "
 						+ "WHERE o.attivo = 1 "
@@ -74,10 +72,7 @@ public class GetOrdiniAdmin extends HttpServlet {
 						contenuto += "<tr>";
 						 contenuto += "<tr class='ordini'>";
 						    contenuto += "<td>"+result.getInt("serial_id")+"</td>";	
-							contenuto += "<td>"+result.getString("vettore")+"</td>";							
 							contenuto += "<td>"+sdf.format(result.getDate("data_ordine"))+"</td>";
-							contenuto += "<td>"+result.getString("cliente")+"</td>";							
-							contenuto += "<td>"+result.getString("email")+"</td>";							
 							contenuto += "<td>"+result.getString("quantita_documenti")+"</td>";		
 							contenuto += "<td>&euro;"+new SystemInformation().truncateDecimal(result.getFloat("totale_ordine"),2)+"</td>";
 									

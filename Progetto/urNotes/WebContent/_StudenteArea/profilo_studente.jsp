@@ -26,16 +26,16 @@
 <img src="https://images.unsplash.com/photo-1491308056676-205b7c9a7dc1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=753&q=80" class="contact-img" alt="email">
 <div class="contact-text">
 <h3>Studente</h3>
-<p>Visualizza le tue info</p>
+<p>Modifica le tue info</p>
 </div>
 </a>
 
 
-<a class="contact" href="<%=request.getContextPath()%>/_StudenteArea/indirizzoStudente.jsp">
-<img src="https://images.unsplash.com/photo-1493952113579-dfa2cfd5398b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="contact-img" alt="email">
+<a class="contact" href="<%=request.getContextPath()%>/_StudenteArea/invioRichiestaStudente.jsp">
+<img src="https://images.unsplash.com/photo-1510070112810-d4e9a46d9e91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="contact-img" alt="email">
 <div class="contact-text">
-<h3>Indirizzo</h3>
-<p>Aggiungi o modifica l'indirizzo</p>
+<h3>Richieste</h3>
+<p>Invia le tue Richieste</p>
 </div>
 </a>
 

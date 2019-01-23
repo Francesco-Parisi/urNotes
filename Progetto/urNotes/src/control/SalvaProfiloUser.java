@@ -1,27 +1,31 @@
 package control;
 
-import java.io.IOException; 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.PreparedStatement;
-import java.text.SimpleDateFormat;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.json.simple.JSONObject;
 
 import model.ConnessioneDB;
+import model.MD5;
+
 /**
- * Servlet implementation class AggiungiRichiesta
+ * Servlet implementation class SalvaProfiloUser
  */
-@WebServlet("/AggiungiRichiesta")
-public class AggiungiRichiesta extends HttpServlet {
+@WebServlet("/SalvaProfiloUser")
+public class SalvaProfiloUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AggiungiRichiesta() {
+    public SalvaProfiloUser() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,57 +45,60 @@ public class AggiungiRichiesta extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		
-		String titolo = request.getParameter("titolo");
-		Integer pagine = Integer.parseInt(request.getParameter("pagine"));
-		String universita = request.getParameter("universita");
-		String nome_materia = request.getParameter("nome_materia");
-		String descrizione = request.getParameter("descrizione");
-		Integer tipo = Integer.parseInt(request.getParameter("tipo"));
-		
-		
-		System.out.println(titolo);
-		System.out.println(pagine);
-		System.out.println(universita);
-		System.out.println(nome_materia);
-		System.out.println(descrizione);
-		System.out.println(tipo);
-		
+		Integer id_utente = Integer.parseInt(request.getParameter("id_utente"));
+		Integer tipo_utente = Integer.parseInt(request.getParameter("tipo_utente"));		
+
+		String password = "";
+		String nome = request.getParameter("nome");
+		String cognome = request.getParameter("cognome");
+		if(tipo_utente == 1){ //Salvo anche la pwd
+			password = request.getParameter("password");
+		}
 		
         Integer risultato = 0;
         String errore = "";
         String contenuto = "";
-        
+		
         ConnessioneDB connDB = new ConnessioneDB();
 		if(connDB.getConn() != null) {
 			try {				
-				String sql = "INSERT INTO richieste (titolo,pagine,universita,nome_materia,descrizione,tipo,data_richiesta,attivo) VALUES (?,?,?,?,?,?,DATE(NOW()),1);";
-				PreparedStatement  stmt = connDB.getConn().prepareStatement(sql);
-				stmt.setString(1, titolo);
-				stmt.setInt(2, pagine);	
-				stmt.setString(3, universita);
-				stmt.setString(4, nome_materia);
-				stmt.setString(5, descrizione);
-				stmt.setString(6, (tipo == 1)? "Appunti":"Dispense");	
-				
+				String sql = "";
+				PreparedStatement  stmt = null;
+				if(tipo_utente == 2){ //Salvo solo i dati
+					sql = "UPDATE utenti SET nome = ?, cognome = ? WHERE id_utente = ?;";
+					stmt = connDB.getConn().prepareStatement(sql);
+					stmt.setString(1, nome);
+					stmt.setString(2, cognome);
+					stmt.setInt(3, id_utente);		
+				}
+				else if(tipo_utente == 1){ //Salvo anche la pwd			
+					sql = "UPDATE utenti SET nome = ?, cognome = ?, paswd = ? WHERE id_utente = ?;";
+					stmt = connDB.getConn().prepareStatement(sql);
+					stmt.setString(1, nome);
+					stmt.setString(2, cognome);
+					stmt.setString(3, MD5.crypt(password));
+					stmt.setInt(4, id_utente);	
+				}						
+			
 				if(stmt.executeUpdate() == 1) {
-					contenuto = "Richiesta Inserito con Successo";
+					contenuto = "Utenza Aggiornata con Successo";
 					risultato = 1;					
 				}
 				else {
-					errore = "Errore Inserimento Richiesta.";
+					errore = "Errore Aggiornamento Password.";
 					risultato = 0;					
-				}
+				}				
 				
 				if(risultato == 0) {
 					connDB.getConn().rollback();
 				}
 				else {
 					connDB.getConn().commit();
-				}												
+				}																					
 				connDB.getConn().close();
 			}
 			catch(Exception e) {
-				errore = "Errore esecuzione Query.";
+				errore = "Errore esecuzione Query."+e.getMessage();
 				risultato = 0;
 			}
 		}
@@ -106,6 +113,7 @@ public class AggiungiRichiesta extends HttpServlet {
 		res.put("errore", errore);
 		res.put("contenuto", contenuto);
 		out.println(res);
+		
 	}
 
 }

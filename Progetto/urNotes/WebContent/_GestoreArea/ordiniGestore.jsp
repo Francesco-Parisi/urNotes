@@ -27,13 +27,10 @@
 					<thead class="adminHeadDataTable">
 						<tr>
 							<th>Id Ordine</th>
-							<th>Vettore</th>
 							<th>Data</th>
-							<th>Cliente</th>
-							<th>Email</th>
 							<th>N. Documenti</th>
 							<th>Totale</th>
-							<th>Elimina</th>
+							<th>Azioni</th>
 						</tr>	
 					</thead>
 					<tbody id="bodyOrdini" class="adminBodyDataTable">

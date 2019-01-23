@@ -13,22 +13,20 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.json.simple.JSONObject;
 
-import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
-
 import model.ConnessioneDB;
 import model.SystemInformation;
 
 /**
- * Servlet implementation class GetDettaglioOrdineUser
+ * Servlet implementation class GetDettaglioOrdineAdmin
  */
-@WebServlet("/GetDettaglioOrdineUser")
-public class GetDettaglioOrdineUser extends HttpServlet {
+@WebServlet("/GetDettaglioOrdineAdmin")
+public class GetDettaglioOrdineAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GetDettaglioOrdineUser() {
+    public GetDettaglioOrdineAdmin() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -53,11 +51,13 @@ public class GetDettaglioOrdineUser extends HttpServlet {
 	    String contenuto = "";
 	    
 	    Integer serial_id = Integer.parseInt(request.getParameter("serial_id"));
+	    
 	    if(serial_id > 0) {
 			String spedizione = "";
 			String vettore = "";
 			String metodoPagamento = "";
 			String totali = "";
+			String cliente = "";
 			String body = "";					
 
 			String sql;
@@ -78,11 +78,26 @@ public class GetDettaglioOrdineUser extends HttpServlet {
 							+ "SELECT * "
 							+ "FROM ordini AS p "
 							+ "WHERE attivo = 1 AND serial_id = "+serial_id+"; ";
-					result = stmt.executeQuery(sql);
+					//System.out.println(sql);
+					result = stmt.executeQuery(sql);				
 					if(!result.wasNull()) {
 
 						while(result.next()) {
+		    				sql = "";
+		    				stmt1 = null;
+		    				result1 = null;	
+		    				stmt1 = connDB.getConn().createStatement();
+							sql = "SELECT email, nome, cognome "
+								+ "FROM utenti "
+								+ "WHERE id_utente = "+result.getInt("id_utente")+"; ";
+							result1 = stmt1.executeQuery(sql);
+	    					if(!result1.wasNull()) {
+	    						while(result1.next()){
+	    							cliente = result1.getString("email")+" - "+result1.getString("nome")+" "+result1.getString("cognome");
+	    						}
+	    					}	
 
+	    					
 		    				sql = "";
 		    				stmt1 = null;
 		    				result1 = null;	
@@ -90,15 +105,16 @@ public class GetDettaglioOrdineUser extends HttpServlet {
 							sql = "SELECT i.nome, i.cognome, i.indirizzo, i.cap, i.citta, i.provincia, i.telefono, i.cellulare "
 								+ "FROM indirizzi AS i "
 								+ "WHERE i.id_indirizzo = "+result.getInt("id_indirizzo")+"; ";
+							//System.out.println(sql);
 							result1 = stmt1.executeQuery(sql);
 	    					if(!result1.wasNull()) {
 	    						while(result1.next()){
 	    							spedizione = result1.getString("nome")+" "+result1.getString("cognome")+" <br/> "+result1.getString("indirizzo")+" <br/> "+result1.getInt("cap")+" "+result1.getString("citta")+" ("+result1.getString("provincia")+")";
 	    						}
 	    					}	
+	    											    					
 	    					
-		 						
-	    	 				sql = "";
+		    				sql = "";
 		    				stmt1 = null;
 		    				result1 = null;	
 		    				stmt1 = connDB.getConn().createStatement();
@@ -128,7 +144,7 @@ public class GetDettaglioOrdineUser extends HttpServlet {
 	    					}						    					
 	    					
 	    					
-	    					totali += "<p><b>Totale Documenti:</b> &euro;"+new SystemInformation().truncateDecimal(result.getFloat("totale_documenti"),2)+"</p>";
+	    					totali += "<p><b>Totale Prodotti:</b> &euro;"+new SystemInformation().truncateDecimal(result.getFloat("totale_documenti"),2)+"</p>";
 	    					totali += "<p><b>Totale Spedizione:</b> &euro;"+new SystemInformation().truncateDecimal(result.getFloat("totale_spedizione"), 2)+"</p>";
 	    					totali += "<p class='totaleOrdine'><b>Totale Ordine:</b> &euro;"+new SystemInformation().truncateDecimal(result.getFloat("totale_ordine"), 2)+"</p>";
 	    					
@@ -140,107 +156,103 @@ public class GetDettaglioOrdineUser extends HttpServlet {
     				result = null;					    				
     				stmt = connDB.getConn().createStatement();
     				sql = ""
-							+ "SELECT *, " 
+    						+ "SELECT *, " 
 							+ "(SELECT filename FROM documenti_immagini WHERE codice = od.codice AND is_default = 1 AND attivo = 1) AS filename "											
 							+ "FROM ordini_documenti AS od "
 							+ "WHERE od.attivo = 1 AND od.serial_id = "+serial_id+"; ";
 					System.out.println(sql);
-					result = stmt.executeQuery(sql);
-					System.out.println(result);
-
+					result = stmt.executeQuery(sql);				
 					if(!result.wasNull()) {
 						while(result.next()){
 							String filename;
 							if(result.getString("filename") != null){
-								filename = new SystemInformation().getPathImmaginiDocumentoHTML()+result.getInt("codice")+"/"+result.getString("filename");		
-								System.out.println(filename);
+								filename = new SystemInformation().getPathImmaginiDocumentoHTML()+result.getInt("codice")+"/"+result.getString("filename");												
 							}
 							else{
-								filename = new SystemInformation().getPathImmaginiDocumentoDefault();	
-								System.out.println(filename);
-
-							}
-														
+								filename = new SystemInformation().getPathImmaginiDocumentoDefault();												
+							}	    							
+							
 							body += "<tr>";							
-    							body += "<td>"+result.getInt("codice")+"</td>";	
-    							System.out.println(result.getInt("codice"));
+    							body += "<td>"+result.getInt("codice")+"</td>";							
     							body += "<td><img class='showImmagineDocumento' src='"+filename+"' alt='"+filename+"' /></td>";
-    							body += "<td>"+result.getString("titolo")+"</td>";
+    							body += "<td>"+result.getString("titolo")+"</td>";							
     							body += "<td>"+result.getInt("quantita")+"</td>";
     							body += "<td>";	    					
     							body += "&euro; "+ new SystemInformation().truncateDecimal(result.getFloat("prezzo_totale"), 2);													
 								body += "</td>";    								    							
-							body += "</tr>";			    							
+							body += "</tr>";		    							
 						}
 					}
 					
 	       			contenuto += "<div id='content'>";
-	       			contenuto += "<div id='content-content'>";
+		       		contenuto += "<div id='content-content'>";
 	       			contenuto += "<div id='dettaglioOrdine'>";
-	       			contenuto += "<table id='prodottiTable'>";
-	       				contenuto += "<thead class='userHeadDataTable'>";
-	       					contenuto += "<tr>";
-		       					contenuto += "<th>ID</th>";
-		       					contenuto += "<th>Foto</th>";
-		       					contenuto += "<th>Titolo</th>";
-		       					contenuto += "<th>Quantità</th>";
-		       					contenuto += "<th>Prezzo</th>";
-	       					contenuto += "</tr>";
-	   					contenuto += "</thead>";
-	   					contenuto += "<tbody id='bodyDettaglioOrdine' class='userBodyDataTable'>";
-	   					contenuto += body;
-	   					contenuto +="</tbody>";
-					contenuto += "</table>";
-					
-					contenuto += "<div class='right'>";
-						contenuto += "<p>Indirizzo di Spedizione</p>";
-						contenuto += spedizione;
-					contenuto += "</div>";
-					
-					contenuto += "<div class='left'>";
-						contenuto += "<p><b>Vettore</b></p>";
-						contenuto += vettore;
-					contenuto += "</div>";
-					contenuto += "<div class='right'>";
-						contenuto += "<p><b>Metodo di Pagamento</b></p>";
-						contenuto += metodoPagamento;
-					contenuto += "</div>";
-			
-					contenuto += totali;
-					
-					contenuto += "<script>";
-					contenuto += "$('#dettaglioOrdineTable').DataTable( {";
-					contenuto += "'order': [[ 0, 'desc' ]],";
-					contenuto += "'language': {";
-					contenuto += "'sEmptyTable':     'Nessun Prodotto Presente',";
-					contenuto += "'sInfo':           'Vista da _START_ a _END_ di _TOTAL_ elementi',";
-					contenuto += "'sInfoEmpty':      'Vista da 0 a 0 di 0 elementi',";
-					contenuto += "'sInfoFiltered':   '(filtrati da _MAX_ elementi totali)',";
-					contenuto += "'sInfoPostFix':    '',";
-					contenuto += "'sInfoThousands':  '.',";
-					contenuto += "'sLengthMenu':     'Visualizza _MENU_ elementi',";
-					contenuto += "'sLoadingRecords': 'Caricamento...',";
-					contenuto += "'sProcessing':     'Elaborazione...',";
-					contenuto += "'sSearch':         'Cerca:',";
-					contenuto += "'sZeroRecords':    'La ricerca non ha portato alcun risultato.',";
-					contenuto += "'oPaginate': {";
-					contenuto += "'sFirst':      'Inizio',";
-					contenuto += "'sPrevious':   'Precedente',";
-					contenuto += "'sNext':       'Successivo',";
-					contenuto += "'sLast':       'Fine'";
-					contenuto += "},";
-					contenuto += "'oAria': {";
-					contenuto += "'sSortAscending':  ': attiva per ordinare la colonna in ordine crescente',";
-					contenuto += "'sSortDescending': ': attiva per ordinare la colonna in ordine decrescente'";
-					contenuto += "}";
-					contenuto += "}";        
-					contenuto += "} );";	
-					contenuto += "</script>";
-					
-	       			contenuto += "</div>";					
-	       			contenuto += "</div>";					
+			       	contenuto += "<div id='prodottiTable'>";
+				    contenuto += "<p><b>Cliente:</b> "+cliente+"</p>";
+				     contenuto += "<table id='prodottiTable'>";
+				       				contenuto += "<thead class='userHeadDataTable'>";
+				       					contenuto += "<tr>";
+					       					contenuto += "<th>ID</th>";
+					       					contenuto += "<th>Foto</th>";
+					       					contenuto += "<th>Titolo</th>";
+					       					contenuto += "<th>Quantità</th>";
+					       					contenuto += "<th>Prezzo</th>";
+				       					contenuto += "</tr>";
+				   					contenuto += "</thead>";
+				   					contenuto += "<tbody id='bodyDettaglioOrdine' class='userBodyDataTable'>";
+				   					contenuto += body;
+				   					contenuto +="</tbody>";
+								contenuto += "</table>";
+								
+								contenuto += "<div class='right'>";
+									contenuto += "<p>Indirizzo di Spedizione</p>";
+									contenuto += spedizione;
+								contenuto += "</div>";
+								
+								contenuto += "<div class='left'>";
+									contenuto += "<p><b>Vettore</b></p>";
+									contenuto += vettore;
+								contenuto += "</div>";
+								contenuto += "<div class='right'>";
+									contenuto += "<p><b>Metodo di Pagamento</b></p>";
+									contenuto += metodoPagamento;
+								contenuto += "</div>";
+						
+								contenuto += totali;
+								
+								contenuto += "<script>";
+								contenuto += "$('#dettaglioOrdineTable').DataTable( {";
+								contenuto += "'order': [[ 0, 'desc' ]],";
+								contenuto += "'language': {";
+								contenuto += "'sEmptyTable':     'Nessun Prodotto Presente',";
+								contenuto += "'sInfo':           'Vista da _START_ a _END_ di _TOTAL_ elementi',";
+								contenuto += "'sInfoEmpty':      'Vista da 0 a 0 di 0 elementi',";
+								contenuto += "'sInfoFiltered':   '(filtrati da _MAX_ elementi totali)',";
+								contenuto += "'sInfoPostFix':    '',";
+								contenuto += "'sInfoThousands':  '.',";
+								contenuto += "'sLengthMenu':     'Visualizza _MENU_ elementi',";
+								contenuto += "'sLoadingRecords': 'Caricamento...',";
+								contenuto += "'sProcessing':     'Elaborazione...',";
+								contenuto += "'sSearch':         'Cerca:',";
+								contenuto += "'sZeroRecords':    'La ricerca non ha portato alcun risultato.',";
+								contenuto += "'oPaginate': {";
+								contenuto += "'sFirst':      'Inizio',";
+								contenuto += "'sPrevious':   'Precedente',";
+								contenuto += "'sNext':       'Successivo',";
+								contenuto += "'sLast':       'Fine'";
+								contenuto += "},";
+								contenuto += "'oAria': {";
+								contenuto += "'sSortAscending':  ': attiva per ordinare la colonna in ordine crescente',";
+								contenuto += "'sSortDescending': ': attiva per ordinare la colonna in ordine decrescente'";
+								contenuto += "}";
+								contenuto += "}";        
+								contenuto += "} );";	
+								contenuto += "</script>";
+							
+			       			contenuto += "</div>";					
+		       			contenuto += "</div>";					
 	       			contenuto += "</div>";
-	       			System.out.println("ho finito");
+	       			
 					risultato = 1;
 	
 					if(risultato == 0) {
@@ -273,8 +285,6 @@ public class GetDettaglioOrdineUser extends HttpServlet {
 		res.put("contenuto", contenuto);
 		out.println(res);		
 	}
+
+
 }
-
-
-
-

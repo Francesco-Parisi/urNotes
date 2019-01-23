@@ -25,7 +25,7 @@
 <img src="https://images.unsplash.com/photo-1479920252409-6e3d8e8d4866?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7335ddddbdb2e401ce4f50507524d900&auto=format&fit=crop&w=750&q=80" class="contact-img" alt="email">
 <div class="contact-text">
 <h3>Gestore</h3>
-<p>Visualizza le tue info</p>
+<p>Modifica le tue info</p>
 </div>
 </a>
 
