@@ -34,15 +34,15 @@ public class Carrello {
 		return null;
 	}
 
-	public void setDocumento(Integer Codice, Integer quantita) {
-		Documento d = new Documento(Codice, quantita);
+	public void setDocumento(Integer codice, Integer quantita) {
+		Documento d = new Documento(codice, quantita);
 		this.documenti.add(d);
 	}
 	
-	public void delDocumento(Integer Codice) {
+	public void delDocumento(Integer codice) {
 		int i = 0;
 		for(Documento documento: this.getDocumenti()) {
-		    if(documento.getCodice()== Codice) {
+		    if(documento.getCodice()== codice) {
 		    	this.getDocumenti().remove(i);
 		    	return;
 		    }
@@ -50,9 +50,9 @@ public class Carrello {
 		}
 	}
 	
-	public void modQuantDocumento(Integer Codice, Integer quantita) {
+	public void modQuantDocumento(Integer codice, Integer quantita) {
 		for(Documento documento: this.documenti) {
-		    if(documento.getCodice() == Codice) {
+		    if(documento.getCodice() == codice) {
 		    	documento.setQuantita(quantita);
 		    }
 		}
