@@ -93,7 +93,9 @@ public class GetCarrello extends HttpServlet {
 	    							contenuto += "<tr>";	
 	    								contenuto += "<td><img class='showImmagineDocumento' src='"+filename+"' alt='"+filename+"' /></td>";					
 	    								contenuto += "<td>"+result.getString("titolo")+"</td>";		
-	    								contenuto += "<td>"+result.getFloat("prezzo")+"</td>";	
+	    								contenuto += "<td>";
+	    								contenuto += new SystemInformation().truncateDecimal(result.getFloat("prezzo"),2);							
+	    								contenuto += "€"+"</td>";	
 	    								contenuto += "<td><i class='fas fa-minus rimuoviQuantitaDocumentoCarrello' data-codice='"+codice+"'></i>&nbsp;&nbsp;"+quantitaDocumento+"&nbsp;&nbsp;<i class='fas fa-plus aggiungiQuantitaDocumentoCarrello' data-codice='"+codice+"'></i></td>";  								    							
 	    								contenuto += "<td>";
 	    								contenuto += "	<i class='elimina eliminaDocumentoCarrello fas fa-times' style='cursor: pointer;' data-codice='"+codice+"' title='Elimina Documento'></i>";
