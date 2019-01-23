@@ -34,9 +34,9 @@ $(document).ready(function(){
 	});
 	
 	$(document).on('click', '.eliminaDocumentoCarrello', function(e){		
-		var Codice = $(this).data("codice");
+		var codice = $(this).data("codice");
 		
-		if(Codice != undefined && Codice > 0){		
+		if(codice != undefined && codice > 0){		
 			if(confirm("Conferma la cancellazione dal carrello del Documento selezionato?")){
 				$("#loader").show();			
 				$.ajax({
@@ -45,7 +45,7 @@ $(document).ready(function(){
 					dataType: 'JSON',
 					async: false,
 					data: {
-						"Codice": Codice
+						"codice": codice
 					},
 					success:function(msg){
 						if(!msg.risultato){

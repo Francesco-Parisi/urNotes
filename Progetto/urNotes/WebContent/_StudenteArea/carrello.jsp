@@ -29,6 +29,7 @@
      							<th>Foto</th>
      							<th>Titolo</th>
         						<th>Prezzo</th>
+        						<th>Quantit&agrave;</th>
         						<th>Elimina</th>
         					</tr>	
 						</thead>

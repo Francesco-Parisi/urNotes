@@ -50,8 +50,8 @@ public class EliminaDalCarrello extends HttpServlet {
         String contenuto = "";
         String urlRedirect = "";
 
-		Integer Codice = Integer.parseInt(request.getParameter("codice"));
-		
+		Integer codice = Integer.parseInt(request.getParameter("codice"));
+		System.out.println(codice);
 		Integer idUtente = 0;			
 		if(request.getSession().getAttribute("id_utente") != null) {
 			idUtente = (Integer) request.getSession().getAttribute("id_utente");
@@ -60,8 +60,8 @@ public class EliminaDalCarrello extends HttpServlet {
         if(idUtente > 0) {
         	Carrello cart = (Carrello) request.getSession().getAttribute("carrello");
         	if(cart != null) {        		
-	        	if(cart.getDocumentoByCodiceDocumento(Codice) != null) { //Se ci sta	        		
-	        		cart.delDocumento(Codice);
+	        	if(cart.getDocumentoByCodiceDocumento(codice) != null) { //Se ci sta	        		
+	        		cart.delDocumento(codice);
 		        	request.getSession().setAttribute("carrello", cart);
 		        	contenuto = "Documento Eliminato con Successo";
 		        	risultato = 1;

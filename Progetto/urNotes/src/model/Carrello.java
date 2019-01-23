@@ -25,9 +25,9 @@ public class Carrello {
 		else return null;
 	}
 
-	public Documento getDocumentoByCodiceDocumento(Integer Codice) {
+	public Documento getDocumentoByCodiceDocumento(Integer codice) {
 		for(Documento documento: this.documenti) {
-		    if(documento.getCodice() == Codice) {
+		    if(documento.getCodice() == codice) {
 		    	return documento;
 		    }
 		}

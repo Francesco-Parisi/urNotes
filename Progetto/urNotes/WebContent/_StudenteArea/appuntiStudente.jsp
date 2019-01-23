@@ -35,7 +35,6 @@
 					</tr>	
 				</thead>
 				<tbody id="bodyMaterie" class="adminBodyDataTable">
-					
 				</tbody>
 			</table>
 			

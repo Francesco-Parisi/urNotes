@@ -75,7 +75,7 @@ public class GetCarrello extends HttpServlet {
 	    					stmt = connDB.getConn().createStatement();
 		    				sql = ""
 									+ "SELECT d.titolo, d.prezzo, "
-									+ "(SELECT filename FROM documenti_immagini WHERE codice = d.codice AND is_default = 1 AND attivo = 1) AS filename, "
+									+ "(SELECT filename FROM documenti_immagini WHERE codice = d.codice AND is_default = 1 AND attivo = 1) AS filename "
 									+ "FROM documenti  AS d "
 									+ "WHERE d.flag = 1 AND d.codice = "+codice+"; ";
 	    					//System.out.println(sql);
@@ -90,13 +90,13 @@ public class GetCarrello extends HttpServlet {
 	    								filename = new SystemInformation().getPathImmaginiDocumentoDefault();												
 	    							}	    							
 	    							
-	    							contenuto += "<tr>";							
-    									contenuto += "<td>"+codice+"</td>";							
-	    								contenuto += "<td><img class='showImmagineDocumento' src='"+filename+"' alt='"+filename+"' /></td>";
-	    								contenuto += "<td>"+result.getString("titolo")+"</td>";							
+	    							contenuto += "<tr>";	
+	    								contenuto += "<td><img class='showImmagineDocumento' src='"+filename+"' alt='"+filename+"' /></td>";					
+	    								contenuto += "<td>"+result.getString("titolo")+"</td>";		
+	    								contenuto += "<td>"+result.getFloat("prezzo")+"</td>";	
 	    								contenuto += "<td><i class='fas fa-minus rimuoviQuantitaDocumentoCarrello' data-codice='"+codice+"'></i>&nbsp;&nbsp;"+quantitaDocumento+"&nbsp;&nbsp;<i class='fas fa-plus aggiungiQuantitaDocumentoCarrello' data-codice='"+codice+"'></i></td>";  								    							
 	    								contenuto += "<td>";
-	    								contenuto += "	<i class='elimina eliminaCodiceCarrello fas fa-times' style='cursor: pointer;' data-codice='"+codice+"' title='Elimina Documento'></i>";
+	    								contenuto += "	<i class='elimina eliminaDocumentoCarrello fas fa-times' style='cursor: pointer;' data-codice='"+codice+"' title='Elimina Documento'></i>";
 	    								contenuto += "</td>";
 	    							contenuto += "</tr>";
 	    						}					
