@@ -139,6 +139,12 @@ ul li a:hover{
 	background-color:#1abbea;
 }
 
+.header_item_dx a .numeroProdottiCarrello{
+		display: inline;
+		color: red;
+		font-weight: normal;
+	}	
+
 .header_item_dx a:hover{
 	opacity:0.85;
 }
@@ -1271,6 +1277,41 @@ a{
 	text-shadow:1px 1px black;
 	font-weight:bold;		
 }
+
+
+	/************************************************************/
+	/**************** PAGINA CARRELLO PRODOTTO  *****************/
+	/************************************************************/	
+
+	#content #content-content #carrelloTable #bodyCarrello i.fa-minus{
+		cursor: pointer; 		
+		background-color:#eee; 
+		border-radius: 15px;
+		padding: 5px;	
+		color: #DC483E;
+	}
+	#content #content-content #carrelloTable #bodyCarrello i.fa-plus{
+		cursor: pointer; 		
+		background-color:#eee; 
+		border-radius: 15px;
+		padding: 5px;	
+		color: #00cc00;
+	}
+	
+	#content #content-content .userButtonCheckout{	
+	background-color: #1abbea;
+	text-shadow: 1px 1px black;
+	text-align:center;
+	height: 30px;		
+	color: #FFF;
+	margin-left: 43%;	
+	margin-top: 5%;
+	width: 15%;	
+	border-radius: 20px;		
+	cursor: pointer;	
+	}
+
+	
 	
 
 	/************************************************************/

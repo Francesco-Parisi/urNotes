@@ -109,6 +109,7 @@
 						<p class="document_title">Descrizione</p>
 						<p class="descrizioneDocumento"><%=descrizione %></p>
 																		
+				<button class='userButtonAggiungiAlCarrello product-button' data-codice='<%=codice%>'>Aggiungi Al Carrello</button>
 						
 					</div>
 				</div>     

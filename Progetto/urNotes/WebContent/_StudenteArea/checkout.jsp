@@ -19,24 +19,24 @@
 	</head>
 	<body>
 		<%@ include file="/partials/header.jsp" %>		
+	<div id="container_appunti_admin">	
 		<div id="content">
 			<div id="content-content">
 
 			<%
 				String output = "";				
-				String fatturazione = "";
 				String spedizione = "";
 				String vettore = "";
 				String metodoPagamento = "";
 				String body = "";
 		    	if(request.getSession() != null){
-		    		Integer idUtente = (Integer) request.getSession().getAttribute("id_utente");    		
+		    		Integer id_utente = (Integer) request.getSession().getAttribute("id_utente");    		
 		    		Carrello cart = (Carrello) request.getSession().getAttribute("carrello");
-		    		if(idUtente != null && cart != null){
+		    		if(id_utente != null && cart != null){
 		    			String sql;
 		    			Statement stmt;
 		    			ResultSet result;
-		    			Integer Codice;
+		    			Integer codice;
 		    			Integer quantitaDocumento;
 		    			Float prz;
 		    			
@@ -47,31 +47,33 @@
 				    				sql = "";
 				    				stmt = null;
 				    				result = null;		    				
-				    				Codice = documento.getCodice();
+				    				codice = documento.getCodice();
 				    				quantitaDocumento = documento.getQuantita();
 			    					stmt = connDB.getConn().createStatement();
 				    				sql = ""
 											+ "SELECT d.titolo, d.prezzo, "
-											+ "FROM documenti  AS d "
-											+ "WHERE d.flag = 1 AND d.codice = "+Codice+"; ";
+											+ "(SELECT filename FROM documenti_immagini WHERE codice = d.codice AND is_default = 1 AND attivo = 1) AS filename "
+											+ "FROM documenti AS d "
+											+ "WHERE d.flag = 1 AND d.codice = "+codice+"; ";
 			    					//System.out.println(sql);
 			    					result = stmt.executeQuery(sql);				
 			    					if(!result.wasNull()) {
 			    						while(result.next()) {
 			    							String filename;
 			    							if(result.getString("filename") != null){
-			    								filename = new SystemInformation().getPathImmaginiDocumentoHTML()+Codice+"/"+result.getString("filename");												
+			    								filename = new SystemInformation().getPathImmaginiDocumentoHTML()+codice+"/"+result.getString("filename");												
 			    							}
 			    							else{
 			    								filename = new SystemInformation().getPathImmaginiDocumentoDefault();												
 			    							}	    
 			    							
 			    							body += "<tr>";							
-			    							body += "<td>"+Codice+"</td>";							
-			    							body += "<td><img class='showImmagineProdotto' src='"+filename+"' alt='"+filename+"' /></td>";
+			    							body += "<td>"+codice+"</td>";							
+			    							body += "<td><img class='showImmagineDocumento' src='"+filename+"' alt='"+filename+"' /></td>";
 			    							body += "<td>"+result.getString("titolo")+"</td>";							
-			    							body += "<td>"+result.getFloat("prezzo")+"</td>";							
-			    							body += "</tr>";
+			    							body += "<td>"+quantitaDocumento+"</td>";
+			    							body += "<td>"+result.getFloat("prezzo")+"</td>";    								    							
+											body += "</tr>";
 			    						}					
 			    					}				 	    						    		
 			    				}
@@ -87,18 +89,17 @@
 			    				result = null;			    				
 		    					stmt = connDB.getConn().createStatement();		    					
 		    					sql = ""
-										+ "SELECT i.id_indirizzo, i.nome, i.cognome, i.indirizzo, i.note,i.cap,i.citta,i.provincia, i.telefono, i.cellulare "
+		    							+ "SELECT i.nome, i.cognome, i.indirizzo, i.cap, i.citta, i.provincia, i.telefono, i.cellulare "
 										+ "FROM indirizzi AS i "
-										+ "WHERE i.attivo = 1 AND i.id_utente = "+idUtente+" "
-										+ "ORDER BY i.id_indirizzo DESC;";										
-		    					result = stmt.executeQuery(sql);				
+										+ "WHERE i.attivo = 1 AND i.id_utente = "+id_utente+"; ";
+										result = stmt.executeQuery(sql);				
 		    					if(!result.wasNull()) {
 		    						int rowCount = result.last() ? result.getRow() : 0;
 		    						if(rowCount > 0) {
 		    							indirizzi += "<option value='0'>Selezionare un Indirizzo</option>";
 		    							result.beforeFirst();
 		    							while(result.next()) {
-		    								indirizzi += "<option value='"+result.getInt("id_indirizzo")+"'>"+result.getString("nome")+" "+result.getString("cognome")+" - "+result.getString("indirizzo")+" - "+result.getString("cap")+" "+result.getString("citta")+" ("+result.getString("provincia")+")</option>";
+		    								indirizzi = result.getString("nome")+" "+result.getString("cognome")+" <br/> "+result.getString("indirizzo")+" <br/> "+result.getInt("cap")+" "+result.getString("citta")+" ("+result.getString("provincia")+")";
 		    							}												
 		    						}
 		    						else {
@@ -169,11 +170,7 @@
 		    					metodiPagamento = "Errore esecuzione Query"+e.getMessage();
 		    				}					    				
 		    				
-			    	        fatturazione += "<select id='fatturazioneCheckout' class='fatturazione checkoutFormField' name='fatturazione'>";
-			    	        fatturazione += indirizzi;
-			    	        fatturazione += "</select>";	        	        
-			    			
-			    	        spedizione += "<select id='spedizioneCheckout' class='spedizione checkoutFormField' name='spedizione'>";
+			    	     	spedizione += "<select id='spedizioneCheckout' class='spedizione checkoutFormField' name='spedizione'>";
 			    	        spedizione += indirizzi;
 			    	        spedizione += "</select>";	       
 		    				
@@ -201,12 +198,12 @@
 					    	<div id="checkoutPage">
 								<p class='adminTitoloPagina'>Concludi Ordine</p>
 								
-			        			<table id='checkoutTable'>
+			        			<table id='prodottiTable'>
 			       					<thead class='adminHeadDataTable'>
 			      						<tr>
 			     							<th>ID</th>
 			     							<th>Foto</th>
-			     							<th>Nome</th>
+			     							<th>Titolo</th>
 											<th>Quantit&agrave;</th>
 			        						<th>Prezzo</th>
 			        					</tr>	
@@ -216,10 +213,7 @@
 									</tbody>
 								</table>
 								
-								<div class="left">
-									<p>Indirizzo di Fatturazione</p>
-									<%=fatturazione %>
-								</div>
+							
 								<div class="right">
 									<p>Indirizzo di Spedizione</p>
 									<%=spedizione %>
@@ -248,6 +242,7 @@
 			%>
 			<%=output %>
 			</div>
+		</div>
 		</div>
 		<%@ include file="/partials/footer.jsp" %>	
 	</body>

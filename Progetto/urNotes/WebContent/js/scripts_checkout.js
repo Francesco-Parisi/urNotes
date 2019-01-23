@@ -28,15 +28,14 @@ $(document).ready(function(){
 	
 	
 	$(document).on('click', '#userButtonConcludiOrdine', function(e){		
-		var fatturazioneCheckout = $("#fatturazioneCheckout").val();
 		var spedizioneCheckout = $("#spedizioneCheckout").val();
 		var vettoreCheckout = $("#vettoreCheckout").val();
 		var metodoPagamentoCheckout = $("#metodoPagamentoCheckout").val();
 		var href = $(this).data("href");
 		
 		if(href != undefined && href.length > 1){
-			if(fatturazioneCheckout != undefined && spedizioneCheckout != undefined && vettoreCheckout != undefined && metodoPagamentoCheckout != undefined
-			   && fatturazioneCheckout > 0 && spedizioneCheckout > 0 && vettoreCheckout > 0 && metodoPagamentoCheckout > 0){		
+			if(spedizioneCheckout != undefined && vettoreCheckout != undefined && metodoPagamentoCheckout != undefined
+			    && spedizioneCheckout > 0 && vettoreCheckout > 0 && metodoPagamentoCheckout > 0){		
 				$("#loader").show();			
 				$.ajax({
 					url: absolutePath+"/AggiungiOrdineTemp",
@@ -44,7 +43,6 @@ $(document).ready(function(){
 					dataType: 'JSON',
 					async: false,
 					data: {
-						"fatturazioneCheckout": fatturazioneCheckout,
 						"spedizioneCheckout": spedizioneCheckout,
 						"vettoreCheckout": vettoreCheckout,
 						"metodoPagamentoCheckout": metodoPagamentoCheckout
@@ -65,7 +63,7 @@ $(document).ready(function(){
 				$("#loader").hide();
 			}
 			else{			
-				showAlert(1, "Verificare di aver selezionato un indirizzo di fatturazione, uno di spedizione, un metodo di pagamento e un vettore.");
+				showAlert(1, "Verificare di aver selezionato un indirizzo di spedizione, un metodo di pagamento e un vettore.");
 			}					
 		}
 		else{

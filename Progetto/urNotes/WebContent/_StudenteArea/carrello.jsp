@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="model.ConnessioneDB,java.sql.*, model.SystemInformation, model.CheckSession"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="model.ConnessioneDB,java.sql.*, model.SystemInformation, model.CheckSession, model.Carrello"%>
 <!DOCTYPE html>
 <html lang = "it">
 	<head>
@@ -22,6 +22,7 @@
 	<div id="container_appunti_admin">	
 		<div id="content">
 			<div id="content-content">
+				<p class='adminTitoloPagina'>Il tuo carrello</p>
 
         			<table id='materieTable'>
        					<thead class='adminHeadDataTable'>

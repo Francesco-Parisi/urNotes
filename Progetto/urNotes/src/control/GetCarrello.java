@@ -54,9 +54,9 @@ public class GetCarrello extends HttpServlet {
 	    String contenuto = "";
 
     	if(request.getSession() != null){
-    		Integer idUtente = (Integer) request.getSession().getAttribute("id_utente");    		
+    		Integer id_utente = (Integer) request.getSession().getAttribute("id_utente");    		
     		Carrello cart = (Carrello) request.getSession().getAttribute("carrello");
-    		if(idUtente != null && cart != null){
+    		if(id_utente != null && cart != null){
     			String sql;
     			Statement stmt;
     			ResultSet result;

@@ -54,12 +54,12 @@ public class ModificaDalCarrello extends HttpServlet {
 		Integer codice = Integer.parseInt(request.getParameter("codice"));
 		Integer mux = Integer.parseInt(request.getParameter("mux"));
 		
-		Integer idUtente = 0;			
+		Integer id_utente = 0;			
 		if(request.getSession().getAttribute("id_utente") != null) {
-			idUtente = (Integer) request.getSession().getAttribute("id_utente");
+			id_utente = (Integer) request.getSession().getAttribute("id_utente");
 		}					
 
-        if(idUtente > 0) {
+        if(id_utente > 0) {
         	Carrello cart = (Carrello) request.getSession().getAttribute("carrello");
         	if(cart != null) {        		
         		Documento d = cart.getDocumentoByCodiceDocumento(codice); 

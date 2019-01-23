@@ -18,7 +18,7 @@
 <ul class="header_menu_dx">
 <li class=header_item_dx><a href="<%=request.getContextPath()%>/_StudenteArea/profilo_studente.jsp">
 <p class="account_item">Ciao <%=request.getSession().getAttribute("nome") %> <i class="fas fa-user"></i></p></a></li>
-<li class=header_item_dx><a href="<%=request.getContextPath()%>/_StudenteArea/carrello.jsp"><i class="fas fa-shopping-cart"></i></a></li>
+<li class=header_item_dx><a href="<%=request.getContextPath()%>/_StudenteArea/carrello.jsp"><i class="fas fa-shopping-cart"></i> <span class="numeroProdottiCarrello"></span></a></li>
 <li class=header_item_dx><a href="<%=request.getContextPath()%>/logout.jsp">Logout</a></li>
 </ul>
 

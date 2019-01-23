@@ -59,9 +59,9 @@ public class AggiungiOrdineTemp extends HttpServlet {
         String contenuto = "";
 		
     	if(request.getSession() != null){
-    		Integer idUtente = (Integer) request.getSession().getAttribute("id_utente");    		
+    		Integer id_utente = (Integer) request.getSession().getAttribute("id_utente");    		
     		Carrello cart = (Carrello) request.getSession().getAttribute("carrello");
-    		if(idUtente != null && cart != null){
+    		if(id_utente != null && cart != null){
     			if(cart.getNumeroDocumenti() > 0) {
     				
 			        ConnessioneDB connDB = new ConnessioneDB();
@@ -74,8 +74,6 @@ public class AggiungiOrdineTemp extends HttpServlet {
 							Integer contrassegno = null;	
 							Float costo_vettore = null;
 							Integer in_contanti = null;		
-							Integer primo_stato = null;
-							Float importo_minimo_ordine_sped_grat = null;
 
 							stmt0 = connDB.getConn().createStatement();
 		    				sql = ""
@@ -102,77 +100,51 @@ public class AggiungiOrdineTemp extends HttpServlet {
 	    						}
 	    					}
 
-							stmt0 = connDB.getConn().createStatement();
-		    				sql = ""
-									+ "SELECT valore AS importo_minimo_ordine_sped_grat "
-									+ "FROM impostazioni "
-									+ "WHERE slug = 'importo_minimo_ordine_sped_grat' AND attivo = 1";
-	    					result = stmt0.executeQuery(sql);				
-	    					if(!result.wasNull()) {
-	    						while(result.next()) {							
-	    							importo_minimo_ordine_sped_grat = result.getFloat("importo_minimo_ordine_sped_grat");
-	    						}
-	    					}
-
-	    					stmt0 = connDB.getConn().createStatement();
-		    				sql = ""
-									+ "SELECT id_stato "
-									+ "FROM ordini_stati "
-									+ "WHERE primo_stato = 1; ";
-	    					result = stmt0.executeQuery(sql);				
-	    					if(!result.wasNull()) {
-	    						while(result.next()) {							
-	    							primo_stato = result.getInt("id_stato");
-	    						}
-	    					}
-	    					
-	    					if(contrassegno != null && in_contanti != null && primo_stato > 0) {	    				
+	    					if(contrassegno != null && in_contanti != null) {	    				
 		    					if(in_contanti == 1 && contrassegno == 0){ //Se ho scelto un metodo di pagamento in contanti e un vettore che NON supporta il contrassegno
 									errore = "Verifica che il vettore selezionato supporti il contrassegno.";
 									risultato = 0;														
 		    					}
 		    					else {		    						
-									sql = "INSERT INTO ordini (id_utente, id_vettore, id_metodo, id_indirizzo_spedizione, data_ordine, attivo, totale_spedizione) VALUES (?, ?, ?, ?, ?, NOW(), ?, ?, ?) ;";
+									sql = "INSERT INTO ordini (id_utente, id_vettore, id_metodo, id_indirizzo, data_ordine, attivo, totale_spedizione) VALUES (?, ?, ?, ?, NOW(), ?, ?) ;";
 									PreparedStatement  stmt = connDB.getConn().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-									stmt.setInt(1, idUtente);
+									stmt.setInt(1, id_utente);
 									stmt.setInt(2, vettoreCheckout);
 									stmt.setInt(3, metodoPagamentoCheckout);							
 									stmt.setInt(4, spedizioneCheckout);
 									stmt.setInt(5, 0);							
-									stmt.setInt(6, primo_stato);							
-									stmt.setFloat(7, costo_vettore);							
+									stmt.setFloat(6, costo_vettore);							
 									if(stmt.executeUpdate() == 1) {								
-										Integer idOrdine = 0;								
+										Integer serial_id = 0;								
 										ResultSet rs = stmt.getGeneratedKeys();
 										if (rs.next()){
-											idOrdine = rs.getInt(1);
+											serial_id = rs.getInt(1);
 										}								
 										
-										if(idOrdine > 0) {									
+										if(serial_id > 0) {									
 											Integer continua = 1;
-											Float prezzo = null;
 
 											for(Documento documento: cart.getDocumenti()) { //Per ogni documento del carrello
 							    				stmt0 = null;
 							    				result = null;					    				
 						    					stmt0 = connDB.getConn().createStatement();
 							    				sql = ""
-														+ "SELECT d.titolo, d.prezzo, "
+														+ "SELECT d.titolo, d.prezzo "
 														+ "FROM documenti  AS d "
-														+ "WHERE p.attivo = 1 AND p.codice = "+documento.getCodice()+"; ";
+														+ "WHERE d.attivo = 1 AND d.codice = "+documento.getCodice()+"; ";
 						    					//System.out.println(sql);
 						    					result = stmt0.executeQuery(sql);				
 						    					if(!result.wasNull()) {
 						    						while(result.next()) {
 						    							stmt1 = null;
-						    							sql = "INSERT INTO ordini_prodotti (serial_id, codice, titolo, quantita, prezzo_documenti, prezzo_totale, nome_materia, attivo) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+						    							sql = "INSERT INTO ordini_documenti (serial_id, codice, titolo, quantita, prezzo_documenti, prezzo_totale, nome_materia, attivo) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
 									    				stmt1 = connDB.getConn().prepareStatement(sql);
-									    				stmt1.setInt(1, idOrdine);												
+									    				stmt1.setInt(1, serial_id);												
 									    				stmt1.setInt(2, documento.getCodice());
 									    				stmt1.setString(3, result.getString("titolo"));
 									    				stmt1.setInt(4, documento.getQuantita());												
-														stmt1.setFloat(5, prezzo);
-														stmt1.setFloat(6, (prezzo*documento.getQuantita()));
+														stmt1.setFloat(5, result.getFloat("prezzo"));
+														stmt1.setFloat(6, (result.getFloat("prezzo")*documento.getQuantita()));
 														stmt1.setString(7, result.getString("nome_materia"));
 														stmt1.setInt(8, result.getInt("attivo"));
 														
@@ -196,11 +168,11 @@ public class AggiungiOrdineTemp extends HttpServlet {
 				    								 +"WHERE serial_id = ?;";
 				    							//System.out.println(sql);
 							    				stmt1 = connDB.getConn().prepareStatement(sql);
-							    				stmt1.setInt(1, idOrdine);												
-							    				stmt1.setInt(2, idOrdine);												
-							    				stmt1.setInt(3, idOrdine);												
-							    				stmt1.setInt(4, idOrdine);												
-							    				stmt1.setInt(5, idOrdine);												
+							    				stmt1.setInt(1, serial_id);												
+							    				stmt1.setInt(2, serial_id);												
+							    				stmt1.setInt(3, serial_id);												
+							    				stmt1.setInt(4, serial_id);												
+							    				stmt1.setInt(5, serial_id);												
 												if(stmt1.executeUpdate() == 1) {
 								    			
 							    					result = stmt0.executeQuery(sql);				

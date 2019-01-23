@@ -54,9 +54,9 @@ public class AggiungiOrdine extends HttpServlet {
         Integer richiesta = Integer.parseInt(request.getParameter("richiesta"));		
         if(richiesta == 1) {
 	    	if(request.getSession() != null){
-	    		Integer idOrdine = (Integer) request.getSession().getAttribute("serial_id");   
-	    		Integer idUtente = (Integer) request.getSession().getAttribute("id_utente");
-	    		if(idOrdine != null && idUtente != null){
+	    		Integer serial_id = (Integer) request.getSession().getAttribute("serial_id");   
+	    		Integer id_utente = (Integer) request.getSession().getAttribute("id_utente");
+	    		if(serial_id != null && serial_id != null){
 			        ConnessioneDB connDB = new ConnessioneDB();
 					if(connDB.getConn() != null) {
 						try {				
@@ -67,7 +67,7 @@ public class AggiungiOrdine extends HttpServlet {
 		    				sql = ""
 									+ "SELECT od.quantita, od.codice, "
 									+ "FROM ordini_documenti AS od "
-									+ "WHERE od.attivo = 1 AND od.serial_id = "+idOrdine+"; ";
+									+ "WHERE od.attivo = 1 AND od.serial_id = "+serial_id+"; ";
 	    					result = stmt0.executeQuery(sql);				
 	    					if(!result.wasNull()) {	    							    					
 	    						int rowCount = result.last() ? result.getRow() : 0;
@@ -84,9 +84,9 @@ public class AggiungiOrdine extends HttpServlet {
 		    						if(continua == 1) {
 		    							sql = "UPDATE ordini SET attivo = 1 WHERE serial_id = ?;";
 		    							stmt = connDB.getConn().prepareStatement(sql);
-		    							stmt.setInt(1, idOrdine);
+		    							stmt.setInt(1, serial_id);
 		    							if(stmt.executeUpdate() == 1) {								
-											Carrello newCart = new Carrello(idUtente);
+											Carrello newCart = new Carrello(id_utente);
 											request.getSession().setAttribute("carrello", newCart);
 		    								risultato = 1;					
 		    								contenuto = "Ordine Terminato con Successo";
