@@ -13,16 +13,16 @@ import org.json.simple.JSONObject;
 import model.ConnessioneDB;
 import model.SystemInformation;
 /**
- * Servlet implementation class GetAppunti
+ * Servlet implementation class GetRichiesta
  */
-@WebServlet("/GetDispense")
-public class GetDispense extends HttpServlet {
+@WebServlet("/GetRichiesta")
+public class GetRichiesta extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GetDispense() {
+    public GetRichiesta() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,14 +43,14 @@ public class GetDispense extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 	    
-		//String idDispensa = request.getParameter("id");
-		//System.out.print(idDispensa+" ");
-		String value = request.getParameter("value");
-		//System.out.println(value);
+		Integer id_utente = (int) request.getSession().getAttribute("id_utente");
 
+		
 		Integer risultato = 0;
 	    String errore = "";
 	    String contenuto = "";
+	    
+	    
 	    
         ConnessioneDB connDB = new ConnessioneDB();
 		if(connDB.getConn() != null) {
@@ -58,39 +58,27 @@ public class GetDispense extends HttpServlet {
 				Statement stmt = connDB.getConn().createStatement();
 				String sql = "";
 				sql = ""
-						+ "SELECT d.codice, d.titolo, d.pagine, d.universita, d.nome_materia, d.prezzo "
-						+ "FROM documenti AS d "
-						+ "WHERE d.tipo LIKE 'Dispense' AND d.flag=1 AND d.nome_materia LIKE '"+value+"';";
+						+ "SELECT r.id_richiesta, r.titolo, r.pagine, r.nome_materia, r.universita, r.descrizione, r.tipo, r.data_richiesta "
+						+ "FROM richieste AS r "
+						+ "WHERE r.attivo = 1 AND id_utente="+id_utente+"; ";
 				//System.out.println(sql);
 				ResultSet result = stmt.executeQuery(sql);	
 				
 				if(!result.wasNull()) {
-					contenuto += "<tr>";
-					contenuto += "<td class='row_title'>"+"Titolo"+"</td>";
-					contenuto += "<td class='row_title'>"+"Pagine"+"</td>";
-					contenuto += "<td class='row_title'>"+"Prezzo"+"</td>";
-					contenuto += "<td class='row_title'>"+""+"</td>";
-					contenuto += "</tr>";
+					
 					while(result.next()) {
 						contenuto += "<tr>";
-						contenuto += "<td>"+""+"</td>";
-						contenuto += "<td>"+""+"</td>";
-						contenuto += "<td>"+""+"</td>";
-						contenuto += "<td>"+""+"</td>";
-						contenuto += "</tr>";
-						contenuto += "<tr>";
+						contenuto += "<td>"+result.getString("id_richiesta")+"</td>";
+						contenuto += "<td>"+result.getString("data_richiesta")+"</td>";		
 						contenuto += "<td>"+result.getString("titolo")+"</td>";		
 						contenuto += "<td>"+result.getInt("pagine")+"</td>";
+						contenuto += "<td>"+result.getString("nome_materia")+"</td>";
+						contenuto += "<td>"+result.getString("universita")+"</td>";		
+						contenuto += "<td>"+result.getString("descrizione")+"</td>";		
+						contenuto += "<td>"+result.getString("tipo")+"</td>";		
 						contenuto += "<td>";
-						contenuto += new SystemInformation().truncateDecimal(result.getFloat("prezzo"),2);							
-						contenuto += "€"+"</td>";	
-						contenuto += "<td><button type='submit' id='idDispensaDett' data-id='"+result.getString("codice")+"' name='submitForm'><i class='fas fa-search' style='cursor: pointer;' title='Dettagli Dispensa'></i></button</td>";
-						contenuto += "<td>";
-						contenuto += "<div class='product'>";
-						contenuto += "<div class='product-button' data-codice='"+result.getInt("codice")+"'>";
-						contenuto += "<button type='submit' class='userButtonAggiungiAlCarrello product-button' data-codice='"+result.getInt("codice")+"' name='submitForm'><i class='fas fa-shopping-cart' style='cursor: pointer;' title='Aggiunta Carrello'></i></button></td>";
-						contenuto += "</div>";
-						contenuto += "</div>";	
+						contenuto += "	<i class='aggiungiRichiesta fas fa-book-open' style='cursor: pointer;' data-id_richiesta='"+result.getInt("id_richiesta")+"' title='Aggiungi Richiesta'></i>";
+						contenuto += "</td>";
 						contenuto += "</td>";
 						contenuto += "</tr>";
 					}		

@@ -28,13 +28,16 @@
 				<table id="prodottiTable">
 					<thead class="adminHeadDataTable">
 						<tr>
+						
+							<th>Id</th>
+							<th>Data</th>
 							<th>Titolo</th>
 							<th>Pagine</th>
-							<th>Univerisit&agrave;</th>
 							<th>Materia</th>
+							<th>Univerisit&agrave;</th>
 							<th>Descrizione</th>
 							<th>Tipo</th>
-							<th>Azioni</th>
+							<th>Azione</th>
 						</tr>	
 					</thead>
 					<tbody id="bodyRichiesta" class="adminBodyDataTable">

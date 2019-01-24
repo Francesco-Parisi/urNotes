@@ -54,7 +54,7 @@ public class GetRichieste extends HttpServlet {
 				Statement stmt = connDB.getConn().createStatement();
 				String sql = "";
 				sql = ""
-						+ "SELECT r.id_richiesta, r.titolo, r.pagine, r.nome_materia, r.universita, r.descrizione, r.tipo, r.data_richiesta, r.letta, IFNULL((SELECT username FROM utenti WHERE id_utente = r.id_utente), '') AS studente "
+						+ "SELECT r.id_richiesta, r.titolo, r.pagine, r.nome_materia, r.universita, r.descrizione, r.tipo, r.data_richiesta, IFNULL((SELECT username FROM utenti WHERE id_utente = r.id_utente), '') AS studente "
 						+ "FROM richieste AS r "
 						+ "WHERE r.attivo = 1; ";	
 				//System.out.println(sql);
@@ -73,15 +73,6 @@ public class GetRichieste extends HttpServlet {
 							contenuto += "<td>"+result.getString("descrizione")+"</td>";							
 							contenuto += "<td>"+result.getString("tipo")+"</td>";							
 							contenuto += "<td>";
-							
-							if(result.getInt("letta") == 1) { //Se è stato letto
-								cl = "letto";
-							}
-							else {
-								cl = "nonLetto";
-							}							
-							
-							contenuto += "	<i class='fotoRichiesta fas fa-camera' style='cursor: pointer;' data-id_richiesta='"+result.getInt("id_richiesta")+"' title='Gestisci Foto'></i>";
 							contenuto += "	<i class='eliminaRichiesta fas fa-times' style='cursor: pointer;' data-id_richiesta='"+result.getInt("id_richiesta")+"' title='Elimina Richiesta'></i>";
 							contenuto += "</td>";
 						contenuto += "</tr>";

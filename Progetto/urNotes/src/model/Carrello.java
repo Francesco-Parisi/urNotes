@@ -27,8 +27,8 @@ public class Carrello {
 
 	public Documento getDocumentoByCodiceDocumento(Integer codice) {
 		for(Documento documento: this.documenti) {
-		    if(documento.getCodice() == codice) {
-		    	return documento;
+			if(documento.getCodice().equals(codice)) {
+				return documento;
 		    }
 		}
 		return null;
@@ -42,7 +42,7 @@ public class Carrello {
 	public void delDocumento(Integer codice) {
 		int i = 0;
 		for(Documento documento: this.getDocumenti()) {
-		    if(documento.getCodice()== codice) {
+		    if(documento.getCodice().equals(codice)) {
 		    	this.getDocumenti().remove(i);
 		    	return;
 		    }
@@ -52,7 +52,7 @@ public class Carrello {
 	
 	public void modQuantDocumento(Integer codice, Integer quantita) {
 		for(Documento documento: this.documenti) {
-		    if(documento.getCodice() == codice) {
+		    if(documento.getCodice().equals(codice)) {
 		    	documento.setQuantita(quantita);
 		    }
 		}

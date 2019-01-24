@@ -14,6 +14,7 @@
 			} 
 		%>
 		<%@ include file="/partials/head.jsp" %>		
+		<script src="<%=request.getContextPath()%>/js/scripts_documenti_admin.js"></script>					
 		<script src="<%=request.getContextPath()%>/js/scripts_richieste_admin.js"></script>					
 		<title>urNotes | Richieste</title>		
 	</head>
@@ -37,10 +38,18 @@
 							<th>Azioni</th>
 						</tr>	
 					</thead>
-					<tbody id="bodyContatti" class="adminBodyDataTable">
+					<tbody id="bodyRichieste" class="adminBodyDataTable">
 						
 					</tbody>
-				</table>							
+				</table>
+				<div id="aggiungiDocumento" class="adminAggiungi">
+			
+					<button id="buttonAggiungiDocumento" class="adminButtonAggiungi"><i class="fas fa-plus" style="cursor: pointer;" title="Aggiungi Documento"></i></button>
+				</div>
+								
+				<div id="formAggiungiDocumento" class="adminFormAggiungi" style="display: none;">
+				
+				</div>							
 			</div>
 		</div>
 		</div>

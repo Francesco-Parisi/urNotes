@@ -5,9 +5,15 @@ import java.math.BigDecimal;
 public class SystemInformation {
 	
 	public SystemInformation() {
+		//Immagini
 		this.setPathImmaginiDocumento("C:\\Users\\Francesco\\Documents\\urNotes\\Progetto\\urNotes\\WebContent\\images\\documenti\\");		
 		this.setPathImmaginiDocumentoHTML("/urNotes/images/documenti/");		
 		this.setPathImmaginiDocumentoDefault("/urNotes/images/documenti/documento_blank.png");
+		
+		//Richieste-File
+		this.setPathFileRichieste("C:\\Users\\Francesco\\Documents\\urNotes\\Progetto\\urNotes\\WebContent\\images\\richieste\\");		
+		this.setPathFileRichiesteHTML("/urNotes/images/richieste/");	
+		
 		this.setUrlRedirect("/accedi.jsp");				
 		this.setLimiteDocumentiIndex(9);
 	}
@@ -32,6 +38,22 @@ public class SystemInformation {
 	public void setPathImmaginiDocumentoDefault(String pathImmaginiDocumentoDefault) {
 		this.pathImmaginiDocumentoDefault = pathImmaginiDocumentoDefault;
 	}
+	
+	//Metodi Richieste
+	public String getPathFileRichiesteHTML() {		
+		return pathFileRichiesteHTML; 
+	}	
+	public void setPathFileRichiesteHTML(String pathFileRichieste) {
+		this.pathFileRichiesteHTML = pathFileRichieste;
+	}
+	
+	public String getPathFileRichieste() {		
+		return pathFileRichieste; 
+	}
+	public void setPathFileRichieste(String pathFileRichieste) {
+		this.pathFileRichieste = pathFileRichieste;
+	}
+	
 	
 	public String getUrlRedirect() {
 		return urlRedirect;
@@ -59,6 +81,8 @@ public class SystemInformation {
 
 	private String pathImmaginiDocumento;
 	private String pathImmaginiDocumentoHTML;
+	private String pathFileRichieste;
+	private String pathFileRichiesteHTML;
 	private String pathImmaginiDocumentoDefault;
 	private String urlRedirect;
 	private Integer limiteDocumentiIndex;

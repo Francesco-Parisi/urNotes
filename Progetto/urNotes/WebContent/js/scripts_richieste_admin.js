@@ -123,10 +123,10 @@ function getRichieste(){
 			}
 			else{				
 				if(msg.contenuto.length > 0){
-					$("#bodyContatti").html(msg.contenuto);
+					$("#bodyRichieste").html(msg.contenuto);
 				}											
 				else{
-					$("#bodyContatti").html("<tr><td colspan='9'>Nessuna Richiesta Presente</td></tr>");
+					$("#bodyRichieste").html("<tr><td colspan='9'>Nessuna Richiesta Presente</td></tr>");
 				}
 				
 			}
