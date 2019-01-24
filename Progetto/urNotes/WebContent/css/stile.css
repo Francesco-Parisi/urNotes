@@ -1222,7 +1222,7 @@ a{
 
 #modalDettaglioOrdine{
 	display: none;
-	height: 17%;
+	height: 20%;
 	width: 80%;
 	left: 10%;
 	top: 10%;
@@ -1415,7 +1415,12 @@ a{
 	
 #content #content-content .adminFormAggiungi .dropzoneFileRichiesta .dz-image img{
 	border-radius: 10px;
-}			
+}		
+
+
+#content #content-content .adminAggiungi #formAggiungiFile .adminButtonConfermaAggiungi{	
+    margin-left:50%;
+}
 	
 
 	/************************************************************/

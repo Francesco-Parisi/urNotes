@@ -29,8 +29,8 @@ public class UploadFileRichiesta extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private boolean isMultipart;
     private String filePath;
-    private int maxFileSize = 200 * 102400;
-    private int maxMemSize = 50 * 1024;
+    private int maxFileSize = 50 * 102400;
+    private int maxMemSize = 4 * 1024;
     @SuppressWarnings("unused")
 	private File file ;	
        

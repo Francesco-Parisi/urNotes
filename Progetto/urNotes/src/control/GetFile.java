@@ -46,7 +46,7 @@ public class GetFile extends HttpServlet {
 
 	    Integer id_richiesta = Integer.parseInt(request.getParameter("id_richiesta"));	
 	    request.getSession().setAttribute("id_richiesta", id_richiesta);
-	    System.out.println(id_richiesta);
+	    //System.out.println(id_richiesta);
 		if(id_richiesta > 0){
 	        ConnessioneDB connDB = new ConnessioneDB();
 			if(connDB.getConn() != null) {

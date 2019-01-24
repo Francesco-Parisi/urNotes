@@ -194,7 +194,7 @@ function createDropzone(){
 	if(id_richiesta != undefined && id_richiesta > 0){
 		$(".dropzoneFileRichiesta").dropzone({
 			  maxFiles: 1,
-			  acceptedFiles: ".docx,.pdf",
+			  acceptedFiles: ".pdf",
 			  accept: function(file, done){					    
 			    done();
 			  },
