@@ -71,7 +71,6 @@ Ogni Documento è visionabile leggendo tutte le informazioni ad esso relative.
 	<section class="container-section">
 	<div class="section-image">
 	<div class="title-section">Effettua la registrazione</div>
-	
 	<div class="section-text">
 	Trovare tempo per preparare un esame non è sempre facile, 
 	per questo hai bisogno di studiare quando e dove vuoi. 
@@ -88,38 +87,31 @@ Ogni Documento è visionabile leggendo tutte le informazioni ad esso relative.
 <% } else if((Integer) request.getSession().getAttribute("tipo_utente") == 1) { %>
 	<section class="container-section">
 	<div class="section-image">
-	<div class="title-section">Gestore</div>
-	
+	<div class="title-section">Gestisci i Documenti</div>
 	<div class="section-text">
-	Trovare tempo per preparare un esame non è sempre facile, 
-	per questo hai bisogno di studiare quando e dove vuoi. 
-	Trova i tuoi appunti sul tuo tablet o 
-	sul tuo smartphone,mentre vai all'Università.
-	Acquistali in modo semplice e veloce.
-	<img class="image-section" alt="icon" src="/urNotes/images/icon3.png">
+	Aggiungi appunti e dispense in modo facile e veloce.
+	Pubblicare nuovi documenti non è mai stato cosi facile. Prova!.
+	<img class="image-section" alt="icon" src="/urNotes/images/setting.png">
 	<br>
-	<a id="button" href="/urNotes/registrati.jsp">Registrati</a>
+	<a id="button" href="/urNotes/_GestoreArea/documentiGestore.jsp">Documenti</a>
 	</div>
 	</div>     
 	</section>
 
 <% } else if((Integer) request.getSession().getAttribute("tipo_utente") == 2) {  %>
-	<section class="container-section">
-	<div class="section-image">
-	<div class="title-section">Studente</div>
-	
-	<div class="section-text">
-	Trovare tempo per preparare un esame non è sempre facile, 
-	per questo hai bisogno di studiare quando e dove vuoi. 
-	Trova i tuoi appunti sul tuo tablet o 
-	sul tuo smartphone,mentre vai all'Università.
-	Acquistali in modo semplice e veloce.
-	<img class="image-section" alt="icon" src="/urNotes/images/icon3.png">
-	<br>
-	<a id="button" href="/urNotes/registrati.jsp">Registrati</a>
-	</div>
-	</div>     
-	</section>
+<section class="container-section">
+<div class="section-image">
+<div class="title-section">Gli Appunti 2.0</div>
+<div class="section-text">
+Sarà possibile per ogni insegnamento caricare e visualizzare dispense e appunti.
+Ogni Documento sarà commentabile e visionabile in anteprima senza doverlo acquistare.
+<img class="image-section1" alt="icon" src="/urNotes/images/icon.png">
+<br>
+<a id="button" href="/urNotes/appunti.jsp">Appunti</a>
+</div>
+
+</div>       
+</section>	
 <% } %>
 
 
