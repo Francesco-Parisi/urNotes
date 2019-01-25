@@ -15,7 +15,10 @@
 		%>
 		<%@ include file="/partials/head.jsp" %>		
 		<script src="<%=request.getContextPath()%>/js/scripts_documenti_admin.js"></script>					
-		<script src="<%=request.getContextPath()%>/js/scripts_richieste_admin.js"></script>					
+		<script src="<%=request.getContextPath()%>/js/scripts_richieste_admin.js"></script>		
+		<script src="<%=request.getContextPath()%>/js/scripts_richiesta.js"></script>		
+		<script src="<%=request.getContextPath()%>/js/scripts_upload_file.js"></script>		
+					
 		<title>urNotes | Richieste</title>		
 	</head>
 	<body onLoad="getRichieste()">

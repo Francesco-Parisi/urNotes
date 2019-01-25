@@ -96,7 +96,7 @@ $(document).ready(function(){
 				$("#loader").hide();
 			}
 			else{
-				showAlert(1, "Controllare di aver compilato correttamente tutti i campi.",filenameFileRichiesta.length);
+				showAlert(1, "<Le Dimensioni del file superano il limite .",filenameFileRichiesta.length);
 			}					
 		}
 		else{
@@ -142,6 +142,41 @@ $(document).ready(function(){
 	});		
 	
 	
+	$(document).on('click', '.scaricaFile', function(e){		
+		var idFile = $(this).data("id_file");
+		
+		if(idFile != undefined && idFile > 0){		
+			if(confirm("Conferma il download del file selezionato? " + idFile)){
+				$("#loader").show();			
+				$.ajax({
+					url: absolutePath+"/ScaricaFile",
+					type: "GET",
+					dataType: 'JSON',
+					async: false,
+					data: {
+						"idFile": idFile
+					},
+					success:function(msg){
+						if(!msg.risultato){
+							showAlert(1, msg.errore);
+						}
+						else{
+							showAlert(0, msg.contenuto);
+							getFile();
+						}
+					},
+					error: function(msg){
+						showAlert(1, "Impossibile Recuperare i dati.");
+					}
+				});
+				
+				$("#loader").hide();
+			}
+		}
+		else{			
+			showAlert(1, "Errore Parametri.");
+		}		
+	});		
 	
 	
 });

@@ -14,6 +14,10 @@ public class SystemInformation {
 		this.setPathFileRichieste("C:\\Users\\Francesco\\Documents\\urNotes\\Progetto\\urNotes\\WebContent\\images\\richieste\\");		
 		this.setPathFileRichiesteHTML("/urNotes/images/richieste/");	
 		
+		//Download-File
+		this.setPathFileDownload("C:\\Users\\Francesco\\Documents\\urNotes\\Progetto\\urNotes\\WebContent\\images\\richieste\\");		
+		this.setPathFileDownloadHTML("/urNotes/images/download/");	
+		
 		this.setUrlRedirect("/accedi.jsp");				
 		this.setLimiteDocumentiIndex(9);
 	}
@@ -55,6 +59,22 @@ public class SystemInformation {
 	}
 	
 	
+	//Metodi Download
+		public String getPathFileDownloadHTML() {		
+			return pathFileDownloadHTML; 
+		}	
+		public void setPathFileDownloadHTML(String pathFileDownload) {
+			this.pathFileDownloadHTML = pathFileDownload;
+		}
+		
+		public String getPathFileDownload() {		
+			return pathFileDownload; 
+		}
+		public void setPathFileDownload(String pathFileDownload) {
+			this.pathFileDownload = pathFileDownload;
+		}
+	
+	
 	public String getUrlRedirect() {
 		return urlRedirect;
 	}
@@ -83,6 +103,8 @@ public class SystemInformation {
 	private String pathImmaginiDocumentoHTML;
 	private String pathFileRichieste;
 	private String pathFileRichiesteHTML;
+	private String pathFileDownload;
+	private String pathFileDownloadHTML;
 	private String pathImmaginiDocumentoDefault;
 	private String urlRedirect;
 	private Integer limiteDocumentiIndex;

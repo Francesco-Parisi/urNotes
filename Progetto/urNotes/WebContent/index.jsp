@@ -34,11 +34,10 @@
 
 
 
+<% if((Integer) request.getSession().getAttribute("tipo_utente") == null){ %>
 <section class="container-section">
 <div class="section-image">
-
 <div class="title-section">Gli Appunti 2.0</div>
-
 <div class="section-text">
 È possibile per ogni insegnamento caricare e visualizzare dispense e appunti.
 Ogni Documento è visionabile leggendo tutte le informazioni ad esso relative.
@@ -46,9 +45,9 @@ Ogni Documento è visionabile leggendo tutte le informazioni ad esso relative.
 <br>
 <a id="button" href="/urNotes/appunti.jsp">Appunti</a>
 </div>
-
 </div>       
 </section>
+<% } %>
 
 
 <section class="container-section">
@@ -67,25 +66,60 @@ Ogni Documento è visionabile leggendo tutte le informazioni ad esso relative.
 </div>       
 </section>
 
-<% if((Integer) request.getSession().getAttribute("tipo_utente") == null){ %>
-<section class="container-section">
-<div class="section-image">
-<div class="title-section">Studia quando e dove vuoi</div>
 
-<div class="section-text">
-Trovare tempo per preparare un esame non è sempre facile, 
-per questo hai bisogno di studiare quando e dove vuoi. 
-Trova i tuoi appunti sul tuo tablet o 
-sul tuo smartphone,mentre vai all'Università.
-Acquistali in modo semplice e veloce.
-<img class="image-section" alt="icon" src="/urNotes/images/icon3.png">
-<br>
-<a id="button" href="/urNotes/registrati.jsp">Registrati</a>
-</div>
-</div>     
-  
-  
-</section>		
+<% if((Integer) request.getSession().getAttribute("tipo_utente") == null) { %>
+	<section class="container-section">
+	<div class="section-image">
+	<div class="title-section">Effettua la registrazione</div>
+	
+	<div class="section-text">
+	Trovare tempo per preparare un esame non è sempre facile, 
+	per questo hai bisogno di studiare quando e dove vuoi. 
+	Trova i tuoi appunti sul tuo tablet o 
+	sul tuo smartphone,mentre vai all'Università.
+	Acquistali in modo semplice e veloce.
+	<img class="image-section" alt="icon" src="/urNotes/images/icon3.png">
+	<br>
+	<a id="button" href="/urNotes/registrati.jsp">Registrati</a>
+	</div>
+	</div>     
+	</section>		
+
+<% } else if((Integer) request.getSession().getAttribute("tipo_utente") == 1) { %>
+	<section class="container-section">
+	<div class="section-image">
+	<div class="title-section">Gestore</div>
+	
+	<div class="section-text">
+	Trovare tempo per preparare un esame non è sempre facile, 
+	per questo hai bisogno di studiare quando e dove vuoi. 
+	Trova i tuoi appunti sul tuo tablet o 
+	sul tuo smartphone,mentre vai all'Università.
+	Acquistali in modo semplice e veloce.
+	<img class="image-section" alt="icon" src="/urNotes/images/icon3.png">
+	<br>
+	<a id="button" href="/urNotes/registrati.jsp">Registrati</a>
+	</div>
+	</div>     
+	</section>
+
+<% } else if((Integer) request.getSession().getAttribute("tipo_utente") == 2) {  %>
+	<section class="container-section">
+	<div class="section-image">
+	<div class="title-section">Studente</div>
+	
+	<div class="section-text">
+	Trovare tempo per preparare un esame non è sempre facile, 
+	per questo hai bisogno di studiare quando e dove vuoi. 
+	Trova i tuoi appunti sul tuo tablet o 
+	sul tuo smartphone,mentre vai all'Università.
+	Acquistali in modo semplice e veloce.
+	<img class="image-section" alt="icon" src="/urNotes/images/icon3.png">
+	<br>
+	<a id="button" href="/urNotes/registrati.jsp">Registrati</a>
+	</div>
+	</div>     
+	</section>
 <% } %>
 
 

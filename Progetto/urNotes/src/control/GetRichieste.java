@@ -73,6 +73,8 @@ public class GetRichieste extends HttpServlet {
 							contenuto += "<td>"+result.getString("descrizione")+"</td>";							
 							contenuto += "<td>"+result.getString("tipo")+"</td>";							
 							contenuto += "<td>";
+							contenuto += "	<i class='aggiungiRichiesta fas fa-book-open' style='cursor: pointer;' data-id_richiesta='"+result.getInt("id_richiesta")+"' title='Visualizza Richiesta'></i>";
+
 							contenuto += "	<i class='eliminaRichiesta fas fa-times' style='cursor: pointer;' data-id_richiesta='"+result.getInt("id_richiesta")+"' title='Elimina Richiesta'></i>";
 							contenuto += "</td>";
 						contenuto += "</tr>";

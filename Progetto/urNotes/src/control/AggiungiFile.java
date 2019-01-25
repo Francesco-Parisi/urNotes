@@ -57,8 +57,7 @@ public class AggiungiFile extends HttpServlet {
 		if(connDB.getConn() != null) {
 			try {				
 				String sql = "";
-					
-				if(continua == 1) {
+			
 					sql = "INSERT INTO richieste_file (id_richiesta, filename, attivo) VALUES (?, ?, ?) ;";
 					PreparedStatement  stmt = connDB.getConn().prepareStatement(sql);
 					stmt.setInt(1, id_richiesta);
@@ -72,7 +71,7 @@ public class AggiungiFile extends HttpServlet {
 						errore = "Errore Inserimento File.";
 						risultato = 0;					
 					}															
-				}
+				
 				
 				if(risultato == 0) {
 					connDB.getConn().rollback();
