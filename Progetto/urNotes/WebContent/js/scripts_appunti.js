@@ -26,6 +26,8 @@ $(document).ready(function(){
         }        
     } );
 	
+	
+	
 	$(document).on('click', '#buttonAggiungiAppunto', function(e){
 		
 		if($("#formAggiungiAppunto").css("display") == "block"){
@@ -95,7 +97,7 @@ $(document).ready(function(){
 						showAlert(0, msg.contenuto);
 						$("#formAggiungiAppunto").html("");
 						$("#formAggiungiAppunto").css("display", "none");
-						getAppuinti();
+						getAppunti();
 					}
 				},
 				error: function(msg){

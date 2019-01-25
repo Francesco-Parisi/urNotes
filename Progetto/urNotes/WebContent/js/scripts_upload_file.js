@@ -146,7 +146,7 @@ $(document).ready(function(){
 		var idFile = $(this).data("id_file");
 		
 		if(idFile != undefined && idFile > 0){		
-			if(confirm("Conferma il download del file selezionato? " + idFile)){
+			if(confirm("Conferma il download del file selezionato? ")){
 				$("#loader").show();			
 				$.ajax({
 					url: absolutePath+"/ScaricaFile",
