@@ -8,7 +8,7 @@
 		<script src="<%=request.getContextPath()%>/js/scripts_recensione.js"></script>
 		<title>urNotes | Dettagli</title>		
 	</head>
-	<body onload="getRecensione()">
+	<body onload="getRecensione">
 		<%@ include file="/partials/header.jsp" %>		
 			<section class="container_appunti_dettaglio">	
 		<div id="content">
@@ -117,7 +117,7 @@
 						<th>Recensioni</th>
 					</tr>	
 				</thead>
-				<tbody id="bodyRecensione" data-id=<%=codice %> class="adminBodyDataTable">
+				<tbody id="bodyRecensione" class="adminBodyDataTable">
 				</tbody>
 			</table>									
 				<button id="button_dettaglio" class='userButtonAggiungiAlCarrello product-button' data-codice='<%=codice%>'>Aggiungi Al Carrello</button>
@@ -130,7 +130,7 @@
 				</div>
 								
 				<div id="formAggiungiRecensione" class="adminFormAggiungi" style="display: none;">
-					<input type="hidden" value=<%=codice %> id="codice"/>
+				
 				</div>
 				</div>     
 				<%

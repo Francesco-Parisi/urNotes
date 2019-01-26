@@ -108,6 +108,7 @@ public class UploadFileRichiesta extends HttpServlet {
 	            }
 	            fi.write( file ) ;
 	            contenuto += fileName; 
+	            //System.out.println(filePath + fileName);
 	            risultato = 1;
 	         }
 	      }
