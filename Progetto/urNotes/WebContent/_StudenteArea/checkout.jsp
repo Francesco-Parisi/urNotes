@@ -215,7 +215,7 @@
 								</table>
 								
 							
-								<div class="right">
+								<div class="left">
 									<p>Indirizzo di Spedizione</p>
 									<%=spedizione %>
 								</div>
@@ -224,7 +224,7 @@
 									<p>Vettore</p>
 									<%=vettore %>
 								</div>
-								<div class="right">
+								<div class="left">
 									<p>Metodo di Pagamento</p>
 									<%=metodoPagamento %>
 								</div>

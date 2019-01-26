@@ -61,8 +61,8 @@ public class GetRecensione extends HttpServlet {
 				ResultSet result = stmt.executeQuery(sql);				
 				if(!result.wasNull()) {
 					while(result.next()) {
-							contenuto += "<tr id=container_documenti'>";
-							contenuto += "<td>"+result.getString("username")+"</td>";
+							contenuto += "<tr class='prova1'>";
+							contenuto += "<td>"+result.getString("username")+":"+"</td>";
 							contenuto += "<td>"+result.getString("descrizione")+"</td>";
 							contenuto += "</tr>";
 					}

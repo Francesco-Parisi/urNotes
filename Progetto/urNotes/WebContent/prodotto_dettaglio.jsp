@@ -111,11 +111,10 @@
 						<p class="document_title">Descrizione</p>
 						<p class="descrizioneDocumento"><%=descrizione %></p>
 					
-					<table id="materieTable">
+					<table id="recensioniTable">
 				<thead class="adminHeadDataTable">
-					<tr>
-						<th>Recensioni</th>
-					</tr>	
+					
+						<p class="recensioni">Recensioni</p>
 				</thead>
 				<tbody id="bodyRecensione" data-id=<%=codice %> class="adminBodyDataTable">
 				</tbody>
@@ -123,6 +122,8 @@
 				<button id="button_dettaglio" class='userButtonAggiungiAlCarrello product-button' data-codice='<%=codice%>'>Aggiungi Al Carrello</button>
 						
 					</div>
+					
+					<% if((Integer) request.getSession().getAttribute("tipo_utente") != null) { %>
 					
 					<div id="aggiungiRecensione" class="adminAggiungi">
 			
@@ -132,6 +133,7 @@
 				<div id="formAggiungiRecensione" class="adminFormAggiungi" style="display: none;">
 					<input type="hidden" value=<%=codice %> id="codice"/>
 				</div>
+				<%} %>
 				</div>     
 				<%
 			        }

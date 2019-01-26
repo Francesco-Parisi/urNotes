@@ -76,9 +76,9 @@ public class GetFormAggiungiRecensione extends HttpServlet {
 				errore = connDB.getError();
 				risultato *= 0;
 			}		
-			contenuto += "<textarea rows='10' cols='70'  id='descrizione' class='descrizione adminFormField' name='descrizione' placeholder='Valuta il Documento...' style='resize:vertical'></textarea>";
+			contenuto += "<textarea rows='5' cols='70'  id='descrizione' class='descrizione adminFormField' name='descrizione' placeholder='Valuta il Documento...' style='resize:vertical'></textarea>";
 			   
-	        contenuto += "<button id='confirmAggiungiRecensione' class='adminButtonConfermaAggiungi'>Aggiungi</button>";
+	        contenuto += "<button id='confirmAggiungiRecensione' class='adminButtonConfermaAggiungiRecensione'>Aggiungi</button>";
 	        risultato *= 1;
 	
 	        				
