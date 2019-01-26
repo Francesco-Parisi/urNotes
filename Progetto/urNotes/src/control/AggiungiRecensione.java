@@ -41,23 +41,23 @@ public class AggiungiRecensione extends HttpServlet {
 		response.setContentType("text/html");
 		
 		String descrizione = request.getParameter("descrizione");
-
-		
-		
-		System.out.println(descrizione);
+		String username = (String) request.getSession().getAttribute("nome_utente");
+		Integer codice = Integer.parseInt(request.getParameter("codice"));
 		
 		
         Integer risultato = 0;
         String errore = "";
         String contenuto = "";
-        
+        if(username != null)
+        {
         ConnessioneDB connDB = new ConnessioneDB();
 		if(connDB.getConn() != null) {
 			try {				
-				String sql = "INSERT INTO recensioni (descrizione,flag) VALUES (?,1);";
+				String sql = "INSERT INTO recensioni (descrizione,username,codice,flag) VALUES (?,?,?,1);";
 				PreparedStatement  stmt = connDB.getConn().prepareStatement(sql);
 				stmt.setString(1, descrizione);
-							
+				stmt.setString(2, username);
+				stmt.setInt(3, codice);
 				if(stmt.executeUpdate() == 1) {
 					contenuto = "Recensione Inserita con Successo";
 					risultato = 1;					

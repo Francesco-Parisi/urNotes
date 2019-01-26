@@ -1,0 +1,9 @@
+diff a/Progetto/urNotes/src/control/ScaricaFile.java b/Progetto/urNotes/src/control/ScaricaFile.java	(rejected hunks)
+@@ -63,6 +63,7 @@
+ 	    	if(!result.wasNull()) {
+ 	    		while(result.next()) {
+ 	    			filename = result.getString("filename");
++	    			System.out.println(filename);
+ 	    		}
+ 	    	}
+ 	    	

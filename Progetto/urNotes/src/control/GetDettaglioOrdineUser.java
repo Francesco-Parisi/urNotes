@@ -144,26 +144,22 @@ public class GetDettaglioOrdineUser extends HttpServlet {
 							+ "(SELECT filename FROM documenti_immagini WHERE codice = od.codice AND is_default = 1 AND attivo = 1) AS filename "											
 							+ "FROM ordini_documenti AS od "
 							+ "WHERE od.attivo = 1 AND od.serial_id = "+serial_id+"; ";
-					System.out.println(sql);
+					//System.out.println(sql);
 					result = stmt.executeQuery(sql);
-					System.out.println(result);
 
 					if(!result.wasNull()) {
 						while(result.next()){
 							String filename;
 							if(result.getString("filename") != null){
 								filename = new SystemInformation().getPathImmaginiDocumentoHTML()+result.getInt("codice")+"/"+result.getString("filename");		
-								System.out.println(filename);
 							}
 							else{
-								filename = new SystemInformation().getPathImmaginiDocumentoDefault();	
-								System.out.println(filename);
+								filename = new SystemInformation().getPathImmaginiDocumentoDefault();
 
 							}
 														
 							body += "<tr>";							
     							body += "<td>"+result.getInt("codice")+"</td>";	
-    							System.out.println(result.getInt("codice"));
     							body += "<td><img class='showImmagineDocumento' src='"+filename+"' alt='"+filename+"' /></td>";
     							body += "<td>"+result.getString("titolo")+"</td>";
     							body += "<td>"+result.getInt("quantita")+"</td>";
@@ -240,7 +236,6 @@ public class GetDettaglioOrdineUser extends HttpServlet {
 	       			contenuto += "</div>";					
 	       			contenuto += "</div>";					
 	       			contenuto += "</div>";
-	       			System.out.println("ho finito");
 					risultato = 1;
 	
 					if(risultato == 0) {

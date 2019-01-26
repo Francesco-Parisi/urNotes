@@ -1,0 +1,17 @@
+diff a/Progetto/urNotes/src/control/AggiungiDocumento.java b/Progetto/urNotes/src/control/AggiungiDocumento.java	(rejected hunks)
+@@ -49,6 +49,15 @@
+ 		Integer tipo = Integer.parseInt(request.getParameter("tipo"));
+ 		
+ 		
++		System.out.println(titolo);
++		System.out.println(pagine);
++		System.out.println(universita);
++		System.out.println(nome_materia);
++		System.out.println(descrizione);
++		System.out.println(prezzoDocumento);
++		System.out.println(tipo);
++		
++		
+         Integer risultato = 0;
+         String errore = "";
+         String contenuto = "";

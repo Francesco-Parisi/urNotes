@@ -50,23 +50,9 @@ public class GetFormAggiungiRecensione extends HttpServlet {
 	        String errore = "";
 	        String contenuto = "";
 	        
-	        
-	        /*PRELEVO LE MATERIE*/
-	        String recensione = "";
-	        Statement stmt;
-	        String sql;
-	        ResultSet result;
 	        ConnessioneDB connDB = new ConnessioneDB();
 			if(connDB.getConn() != null) {			
-				try {
-					//Materie
-					stmt = connDB.getConn().createStatement();
-					sql = "";
-					sql = ""
-							+ "SELECT username "
-							+ "FROM utenti "
-							+ "WHERE attivo = 1 AND id_utente="+id_utente+"; ";
-					result = stmt.executeQuery(sql);				
+				try {		
 					
 					
 					risultato *= 1;
@@ -90,9 +76,9 @@ public class GetFormAggiungiRecensione extends HttpServlet {
 				errore = connDB.getError();
 				risultato *= 0;
 			}		
-			contenuto += "<input type='text' id='descrizione' class='descrizione adminFormField' name='descrizione' placeholder='Valuta il Documento...' />";
+			contenuto += "<textarea rows='10' cols='70'  id='descrizione' class='descrizione adminFormField' name='descrizione' placeholder='Valuta il Documento...' style='resize:vertical'></textarea>";
 			   
-	        contenuto += "<button id='confirmAggiungiRichiesta' class='adminButtonConfermaAggiungi'>Aggiungi</button>";
+	        contenuto += "<button id='confirmAggiungiRecensione' class='adminButtonConfermaAggiungi'>Aggiungi</button>";
 	        risultato *= 1;
 	
 	        				

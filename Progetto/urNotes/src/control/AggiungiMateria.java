@@ -43,10 +43,6 @@ public class AggiungiMateria extends HttpServlet {
 		String nome = request.getParameter("nome");
 		
 		
-		
-		System.out.println(nome);
-		
-		
         Integer risultato = 0;
         String errore = "";
         String contenuto = "";

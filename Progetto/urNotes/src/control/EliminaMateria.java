@@ -44,7 +44,6 @@ public class EliminaMateria extends HttpServlet {
 		response.setContentType("text/html");
 		
 		String nome = request.getParameter("nome");
-        System.out.println(nome);
         Integer risultato = 0;
         String errore = "";
         String contenuto = "";
@@ -84,7 +83,6 @@ public class EliminaMateria extends HttpServlet {
 				connDB.getConn().close();
 			}
 			catch(Exception e) {
-				System.out.println("errore in EliminaMateria");
 				errore = "Errore esecuzione Query.";
 				risultato = 0;
 			}

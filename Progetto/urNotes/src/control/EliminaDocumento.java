@@ -44,7 +44,7 @@ public class EliminaDocumento extends HttpServlet {
 		response.setContentType("text/html");
 		
 		int codice = Integer.parseInt(request.getParameter("codice"));
-        System.out.println(codice);
+		
         Integer risultato = 0;
         String errore = "";
         String contenuto = "";
