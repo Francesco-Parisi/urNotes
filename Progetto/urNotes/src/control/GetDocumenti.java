@@ -43,6 +43,10 @@ public class GetDocumenti extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 	    
+		//String idAppunto = request.getParameter("id");
+		//System.out.print(idAppunto+" ");
+		//String value = request.getParameter("value");
+		//System.out.println(value);
 
 		Integer risultato = 0;
 	    String errore = "";
@@ -58,6 +62,7 @@ public class GetDocumenti extends HttpServlet {
 						+ "WHERE flag = 1;";
 				//System.out.println(sql);
 				ResultSet result = stmt.executeQuery(sql);	
+				//prezzo,tipo,id_recensione,flag
 				if(!result.wasNull()) {
 					while(result.next()) {
 						contenuto += "<tr class='documenti'>";

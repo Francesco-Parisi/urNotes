@@ -62,6 +62,7 @@ public class EliminaImmagine extends HttpServlet {
 				if(!result.wasNull()) {
 					while(result.next()) {
 						String filePath = new SystemInformation().getPathImmaginiDocumento()+result.getString("codice")+"\\"+result.getString("filename");
+						System.out.println(filePath);
 						File file = new File(filePath);
 			    		if(file.delete()){
 							Statement stmt = connDB.getConn().createStatement();				

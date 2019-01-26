@@ -44,6 +44,8 @@ public class AggiungiFile extends HttpServlet {
 		
 		Integer id_richiesta = Integer.parseInt(request.getParameter("id_richiesta"));
 		String filenameFileRichiesta = request.getParameter("filenameFileRichiesta");
+		System.out.println(id_richiesta);
+		System.out.println(filenameFileRichiesta);
 
         Integer risultato = 0;        
         String errore = "";

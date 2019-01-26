@@ -46,6 +46,7 @@ public class GetDispenseDett extends HttpServlet {
 	    
 		
 		String value = request.getParameter("value");
+		/*System.out.println(value);*/
 
 		Integer risultato = 0;
 	    String errore = "";
@@ -62,7 +63,7 @@ public class GetDispenseDett extends HttpServlet {
 						+ "SELECT d.codice "
 						+ "FROM documenti AS d "
 						+ "WHERE d.tipo LIKE 'Dispense' AND d.codice = "+value+";";
-				//System.out.println(sql);
+				System.out.println(sql);
 				ResultSet result = stmt.executeQuery(sql);	
 				
 				if(!result.wasNull()) {
