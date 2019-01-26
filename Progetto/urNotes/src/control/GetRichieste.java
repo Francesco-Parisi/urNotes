@@ -92,6 +92,7 @@ public class GetRichieste extends HttpServlet {
 				
 			}
 			catch(Exception e) {
+				System.out.println("sto qui");
 				errore = "Errore esecuzione Query.";
 				risultato = 0;
 			}

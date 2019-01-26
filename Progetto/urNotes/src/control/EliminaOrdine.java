@@ -43,6 +43,7 @@ public class EliminaOrdine extends HttpServlet {
 		response.setContentType("text/html");
 		
 		int serial_id = Integer.parseInt(request.getParameter("serial_id"));
+        System.out.println(serial_id);
         Integer risultato = 0;
         String errore = "";
         String contenuto = "";
@@ -93,6 +94,7 @@ public class EliminaOrdine extends HttpServlet {
 				connDB.getConn().close();
 			}
 			catch(Exception e) {
+				System.out.println("errore in EliminaMateria");
 				errore = "Errore esecuzione Query.";
 				risultato = 0;
 			}

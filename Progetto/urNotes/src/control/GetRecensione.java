@@ -45,7 +45,6 @@ public class GetRecensione extends HttpServlet {
 		Integer risultato = 0;
 	    String errore = "";
 	    String contenuto = "";
-	    Integer codice = Integer.parseInt(request.getParameter("codice"));
         ConnessioneDB connDB = new ConnessioneDB();
 		if(connDB.getConn() != null) {
 			
@@ -55,9 +54,10 @@ public class GetRecensione extends HttpServlet {
 				sql = ""
 						+ "SELECT r.username, r.descrizione "
 						+ "FROM recensioni  AS r "
-						+ "WHERE r.flag = 1 AND r.codice = "+codice+" "
+						+ "WHERE r.flag = 1 "
 						+ "ORDER BY r.username ASC;";
 				
+				//System.out.println(sql);
 				ResultSet result = stmt.executeQuery(sql);				
 				if(!result.wasNull()) {
 					while(result.next()) {
@@ -66,12 +66,8 @@ public class GetRecensione extends HttpServlet {
 							contenuto += "<td>"+result.getString("descrizione")+"</td>";
 							contenuto += "</tr>";
 					}
-				}
-				else {
-					contenuto += "<tr id=container_documenti'>";
-					contenuto += "<td>Non ci sono recensioni</td>";
-					contenuto += "</tr>";
-				}
+					
+				}				 
 
 				risultato = 1;
 				if(risultato == 0) {
