@@ -46,7 +46,6 @@ public class GetAppuntiDett extends HttpServlet {
 	    
 		
 		String value = request.getParameter("value");
-		/*System.out.println(value);*/
 
 		Integer risultato = 0;
 	    String errore = "";

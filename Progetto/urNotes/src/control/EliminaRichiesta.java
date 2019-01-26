@@ -44,7 +44,6 @@ public class EliminaRichiesta extends HttpServlet {
 		response.setContentType("text/html");
 		
 		int id_richiesta = Integer.parseInt(request.getParameter("id_richiesta"));
-        System.out.println(id_richiesta);
         Integer risultato = 0;
         String errore = "";
         String contenuto = "";
@@ -67,7 +66,6 @@ public class EliminaRichiesta extends HttpServlet {
 					int rowCount = result.last() ? result.getRow() : 0;
 					if(rowCount > 0) {
 						String filePath = new SystemInformation().getPathImmaginiDocumento()+id_richiesta+"\\";
-						System.out.println(filePath);
 						File file = new File(filePath);					    
 						File[] contents = file.listFiles();
 					    if (contents != null) {

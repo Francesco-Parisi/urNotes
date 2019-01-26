@@ -43,10 +43,7 @@ public class GetDispense extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 	    
-		//String idDispensa = request.getParameter("id");
-		//System.out.print(idDispensa+" ");
 		String value = request.getParameter("value");
-		//System.out.println(value);
 
 		Integer risultato = 0;
 	    String errore = "";

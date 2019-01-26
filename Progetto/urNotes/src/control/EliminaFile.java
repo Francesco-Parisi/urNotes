@@ -62,7 +62,6 @@ public class EliminaFile extends HttpServlet {
 				if(!result.wasNull()) {
 					while(result.next()) {
 						String filePath = new SystemInformation().getPathFileRichieste()+result.getString("id_richiesta")+"\\"+result.getString("filename");
-						System.out.println(filePath);
 						File file = new File(filePath);
 			    		if(file.delete()){
 							Statement stmt = connDB.getConn().createStatement();				

@@ -48,14 +48,6 @@ public class AggiungiRichiesta extends HttpServlet {
 		Integer tipo = Integer.parseInt(request.getParameter("tipo"));
 		
 		
-		System.out.println(titolo);
-		System.out.println(pagine);
-		System.out.println(universita);
-		System.out.println(nome_materia);
-		System.out.println(descrizione);
-		System.out.println(tipo);
-		
-		
         Integer risultato = 0;
         String errore = "";
         String contenuto = "";

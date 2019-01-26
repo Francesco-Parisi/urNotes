@@ -64,7 +64,7 @@ $(document).on('click', '#buttonAggiungiRecensione', function(e){
 	
 	$(document).on('click', '#confirmAggiungiRecensione', function(e){		
 		var descrizione = $("#descrizione").val();
-	
+		var codice = $("#bodyRecensione").data("id");
 		
 		
 		if(descrizione != undefined && descrizione.length > 1 ){		
@@ -75,7 +75,8 @@ $(document).on('click', '#buttonAggiungiRecensione', function(e){
 				dataType: 'JSON',
 				async: false,
 				data: {
-					"descrizione": descrizione
+					"descrizione": descrizione,
+					"codice": codice
 				
 				},
 				success:function(msg){
@@ -104,7 +105,8 @@ $(document).on('click', '#buttonAggiungiRecensione', function(e){
 });
 
 
-function getRecensione(){ 
+function getRecensione(){
+	var codice = $("#bodyRecensione").data("id");
 	$("#loader").show();
 	$.ajax({
 		url: absolutePath+"/GetRecensione",
@@ -112,7 +114,8 @@ function getRecensione(){
 		dataType: 'JSON',
 		async: false,
 		data: {
-			"richiesta": 1
+			"richiesta": 1,
+			"codice": codice
 		},
 		success:function(msg){
 			if(!msg.risultato){

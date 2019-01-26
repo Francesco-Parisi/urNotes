@@ -59,7 +59,6 @@ public class UploadImmagineDocumento extends HttpServlet {
         String contenuto = "";
                         
         filePath = new SystemInformation().getPathImmaginiDocumento()+request.getSession().getAttribute("codice")+"\\";  
-        System.out.println(filePath);
         File file = new File(filePath);
         if (!file.exists()) {
             if (!file.mkdir()) {
@@ -109,7 +108,6 @@ public class UploadImmagineDocumento extends HttpServlet {
 	            }
 	            fi.write( file ) ;
 	            contenuto += fileName; 
-	            //System.out.println(filePath + fileName);
 	            risultato = 1;
 	         }
 	      }

@@ -63,7 +63,6 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 	    	if(!result.wasNull()) {
 	    		while(result.next()) {
 	    			filename = result.getString("filename");
-	    			System.out.println(filename);
 	    		}
 	    	}
 	    	
