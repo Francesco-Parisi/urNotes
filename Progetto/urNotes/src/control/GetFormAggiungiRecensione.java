@@ -42,7 +42,10 @@ public class GetFormAggiungiRecensione extends HttpServlet {
 		response.setContentType("text/html");
         
 		if(Integer.parseInt(request.getParameter("richiesta"))  == 1) {		
-			Integer id_utente = Integer.parseInt(request.getParameter("id_utente"));
+			Integer id_utente = 0;			
+			if(request.getSession().getAttribute("id_utente") != null) {
+				id_utente = (Integer) request.getSession().getAttribute("id_utente");
+			}	
 	        Integer risultato = 1;
 	        String errore = "";
 	        String contenuto = "";
@@ -87,7 +90,6 @@ public class GetFormAggiungiRecensione extends HttpServlet {
 				errore = connDB.getError();
 				risultato *= 0;
 			}		
-			contenuto += "<p>"+id_utente+"</p>";
 			contenuto += "<input type='text' id='descrizione' class='descrizione adminFormField' name='descrizione' placeholder='Valuta il Documento...' />";
 			   
 	        contenuto += "<button id='confirmAggiungiRichiesta' class='adminButtonConfermaAggiungi'>Aggiungi</button>";

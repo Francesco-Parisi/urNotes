@@ -51,7 +51,7 @@
 				    				quantitaDocumento = documento.getQuantita();
 			    					stmt = connDB.getConn().createStatement();
 				    				sql = ""
-											+ "SELECT d.titolo, d.prezzo, "
+											+ "SELECT d.titolo, d.nome_materia, d.prezzo, "
 											+ "(SELECT filename FROM documenti_immagini WHERE codice = d.codice AND is_default = 1 AND attivo = 1) AS filename "
 											+ "FROM documenti AS d "
 											+ "WHERE d.flag = 1 AND d.codice = "+codice+"; ";
@@ -68,11 +68,11 @@
 			    							}	    
 			    							
 			    							body += "<tr>";							
-			    							body += "<td>"+codice+"</td>";							
 			    							body += "<td><img class='showImmagineDocumento' src='"+filename+"' alt='"+filename+"' /></td>";
 			    							body += "<td>"+result.getString("titolo")+"</td>";							
+			    							body += "<td>"+result.getString("nome_materia")+"</td>";							
 			    							body += "<td>"+quantitaDocumento+"</td>";
-			    							body += "<td>"+result.getFloat("prezzo")+"</td>";    								    							
+			    							body += "<td>"+result.getFloat("prezzo")+" €"+"</td>";    								    							
 											body += "</tr>";
 			    						}					
 			    					}				 	    						    		
@@ -89,17 +89,18 @@
 			    				result = null;			    				
 		    					stmt = connDB.getConn().createStatement();		    					
 		    					sql = ""
-		    							+ "SELECT i.nome, i.cognome, i.indirizzo, i.cap, i.citta, i.provincia, i.telefono, i.cellulare "
+										+ "SELECT i.id_indirizzo, i.nome, i.cognome, i.indirizzo, i.cap, i.citta, i.provincia, i.telefono, i.cellulare "
 										+ "FROM indirizzi AS i "
-										+ "WHERE i.attivo = 1 AND i.id_utente = "+id_utente+"; ";
-										result = stmt.executeQuery(sql);				
+										+ "WHERE i.attivo = 1 AND i.id_utente = "+id_utente+" "
+										+ "ORDER BY i.id_indirizzo DESC;";										
+		    					result = stmt.executeQuery(sql);				
 		    					if(!result.wasNull()) {
 		    						int rowCount = result.last() ? result.getRow() : 0;
 		    						if(rowCount > 0) {
 		    							indirizzi += "<option value='0'>Selezionare un Indirizzo</option>";
 		    							result.beforeFirst();
 		    							while(result.next()) {
-		    								indirizzi = result.getString("nome")+" "+result.getString("cognome")+" <br/> "+result.getString("indirizzo")+" <br/> "+result.getInt("cap")+" "+result.getString("citta")+" ("+result.getString("provincia")+")";
+		    								indirizzi += "<option value='"+result.getInt("id_indirizzo")+"'>"+result.getString("nome")+" "+result.getString("cognome")+" - "+result.getString("indirizzo")+" - "+result.getInt("cap")+" "+result.getString("citta")+" ("+result.getString("provincia")+")</option>";
 		    							}												
 		    						}
 		    						else {
@@ -201,9 +202,9 @@
 			        			<table id='prodottiTable'>
 			       					<thead class='adminHeadDataTable'>
 			      						<tr>
-			     							<th>ID</th>
 			     							<th>Foto</th>
 			     							<th>Titolo</th>
+			     							<th>Materia</th>
 											<th>Quantit&agrave;</th>
 			        						<th>Prezzo</th>
 			        					</tr>	
@@ -228,7 +229,7 @@
 									<%=metodoPagamento %>
 								</div>
 
-								<button id='userButtonConcludiOrdine' data-href="<%=request.getContextPath()%>/_userArea/conferma_ordine.jsp" class='userButtonCheckout'>Avanti</button>			
+								<button id='userButtonConcludiOrdine' data-href="<%=request.getContextPath()%>/_StudenteArea/conferma_ordine.jsp" class='userButtonCheckout'>Avanti</button>			
 					    	</div>
 				    	<%	    					    		
 		    		}

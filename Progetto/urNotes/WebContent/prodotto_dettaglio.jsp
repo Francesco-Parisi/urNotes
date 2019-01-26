@@ -8,7 +8,7 @@
 		<script src="<%=request.getContextPath()%>/js/scripts_recensione.js"></script>
 		<title>urNotes | Dettagli</title>		
 	</head>
-	<body>
+	<body onload="getRecensione">
 		<%@ include file="/partials/header.jsp" %>		
 			<section class="container_appunti_dettaglio">	
 		<div id="content">
@@ -26,7 +26,6 @@
 		        	String descrizione = "";
 		        	String prezzoDocumento = "";
 		        	String materiaDocumento = "";
-		        	String recensione = "";
 			        try{
 			        	 Integer codice = Integer.parseInt(request.getParameter("codice"));
 			        				        	
@@ -43,7 +42,6 @@
 											+ "       d.descrizione, " 
 											+ "       d.prezzo, " 
 											+ "       (SELECT nome FROM materie WHERE nome = d.nome_materia) AS materie, "
-     										+ "       (SELECT descrizione FROM recensioni  WHERE codice = d.codice AND flag = 1) AS recensione , "
 											+ "       (SELECT filename FROM documenti_immagini WHERE codice = d.codice AND is_default = 1 AND attivo = 1) AS filename "
 											+ "FROM documenti AS d "
 											+ "WHERE d.flag = 1 AND d.codice = "+codice+" ";
@@ -67,7 +65,6 @@
 												descrizione = result.getString("descrizione");
 												prezzoDocumento = result.getString("prezzo");
 												materiaDocumento = result.getString("nome_materia");									
-												recensione = result.getString("recensione");									
 												Statement stmt2 = connDB.getConn().createStatement();							
 												sql = ""
 														+ "SELECT filename " 
@@ -113,9 +110,17 @@
 						<p class="prezzoDocumento">Prezzo: <%=prezzoDocumento %>€</p>
 						<p class="document_title">Descrizione</p>
 						<p class="descrizioneDocumento"><%=descrizione %></p>
-						<p class="recensione"><%=recensione %></p>
-																		
-				<button class='userButtonAggiungiAlCarrello product-button' data-codice='<%=codice%>'>Aggiungi Al Carrello</button>
+					
+					<table id="materieTable">
+				<thead class="adminHeadDataTable">
+					<tr>
+						<th>Recensioni</th>
+					</tr>	
+				</thead>
+				<tbody id="bodyRecensione" class="adminBodyDataTable">
+				</tbody>
+			</table>									
+				<button id="button_dettaglio" class='userButtonAggiungiAlCarrello product-button' data-codice='<%=codice%>'>Aggiungi Al Carrello</button>
 						
 					</div>
 					

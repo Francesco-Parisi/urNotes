@@ -129,9 +129,9 @@ public class AggiungiOrdineTemp extends HttpServlet {
 							    				result = null;					    				
 						    					stmt0 = connDB.getConn().createStatement();
 							    				sql = ""
-														+ "SELECT d.titolo, d.prezzo "
+														+ "SELECT d.titolo, d.nome_materia, d.prezzo "
 														+ "FROM documenti  AS d "
-														+ "WHERE d.attivo = 1 AND d.codice = "+documento.getCodice()+"; ";
+														+ "WHERE d.flag = 1 AND d.codice = "+documento.getCodice()+"; ";
 						    					//System.out.println(sql);
 						    					result = stmt0.executeQuery(sql);				
 						    					if(!result.wasNull()) {

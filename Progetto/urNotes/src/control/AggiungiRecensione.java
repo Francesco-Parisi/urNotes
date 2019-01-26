@@ -41,7 +41,7 @@ public class AggiungiRecensione extends HttpServlet {
 		response.setContentType("text/html");
 		
 		String descrizione = request.getParameter("descrizione");
-		
+
 		
 		
 		System.out.println(descrizione);
@@ -54,7 +54,7 @@ public class AggiungiRecensione extends HttpServlet {
         ConnessioneDB connDB = new ConnessioneDB();
 		if(connDB.getConn() != null) {
 			try {				
-				String sql = "INSERT INTO recesioni (descrizione,flag) VALUES (?,1);";
+				String sql = "INSERT INTO recensioni (descrizione,flag) VALUES (?,1);";
 				PreparedStatement  stmt = connDB.getConn().prepareStatement(sql);
 				stmt.setString(1, descrizione);
 							

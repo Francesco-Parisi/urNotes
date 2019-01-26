@@ -105,7 +105,7 @@ Ogni Documento è visionabile leggendo tutte le informazioni ad esso relative.
 <div class="section-text">
 Sarà possibile per ogni insegnamento caricare e visualizzare dispense e appunti.
 Ogni Documento sarà commentabile e visionabile in anteprima senza doverlo acquistare.
-<img class="image-section1" alt="icon" src="/urNotes/images/icon.png">
+<img class="image-section1" alt="icon" src="/urNotes/images/tutoring.png">
 <br>
 <a id="button" href="/urNotes/appunti.jsp">Appunti</a>
 </div>

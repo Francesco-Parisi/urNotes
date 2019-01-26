@@ -45,7 +45,6 @@ public class GetRecensione extends HttpServlet {
 		Integer risultato = 0;
 	    String errore = "";
 	    String contenuto = "";
-	    int i = 1;
         ConnessioneDB connDB = new ConnessioneDB();
 		if(connDB.getConn() != null) {
 			
@@ -66,7 +65,6 @@ public class GetRecensione extends HttpServlet {
 							contenuto += "<td>"+result.getString("username")+"</td>";
 							contenuto += "<td>"+result.getString("descrizione")+"</td>";
 							contenuto += "</tr>";
-							i++;
 					}
 					
 				}				 
