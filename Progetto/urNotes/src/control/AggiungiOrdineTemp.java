@@ -146,7 +146,7 @@ public class AggiungiOrdineTemp extends HttpServlet {
 														stmt1.setFloat(5, result.getFloat("prezzo"));
 														stmt1.setFloat(6, (result.getFloat("prezzo")*documento.getQuantita()));
 														stmt1.setString(7, result.getString("nome_materia"));
-														stmt1.setInt(8, result.getInt("attivo"));
+														stmt1.setInt(8, 1);
 														
 														if(stmt1.executeUpdate() != 1) {
 															errore += "Errore Inserimento Documento "+documento.getCodice();
@@ -160,7 +160,7 @@ public class AggiungiOrdineTemp extends HttpServlet {
 						    					}
 							    			}
 											
-							    			if(continua == 1) {
+											if(continua == 1) {
 							    				stmt1 = null;
 				    							sql = "UPDATE ordini SET "
 				    								 +"totale_documenti =  (SELECT SUM(prezzo_documenti) FROM ordini_documenti WHERE serial_id = ?), "
@@ -171,13 +171,31 @@ public class AggiungiOrdineTemp extends HttpServlet {
 							    				stmt1.setInt(1, serial_id);												
 							    				stmt1.setInt(2, serial_id);												
 							    				stmt1.setInt(3, serial_id);												
-							    				stmt1.setInt(4, serial_id);												
-							    				stmt1.setInt(5, serial_id);												
 												if(stmt1.executeUpdate() == 1) {
-								    			
+								    				stmt0 = null;
+								    				result = null;			
+								    				Float totale_documenti = (float) 1;	
+								    				stmt0 = connDB.getConn().createStatement();
+								    				sql = ""
+															+ "SELECT totale_documenti "
+															+ "FROM ordini "
+															+ "WHERE serial_id = "+serial_id+"; ";
 							    					result = stmt0.executeQuery(sql);				
-							    			
-							    				
+							    					if(!result.wasNull()) {
+							    						while(result.next()) {
+							    							totale_documenti = result.getFloat("totale_documenti");
+							    						}													
+							    					}
+							    					
+							    					continua = 1;
+							    					
+							    					if(continua == 1) {
+							    						
+															request.getSession().setAttribute("serial_id", serial_id);
+															risultato = 1;					
+															contenuto = "Ordine Inserito con Successo";						    							
+							    													    						
+							    					}
 												}
 												else {
 													errore = "Errore Aggiornamento Prezzo Ordine.";

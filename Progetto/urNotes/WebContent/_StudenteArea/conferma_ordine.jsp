@@ -15,7 +15,7 @@
 		%>	
 		<%@ include file="/partials/head.jsp" %>			
 		<script src="<%=request.getContextPath()%>/js/scripts_conferma_ordine.js"></script>
-		<title>Conferma Ordine</title>		
+		<title>urNotes | Conferma Ordine</title>		
 	</head>
 	<body>
 		<%@ include file="/partials/header.jsp" %>		
@@ -24,15 +24,14 @@
 
 			<%
 				String output = "";				
-				String fatturazione = "";
 				String spedizione = "";
 				String vettore = "";
 				String metodoPagamento = "";
 				String totali = "";
 				String body = "";
 		    	if(request.getSession() != null){
-		    		Integer idOrdine = (Integer) request.getSession().getAttribute("id_ordine");		    		
-		    		if(idOrdine != null){
+		    		Integer serial_id = (Integer) request.getSession().getAttribute("serial_id");		    		
+		    		if(serial_id != null){
 		    			String sql;
 		    			Statement stmt;
 		    			Statement stmt1;
@@ -50,7 +49,7 @@
 				    				sql = ""
 											+ "SELECT * "
 											+ "FROM ordini AS o "
-											+ "WHERE attivo = 0 AND id_ordine = "+idOrdine+"; ";
+											+ "WHERE attivo = 0 AND serial_id = "+serial_id+"; ";
 			    					//System.out.println(sql);
 			    					result = stmt.executeQuery(sql);				
 			    					if(!result.wasNull()) {
@@ -60,29 +59,16 @@
 						    				stmt1 = null;
 						    				result1 = null;	
 						    				stmt1 = connDB.getConn().createStatement();
-											sql = "SELECT i.nome, i.cognome, i.indirizzo, i.note, (SELECT valore FROM cap WHERE id_cap = i.id_cap) AS cap, (SELECT valore FROM citta WHERE id_citta = i.id_citta) AS citta, (SELECT sigla FROM province WHERE id_provincia = i.id_provincia) AS provincia, i.telefono, i.cellulare "
+											sql = "SELECT i.nome, i.cognome, i.indirizzo, i.cap, i.citta, i.provincia, i.telefono, i.cellulare "
 												+ "FROM indirizzi AS i "
-												+ "WHERE i.id_indirizzo = "+result.getInt("id_indirizzo_spedizione")+"; ";
+												+ "WHERE i.id_indirizzo = "+result.getInt("id_indirizzo")+"; ";
 											result1 = stmt1.executeQuery(sql);
 					    					if(!result1.wasNull()) {
 					    						while(result1.next()){
-					    							spedizione = result1.getString("nome")+" "+result1.getString("cognome")+" <br/> "+result1.getString("indirizzo")+" <br/> "+result1.getString("cap")+" "+result1.getString("citta")+" ("+result1.getString("provincia")+")";
+					    							spedizione = result1.getString("nome")+" "+result1.getString("cognome")+" <br/> "+result1.getString("indirizzo")+" <br/> "+result1.getInt("cap")+" "+result1.getString("citta")+" ("+result1.getString("provincia")+")";
 					    						}
 					    					}	
 					    					
-						    				sql = "";
-						    				stmt1 = null;
-						    				result1 = null;	
-						    				stmt1 = connDB.getConn().createStatement();
-											sql = "SELECT i.nome, i.cognome, i.indirizzo, i.note, (SELECT valore FROM cap WHERE id_cap = i.id_cap) AS cap, (SELECT valore FROM citta WHERE id_citta = i.id_citta) AS citta, (SELECT sigla FROM province WHERE id_provincia = i.id_provincia) AS provincia, i.telefono, i.cellulare "
-												+ "FROM indirizzi AS i "
-												+ "WHERE i.id_indirizzo = "+result.getInt("id_indirizzo_fatturazione")+"; ";
-											result1 = stmt1.executeQuery(sql);
-					    					if(!result1.wasNull()) {
-					    						while(result1.next()){
-					    							fatturazione = result1.getString("nome")+" "+result1.getString("cognome")+" <br/> "+result1.getString("indirizzo")+" <br/> "+result1.getString("cap")+" "+result1.getString("citta")+" ("+result1.getString("provincia")+")";
-					    						}
-					    					}						    					
 					    					
 						    				sql = "";
 						    				stmt1 = null;
@@ -114,7 +100,7 @@
 					    					}						    					
 					    					
 					    					
-					    					totali += "<p><b>Totale Prodotti:</b> &euro;"+new SystemInformation().truncateDecimal(result.getFloat("totale_prodotti"),2)+"</p>";
+					    					totali += "<p><b>Totale Documenti:</b> &euro;"+new SystemInformation().truncateDecimal(result.getFloat("totale_documenti"),2)+"</p>";
 					    					totali += "<p><b>Totale Spedizione:</b> &euro;"+new SystemInformation().truncateDecimal(result.getFloat("totale_spedizione"), 2)+"</p>";
 					    					totali += "<p><b>Totale Ordine:</b> &euro;"+new SystemInformation().truncateDecimal(result.getFloat("totale_ordine"), 2)+"</p>";
 					    					
@@ -126,35 +112,29 @@
 				    				result = null;					    				
 				    				stmt = connDB.getConn().createStatement();
 				    				sql = ""
-											+ "SELECT op.*, " 
-											+ "(SELECT sigla FROM prodotti_unita WHERE id_unita = op.id_unita) AS unita, "
-											+ "(SELECT filename FROM prodotti_immagini WHERE id_prodotto = op.id_prodotto AND is_default = 1 AND attivo = 1) AS filename "											
-											+ "FROM ordini_prodotti AS op "
-											+ "WHERE op.attivo = 1 AND op.id_ordine = "+idOrdine+"; ";
+											+ "SELECT od.* , " 
+											+ "(SELECT filename FROM documenti_immagini WHERE codice = od.codice AND is_default = 1 AND attivo = 1) AS filename "											
+											+ "FROM ordini_documenti AS od "
+											+ "WHERE od.attivo = 1 AND od.serial_id = "+serial_id+"; ";
 			    					//System.out.println(sql);
 			    					result = stmt.executeQuery(sql);				
 			    					if(!result.wasNull()) {
 			    						while(result.next()){
 			    							String filename;
 			    							if(result.getString("filename") != null){
-			    								filename = new SystemInformation().getPathImmaginiDocumentoHTML()+result.getInt("id_prodotto")+"/"+result.getString("filename");												
+			    								filename = new SystemInformation().getPathImmaginiDocumentoHTML()+result.getInt("codice")+"/"+result.getString("filename");												
 			    							}
 			    							else{
 			    								filename = new SystemInformation().getPathImmaginiDocumentoDefault();												
 			    							}	    
 			    							
 			    							body += "<tr>";							
-				    							body += "<td>"+result.getInt("id_prodotto")+"</td>";							
-				    							body += "<td><img class='showImmagineProdotto' src='"+filename+"' alt='"+filename+"' /></td>";
-				    							body += "<td>"+result.getString("nome")+"</td>";							
-				    							body += "<td>"+result.getInt("quantita")+" "+result.getString("unita")+"</td>";
+				    							body += "<td><img class='showImmagineDocumento' src='"+filename+"' alt='"+filename+"' /></td>";
+				    							body += "<td>"+result.getString("titolo")+"</td>";							
+				    							body += "<td>"+result.getString("nome_materia")+"</td>";							
+				    							body += "<td>"+result.getInt("quantita")+"</td>";
 				    							body += "<td>";	    					
-				    								if(result.getInt("id_sconto") > 0){
-				    									body += "<span style='color: #DC483E;'>&euro; "+ new SystemInformation().truncateDecimal(result.getFloat("prezzo_totale"), 2)+"*</span>";	
-				    								}
-				    								else{
-				    									body += "&euro; "+ new SystemInformation().truncateDecimal(result.getFloat("prezzo_totale"), 2);
-				    								}													
+				    							body += "&euro; "+ new SystemInformation().truncateDecimal(result.getFloat("prezzo_totale"), 2);													
 												body += "</td>";    								    							
 											body += "</tr>";			    							
 			    						}
@@ -177,9 +157,9 @@
 			        			<table id='confermaOrdineTable'>
 			       					<thead class='adminHeadDataTable'>
 			      						<tr>
-			     							<th>ID</th>
 			     							<th>Foto</th>
-			     							<th>Nome</th>
+			     							<th>Titolo</th>
+			     							<th>Materia</th>
 											<th>Quantit&agrave;</th>
 			        						<th>Prezzo</th>
 			        					</tr>	
@@ -189,11 +169,8 @@
 									</tbody>
 								</table>
 								
+								
 								<div class="left">
-									<p>Indirizzo di Fatturazione</p>
-									<p><%=fatturazione %></p>
-								</div>
-								<div class="right">
 									<p>Indirizzo di Spedizione</p>
 									<p><%=spedizione %></p>									
 								</div>
@@ -202,14 +179,14 @@
 									<p><b>Vettore</b></p>
 									<p><%=vettore %></p>		
 								</div>
-								<div class="right">
+								<div class="left">
 									<p><b>Metodo di Pagamento</b></p>
 									<p><%=metodoPagamento %></p>		
 								</div>
 								
 								<%=totali %>								
 
-								<button id='userButtonTerminaOrdine' data-href="<%=request.getContextPath()%>/_StudenteArea/ordini.jsp" class='userButtonCheckout'>Termina Ordine</button>			
+								<button id='userButtonTerminaOrdine' data-href="<%=request.getContextPath()%>/_StudenteArea/ordiniStudente.jsp" class='userButtonCheckout'>Termina Ordine</button>			
 					    	</div>
 				    	<%	    					    		
 		    		}

@@ -1379,14 +1379,14 @@ textarea { /* Stili per il campo di testo e per la textarea */
 	/**************** PAGINA CARRELLO PRODOTTO  *****************/
 	/************************************************************/	
 
-	#content #content-content #carrelloTable #bodyCarrello i.fa-minus{
+	#content #content-content #documentiTable #bodyCarrello i.fa-minus{
 		cursor: pointer; 		
 		background-color:#eee; 
 		border-radius: 15px;
 		padding: 5px;	
 		color: #DC483E;
 	}
-	#content #content-content #carrelloTable #bodyCarrello i.fa-plus{
+	#content #content-content #documentiTable #bodyCarrello i.fa-plus{
 		cursor: pointer; 		
 		background-color:#eee; 
 		border-radius: 15px;

@@ -15,7 +15,7 @@
 		%>	
 		<%@ include file="/partials/head.jsp" %>			
 		<script src="<%=request.getContextPath()%>/js/scripts_checkout.js"></script>
-		<title>Checkout</title>		
+		<title>urNotes | Checkout</title>		
 	</head>
 	<body>
 		<%@ include file="/partials/header.jsp" %>		

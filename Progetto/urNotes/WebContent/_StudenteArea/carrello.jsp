@@ -24,7 +24,7 @@
 			<div id="content-content">
 				<p class='adminTitoloPagina'>Il tuo carrello</p>
 
-        			<table id='materieTable'>
+        			<table id='documentiTable'>
        					<thead class='adminHeadDataTable'>
       						<tr>
      							<th>Foto</th>
