@@ -204,7 +204,7 @@ public class GetDettaglioOrdineAdmin extends HttpServlet {
 				   					contenuto +="</tbody>";
 								contenuto += "</table>";
 								
-								contenuto += "<div class='right'>";
+								contenuto += "<div class='left'>";
 									contenuto += "<p>Indirizzo di Spedizione</p>";
 									contenuto += spedizione;
 								contenuto += "</div>";
@@ -213,7 +213,7 @@ public class GetDettaglioOrdineAdmin extends HttpServlet {
 									contenuto += "<p><b>Vettore</b></p>";
 									contenuto += vettore;
 								contenuto += "</div>";
-								contenuto += "<div class='right'>";
+								contenuto += "<div class='left'>";
 									contenuto += "<p><b>Metodo di Pagamento</b></p>";
 									contenuto += metodoPagamento;
 								contenuto += "</div>";

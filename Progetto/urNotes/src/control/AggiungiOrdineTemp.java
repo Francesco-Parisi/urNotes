@@ -123,6 +123,7 @@ public class AggiungiOrdineTemp extends HttpServlet {
 										
 										if(serial_id > 0) {									
 											Integer continua = 1;
+											Float prezzo;
 
 											for(Documento documento: cart.getDocumenti()) { //Per ogni documento del carrello
 							    				stmt0 = null;
@@ -142,9 +143,10 @@ public class AggiungiOrdineTemp extends HttpServlet {
 									    				stmt1.setInt(1, serial_id);												
 									    				stmt1.setInt(2, documento.getCodice());
 									    				stmt1.setString(3, result.getString("titolo"));
-									    				stmt1.setInt(4, documento.getQuantita());												
-														stmt1.setFloat(5, result.getFloat("prezzo"));
-														stmt1.setFloat(6, (result.getFloat("prezzo")*documento.getQuantita()));
+									    				stmt1.setInt(4, documento.getQuantita());	
+									    				prezzo=result.getFloat("prezzo");
+														stmt1.setFloat(5, prezzo);
+														stmt1.setFloat(6, (prezzo*documento.getQuantita()));
 														stmt1.setString(7, result.getString("nome_materia"));
 														stmt1.setInt(8, 1);
 														
@@ -163,8 +165,8 @@ public class AggiungiOrdineTemp extends HttpServlet {
 											if(continua == 1) {
 							    				stmt1 = null;
 				    							sql = "UPDATE ordini SET "
-				    								 +"totale_documenti =  (SELECT SUM(prezzo_documenti) FROM ordini_documenti WHERE serial_id = ?), "
-				    								 +"totale_ordine =  ((SELECT SUM(prezzo_documenti) FROM ordini_documenti WHERE serial_id = ?) + totale_spedizione) "
+				    								 +"totale_documenti =  (SELECT SUM(prezzo_totale) FROM ordini_documenti WHERE serial_id = ?), "
+				    								 +"totale_ordine =  ((SELECT SUM(prezzo_totale) FROM ordini_documenti WHERE serial_id = ?) + totale_spedizione) "
 				    								 +"WHERE serial_id = ?;";
 				    							//System.out.println(sql);
 							    				stmt1 = connDB.getConn().prepareStatement(sql);

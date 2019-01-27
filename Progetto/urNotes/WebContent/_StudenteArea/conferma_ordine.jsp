@@ -112,11 +112,11 @@
 				    				result = null;					    				
 				    				stmt = connDB.getConn().createStatement();
 				    				sql = ""
-											+ "SELECT od.* , " 
+				    						+ "SELECT *, " 
 											+ "(SELECT filename FROM documenti_immagini WHERE codice = od.codice AND is_default = 1 AND attivo = 1) AS filename "											
 											+ "FROM ordini_documenti AS od "
 											+ "WHERE od.attivo = 1 AND od.serial_id = "+serial_id+"; ";
-			    					//System.out.println(sql);
+			    					System.out.println(sql);
 			    					result = stmt.executeQuery(sql);				
 			    					if(!result.wasNull()) {
 			    						while(result.next()){
