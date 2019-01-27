@@ -55,7 +55,10 @@ public class AggiungiOrdine extends HttpServlet {
         if(richiesta == 1) {
 	    	if(request.getSession() != null){
 	    		Integer serial_id = (Integer) request.getSession().getAttribute("serial_id");   
+	    		System.out.println("serial id = "+serial_id);
 	    		Integer id_utente = (Integer) request.getSession().getAttribute("id_utente");
+	    		System.out.println("id utente = "+id_utente);
+
 	    		if(serial_id != null && serial_id != null){
 			        ConnessioneDB connDB = new ConnessioneDB();
 					if(connDB.getConn() != null) {
@@ -65,20 +68,27 @@ public class AggiungiOrdine extends HttpServlet {
 			    			ResultSet result;
 							stmt0 = connDB.getConn().createStatement();
 		    				sql = ""
-									+ "SELECT od.quantita, od.codice, "
+									+ "SELECT od.quantita, od.codice "
 									+ "FROM ordini_documenti AS od "
 									+ "WHERE od.attivo = 1 AND od.serial_id = "+serial_id+"; ";
 	    					result = stmt0.executeQuery(sql);				
 	    					if(!result.wasNull()) {	    							    					
 	    						int rowCount = result.last() ? result.getRow() : 0;
+	    						System.out.println(rowCount);
 	    						if(rowCount > 0) {
+	    							System.out.println(rowCount);
 	    							Integer continua = 1;	    							
 		    						result.beforeFirst();
 		    						PreparedStatement  stmt;
+
+	    							
 		    						while(result.next()){
-			    							stmt = connDB.getConn().prepareStatement(sql);
+		    							System.out.println("ciao");
+		    								stmt = null;
+		    								stmt = connDB.getConn().prepareStatement(sql);
 			    							stmt.setInt(1, result.getInt("quantita"));
 			    							stmt.setInt(2, result.getInt("codice"));
+			    							System.out.println("ciao");
 		    						}
 		    						
 		    						if(continua == 1) {
