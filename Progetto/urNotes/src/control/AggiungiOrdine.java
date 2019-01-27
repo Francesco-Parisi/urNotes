@@ -76,20 +76,10 @@ public class AggiungiOrdine extends HttpServlet {
 	    						int rowCount = result.last() ? result.getRow() : 0;
 	    						System.out.println(rowCount);
 	    						if(rowCount > 0) {
-	    							System.out.println(rowCount);
 	    							Integer continua = 1;	    							
 		    						result.beforeFirst();
 		    						PreparedStatement  stmt;
 
-	    							
-		    						while(result.next()){
-		    							System.out.println("ciao");
-		    								stmt = null;
-		    								stmt = connDB.getConn().prepareStatement(sql);
-			    							stmt.setInt(1, result.getInt("quantita"));
-			    							stmt.setInt(2, result.getInt("codice"));
-			    							System.out.println("ciao");
-		    						}
 		    						
 		    						if(continua == 1) {
 		    							sql = "UPDATE ordini SET attivo = 1 WHERE serial_id = ?;";
