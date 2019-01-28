@@ -65,7 +65,7 @@ public class GetFile extends HttpServlet {
 							contenuto += "<tr>";
 								contenuto += "<td><img class='showImmagineDocumento' src='"+request.getContextPath()+"/images/richieste/"+id_richiesta+"/"+result.getString("filename")+"' alt='"+result.getString("filename")+"' /></td>";
 								contenuto += "<td>";
-								contenuto += "	<i class='scaricaFile fas fa-download' style='cursor: pointer;' data-id_file='"+result.getInt("id_file")+"' title='Scarica File'></i>";
+								contenuto += "	<i class='scaricaFile fas fa-download' style='cursor: pointer;' data-id_file='"+result.getInt("id_file")+"' title='Apri File'></i>";
 								contenuto += "	<i class='elimina eliminaFile fas fa-times' style='cursor: pointer;' data-id_file='"+result.getInt("id_file")+"' title='Elimina File'></i>";
 								contenuto += "</td>";
 							contenuto += "</tr>";

@@ -18,7 +18,7 @@
 <%@ include file="/partials/head.jsp" %>				
 	<script src="<%=request.getContextPath()%>/js/scripts_materieDispense.js"></script>	
 	<script src="<%=request.getContextPath()%>/js/scripts_dispense.js"></script>				
-	<title>urNotes | Catalogo</title>		
+	<title>urNotes | Documenti</title>		
 </head>
 <body onLoad="getMaterieDispense()">
 	<%@ include file="/partials/header.jsp" %>		
@@ -28,7 +28,7 @@
 			<table id="materieTable">
 				<thead class="adminHeadDataTable">
 					<tr>
-						<th>Materie</th>
+						<th>Cerca Dispense di una materia specifica</th>
 					</tr>	
 				</thead>
 				<tbody id="bodyMaterie" class="adminBodyDataTable">

@@ -216,16 +216,16 @@
 								
 							
 								<div class="left">
-									<p>Indirizzo di Spedizione</p>
+									<p class="info">Indirizzo di Spedizione</p>
 									<%=spedizione %>
 								</div>
 								
 								<div class="left">
-									<p>Vettore</p>
+									<p class="info">Vettore</p>
 									<%=vettore %>
 								</div>
 								<div class="left">
-									<p>Metodo di Pagamento</p>
+									<p class="info">Metodo di Pagamento</p>
 									<%=metodoPagamento %>
 								</div>
 

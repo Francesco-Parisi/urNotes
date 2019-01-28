@@ -29,7 +29,7 @@
 					<thead class="adminHeadDataTable">
 						<tr>
 							<th>File</th>
-							<th>Elimina</th>
+							<th>Azioni</th>
 						</tr>	
 					</thead>
 					<tbody id="bodyFile" class="adminBodyDataTable">

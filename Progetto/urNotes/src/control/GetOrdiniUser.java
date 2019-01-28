@@ -69,7 +69,7 @@ public class GetOrdiniUser extends HttpServlet {
 						if(!result.wasNull()) {
 							SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 							while(result.next()) {
-								    contenuto += "<tr>";
+								 contenuto += "<tr class='ordini'>";
 								    contenuto += "<td>"+result.getInt("serial_id")+"</td>";	
 									contenuto += "<td>"+sdf.format(result.getDate("data_ordine"))+"</td>";
 									contenuto += "<td>"+result.getString("numero_documenti")+"</td>";							

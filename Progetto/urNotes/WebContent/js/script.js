@@ -5,22 +5,11 @@ $(document).ready(function(){
 				e.preventDefault();
 			});
 			
-			
 			resizeContent();
 			$( window ).resize(function() {
 				resizeContent();
 			});	
 	 });
-
-$(document).ready(function(){
-
-	$(".header_icon").click(function(e){
-
-		$(".header_menu").toggleClass('is-open');
-		e.preventDefault();
-
-	});
-});
 
 //checkEmail('prova@email.it');
 function checkEmail(email){

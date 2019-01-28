@@ -44,9 +44,15 @@ $(document).ready(function(){
 							showAlert(1, msg.errore);
 						}
 						else{							
+						
+							setTimeout(function() {
+								  window.location.href = "/urNotes/_StudenteArea/ordiniStudente.jsp";
+								}, 4000);
+						}	
 							showAlert(0, msg.contenuto);
-							
-						}
+
+						
+						
 					},
 					error: function(msg){
 						showAlert(1, "Impossibile Recuperare i dati.");

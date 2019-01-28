@@ -3,16 +3,16 @@ body{
 	margin:0;
 	padding:0;
 	background-color:#f5f5f0;
-	
 }
 
 .animate{
-	
 	-webkit-transition:all 0.3 ease-out;
 	 transition:all 0.3 ease-out;
 }
 
+
 /*Scrollup------------------*/
+
 
 .scrollup {
     position: fixed;
@@ -31,11 +31,12 @@ body{
 	
 /*Header------------------*/
 
+
 .header{
 	background-color:#1ea4ca;
 	border-radius:0px 0px 5px 5px;
-	
 }
+
 
 .header_logo{
 	color:white;
@@ -46,12 +47,14 @@ body{
 	margin-top:5px
 }
 
+
 .header_icon{
 	display:block;
 	float:right;
 	padding:20px;
 	display:none;
 }
+
 
 .header_icon span{
 	display:block;
@@ -61,12 +64,14 @@ body{
 	margin-bottom:5px;
 }
 
+
 .header_menu{
 	margin:0;
 	padding:0;
 	float:left;
 	list-style-type:none;	
 }
+
 
 .header_menu .header_item{
 	margin:0;
@@ -79,6 +84,7 @@ body{
 	font-size:15px;
 	list-style-type:none;
 }
+
 
 .header_menu .header_item a{
 	font-family:monospace;
@@ -99,6 +105,7 @@ ul li ul li{
 	background-color:#1ea4ca;
 }
 
+
 ul li:hover ul li{
 	display:block;
 	position:relative;
@@ -108,22 +115,24 @@ ul li:hover ul li{
 
 
 ul li a:hover{
-	background-color:#1abbea;
-	
+	background-color:#1abbea;	
 }
 
 
 /*Header Menu dx-------------------------*/
+
 
 .header_menu_dx{
 	float:left;
 	margin-left:300px;
 }
 
+
 .header_item_dx{
 	display:inline-block;
 	
 }
+
 
 .header_item_dx a{
 	font-family:monospace;
@@ -139,15 +148,18 @@ ul li a:hover{
 	background-color:#1abbea;
 }
 
+
 .header_item_dx a .numeroProdottiCarrello{
-		display: inline;
-		color: red;
-		font-weight: normal;
-	}	
+	display: inline;
+	color: red;
+	font-weight: normal;
+}	
+
 
 .header_item_dx a:hover{
 	opacity:0.85;
 }
+
 
 .clear:after{
    visibility: hidden;
@@ -159,13 +171,17 @@ ul li a:hover{
 }
 
 
+
 /*Account-------------------------------------*/
+
+
 
 .account_item{
 	font-family:monospace;
 	font-weight:800;
 	font-size:15px;
 }
+
 
 #logout{
 	color:white;
@@ -180,6 +196,7 @@ ul li a:hover{
 	border-radius:10px;
 	box-shadow:1px 1px grey;
 }
+
 
 .logout_button{
 	border:none;
@@ -196,6 +213,7 @@ ul li a:hover{
 	text-decoration:none;
 	background-color:#f5f5f0;
 }
+
 
 .logout_button:hover{
 	box-shadow:1px 1px black;
@@ -219,9 +237,11 @@ ul li a:hover{
 	text-decoration:none;
 }
 
+
 .contact:hover{
 	 transform: scale(1.05);
 }
+
 .contact-img{
 	width:100%;
 	height:auto;
@@ -242,10 +262,12 @@ ul li a:hover{
 	margin-bottom:0;
 }
 
+
 .contact-text p{
 	font-family:monospace;
 	font-size:15px;
 }
+
 
 .mail{
 	margin:0;
@@ -340,7 +362,10 @@ ul li a:hover{
 	margin-right:100px;
 }
 
+
+
 /*Container-Section------------------------*/
+
 
 .title-section{
 	color:white;
@@ -368,6 +393,8 @@ ul li a:hover{
 
 
 /*Container-Appunti------------------------*/
+
+
 
 .container_appunti{
 	width:75%;
@@ -519,7 +546,9 @@ input[type="button"]:hover{
 }
 
 
+
 /*Come Funziona---------------------------*/
+
 
 .container_come-funziona{
 	width:75%;
@@ -596,7 +625,10 @@ input[type="button"]:hover{
 	margin-right:70px;
 }
 
+
+
 /*FAQ-------------------------------*/
+
 
 .container_faq{
 	width:75%;
@@ -663,7 +695,11 @@ border:none;
 	height:70%;
 }
 
-/*Dettaglio Documento*/
+
+
+/*Dettaglio Documento-------------------------------*/
+
+
 
 .container_appunti_dettaglio{
     width:75%;
@@ -818,7 +854,10 @@ border:none;
 	width:20%;
 }
 
+
+
 /*Privacy-------------------------------------*/
+
 
 .container_privacy{
     width:80%;
@@ -844,7 +883,11 @@ strong{
 	font-size:22px;
 }
 
+
+
 /*Accesso e Regisrazione-----------------------------------*/
+
+
 
 .loginbox{
 	width:400px;
@@ -926,8 +969,6 @@ p{
 	color:white;
 	text-shadow:1px 1px black;
 	font-size:18px;
-	
-	
 }	
 	
 .loginbox input[type="submit"]{
@@ -981,7 +1022,6 @@ a{
 	color:white;
 	text-shadow:1px 1px black;
 	margin-left:95px;
-	
 }
 
 .loginbox-reg a{
@@ -1009,7 +1049,9 @@ a{
 }
 
 
+
 /*Footer-----------------------------------*/
+
 
 
 .footer{
@@ -1033,7 +1075,7 @@ a{
 }
 
 .container-footer{
-	font-weight:600;
+	font-weight:bold;
 	font-size:15px;
 	padding:0;
 	margin-top:-75px;
@@ -1048,8 +1090,6 @@ a{
 	text-align:right;
 	text-decoration:none;
 	color:#fff;
-	
-	
 }	
 
 
@@ -1091,7 +1131,10 @@ a{
 }
 
 
+
 /*Recensioni-----------------------------------*/
+
+
 
 .right{
 	margin-left:20%;
@@ -1101,8 +1144,6 @@ a{
 .right #recensioniTable{
 	margin-left:11%;
 }
-
-
 
 .right #recensioniTable .adminHeadDataTable .recensioni{
     position:static;
@@ -1118,7 +1159,6 @@ a{
 	color:white;
 	text-align: center;
 	margin-left:20%;
-	
 }
 
 
@@ -1140,10 +1180,9 @@ a{
 	border-top:10px solid #1ea4ca;
 }
 
-
-textarea { /* Stili per il campo di testo e per la textarea */
-    background: #f5f5f0; /* Colore di sfondo */
-    border: 1px solid #f5f5f0; /* Bordo */
+textarea {
+    background: #f5f5f0;
+    border: 1px solid #f5f5f0;
     color: black; 
     height: 100px; 
     line-height: 30px; 
@@ -1165,10 +1204,9 @@ textarea { /* Stili per il campo di testo e per la textarea */
 	cursor: pointer;	
 	}
 
+
+/*Content-----------------------------------*/
 	
-	/*************************************************************************/
-	/*******************************  CONTENT ********************************/
-	/*************************************************************************/
 	
 #container_ordini_user{
     width:95%;
@@ -1251,8 +1289,6 @@ textarea { /* Stili per il campo di testo e per la textarea */
 }
 	
 #content #content-content .adminFormAggiungi{
-	border: solid 1px #1abbea;
-	border-radius: 5px;
 	margin-top: 10px;
 	padding: 10px;
 }
@@ -1278,10 +1314,8 @@ textarea { /* Stili per il campo di testo e per la textarea */
 	cursor: pointer;	
 }
 
-	/************************************************************/
-	/*******************   PAGINA ORDINI USER    ****************/
-	/************************************************************/	
 
+/*Pagina Ordini User-----------------------------------*/
 	
 #content #content-content .userBodyDataTable tr td i.dettaglioOrdine{
 	color: white;
@@ -1379,27 +1413,26 @@ textarea { /* Stili per il campo di testo e per la textarea */
 }
 
 
-	/************************************************************/
-	/**************** PAGINA CARRELLO PRODOTTO  *****************/
-	/************************************************************/	
+/*Pagina Carrello Documento-----------------------------------*/
 
-	#content #content-content #documentiTable #bodyCarrello i.fa-minus{
-		cursor: pointer; 		
-		background-color:#eee; 
-		border-radius: 15px;
-		padding: 5px;	
-		color: #DC483E;
-	}
-	#content #content-content #documentiTable #bodyCarrello i.fa-plus{
-		cursor: pointer; 		
-		background-color:#eee; 
-		border-radius: 15px;
-		padding: 5px;	
-		color: #00cc00;
-	}
+#content #content-content #documentiTable #bodyCarrello i.fa-minus{
+	cursor: pointer; 		
+	background-color:#eee; 
+	border-radius: 15px;
+	padding: 5px;	
+	color: #DC483E;
+}
+
+#content #content-content #documentiTable #bodyCarrello i.fa-plus{
+	cursor: pointer; 		
+	background-color:#eee; 
+	border-radius: 15px;
+	padding: 5px;	
+	color: #00cc00;
+}
 	
-	#content #content-content .userButtonCheckout{	
-	background-color: #1abbea;
+#content #content-content .userButtonCheckout{	
+    background-color: #1abbea;
 	text-shadow: 1px 1px black;
 	text-align:center;
 	height: 30px;		
@@ -1409,14 +1442,10 @@ textarea { /* Stili per il campo di testo e per la textarea */
 	width: 15%;	
 	border-radius: 20px;		
 	cursor: pointer;	
-	}
+}
 
 	
-	
-
-	/************************************************************/
-	/*******************   DROPZONE IMMAGINI     ****************/
-	/************************************************************/	
+/*DropZone Immagini-----------------------------------*/
 
 
 
@@ -1466,10 +1495,8 @@ textarea { /* Stili per il campo di testo e per la textarea */
 }			
 	
 
-     /************************************************************/
-	  /*******************   DROPZONE File     ****************/
-	/************************************************************/	
 
+/*Dropzone File-----------------------------------*/
 
 
 #content #content-content .adminFormAggiungi .dropzoneFileRichiesta{
@@ -1520,9 +1547,7 @@ textarea { /* Stili per il campo di testo e per la textarea */
 
 
 
-	/************************************************************/
-	/****************PAGINA IMPOSTAZIONI USER  *****************/
-	/************************************************************/	
+/*Pagina Impostazioni User-----------------------------------*/
 	
 #content #content-content #formImpostazioniUser{
 	border-radius: 15px;	
@@ -1609,49 +1634,49 @@ textarea { /* Stili per il campo di testo e per la textarea */
 	cursor: pointer;
 }				
 	
-	#content #content-content .addIndirizzo{
-		display: table;
-	}
+#content #content-content .addIndirizzo{
+	display: table;
+}
 	
-	#content #content-content .formIndirizzo .aggiungiIndirizzo{		
-		display: table-cell;
-		color: white;
-		cursor: pointer;
-		width: 100%;	
-		height: 100%;		
-		text-align: center;		
-		font-size: 50px;			
-		vertical-align: middle;			
-	}					
+#content #content-content .formIndirizzo .aggiungiIndirizzo{		
+	display: table-cell;
+	color: white;
+	cursor: pointer;
+	width: 100%;	
+	height: 100%;		
+	text-align: center;		
+	font-size: 50px;			
+	vertical-align: middle;			
+}					
 	
-	#content #content-content .formIndirizzo p{
-		overflow-y: auto;
-	}
+#content #content-content .formIndirizzo p{
+	overflow-y: auto;
+}
 
-	#content #content-content .formIndirizzo .note{
-		height: 40px;
-	}		
+#content #content-content .formIndirizzo .note{
+	height: 40px;
+}		
 	
-	#content #content-content .formIndirizzo .nomeCognome, #content #content-content .formIndirizzo .indirizzo, #content #content-content .formIndirizzo .capCittaProvincia, #content #content-content .formIndirizzo .telefono, #content #content-content .formIndirizzo .cellulare{
-		height: 25px;
-	}		
+#content #content-content .formIndirizzo .nomeCognome, #content #content-content .formIndirizzo .indirizzo, #content #content-content .formIndirizzo .capCittaProvincia, #content #content-content .formIndirizzo .telefono, #content #content-content .formIndirizzo .cellulare{
+	height: 25px;	
+}		
 	
- #content #content-content .userFormAggiungi{
-		background-color: #1ea4ca;
-		border-radius: 5px;
-		margin-top: 10px;
-		padding: 10px;
-	}
+#content #content-content .userFormAggiungi{
+	background-color: #1ea4ca;
+	border-radius: 5px;
+	margin-top: 10px;
+	padding: 10px;
+}
 	
-	#content #content-content .userFormAggiungi .adminFormField{
-	    border-radius: 5px;
-		height: 25px;	
-		border: solid 1px #276274;
-		margin-left: 1%;	
-	}
+#content #content-content .userFormAggiungi .adminFormField{
+    border-radius: 5px;
+	height: 25px;	
+	border: solid 1px #276274;
+	margin-left: 1%;	
+}
 	
-	#content #content-content .userFormAggiungi .adminButtonConfermaAggiungi{	
-	background-color: #1abbea;
+#content #content-content .userFormAggiungi .adminButtonConfermaAggiungi{	
+	background-color: #1abbea;	
 	text-shadow: 1px 1px black;
 	text-align:center;
 	height: 30px;		
@@ -1661,47 +1686,47 @@ textarea { /* Stili per il campo di testo e per la textarea */
 	width: 10%;	
 	border-radius: 20px;		
 	cursor: pointer;	
-	}
+}
 	
-	#content #content-content .userFormAggiungi #nomeIndirizzo, #content #content-content .userFormAggiungi #cognomeIndirizzo{
-		width: 20%;
-	}
+#content #content-content .userFormAggiungi #nomeIndirizzo, #content #content-content .userFormAggiungi #cognomeIndirizzo{
+	width: 20%;
+}
 	
-	#content #content-content .userFormAggiungi #indirizzoIndirizzo{
-		width: 55%;
-	}
+#content #content-content .userFormAggiungi #indirizzoIndirizzo{
+	width: 55%;
+}
 	
-	#content #content-content .userFormAggiungi #capIndirizzo{
-		width: 7.3%;
-		margin-top: 10px;
-	}
+#content #content-content .userFormAggiungi #capIndirizzo{
+	width: 7.3%;
+	margin-top: 10px;
+}
 	
-	#content #content-content .userFormAggiungi #cittaIndirizzo, #content #content-content .userFormAggiungi #provinciaIndirizzo{
-		width: 31%;
-	}
+#content #content-content .userFormAggiungi #cittaIndirizzo, #content #content-content .userFormAggiungi #provinciaIndirizzo{
+	width: 31%;
+}
 	
-	#content #content-content .userFormAggiungi #telefonoIndirizzo, #content #content-content .userFormAggiungi #cellulareIndirizzo{
-		width: 12%;
-	}
+#content #content-content .userFormAggiungi #telefonoIndirizzo, #content #content-content .userFormAggiungi #cellulareIndirizzo{
+	width: 12%;
+}
 	
-	#content #content-content .userFormAggiungi #noteIndirizzo{
-		width: 97.7%;
-		height: 70px;		
-		margin-top: 10px;
-		margin-bottom: 10px;
-	}
+#content #content-content .userFormAggiungi #noteIndirizzo{
+	width: 97.7%;
+	height: 70px;		
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
 	
-	#content #content-content .userFormAggiungi #confirmAggiungiIndirizzo{
-		margin-left: 43%;
-	}
+#content #content-content .userFormAggiungi #confirmAggiungiIndirizzo{
+	margin-left: 43%;
+}
 
 
 
 
-    /************************************************************/
-	/*******************   PAGINA CHECKOUT  *********************/
-	/************************************************************/			
-	#content #content-content #checkoutPage #userButtonConcludiOrdine{	
+/*Pagina Checkout-----------------------------------*/
+
+
+#content #content-content #checkoutPage #userButtonConcludiOrdine{	
 	background-color: #1abbea;
 	text-shadow: 1px 1px black;
 	text-align:center;
@@ -1712,19 +1737,20 @@ textarea { /* Stili per il campo di testo e per la textarea */
 	width: 15%;	
 	border-radius: 20px;		
 	cursor: pointer;	
-	}	
-	#content #content-content #checkoutPage .left, #content #content-content #checkoutPage .right{
-		width: 55%;
-		padding: 2%;
-	}
+}	
 	
-	.left p{
+#content #content-content #checkoutPage .left, #content #content-content #checkoutPage .right{
+	width: 55%;
+	padding: 2%;
+}
+	
+.left .info{
 	text-align:center;
 	margin-left:39%;
 	width:100%;
-	}
+}
 	
-	.container_pagamento{
+.container_pagamento{
 	border:2px solid #276274;
 	border-radius:20px 20px;
 	width:80%;
@@ -1732,58 +1758,56 @@ textarea { /* Stili per il campo di testo e per la textarea */
 	margin-top:10%;
 	background-color:#276274;
 	box-shadow:1px 1px grey;
-	}
+}
 	
-	.info_pagamento{
+.info_pagamento{
 	font-size:10px;
 	text-align:center;
 	color:white;
 	text-shadow:1px 2px black;
 	margin-top:30px;
-	}
+}
 	
-	.info_totale{
+.info_totale{
 	font-size:25px;
 	text-align:center;
 	color:white;
 	text-shadow:1px 2px black;
 	margin-top:100px;
-	}
+}
 	
-	.info_pagamento b{
+.info_pagamento b{
 	font-size:22px;
-	}
+}
 	
-	#content #content-content #checkoutPage .left p, #content #content-content #checkoutPage .right p{
-		color: white;
-		text-shadow:1px 1px black;		
-	}
-	#content #content-content #checkoutPage .left p:first-child, #content #content-content #checkoutPage .right p:first-child{
-		font-weight: bold;	
-	}
-	#content #content-content #checkoutPage #checkoutTable{
-		margin-bottom: 200px;
-	}	
-	#content #content-content #checkoutPage .checkoutFormField{
-		height: 30px;	
-		border: solid 1px #276274;
-		margin-top:0px;
-		margin-left: 50%;	
-	}	
-	#content #content-content #checkoutPage #spedizioneCheckout, #content #content-content #checkoutPage #vettoreCheckout, #content #content-content #checkoutPage #metodoPagamentoCheckout{
-		width: 80%;
-		height: 30px;
-	}
+#content #content-content #checkoutPage .left p, #content #content-content #checkoutPage .right p{
+	color: white;
+	text-shadow:1px 1px black;		
+}
+
+#content #content-content #checkoutPage .left p:first-child, #content #content-content #checkoutPage .right p:first-child{
+	font-weight: bold;	
+}
+
+#content #content-content #checkoutPage #checkoutTable{
+	margin-bottom: 200px;
+}	
+
+#content #content-content #checkoutPage .checkoutFormField{
+	height: 30px;	
+	border: solid 1px #276274;
+	margin-top:0px;
+	margin-left: 50%;	
+}	
+
+#content #content-content #checkoutPage #spedizioneCheckout, #content #content-content #checkoutPage #vettoreCheckout, #content #content-content #checkoutPage #metodoPagamentoCheckout{
+	width: 80%;
+	height: 30px;
+}
 	
 
 
-
-
-
-    /************************************************************/
-	/****************PAGINA IMPOSTAZIONI ADMIN  *****************/
-	/************************************************************/	
-	
+/*Pagina Impostazioni Admin-----------------------------------*/
 	
 	
 .admin_settings{
@@ -1854,10 +1878,3 @@ textarea { /* Stili per il campo di testo e per la textarea */
 	cursor: pointer;
 	margin-top: 10px;
 }
-	
-	
-
-	
-
-	
-	

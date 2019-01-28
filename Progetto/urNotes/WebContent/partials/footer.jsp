@@ -1,6 +1,6 @@
 <div class="footer">
 <div class="image-footer">
-<a href="/urNotes/index.jsp"><img src="/urNotes/images/menu_logo3.png" height="100" width="250" alt="logo"></a>
+<a href="/urNotes/index.jsp"><img class="image_footer" src="/urNotes/images/menu_logo3.png" height="100" width="250" alt="logo"></a>
 </div>
 
 <div class="container-footer">
