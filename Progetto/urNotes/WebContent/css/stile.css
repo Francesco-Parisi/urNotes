@@ -1201,6 +1201,7 @@ textarea { /* Stili per il campo di testo e per la textarea */
 	color:white;
 	font-weight:bold;
 	font-size:30px;
+	padding:20px;
 	text-shadow:1px 1px black;
 }
 
@@ -1209,6 +1210,7 @@ textarea { /* Stili per il campo di testo e per la textarea */
 	color:white;
 	font-weight:bold;
 	font-size:30px;
+	padding:20px;
 	text-shadow:1px 1px black;
 }
 	
@@ -1216,6 +1218,8 @@ textarea { /* Stili per il campo di testo e per la textarea */
 	text-align:center;
 	color:white;
 	font-weight:bold;
+	margin-top:20px;
+	padding:20px;
 	font-size:30px;
 	text-shadow:1px 1px black;
 }
@@ -1690,6 +1694,90 @@ textarea { /* Stili per il campo di testo e per la textarea */
 	#content #content-content .userFormAggiungi #confirmAggiungiIndirizzo{
 		margin-left: 43%;
 	}
+
+
+
+
+    /************************************************************/
+	/*******************   PAGINA CHECKOUT  *********************/
+	/************************************************************/			
+	#content #content-content #checkoutPage #userButtonConcludiOrdine{	
+	background-color: #1abbea;
+	text-shadow: 1px 1px black;
+	text-align:center;
+	height: 30px;		
+	color: #FFF;
+	margin-left: 43%;	
+	margin-top: 5%;
+	width: 15%;	
+	border-radius: 20px;		
+	cursor: pointer;	
+	}	
+	#content #content-content #checkoutPage .left, #content #content-content #checkoutPage .right{
+		width: 55%;
+		padding: 2%;
+	}
+	
+	.left p{
+	text-align:center;
+	margin-left:39%;
+	width:100%;
+	}
+	
+	.container_pagamento{
+	border:2px solid #276274;
+	border-radius:20px 20px;
+	width:80%;
+	margin-left:10%;
+	margin-top:10%;
+	background-color:#276274;
+	box-shadow:1px 1px grey;
+	}
+	
+	.info_pagamento{
+	font-size:10px;
+	text-align:center;
+	color:white;
+	text-shadow:1px 2px black;
+	margin-top:30px;
+	}
+	
+	.info_totale{
+	font-size:25px;
+	text-align:center;
+	color:white;
+	text-shadow:1px 2px black;
+	margin-top:100px;
+	}
+	
+	.info_pagamento b{
+	font-size:22px;
+	}
+	
+	#content #content-content #checkoutPage .left p, #content #content-content #checkoutPage .right p{
+		color: white;
+		text-shadow:1px 1px black;		
+	}
+	#content #content-content #checkoutPage .left p:first-child, #content #content-content #checkoutPage .right p:first-child{
+		font-weight: bold;	
+	}
+	#content #content-content #checkoutPage #checkoutTable{
+		margin-bottom: 200px;
+	}	
+	#content #content-content #checkoutPage .checkoutFormField{
+		height: 30px;	
+		border: solid 1px #276274;
+		margin-top:0px;
+		margin-left: 50%;	
+	}	
+	#content #content-content #checkoutPage #spedizioneCheckout, #content #content-content #checkoutPage #vettoreCheckout, #content #content-content #checkoutPage #metodoPagamentoCheckout{
+		width: 80%;
+		height: 30px;
+	}
+	
+
+
+
 
 
     /************************************************************/

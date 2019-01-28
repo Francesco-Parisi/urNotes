@@ -86,7 +86,8 @@ public class AggiungiOrdine extends HttpServlet {
 		    							stmt = connDB.getConn().prepareStatement(sql);
 		    							stmt.setInt(1, serial_id);
 		    							if(stmt.executeUpdate() == 1) {								
-											Carrello newCart = new Carrello(id_utente);
+
+		    								Carrello newCart = new Carrello(id_utente);
 											request.getSession().setAttribute("carrello", newCart);
 		    								risultato = 1;					
 		    								contenuto = "Ordine Terminato con Successo";
@@ -104,6 +105,10 @@ public class AggiungiOrdine extends HttpServlet {
 	    							errore = "Nessun Documento Trovato";
 	    							risultato = 0;
 	    						}
+	    					}
+	    					else {
+								risultato = 0;					
+								errore = "Errore Prelevamento Quantit&agrave; Ordine";	    						
 	    					}
 											
 	    					if(risultato == 0) {

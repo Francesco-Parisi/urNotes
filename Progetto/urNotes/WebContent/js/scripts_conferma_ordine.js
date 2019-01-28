@@ -44,7 +44,8 @@ $(document).ready(function(){
 							showAlert(1, msg.errore);
 						}
 						else{							
-							window.location.href = href;
+							showAlert(0, msg.contenuto);
+							
 						}
 					},
 					error: function(msg){

@@ -99,11 +99,12 @@
 					    						}
 					    					}						    					
 					    					
-					    					
+					    					totali += "<div class='info_totale'>";
 					    					totali += "<p><b>Totale Documenti:</b> &euro;"+new SystemInformation().truncateDecimal(result.getFloat("totale_documenti"),2)+"</p>";
 					    					totali += "<p><b>Totale Spedizione:</b> &euro;"+new SystemInformation().truncateDecimal(result.getFloat("totale_spedizione"), 2)+"</p>";
 					    					totali += "<p><b>Totale Ordine:</b> &euro;"+new SystemInformation().truncateDecimal(result.getFloat("totale_ordine"), 2)+"</p>";
-					    					
+					    					totali += "</div>";
+
 			    						}					
 			    					}				 	    						
 
@@ -116,7 +117,7 @@
 											+ "(SELECT filename FROM documenti_immagini WHERE codice = od.codice AND is_default = 1 AND attivo = 1) AS filename "											
 											+ "FROM ordini_documenti AS od "
 											+ "WHERE od.attivo = 1 AND od.serial_id = "+serial_id+"; ";
-			    					System.out.println(sql);
+			    					//System.out.println(sql);
 			    					result = stmt.executeQuery(sql);				
 			    					if(!result.wasNull()) {
 			    						while(result.next()){
@@ -151,10 +152,12 @@
 			    		}	    	
 
 				    	%>
-					    	<div id="confermaOrdinePage">
+	                        <div id="container_appunti_admin">	
+	                        <div id="content">
+			                  <div id="content-content">
 								<p class='adminTitoloPagina'>Concludi Ordine</p>
 								
-			        			<table id='confermaOrdineTable'>
+			        			<table id='documentiTable'>
 			       					<thead class='adminHeadDataTable'>
 			      						<tr>
 			     							<th>Foto</th>
@@ -170,23 +173,29 @@
 								</table>
 								
 								
-								<div class="left">
-									<p>Indirizzo di Spedizione</p>
+								<div class="container_pagamento">
+								<p class='adminTitoloPagina'>Info Ordine</p>
+								
+								<div class="info_pagamento">
+									<p><b>Indirizzo di Spedizione</b></p>
 									<p><%=spedizione %></p>									
 								</div>
 								
-								<div class="left">
+								<div class="info_pagamento">
 									<p><b>Vettore</b></p>
 									<p><%=vettore %></p>		
 								</div>
-								<div class="left">
+								<div class="info_pagamento">
 									<p><b>Metodo di Pagamento</b></p>
 									<p><%=metodoPagamento %></p>		
 								</div>
 								
+								<div class="info_pagamento">
 								<%=totali %>								
-
+								</div>
+							</div>
 								<button id='userButtonTerminaOrdine' data-href="<%=request.getContextPath()%>/_StudenteArea/ordiniStudente.jsp" class='userButtonCheckout'>Termina Ordine</button>			
+					    	
 					    	</div>
 				    	<%	    					    		
 		    		}
@@ -199,6 +208,8 @@
 				}	    
 			%>
 			<%=output %>
+			</div>
+			</div>
 			</div>
 		</div>
 		<%@ include file="/partials/footer.jsp" %>	
