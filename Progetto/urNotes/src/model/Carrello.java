@@ -2,6 +2,8 @@ package model;
 
 import java.util.ArrayList;
 
+import bean.Documento;
+
 public class Carrello {
 	public Carrello(Integer id_utente) {
 		this.documenti = new ArrayList<Documento>();	

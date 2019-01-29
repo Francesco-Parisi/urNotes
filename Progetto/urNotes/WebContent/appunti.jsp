@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="model.ConnessioneDB, java.sql.* , javax.servlet.http.HttpSession, model.SystemInformation" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="connection.ConnessioneDB, java.sql.* , javax.servlet.http.HttpSession, model.SystemInformation" %>
 
 <!DOCTYPE html>
 <html lang = "it">
