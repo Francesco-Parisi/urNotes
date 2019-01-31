@@ -9,11 +9,11 @@ $(document).ready(function(){
 
 		
 		var continua = 1;
-		if(username == undefined || username == "" || username.length < 1){			
+		if(username == undefined || username == "" || username.length < 3){			
 			showAlert(1, "Inserire un username");
 			continua *= 0;
 		}
-		if(nome == undefined || nome == "" || nome.length < 1){			
+		if(nome == undefined || nome == "" || nome.length < 2){			
 			showAlert(1, "Inserire un nome");
 			continua *= 0;
 		}
