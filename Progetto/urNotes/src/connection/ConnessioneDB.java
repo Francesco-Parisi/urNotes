@@ -28,9 +28,55 @@ public class ConnessioneDB {
 	public Connection getConn(){
 		return this.conn;
 	}
+	
+	public void setConn(Connection conn){
+		this.conn = conn ;
+	}
+	
+	public String getDBname(){
+		return this.nomeDB;
+	}
+	
+	public void setDBname(String nomeDB){
+		this.nomeDB = nomeDB;
+	}
+	
+	public String getUserDB(){
+		return this.userDB;
+	}
+	
+	public void setUserDB(String userDB){
+		this.userDB = userDB;
+	}
+	
+	public String getPassDB(){
+		return this.passDB;
+	}
+	
+	public void setPassDB(String passDB){
+		this.passDB = passDB;
+	}
+	
+	public int getHostPort(){
+		return this.porta;
+	}
+	
+	public void setHostPort(int porta){
+		this.porta = porta;
+	}
+	
+	public String getServer(){
+		return this.server;
+	}
+	
+	public void setServer(String server){
+		this.server = server;
+	}
+	
 	public String getError(){
 		return this.error;
 	}
+	
 	
 	public void closeConn() throws SQLException{
 		this.conn.close();
