@@ -36,8 +36,8 @@ public class ScaricaFile extends HttpServlet {
 
   	}
     // TODO Auto-generated constructor stub
-@SuppressWarnings("unchecked") 
-protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+@SuppressWarnings("unchecked")
+public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	doPost(request, response);
 	PrintWriter out = response.getWriter();
 	response.setContentType("text/html");
@@ -114,7 +114,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
  * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
  */
 @SuppressWarnings("unchecked")
-protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 }
 }

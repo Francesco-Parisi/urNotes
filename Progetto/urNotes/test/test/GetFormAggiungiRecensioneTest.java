@@ -16,14 +16,11 @@ import org.mockito.Mockito;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 
-import account.Accedi;
-import account.SalvaUtente;
-import ordini.AggiungiOrdine;
-import ordini.AggiungiOrdineTemp;
+import documenti.GetFormAggiungiRecensione;
 
-public class AggiungiOrdineTempTest extends Mockito{
+public class GetFormAggiungiRecensioneTest extends Mockito{
 
-	 private AggiungiOrdineTemp servlet;
+	 private GetFormAggiungiRecensione servlet;
 	  private MockHttpServletRequest request;
 	  private MockHttpServletResponse response;
 
@@ -32,27 +29,23 @@ public class AggiungiOrdineTempTest extends Mockito{
 	   */
 	  @Before
 	  public void setUp() {
-	    servlet = new AggiungiOrdineTemp();
+	    servlet = new GetFormAggiungiRecensione();
 	    request = new MockHttpServletRequest();
 	    response = new MockHttpServletResponse();
 	  }
 	
 	@Test
-	  public void aggiunta() throws ServletException, IOException  {
-		request.addParameter("id_richiesta", "1");
-	    request.addParameter("spedizioneCheckout","Via Garibaldi 61");
-	    request.addParameter("vettoreCheckout", "GLS");
-	    request.addParameter("metodoPagamentoCheckout","Bonifico Bancario");
+	  public void FormRecensione() throws ServletException, IOException  {
+	    request.addParameter("richiesta","1");
+	    request.addParameter("id_utente","8");
 	    servlet.doPost(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }
 	
-	
 	@Test
-	  public void aggiuntaDoGet() throws ServletException, IOException  {
-		request.addParameter("richiesta","1");
-	    //request.addParameter("serial_id","100");
-	    //request.addParameter("id_utente","2");
+	  public void FormRecensioneget() throws ServletException, IOException  {
+	    request.addParameter("richiesta","1");
+	    request.addParameter("id_utente","8");
 	    servlet.doGet(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }
