@@ -4,11 +4,11 @@ $(document).ready(function(){
 		var password = $("#password").val();
 		
 		var continua = 1;
-		if(username == undefined || username == ""){			
-			showAlert(1, "Inserire un Nome Utente valido");
+		if(username == undefined || username == "" || username == "."){			
+			showAlert(1, "Inserire un Username valido");
 			continua *= 0;
 		}
-		if(password == undefined || password == "" || password.length < 3){			
+		if(password == undefined || password == "" || password.length < 6){			
 			showAlert(1, "Inserire una Password valida");
 			continua *= 0;
 		}

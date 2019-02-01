@@ -1,0 +1,51 @@
+package documenti;
+import static org.junit.Assert.*;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mockito;
+import org.springframework.mock.web.MockHttpServletRequest;
+import org.springframework.mock.web.MockHttpServletResponse;
+
+
+import documenti.AggiungiFile;
+
+
+
+
+
+public class AggiungiFileTest extends Mockito {
+
+	  private AggiungiFile servlet;
+	  private MockHttpServletRequest request;
+	  private MockHttpServletResponse response;
+	  
+	  @Before
+	  public void setUp() {
+	    servlet = new AggiungiFile();
+	    request = new MockHttpServletRequest();
+	    response = new MockHttpServletResponse();
+	  }
+	  
+	  
+	  @Test
+	  public void AggiungiFile() throws ServletException, IOException  {
+	    request.addParameter("id_richiesta","100");
+	    request.addParameter("filenameFileRichiesta","analisi1.pdf");
+	    servlet.doPost(request, response);
+	    assertEquals("text/html", response.getContentType());
+	  }
+	  
+	  @Test
+	  public void AggiungiFileget() throws ServletException, IOException  {
+	    request.addParameter("id_richiesta","100");
+	    request.addParameter("filenameFileRichiesta","analisi1.pdf");
+	    servlet.doGet(request, response);
+	    assertEquals("text/html", response.getContentType());
+	  }
+	  
+}

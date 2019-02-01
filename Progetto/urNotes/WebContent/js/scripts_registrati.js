@@ -10,23 +10,23 @@ $(document).ready(function(){
 		
 		var continua = 1;
 		if(username == undefined || username == "" || username.length < 3){			
-			showAlert(1, "Inserire un username");
+			showAlert(1, "Inserire un Username valido");
 			continua *= 0;
 		}
-		if(nome == undefined || nome == "" || nome.length < 2){			
-			showAlert(1, "Inserire un nome");
+		if(nome == undefined || nome == "" || nome == "." || nome.length < 3){			
+			showAlert(1, "Inserire un Nome valido");
 			continua *= 0;
 		}
-		if(cognome == undefined || cognome == "" || cognome.length < 1){			
-			showAlert(1, "Inserire un cognome");
+		if(cognome == undefined || cognome == "" || cognome.length < 4){			
+			showAlert(1, "Inserire un Cognome valido");
 			continua *= 0;
 		}
 		if(email == undefined || email == "" || !checkEmail(email)){			
-			showAlert(1, "Inserire un'email valida");
+			showAlert(1, "Inserire un'Email valida");
 			continua *= 0;
 		}
 		if(password == undefined || password == "" || password.length < 6){			
-			showAlert(1, "Inserire una password valida di almeno 6 caratteri");
+			showAlert(1, "Inserire una Password valida di almeno 6 caratteri");
 			continua *= 0;
 		}
 		if(confermaPassword == undefined || password != confermaPassword){			
