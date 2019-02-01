@@ -24,13 +24,12 @@
 	<div id="container_appunti_admin">	
 		<div id="content">
 			<div id="content-content">
-			<p class="adminTitoloPagina">Materie</p> 
+			<p class="adminTitoloPagina">Recensioni</p> 
 				<table id="prodottiTable">
 					<thead class="adminHeadDataTable">
 						<tr>
 							<th>Username</th>
 							<th>Azioni</th>
-							
 						</tr>	
 					</thead>
 					<tbody id="bodyRecensioni" class="adminBodyDataTable">
