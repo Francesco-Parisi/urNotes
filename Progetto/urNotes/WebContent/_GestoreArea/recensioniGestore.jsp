@@ -29,6 +29,8 @@
 					<thead class="adminHeadDataTable">
 						<tr>
 							<th>Username</th>
+							<th>Descrizione</th>
+							<th>Documento</th>
 							<th>Azioni</th>
 						</tr>	
 					</thead>

@@ -56,15 +56,17 @@ public class GetRecensioneAdmin extends HttpServlet {
 				Statement stmt = connDB.getConn().createStatement();
 				String sql = "";
 				sql = ""
-						+ "SELECT r.username, r.descrizione, r.id_recensione "
-						+ "FROM recensioni  AS r "
-						+ "WHERE r.flag = 1;";
+						+ "SELECT r.username, r.descrizione, r.id_recensione, d.titolo "
+						+ "FROM recensioni  AS r, documenti AS d "
+						+ "WHERE r.flag = 1 AND r.codice = d.codice;";
 				
 				ResultSet result = stmt.executeQuery(sql);				
 				if(!result.wasNull()) {
 					while(result.next()) {
 							contenuto += "<tr class='prova1'>";
-							contenuto += "<td>"+result.getString("username")+": "+result.getString("descrizione")+"</td>";
+							contenuto += "<td>"+result.getString("username")+"</td>";
+							contenuto += "<td>"+result.getString("descrizione")+"</td>";
+							contenuto += "<td>"+result.getString("titolo")+"</td>";
 							contenuto += "<td>";
 							contenuto += "	<i class='eliminaRecensione fas fa-times' style='cursor: pointer;' data-id_recensione='"+result.getInt("id_recensione")+"' title='Elimina Recensione'></i>";
 							contenuto += "</td>";
