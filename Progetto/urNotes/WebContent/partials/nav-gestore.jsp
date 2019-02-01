@@ -4,6 +4,7 @@
 <ul>
 <li class="drop_item"><a href="<%=request.getContextPath()%>/_GestoreArea/materieGestore.jsp">Materie</a></li>
 <li class="drop_item"><a href="<%=request.getContextPath()%>/_GestoreArea/documentiGestore.jsp">Documenti</a></li>
+<li class="drop_item"><a href="<%=request.getContextPath()%>/_GestoreArea/recensioniGestore.jsp">Recensioni</a></li>
 </ul>
 </li>
 
