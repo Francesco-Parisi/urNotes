@@ -29,6 +29,8 @@ public class CarrelloTest {
 	    assertTrue(cart.getIdUtente() == 1);
 	}	
 	
+	
+	
 	@Test
 	 public void testGetDocumenti() {
 		Carrello cart = new Carrello(2);
@@ -36,7 +38,20 @@ public class CarrelloTest {
 	}	
 	
 	@Test
+	 public void testSetDocumenti() {
+		Carrello cart = new Carrello(1);
+	    assertTrue(cart.getDocumenti() != null);
+	}
+	
+	
+	@Test
 	 public void testGetNumeroDocumenti() {
+		Carrello cart = new Carrello(2);
+	    assertTrue(cart.getNumeroDocumenti() == 0);
+	}	
+	
+	@Test
+	 public void testSetNumeroDocumenti() {
 		Carrello cart = new Carrello(2);
 	    assertTrue(cart.getNumeroDocumenti() == 0);
 	}	

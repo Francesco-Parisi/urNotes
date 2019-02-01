@@ -49,7 +49,12 @@ public class ConnessioneDBTest {
     assertNotEquals(null, db.getConn());
   }
 
-
+  @Test
+  public void testgetError(){
+	  ConnessioneDB db = new ConnessioneDB();
+	    assertEquals(null, db.getError());
+  }
+  
 
   //Test Metodi SET
   

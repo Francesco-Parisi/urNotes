@@ -32,7 +32,7 @@ public class AggiungiMateriaTest extends Mockito {
 	  
 	  @Test
 	  public void AggiungiMateria() throws ServletException, IOException  {
-		    request.addParameter("nome","Scienze");
+		    request.addParameter("nome","Storia Moderna");
 		    servlet.doPost(request, response);
 		    assertEquals("text/html", response.getContentType());
 		  }
@@ -46,7 +46,7 @@ public class AggiungiMateriaTest extends Mockito {
 	  
 	  @Test
 	  public void AggiungiMateriaGet() throws ServletException, IOException  {
-		    request.addParameter("nome","Scienze");
+		    request.addParameter("nome","Storia Moderna");
 		    servlet.doGet(request, response);
 		    assertEquals("text/html", response.getContentType());
 		  }

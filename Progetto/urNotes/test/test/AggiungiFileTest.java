@@ -34,16 +34,16 @@ public class AggiungiFileTest extends Mockito {
 	  
 	  @Test
 	  public void AggiungiFile() throws ServletException, IOException  {
-	    request.addParameter("id_richiesta","163");
-	    request.addParameter("filenameFileRichiesta","richiesta.pdf");
+	    request.addParameter("id_richiesta","100");
+	    request.addParameter("filenameFileRichiesta","analisi1.pdf");
 	    servlet.doPost(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }
 	  
 	  @Test
 	  public void AggiungiFileget() throws ServletException, IOException  {
-	    request.addParameter("id_richiesta","190");
-	    request.addParameter("filenameFileRichiesta","prova.pdf");
+	    request.addParameter("id_richiesta","100");
+	    request.addParameter("filenameFileRichiesta","analisi1.pdf");
 	    servlet.doGet(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }

@@ -23,6 +23,12 @@ public class DocumentoTest {
   }
   
   @Test
+  public void testgetString() {
+	 Documento d = new Documento(1040,5);
+     assertTrue(d.toString()!=null);
+  }
+  
+  @Test
   public void testsetDocumentoCodice() {
 	  Documento d = new Documento(1040,5);
 	  d.setCodice(1041);

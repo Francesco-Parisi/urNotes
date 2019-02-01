@@ -36,14 +36,14 @@ public class GetFormModificaPrezzoDocumentoAdminTest extends Mockito{
 	
 	@Test
 	  public void FormModificaPrezzo() throws ServletException, IOException  {
-	    request.addParameter("codice","1034");
+	    request.addParameter("codice","1004");
 	    servlet.doPost(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }
 	
 	@Test
 	  public void FormModificaPrezzoget() throws ServletException, IOException  {
-	    request.addParameter("codice","1034");
+	    request.addParameter("codice","1004");
 	    servlet.doGet(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }

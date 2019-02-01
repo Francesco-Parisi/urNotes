@@ -16,11 +16,11 @@ import org.mockito.Mockito;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 
-import documenti.ScaricaFile;
+import documenti.GetRecensioneAdmin;
 
-public class ScaricaFileTest extends Mockito{
+public class GetRecensioneAdminTest extends Mockito{
 
-	 private ScaricaFile servlet;
+	 private GetRecensioneAdmin servlet;
 	  private MockHttpServletRequest request;
 	  private MockHttpServletResponse response;
 
@@ -29,24 +29,23 @@ public class ScaricaFileTest extends Mockito{
 	   */
 	  @Before
 	  public void setUp() {
-	    servlet = new ScaricaFile();
+	    servlet = new GetRecensioneAdmin();
 	    request = new MockHttpServletRequest();
 	    response = new MockHttpServletResponse();
 	  }
 	
 	@Test
-	  public void Scarica() throws ServletException, IOException  {
-		  request.addParameter("filename","analisi1.pdf");
-		  request.addParameter("filePath","/urNotes/images/richieste/100/");
-		  request.addParameter("idFile","1");
-		  servlet.doPost(request, response);
+	  public void RecensioneAdmin() throws ServletException, IOException  {
+	    request.addParameter("username","mick99");
+	    request.addParameter("descrizione","Consigliato");
+	    request.addParameter("titolo","La Camera Chiara - Roland Barthes");
+
+	    servlet.doPost(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }
 	
 	@Test
-	  public void Scaricaget() throws ServletException, IOException  {
-		request.addParameter("filename","");
-	    request.addParameter("idFile","1");
+	  public void RecensioneAdminget() throws ServletException, IOException  {
 	    servlet.doGet(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }

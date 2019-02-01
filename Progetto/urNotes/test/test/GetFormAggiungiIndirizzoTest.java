@@ -37,6 +37,9 @@ public class GetFormAggiungiIndirizzoTest extends Mockito{
 	@Test
 	  public void FormIndirizzo() throws ServletException, IOException  {
 	    request.addParameter("richiesta","1");
+	    request.addParameter("username","mick99");
+	    request.addParameter("id_utente","4");
+
 	    servlet.doPost(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }
@@ -44,6 +47,9 @@ public class GetFormAggiungiIndirizzoTest extends Mockito{
 	@Test
 	  public void FormIndirizzoget() throws ServletException, IOException  {
 	    request.addParameter("richiesta","1");
+	    request.addParameter("richiesta","1");
+	    request.addParameter("username","mick99");
+	    request.addParameter("id_utente","4");
 	    servlet.doGet(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }

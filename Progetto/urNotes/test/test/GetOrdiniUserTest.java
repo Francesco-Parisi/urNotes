@@ -37,6 +37,11 @@ public class GetOrdiniUserTest extends Mockito{
 	@Test
 	  public void getDoPost() throws ServletException, IOException  {
 		request.addParameter("id_utente", "2");
+		request.addParameter("serial_id", "100");
+		request.addParameter("data_ordine", "2018-12-13 11:16:18");
+		request.addParameter("numero_documenti", "2");
+		request.addParameter("totale_ordine", "8.98");
+
 	    servlet.doPost(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }
@@ -44,7 +49,12 @@ public class GetOrdiniUserTest extends Mockito{
 	
 	@Test
 	  public void getDoGet() throws ServletException, IOException  {
-	    servlet.doGet(request, response);
+		request.addParameter("id_utente", "2");
+		request.addParameter("serial_id", "100");
+		request.addParameter("data_ordine", "2018-12-13 11:16:18");
+		request.addParameter("numero_documenti", "2");
+		request.addParameter("totale_ordine", "8.98");
+		servlet.doGet(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }
 }

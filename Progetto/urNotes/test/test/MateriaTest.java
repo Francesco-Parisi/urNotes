@@ -1,6 +1,8 @@
 package test;
 
 import static org.junit.Assert.*;
+
+import bean.Documento;
 import bean.Materia;
 
 import org.junit.After;
@@ -24,5 +26,6 @@ public class MateriaTest {
     m.setNome("Geografia");
     assertEquals("Geografia", m.getNome());
   }
+  
   
 }

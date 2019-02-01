@@ -37,7 +37,7 @@ public class GetFormAggiungiRecensioneTest extends Mockito{
 	@Test
 	  public void FormRecensione() throws ServletException, IOException  {
 	    request.addParameter("richiesta","1");
-	    request.addParameter("id_utente","8");
+	    request.addParameter("id_utente","2");
 	    servlet.doPost(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }
@@ -45,7 +45,7 @@ public class GetFormAggiungiRecensioneTest extends Mockito{
 	@Test
 	  public void FormRecensioneget() throws ServletException, IOException  {
 	    request.addParameter("richiesta","1");
-	    request.addParameter("id_utente","8");
+	    request.addParameter("id_utente","2");
 	    servlet.doGet(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }

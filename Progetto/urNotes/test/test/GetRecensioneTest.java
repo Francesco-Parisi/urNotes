@@ -36,15 +36,19 @@ public class GetRecensioneTest extends Mockito{
 	
 	@Test
 	  public void Recensione() throws ServletException, IOException  {
-	    request.addParameter("codice","1019");
+	    request.addParameter("codice","1002");
+	    request.addParameter("username","mick99");
+	    request.addParameter("descrizione","Consigliato");
 	    servlet.doPost(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }
 	
 	@Test
 	  public void Recensioneget() throws ServletException, IOException  {
-	    request.addParameter("codice","1019");
-	    servlet.doGet(request, response);
+		 request.addParameter("codice","1002");
+		 request.addParameter("username","mick99");
+		 request.addParameter("descrizione","Consigliato");
+		 servlet.doGet(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }
 }

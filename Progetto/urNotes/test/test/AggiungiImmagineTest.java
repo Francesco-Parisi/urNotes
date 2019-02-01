@@ -33,8 +33,8 @@ public class AggiungiImmagineTest extends Mockito{
 	  
 	  @Test
 	  public void AggiungiImmagine() throws ServletException, IOException  {
-	    request.addParameter("codice","163");
-	    request.addParameter("filenameImmagineDocumento","immagine.png");
+	    request.addParameter("codice","1040");
+	    request.addParameter("filenameImmagineDocumento","Appunti_Di_Biochimica_Scienze_Motorie.jpg");
 	    request.addParameter("defaultImmagine","1");
 	    servlet.doPost(request, response);
 	    assertEquals("text/html", response.getContentType());
@@ -44,8 +44,8 @@ public class AggiungiImmagineTest extends Mockito{
 	  
 	  @Test
 	  public void AggiungiImmagineget() throws ServletException, IOException  {
-	    request.addParameter("codice","163");
-	    request.addParameter("filenameImmagineDocumento","immagine.png");
+		request.addParameter("codice","1040");
+	    request.addParameter("filenameImmagineDocumento","Appunti_Di_Biochimica_Scienze_Motorie.jpg");
 	    request.addParameter("defaultImmagine","1");
 	    servlet.doPost(request, response);
 	    assertEquals("text/html", response.getContentType());

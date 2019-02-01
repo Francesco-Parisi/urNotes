@@ -37,6 +37,8 @@ public class AggiungiOrdineTest extends Mockito{
 	@Test
 	  public void aggiunta() throws ServletException, IOException  {
 	    request.addParameter("richiesta","1");
+	    request.addParameter("serial_id","108");
+	    request.addParameter("id_utente","2");
 	    servlet.doPost(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }
@@ -45,6 +47,8 @@ public class AggiungiOrdineTest extends Mockito{
 	@Test
 	  public void aggiuntaDoGet() throws ServletException, IOException  {
 		request.addParameter("richiesta","1");
+		request.addParameter("serial_id","108");
+	    request.addParameter("id_utente","2");
 	    servlet.doGet(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }

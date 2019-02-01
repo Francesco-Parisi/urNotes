@@ -51,7 +51,7 @@ public class AggiungiRichiestaTest extends Mockito {
 		    request.addParameter("universita","Bocconi");
 		    request.addParameter("nome_materia","Arte");
 		    request.addParameter("descrizione","Questa è la mia richiesta ");
-		    request.addParameter("tipo","2");
+		    request.addParameter("tipo","1");
 		    servlet.doGet(request, response);
 		    assertEquals("text/html", response.getContentType());
 		  }

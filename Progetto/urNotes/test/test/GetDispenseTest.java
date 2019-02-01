@@ -36,14 +36,14 @@ public class GetDispenseTest extends Mockito{
 	
 	@Test
 	  public void Dispense() throws ServletException, IOException  {
-	    request.addParameter("value","");
+	    request.addParameter("value","1016");
 	    servlet.doPost(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }
 	
 	@Test
 	  public void Dispenseget() throws ServletException, IOException  {
-	    request.addParameter("value","");
+	    request.addParameter("value","1016");
 	    servlet.doGet(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }

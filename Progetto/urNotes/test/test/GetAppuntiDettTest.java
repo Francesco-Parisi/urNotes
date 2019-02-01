@@ -36,13 +36,14 @@ public class GetAppuntiDettTest extends Mockito{
 	
 	@Test
 	  public void AppuntiDettaglio() throws ServletException, IOException  {
-	    request.addParameter("value","");
+	    request.addParameter("value","1010");
 	    servlet.doPost(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }
 	
+	@Test
 	  public void AppuntiDettaglioget() throws ServletException, IOException  {
-		    request.addParameter("value","");
+		    request.addParameter("value","1010");
 		    servlet.doGet(request, response);
 		    assertEquals("text/html", response.getContentType());
 		  }

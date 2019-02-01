@@ -32,6 +32,7 @@ public class AggiungiIndirizzoTest extends Mockito {
 	  
 	  @Test
 	  public void AggiungiAlCarrello() throws ServletException, IOException  {
+		    request.addParameter("id_utente","2");
 		    request.addParameter("cap","19191");
 		    request.addParameter("citta","Salerno");
 		    request.addParameter("provincia","Fisciano");

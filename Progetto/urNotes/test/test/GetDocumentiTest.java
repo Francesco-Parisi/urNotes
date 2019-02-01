@@ -40,6 +40,7 @@ public class GetDocumentiTest extends Mockito{
 	    assertEquals("text/html", response.getContentType());
 	  }
 	
+	@Test
 	 public void Documentiget() throws ServletException, IOException  {
 		    servlet.doGet(request, response);
 		    assertEquals("text/html", response.getContentType());

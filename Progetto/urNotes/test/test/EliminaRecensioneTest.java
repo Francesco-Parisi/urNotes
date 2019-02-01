@@ -16,11 +16,11 @@ import org.mockito.Mockito;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 
-import ordini.GetDettaglioOrdineUser;
+import documenti.EliminaRecensione;
 
-public class GetDettaglioOrdineUserTest extends Mockito{
+public class EliminaRecensioneTest extends Mockito{
 
-	 private GetDettaglioOrdineUser servlet;
+	 private EliminaRecensione servlet;
 	  private MockHttpServletRequest request;
 	  private MockHttpServletResponse response;
 
@@ -29,27 +29,22 @@ public class GetDettaglioOrdineUserTest extends Mockito{
 	   */
 	  @Before
 	  public void setUp() {
-	    servlet = new GetDettaglioOrdineUser();
+	    servlet = new EliminaRecensione();
 	    request = new MockHttpServletRequest();
 	    response = new MockHttpServletResponse();
 	  }
 	
 	@Test
-	  public void getDoPost() throws ServletException, IOException  {
-		request.addParameter("serial_id", "100");
-		request.addParameter("codice", "1001");
-		request.addParameter("filename", "appunti-ilmondocontemporaneo.jpg");
-	    servlet.doPost(request, response);
+	  public void EliminaRec() throws ServletException, IOException  {
+	    request.addParameter("id_recensione","2");
+		servlet.doPost(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }
 	
-	
 	@Test
-	  public void getDoGet() throws ServletException, IOException  {
-		request.addParameter("serial_id", "100");
-		request.addParameter("codice", "1001");
-		request.addParameter("filename", "appunti-ilmondocontemporaneo.jpg");
-		servlet.doGet(request, response);
+	  public void EliminaRecget() throws ServletException, IOException  {
+	    request.addParameter("id_recensione","2");
+	    servlet.doGet(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }
 }

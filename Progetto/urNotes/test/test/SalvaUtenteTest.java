@@ -42,6 +42,8 @@ public class SalvaUtenteTest extends Mockito{
 	    request.addParameter("cognome","La monica");
 	    request.addParameter("email","lamonica1@gmail.com");
 	    request.addParameter("password","Lamonica1");
+	    request.addParameter("MD5","070ED0CA070A7B4C1AA84BCB0979B9AE");
+	    
 	    servlet.doPost(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }
@@ -74,6 +76,7 @@ public class SalvaUtenteTest extends Mockito{
 	    request.addParameter("cognome","Marottoli");
 	    request.addParameter("email","gio@gmail.com");
 	    request.addParameter("password","gio4696");
+	    request.addParameter("MD5","15F937B7C55A881A98863B256680464B");
 	    servlet.doGet(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }

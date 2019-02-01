@@ -59,7 +59,7 @@ public class AggiungiOrdine extends HttpServlet {
 	    		Integer id_utente = (Integer) request.getSession().getAttribute("id_utente");
 	    		System.out.println("id utente = "+id_utente);
 
-	    		if(serial_id != null && serial_id != null){
+	    		if(serial_id != null && id_utente != null){
 			        ConnessioneDB connDB = new ConnessioneDB();
 					if(connDB.getConn() != null) {
 						try {				
