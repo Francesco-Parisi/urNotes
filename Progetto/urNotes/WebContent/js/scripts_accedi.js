@@ -4,10 +4,16 @@ $(document).ready(function(){
 		var password = $("#password").val();
 		
 		var continua = 1;
-		if(username == undefined || username == "" || username == "."){			
-			showAlert(1, "Inserire un Username valido");
+		
+		if(username.length<3 || username.length>20){
+			   if(username == null || username == "") {
+			showAlert(1, "Inserisci Username Correttamente");
+			continua *= 0;
+			}
+			showAlert(1, "Errore Lunghezza Username");
 			continua *= 0;
 		}
+		
 		if(password == undefined || password == "" || password.length < 6){			
 			showAlert(1, "Inserire una Password valida");
 			continua *= 0;

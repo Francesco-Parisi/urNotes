@@ -34,16 +34,10 @@ public class AccediTest extends Mockito{
 	    response = new MockHttpServletResponse();
 	  }
 	
-	@Test
-	  public void AccediAdmin() throws ServletException, IOException  {
-	    request.addParameter("username","franpa96");
-	    request.addParameter("password","admin1");
-	    servlet.doPost(request, response);
-	    assertEquals("text/html", response.getContentType());
-	  }
-	
+
 	@Test
 	  public void AccediUser() throws ServletException, IOException  {
+	    request.addParameter("tipo_utente","2");
 	    request.addParameter("username","mick99");
 	    request.addParameter("password","mrullo");
 	    servlet.doPost(request, response);
@@ -51,9 +45,19 @@ public class AccediTest extends Mockito{
 	  }
 	
 	@Test
-	  public void AccediFail() throws ServletException, IOException  {
-	    request.addParameter("username","pippo");
-	    request.addParameter("password","admin1");
+	  public void AccediAdmin() throws ServletException, IOException  {
+	    request.addParameter("tipo_utente","1");
+	    request.addParameter("username","franpa96");
+	    request.addParameter("password","gestore96");
+	    servlet.doPost(request, response);
+	    assertEquals("text/html", response.getContentType());
+	  }
+	
+	
+	@Test
+	  public void AccediFailCampiErrati() throws ServletException, IOException  {
+	    request.addParameter("username","%");
+	    request.addParameter("password","%");
 	    servlet.doPost(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }
@@ -61,7 +65,7 @@ public class AccediTest extends Mockito{
 	@Test
 	  public void AccedidoGet() throws ServletException, IOException  {
 	    request.addParameter("username","franpa96");
-	    request.addParameter("password","admin1");
+	    request.addParameter("password","gestore96");
 	    servlet.doGet(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }

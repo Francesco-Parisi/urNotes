@@ -9,18 +9,35 @@ $(document).ready(function(){
 
 		
 		var continua = 1;
-		if(username == undefined || username == "" || username.length < 3){			
-			showAlert(1, "Inserire un Username valido");
+	
+		if(username.length<3 || username.length>20){
+			   if(username == null || username == "") {
+			showAlert(1, "Inserisci Username Correttamente");
+			continua *= 0;
+			}
+			showAlert(1, "Errore Lunghezza Username");
 			continua *= 0;
 		}
-		if(nome == undefined || nome == "" || nome == "." || nome.length < 3){			
-			showAlert(1, "Inserire un Nome valido");
+		
+		
+		if(nome.length<3 || nome.length>50){	
+			   if(username == null || username == "") {
+			showAlert(1, "Inserisci Nome Correttamente");
+			continua *= 0;
+			}
+			showAlert(1, "Errore Lunghezza Nome");
 			continua *= 0;
 		}
-		if(cognome == undefined || cognome == "" || cognome.length < 4){			
-			showAlert(1, "Inserire un Cognome valido");
+		
+		if(cognome.length<3 || cognome.length>20){	
+			   if(cognome == null || cognome == "") {
+			showAlert(1, "Inserisci Cognome Correttamente");
+			continua *= 0;
+			}
+			showAlert(1, "Errore Lunghezza Cognome");
 			continua *= 0;
 		}
+		
 		if(email == undefined || email == "" || !checkEmail(email)){			
 			showAlert(1, "Inserire un'Email valida");
 			continua *= 0;

@@ -16,7 +16,7 @@ import org.mockito.Mockito;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 
-import account.Accedi;
+import model.MD5;
 import account.SalvaUtente;
 
 public class SalvaUtenteTest extends Mockito{
@@ -41,13 +41,22 @@ public class SalvaUtenteTest extends Mockito{
 	    request.addParameter("nome","Tiziano");
 	    request.addParameter("cognome","La monica");
 	    request.addParameter("email","lamonica1@gmail.com");
-	    request.addParameter("password","Lamonica1");
-	    request.addParameter("MD5","070ED0CA070A7B4C1AA84BCB0979B9AE");
+	    request.addParameter("password",MD5.crypt("070ED0CA070A7B4C1AA84BCB0979B9AE"));
 	    
 	    servlet.doPost(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }
 	
+	@Test
+	  public void registrazioneFailCampiVuoti() throws ServletException, IOException  {
+		request.addParameter("username","");
+	    request.addParameter("nome","");
+	    request.addParameter("cognome","");
+	    request.addParameter("email","");
+	    request.addParameter("password","");
+	    servlet.doPost(request, response);
+	    assertEquals("text/html", response.getContentType());
+	  }
 	@Test
 	  public void registrazioneFailPassw() throws ServletException, IOException  {
 		request.addParameter("username","Lamonica97");
@@ -64,7 +73,8 @@ public class SalvaUtenteTest extends Mockito{
 	    request.addParameter("nome","Marco");
 	    request.addParameter("cognome","La cortiglia");
 	    request.addParameter("email","lacortiglia@gmail.com");
-	    request.addParameter("password","marco1");
+	    request.addParameter("password",MD5.crypt("070ED0CA070A7B4C1AA84BCB0979B9AE"));
+
 	    servlet.doPost(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }
@@ -75,8 +85,7 @@ public class SalvaUtenteTest extends Mockito{
 	    request.addParameter("nome","Giovanni");
 	    request.addParameter("cognome","Marottoli");
 	    request.addParameter("email","gio@gmail.com");
-	    request.addParameter("password","gio4696");
-	    request.addParameter("MD5","15F937B7C55A881A98863B256680464B");
+	    request.addParameter("password",MD5.crypt("070ED0CA070A7B4C1AA84BCB0979B9AE"));
 	    servlet.doGet(request, response);
 	    assertEquals("text/html", response.getContentType());
 	  }
