@@ -59,7 +59,7 @@ public class AggiungiRecensione extends HttpServlet {
 				stmt.setString(2, username);
 				stmt.setInt(3, codice);
 				if(stmt.executeUpdate() == 1) {
-					contenuto = "Recensione Inserita con Successo";
+					contenuto = "Recensione Pubblicata";
 					risultato = 1;					
 				}
 				else {

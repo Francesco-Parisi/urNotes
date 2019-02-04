@@ -20,6 +20,7 @@ $(document).ready(function(){
 		}
 		
 		
+		
 		if(nome.length<3 || nome.length>50){	
 			   if(username == null || username == "") {
 			showAlert(1, "Inserisci Nome Correttamente");
