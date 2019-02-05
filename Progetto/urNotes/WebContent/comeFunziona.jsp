@@ -13,11 +13,9 @@
 
 
 <section class="container_come-funziona">
-<div class="section-image">
-<div class="title-section_come-funziona">Come Funziona urNotes Store</div>
-<div class="section-text_come-funziona">
-Valorizza i tuoi documenti didattici: Condividili con gli altri utenti!
-</div>
+<div class="section-image_come-funziona">
+<div class="title-section_come-funziona">Come Funziona urNotes</div>
+<div class="section-text_come-funziona">Valorizza i tuoi documenti didattici: Condividili con gli altri utenti!</div>
 </div>       
 </section>
 

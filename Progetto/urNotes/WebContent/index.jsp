@@ -75,10 +75,9 @@ Ogni Documento è visionabile leggendo tutte le informazioni ad esso relative.
 	Trovare tempo per preparare un esame non è sempre facile, 
 	per questo hai bisogno di studiare quando e dove vuoi. 
 	Trova i tuoi appunti sul tuo tablet o 
-	sul tuo smartphone,mentre vai all'Università.
-	Acquistali in modo semplice e veloce.
-	<img class="image-section" alt="icon" src="/urNotes/images/icon3.png">
-	<br>
+	sul tuo smartphone e acquista!
+	<img class="image-section1" alt="icon" src="/urNotes/images/icon3.png">
+		<br>
 	<a id="button" href="/urNotes/registrati.jsp">Registrati</a>
 	</div>
 	</div>     

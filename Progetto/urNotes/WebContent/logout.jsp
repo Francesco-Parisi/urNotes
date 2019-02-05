@@ -7,17 +7,26 @@
 <html lang = "it">
 	<head>
 		<%@ include file="/partials/head.jsp" %>			
-		<title>Logout</title>		
+		<title>urNotes | Logout</title>		
 	</head>
-	<body>
-	<%@ include file="/partials/header.jsp" %>		
+
+<body>
+<%@ include file="/partials/header.jsp" %>		
 	
-		<div id="content">
-			<div id="content-content">
-				<p id="logout">Logout Effettuato con successo</p>
-	            <a class="logout_button" href="/urNotes/index.jsp">Torna alla Home</a>
-			</div>
-		</div>
-		<%@ include file="/partials/footer.jsp" %>	
-	</body>
+	
+<section class="container_logout">
+
+<div class="logout">
+<img src="/urNotes/images/exit.png" class="logout-img" alt="email">
+<div class="logout-text">
+<h3>Logout Effettuato con successo</h3>
+</div>
+</div>
+
+
+</section>
+
+<%@ include file="/partials/footer.jsp" %>	
+
+</body>
 </html>

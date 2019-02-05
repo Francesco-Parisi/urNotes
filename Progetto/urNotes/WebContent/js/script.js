@@ -14,7 +14,7 @@ $(document).ready(function(){
 //checkEmail('prova@email.it');
 function checkEmail(email){
 	var $email = email;
-	var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
+	var re = /\b[A-Z0-9._%+-]+@(?:[A-Z0-9-]+\.)+[A-Z]{2,6}\b/i;
 	if ($email == '' || !re.test($email)){
 		return false;
 	}

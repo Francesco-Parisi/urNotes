@@ -83,7 +83,7 @@ $(document).ready(function(){
 		var tipo = $("#tipo").val();
 		
 		
-		if(titolo != undefined && titolo.length > 1 && pagine != undefined && pagine > 0 && universita != undefined && universita.length > 1 && nome_materia != undefined && nome_materia.length > 1 && descrizione != undefined && descrizione.length > 1 && tipo != undefined && tipo > 0 ){		
+		if(titolo != undefined && titolo.length > 5 && pagine != undefined && pagine > 0 && universita != undefined && universita.length > 3 && nome_materia != undefined && nome_materia.length > 1 && descrizione != undefined && descrizione.length > 5 && tipo != undefined && tipo > 0 ){		
 			$("#loader").show();			
 			$.ajax({
 				url: absolutePath+"/AggiungiRichiesta",

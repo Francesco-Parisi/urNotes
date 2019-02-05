@@ -73,8 +73,13 @@ $(document).ready(function(){
 						showAlert(1, msg.errore);
 					}
 					else{
-						window.location.href = msg.redirect;
+						
+						setTimeout(function() {
+							  window.location.href = "/urNotes/accedi.jsp";
+							}, 3000);
+
 					}
+					showAlert(0, msg.contenuto);
 				},
 				error: function(msg){
 					showAlert(1, "Impossibile Recuperare i dati.");

@@ -42,6 +42,7 @@ public class EliminaOrdine extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		
+		int flag=0;
 		int serial_id = Integer.parseInt(request.getParameter("serial_id"));
         Integer risultato = 0;
         String errore = "";
@@ -51,7 +52,6 @@ public class EliminaOrdine extends HttpServlet {
 		if(connDB.getConn() != null) {
 			try {
 				Integer continua = 1;
-				
 				Statement stmt0 = connDB.getConn().createStatement();
 				String sql = "";
 				sql = ""
@@ -68,7 +68,8 @@ public class EliminaOrdine extends HttpServlet {
 					stmt0 = connDB.getConn().createStatement();
 					String sql0 = "";
 					sql0 = "UPDATE ordini_documenti SET attivo = 0 WHERE serial_id = "+serial_id+";";
-					if(stmt0.executeUpdate(sql0) == 1) {
+					flag=stmt0.executeUpdate(sql0);
+					if(stmt0.executeUpdate(sql0) == flag) {
 						Statement stmt1 = connDB.getConn().createStatement();
 						sql = "UPDATE ordini SET attivo = 0 WHERE serial_id = "+serial_id+";";
 						if(stmt1.executeUpdate(sql) == 1) {

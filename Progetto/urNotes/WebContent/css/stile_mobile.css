@@ -31,9 +31,7 @@
 	overflow:hidden;
 }
 
-.header_item_dx{
-	display:none;
-}
+
 
 .header_menu .header_item{
 	margin:0;
@@ -85,6 +83,174 @@ ul li a:hover{
 	margin:5%;	
 }
 
+/*Index-------------------------------*/
+
+.container-section{
+	width:100%;
+	height:300px;
+	margin:80px auto;
+}
+
+.title-section{
+	width:100%;
+}
+
+
+
+.title-section_come-funziona{
+	padding:12px;
+	text-align:center;
+	font-size:24px;
+}
+
+.section-image{
+	padding:0px;
+	width:90%;
+	margin-top:50px;
+	margin-left:0px;
+}
+
+.image-section1{
+	height:100px;
+	width:100px;
+	float:right;
+	padding:0px;
+	margin-top:50px;
+	margin-right:-20px;
+}
+
+.section-text{
+	width:100%;
+	padding:10px;
+	margin-top:0px;
+	font-size:17px;
+	font-weight:800;
+}
+
+/*Come Funziona---------------------------*/
+
+
+.container_come-funziona{
+	width:80%;
+	height:200px;
+    margin-top: 50px;
+}
+
+
+.container-thumbnail{
+	width:80%;
+	height:400px;
+    margin-top: 70px;
+}
+
+.section-text_image{
+	width:98%;
+	padding:10px;
+	margin-top:30px;
+	font-size:16px;
+}
+
+.title-section{
+	padding:10px;
+	width:100%;
+	font-size:20px;
+	font-weight:bold;
+}
+
+.section-image_come-funziona{
+	padding:0px;
+	width:99%;
+	margin-top:50px;
+	margin-left:0px;
+}
+
+.section-text_come-funziona{
+	padding:20px;
+	margin-top:0px;
+	width:90%;
+	font-size:16px;
+	font-weight:bold;
+}
+
+.image-section_come-funziona{
+	height:100px;
+	width:200px;
+	float:right;
+	margin-top:50px;
+	margin-right:50px;
+}
+
+/*Prodotto_Dettaglio--------------*/
+
+/*Slider*/
+
+
+
+/*FAQ---------------------------*/
+
+.container_faq{
+	width:80%;
+	height:400px;
+    margin-top: 50px;	
+    margin-left:12%;
+}
+
+
+#faq_button,#faq_button1,#faq_button2,#faq_button3,#faq_button4,#faq_button5{
+	text-align:left;
+	margin-left:0;
+	margin-top:15px;
+	font-size:16px;
+    width:310px;
+    height:50px;
+	
+}
+
+.faq_content,.faq_content1,.faq_content2,.faq_content3,.faq_content4,.faq_content5{
+	font-size:15px;
+	text-align:left;
+	margin-left:0;
+	padding:5px;
+   	text-shadow: 1px 1px black;
+    display: none;
+    width:290px;
+}
+
+
+/*Privacy-------------------------*/
+
+.container_privacy{
+	width:90%;
+	height:100%;	
+}
+
+
+/*Logout-----------------------------*/
+
+
+.container_logout{
+	margin:50px auto;
+}
+
+.logout{
+	width:30%;
+	margin:15% 35%;	
+	float:left;	
+}
+
+.logout-img{
+	width:100%;
+	height:150px;
+}
+
+.logout-text{
+	font-family:monospace;
+	font-size:14px;
+	text-align:center;
+	padding:5px 10px;
+	color:white;
+	text-shadow:1px 1px black;
+}
 
 
 /*Footer-------------------------*/
