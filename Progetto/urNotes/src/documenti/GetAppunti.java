@@ -77,7 +77,7 @@ public class GetAppunti extends HttpServlet {
 						contenuto += "<td>"+""+"</td>";
 						contenuto += "<td>"+""+"</td>";
 						contenuto += "</tr>";
-						contenuto += "<tr>";
+						contenuto += "<tr id=container_documenti>";
 						contenuto += "<td>"+result.getString("titolo")+"</td>";		
 						contenuto += "<td>"+result.getInt("pagine")+"</td>";
 						contenuto += "<td>";

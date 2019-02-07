@@ -26,11 +26,11 @@
 				<table id="prodottiTable">
 					<thead class="adminHeadDataTable">
 						<tr>
-							<th>Id Ordine</th>
-							<th>Data</th>
-							<th>N. Documenti</th>
-							<th>Totale</th>
-							<th>Azioni</th>
+							<th class="row_title">ID</th>
+							<th class="row_title">Data</th>
+							<th class="row_title">N. Prodotti</th>
+						    <th class="row_title">Totale</th>
+							<th class="row_title">Azioni</th>	
 						</tr>	
 					</thead>
 					<tbody id="bodyOrdini" class="adminBodyDataTable">

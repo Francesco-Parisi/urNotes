@@ -90,7 +90,7 @@ public class GetCarrello extends HttpServlet {
 	    								filename = new SystemInformation().getPathImmaginiDocumentoDefault();												
 	    							}	    							
 	    							
-	    							contenuto += "<tr>";	
+	    							contenuto += "<tr id=container_carrello>";
 	    								contenuto += "<td><img class='showImmagineDocumento' src='"+filename+"' alt='"+filename+"' /></td>";					
 	    								contenuto += "<td>"+result.getString("titolo")+"</td>";		
 	    								contenuto += "<td>";

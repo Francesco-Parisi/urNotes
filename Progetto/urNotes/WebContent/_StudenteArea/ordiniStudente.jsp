@@ -25,12 +25,12 @@
 				<p class="adminTitoloPagina">I Miei Ordini</p> 
 				<table id="prodottiTable">
 					<thead class="userHeadDataTable">
-						<tr>
-							<th>ID</th>
-							<th>Data</th>
-							<th>N. Prodotti</th>
-							<th>Totale</th>
-							<th>Azioni</th>						
+						<tr >
+							<th class="row_title">ID</th>
+							<th class="row_title">Data</th>
+							<th class="row_title">N. Prodotti</th>
+						    <th class="row_title">Totale</th>
+							<th class="row_title">Azioni</th>						
 						</tr>	
 					</thead>
 					<tbody id="bodyOrdini" class="userBodyDataTable">

@@ -42,7 +42,7 @@
 					<button id="buttonAggiungiImmagine" class="adminButtonAggiungi"><i class="fas fa-plus"></i></button>
 				</div>
 				
-				<div id="formAggiungiImmagine" class="adminFormAggiungi">
+				<div id="formAggiungiImmagine" class="adminFormAggiungiImmagine">
 					
 				</div>
 				<input type="hidden" id="idDocumentoImmagine" value="<%=codice %>" />

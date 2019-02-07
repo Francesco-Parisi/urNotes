@@ -41,7 +41,7 @@
 					<button id="buttonAggiungiFile" class="adminButtonAggiungi"><i class="fas fa-plus"></i></button>
 				</div>
 				
-				<div id="formAggiungiFile" class="adminFormAggiungi">
+				<div id="formAggiungiFile" class="adminFormAggiungiFile">
 					
 				</div>
 				<input type="hidden" id="idFileRichiesta" value="<%=id_richiesta %>" />

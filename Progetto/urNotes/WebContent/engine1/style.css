@@ -274,17 +274,22 @@
 	background:url(./triangle.png);
 	width:11px;
 	height:6px;
-}#wowslider-container1 .ws_bulframe div div{
+}
+
+#wowslider-container1 .ws_bulframe div div{
 	height: auto;
 }
 
 @media all and (max-width:760px) {
-	#wowslider-container1 .ws_fullscreen {
-		display: block;
-	}
-}
-@media all and (max-width:400px){
 	
+#wowslider-container1 .ws_fullscreen {
+	display: block;
+}
+	
+
+}
+
+@media all and (max-width:400px){
 	
 	#wowslider-container1 .ws_controls, #wowslider-container1 .ws_bullets, #wowslider-container1 .ws_thumbs{
 		display: none;

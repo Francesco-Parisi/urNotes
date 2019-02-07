@@ -60,7 +60,7 @@ public class GetDocumenti extends HttpServlet {
 				ResultSet result = stmt.executeQuery(sql);	
 				if(!result.wasNull()) {
 					while(result.next()) {
-						contenuto += "<tr class='documenti'>";
+						 contenuto += "<tr class='richieste'>";
 						contenuto += "<td>"+result.getString("titolo")+"</td>";		
 						contenuto += "<td>"+result.getInt("pagine")+"</td>";
 						contenuto += "<td>"+result.getString("universita")+"</td>";

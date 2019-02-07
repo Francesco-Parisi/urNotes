@@ -21,7 +21,7 @@
 <body onLoad="getRichiesta()">
 		<%@ include file="/partials/header.jsp" %>	
 		
-	<div id="container_appunti_admin">	
+	<div id="container_richieste_admin">	
 		<div id="content">
 			<div id="content-content">
 			<p class="adminTitoloPagina">Richieste</p> 
@@ -29,15 +29,15 @@
 					<thead class="adminHeadDataTable">
 						<tr>
 						
-							<th>Id</th>
-							<th>Data</th>
-							<th>Titolo</th>
-							<th>Pagine</th>
-							<th>Materia</th>
-							<th>Univerisit&agrave;</th>
-							<th>Descrizione</th>
-							<th>Tipo</th>
-							<th>Azione</th>
+							<th class="row_title">Id</th>
+							<th class="row_title">Data</th>
+     						<th class="row_title">Titolo</th>
+							<th class="row_title">Pagine</th>
+							<th class="row_title">Materia</th>
+							<th class="row_title">Univerisit&agrave;</th>
+							<th class="row_title">Descrizione</th>
+							<th class="row_title">Tipo</th>
+							<th class="row_title">Azione</th>
 						</tr>	
 					</thead>
 					<tbody id="bodyRichiesta" class="adminBodyDataTable">

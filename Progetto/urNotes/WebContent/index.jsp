@@ -90,7 +90,7 @@ Ogni Documento è visionabile leggendo tutte le informazioni ad esso relative.
 	<div class="section-text">
 	Aggiungi appunti e dispense in modo facile e veloce.
 	Pubblicare nuovi documenti non è mai stato cosi facile. Prova!.
-	<img class="image-section" alt="icon" src="/urNotes/images/setting.png">
+	<img class="image-section1" alt="icon" src="/urNotes/images/setting.png">
 	<br>
 	<a id="button" href="/urNotes/_GestoreArea/documentiGestore.jsp">Documenti</a>
 	</div>

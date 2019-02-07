@@ -192,11 +192,11 @@ public class GetDettaglioOrdineAdmin extends HttpServlet {
 				     contenuto += "<table id='prodottiTable'>";
 				       				contenuto += "<thead class='userHeadDataTable'>";
 				       					contenuto += "<tr>";
-					       					contenuto += "<th>ID</th>";
-					       					contenuto += "<th>Foto</th>";
-					       					contenuto += "<th>Titolo</th>";
-					       					contenuto += "<th>Quantità</th>";
-					       					contenuto += "<th>Prezzo</th>";
+				       					contenuto += "<th class='row_title'>ID</th>";
+				       					contenuto += "<th class='row_title'>Foto</th>";
+				       					contenuto += "<th class='row_title'>Titolo</th>";
+				       					contenuto += "<th class='row_title'>Quantità</th>";
+				       					contenuto += "<th class='row_title'>Prezzo</th>";
 				       					contenuto += "</tr>";
 				   					contenuto += "</thead>";
 				   					contenuto += "<tbody id='bodyDettaglioOrdine' class='userBodyDataTable'>";

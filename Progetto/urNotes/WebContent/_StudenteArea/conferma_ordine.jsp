@@ -132,7 +132,6 @@
 			    							body += "<tr>";							
 				    							body += "<td><img class='showImmagineDocumento' src='"+filename+"' alt='"+filename+"' /></td>";
 				    							body += "<td>"+result.getString("titolo")+"</td>";							
-				    							body += "<td>"+result.getString("nome_materia")+"</td>";							
 				    							body += "<td>"+result.getInt("quantita")+"</td>";
 				    							body += "<td>";	    					
 				    							body += "&euro; "+ new SystemInformation().truncateDecimal(result.getFloat("prezzo_totale"), 2);													
@@ -155,16 +154,15 @@
 	                        <div id="container_appunti_admin">	
 	                        <div id="content">
 			                  <div id="content-content">
-								<p class='adminTitoloPagina'>Concludi Ordine</p>
+								<p class='adminTitoloPagina'>Conferma Ordine</p>
 								
 			        			<table id='documentiTable'>
 			       					<thead class='adminHeadDataTable'>
 			      						<tr>
-			     							<th>Foto</th>
-			     							<th>Titolo</th>
-			     							<th>Materia</th>
-											<th>Quantit&agrave;</th>
-			        						<th>Prezzo</th>
+			     							<th class="row_title">Foto</th>
+			     							<th class="row_title">Titolo</th>
+											<th class="row_title">Quantit&agrave;</th>
+			        						<th class="row_title">Prezzo</th>
 			        					</tr>	
 									</thead>
 									<tbody id="bodyCarrello" class='adminBodyDataTable'>

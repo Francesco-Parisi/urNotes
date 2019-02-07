@@ -109,8 +109,7 @@ ul li ul li{
 ul li:hover ul li{
 	display:block;
 	position:relative;
-	z-index:1000;
-	
+	z-index:1000;	
 }
 
 
@@ -119,6 +118,10 @@ ul li a:hover{
 }
 
 
+#icon{
+    display:none;
+}
+ 
 /*Header Menu dx-------------------------*/
 
 
@@ -219,6 +222,11 @@ ul li a:hover{
 	padding:5px 10px;
 	color:white;
 	text-shadow:1px 1px black;
+}
+
+.logout_box{
+	display:none;
+
 }
 
 
@@ -726,7 +734,10 @@ border:none;
 
 /*Dettaglio Documento-------------------------------*/
 
-
+#container_richieste td{
+	padding:10px;
+	width:20%;	
+}
 
 .container_appunti_dettaglio{
     width:75%;
@@ -1248,6 +1259,19 @@ textarea {
 	box-shadow:1px 1px grey;
 }		
 
+#container_ordini_admin{
+    width:95%;
+	height:100%;
+	margin-top:4600px;
+	margin-left:25%;
+	padding:0;
+	margin:100px auto;
+	background-color:#1ea4ca;
+	opacity:0.9;
+	border-radius:10px;
+	box-shadow:1px 1px grey;
+}	
+
 #container_appunti_admin{
     width:95%;
 	height:100%;
@@ -1341,6 +1365,30 @@ textarea {
 	cursor: pointer;	
 }
 
+
+/*Materia Admin---------------------------------------*/
+
+#content #content-content .adminFormAggiungiMateria .adminFormField{
+	border: 0;
+	height: 30px;	
+	border: solid 1px #276274;
+	border-radius: 10px;		
+	margin-left: 10px;	
+}
+
+
+#content #content-content .adminFormAggiungiMateria .adminButtonConfermaAggiungi{	
+	background-color: #1abbea;
+	text-shadow: 1px 1px black;
+	text-align:center;
+	height: 30px;		
+	color: #FFF;
+	margin-left: 5px;	
+	margin-top: 1%;
+	width: 7%;	
+	border-radius: 20px;		
+	cursor: pointer;	
+}
 
 /*Pagina Ordini User-----------------------------------*/
 	
@@ -1476,10 +1524,11 @@ textarea {
 
 
 
-#content #content-content .adminFormAggiungi .dropzoneImmagineDocumento{
+#content #content-content .adminFormAggiungiImmagine .dropzoneImmagineDocumento{
 	min-height: 100px;
 	background-color: #eee;
 	margin-bottom: 20px;
+	margin-top: 20px;
 	cursor: pointer;
 	position: relative;
 	padding: 15px;
@@ -1487,7 +1536,7 @@ textarea {
     border-radius:10px;		
 }	
 
-#content #content-content .adminFormAggiungi .dropzoneImmagineDocumento:after {
+#content #content-content .adminFormAggiungiImmagine .dropzoneImmagineDocumento:after {
    	content: 'Sposta qui l\'immagine da caricare';
    	position: absolute;
    	top: 40%;
@@ -1496,15 +1545,16 @@ textarea {
    	height: 5%;
 }		
 
-#content #content-content .adminFormAggiungi .dz-started.dropzoneImmagineDocumento:after {
+
+#content #content-content .adminFormAggiungiImmagine .dz-started.dropzoneImmagineDocumento:after {
 	display: none;
 }	
 
-#content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-error-mark, #content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-error-message, #content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-success-mark{
+#content #content-content .adminFormAggiungiImmagine .dropzoneImmagineDocumento .dz-error-mark, #content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-error-message, #content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-success-mark{
 	display: none;		
 }	
 
-#content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-remove{
+#content #content-content .adminFormAggiungiImmagine .dropzoneImmagineDocumento .dz-remove{
 	background-color: #DC483E;
 	border: solid 1px #DC483E;
 	height: 30px;		
@@ -1517,19 +1567,33 @@ textarea {
 	padding: 5px;		
 }		
 	
-#content #content-content .adminFormAggiungi .dropzoneImmagineDocumento .dz-image img{
+#content #content-content .adminFormAggiungiImmagine .dropzoneImmagineDocumento .dz-image img{
 	border-radius: 10px;
 }			
 	
-
+#content #content-content .adminFormAggiungiImmagine .adminButtonConfermaAggiungi{
+	background-color: #1abbea;
+	text-shadow: 1px 1px black;
+	text-align:center;
+	height: 30px;		
+	color: #FFF;
+	margin-left: 5px;	
+	margin-top: 1%;
+	width: 7%;	
+	border-radius: 20px;		
+	cursor: pointer;	
+	margin-left:40%;
+	width:20%;
+}
 
 /*Dropzone File-----------------------------------*/
 
 
-#content #content-content .adminFormAggiungi .dropzoneFileRichiesta{
+#content #content-content .adminFormAggiungiFile .dropzoneFileRichiesta{
 	min-height: 100px;
 	background-color: #eee;
 	margin-bottom: 20px;
+	margin-top: 20px;
 	cursor: pointer;
 	position: relative;
 	padding: 15px;
@@ -1537,7 +1601,7 @@ textarea {
     border-radius:10px;		
 }	
 
-#content #content-content .adminFormAggiungi .dropzoneFileRichiesta:after {
+#content #content-content .adminFormAggiungiFile .dropzoneFileRichiesta:after {
    	content: 'Sposta qui il file .pdf/.docx da caricare';
    	position: absolute;
    	top: 40%;
@@ -1546,15 +1610,15 @@ textarea {
    	height: 5%;
 }		
 
-#content #content-content .adminFormAggiungi .dz-started.dropzoneFileRichiesta:after {
+#content #content-content .adminFormAggiungiFile .dz-started.dropzoneFileRichiesta:after {
 	display: none;
 }	
 
-#content #content-content .adminFormAggiungi .dropzoneFileRichiesta .dz-error-mark, #content #content-content .adminFormAggiungi .dropzoneFileRichiesta .dz-error-message, #content #content-content .adminFormAggiungi .dropzoneFileRichiesta .dz-success-mark{
+#content #content-content .adminFormAggiungiFile .dropzoneFileRichiesta .dz-error-mark, #content #content-content .adminFormAggiungi .dropzoneFileRichiesta .dz-error-message, #content #content-content .adminFormAggiungi .dropzoneFileRichiesta .dz-success-mark{
 	display: none;		
 }	
 
-#content #content-content .adminFormAggiungi .dropzoneFileRichiesta .dz-remove{
+#content #content-content .adminFormAggiungiFile .dropzoneFileRichiesta .dz-remove{
 	background-color: #DC483E;
 	border: solid 1px #DC483E;
 	height: 30px;		
@@ -1567,11 +1631,24 @@ textarea {
 	padding: 5px;		
 }		
 	
-#content #content-content .adminFormAggiungi .dropzoneFileRichiesta .dz-image img{
+#content #content-content .adminFormAggiungiFile .dropzoneFileRichiesta .dz-image img{
 	border-radius: 10px;
 }		
 
-
+#content #content-content .adminFormAggiungiFile .adminButtonConfermaAggiungi{
+	background-color: #1abbea;
+	text-shadow: 1px 1px black;
+	text-align:center;
+	height: 30px;		
+	color: #FFF;
+	margin-left: 5px;	
+	margin-top: 1%;
+	width: 7%;	
+	border-radius: 20px;		
+	cursor: pointer;	
+	margin-left:40%;
+	width:20%;
+}
 
 
 /*Pagina Impostazioni User-----------------------------------*/

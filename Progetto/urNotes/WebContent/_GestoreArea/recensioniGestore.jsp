@@ -28,10 +28,10 @@
 				<table id="prodottiTable">
 					<thead class="adminHeadDataTable">
 						<tr>
-							<th>Username</th>
-							<th>Descrizione</th>
-							<th>Documento</th>
-							<th>Azioni</th>
+							<th class="row_title">Username</th>
+							<th class="row_title">Descrizione</th>
+							<th class="row_title">Documento</th>
+							<th class="row_title">Azioni</th>
 						</tr>	
 					</thead>
 					<tbody id="bodyRecensioni" class="adminBodyDataTable">

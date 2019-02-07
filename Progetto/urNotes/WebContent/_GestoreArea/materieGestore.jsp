@@ -28,10 +28,11 @@
 				<table id="prodottiTable">
 					<thead class="adminHeadDataTable">
 						<tr>
-							<th>Nome</th>
-							<th>Quantità Appunti</th>
-							<th>Quantità Dispense</th>
-							<th>Azioni</th>
+						
+							<th class='row_title'>Nome</th>
+							<th class='row_title'>Quantità Appunti</th>
+							<th class='row_title'>Quantità Dispense</th>
+							<th class='row_title'>Azioni</th>
 							
 						</tr>	
 					</thead>
@@ -45,7 +46,7 @@
 				
 				</div>
 				
-				<div id="formAggiungiMateria" class="adminFormAggiungi" style="display: none;">
+				<div id="formAggiungiMateria" class="adminFormAggiungiMateria" style="display: none;">
 					
 				</div>
 				

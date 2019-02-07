@@ -67,7 +67,7 @@
 			    								filename = new SystemInformation().getPathImmaginiDocumentoDefault();												
 			    							}	    
 			    							
-			    							body += "<tr>";							
+			    							body += "<tr id=container_checkout>";
 			    							body += "<td><img class='showImmagineDocumento' src='"+filename+"' alt='"+filename+"' /></td>";
 			    							body += "<td>"+result.getString("titolo")+"</td>";							
 			    							body += "<td>"+result.getString("nome_materia")+"</td>";							
@@ -202,11 +202,11 @@
 			        			<table id='prodottiTable'>
 			       					<thead class='adminHeadDataTable'>
 			      						<tr>
-			     							<th>Foto</th>
-			     							<th>Titolo</th>
-			     							<th>Materia</th>
-											<th>Quantit&agrave;</th>
-			        						<th>Prezzo</th>
+			     							<th class="row_title">Foto</th>
+			     							<th class="row_title">Titolo</th>
+			     							<th class="row_title">Materia</th>
+											<th class="row_title">Quantit&agrave;</th>
+			        						<th class="row_title">Prezzo</th>
 			        					</tr>	
 									</thead>
 									<tbody id="bodyCarrello" class='adminBodyDataTable'>

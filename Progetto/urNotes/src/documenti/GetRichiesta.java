@@ -67,7 +67,7 @@ public class GetRichiesta extends HttpServlet {
 				if(!result.wasNull()) {
 					
 					while(result.next()) {
-						contenuto += "<tr>";
+						contenuto += "<tr id='container_richieste'>";
 						contenuto += "<td>"+result.getString("id_richiesta")+"</td>";
 						contenuto += "<td>"+result.getString("data_richiesta")+"</td>";		
 						contenuto += "<td>"+result.getString("titolo")+"</td>";		

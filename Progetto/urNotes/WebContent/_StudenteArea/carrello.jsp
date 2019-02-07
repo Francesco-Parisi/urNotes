@@ -27,11 +27,11 @@
         			<table id='documentiTable'>
        					<thead class='adminHeadDataTable'>
       						<tr>
-     							<th>Foto</th>
-     							<th>Titolo</th>
-        						<th>Prezzo</th>
-        						<th>Quantit&agrave;</th>
-        						<th>Elimina</th>
+     							<th class="row_title">Foto</th>
+     							<th class="row_title">Titolo</th>
+        						<th class="row_title">Prezzo</th>
+        					    <th class="row_title">Quantit&agrave;</th>
+        						<th class="row_title">Azioni</th>
         					</tr>	
 						</thead>
 						<tbody id="bodyCarrello" class='adminBodyDataTable'>

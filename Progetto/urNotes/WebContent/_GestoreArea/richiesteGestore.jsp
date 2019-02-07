@@ -26,19 +26,19 @@
 	<div id="container_richieste_admin">	
 		<div id="content">
 			<div id="content-content">
-				<p class="adminTitoloPagina">Gestione Richieste</p> 
+				<p class="adminTitoloPagina">Richieste</p> 
 				<table id="prodottiTable">
 					<thead class="adminHeadDataTable">
 						<tr>
-							<th>Data</th>
-							<th>Studente</th>
-							<th>Titolo</th>
-							<th>Pagine</th>
-							<th>Materia</th>
-							<th>Universita</th>
-							<th>Descrizione</th>
-							<th>Tipo</th>
-							<th>Azioni</th>
+							<th class="row_title">Data</th>
+							<th class="row_title">Studente</th>
+							<th class="row_title">Titolo</th>
+							<th class="row_title">Pagine</th>
+						    <th class="row_title">Materia</th>
+							<th class="row_title">Universita</th>
+							<th class="row_title">Descrizione</th>
+							<th class="row_title">Tipo</th>
+							<th class="row_title">Azioni</th>
 						</tr>	
 					</thead>
 					<tbody id="bodyRichieste" class="adminBodyDataTable">

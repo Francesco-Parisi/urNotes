@@ -48,7 +48,17 @@
 </div>
 </a>
 
+<div class="logout_box">
+
+<div class="logout-text">
+<h3>Voui Uscire?</h3>
+<a class="logout-button" href="<%=request.getContextPath()%>/logout.jsp">Logout</a>
+</div>
+</div>
+
 </section>
+
+
 
 
 <%@ include file="/partials/footer.jsp" %>	

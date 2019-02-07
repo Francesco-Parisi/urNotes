@@ -18,8 +18,8 @@
 
 <ul class="header_menu_dx">
 <li class=header_item_dx><a href="<%=request.getContextPath()%>/_GestoreArea/profilo_gestore.jsp">
-<p class="account_item">Ciao <%=request.getSession().getAttribute("nome") %> <i class="fas fa-user"></i></p></a></li>
-<li class=header_item_dx><a href="<%=request.getContextPath()%>/logout.jsp">Logout</a></li>
+<p class="account_item"><span class="display">Ciao <%=request.getSession().getAttribute("nome") %></span> <i class="fas fa-user"></i></p></a></li>
+<li class=header_item_dx><a class="display" href="<%=request.getContextPath()%>/logout.jsp">Logout</a></li>
 </ul>
 
 </ul>
