@@ -1,0 +1,201 @@
+@media only screen and (min-width: 991px) and (max-width: 1189px){
+
+	
+#loader{
+	display: none;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	position: fixed;
+	z-index: 99999;
+	background-color: #e5eff1;
+	opacity: 0.9;	
+	text-align: center;
+	padding-top: 15%;		
+}
+	
+#loader img{
+		width: 15%;
+}
+
+
+
+/*Header------------------*/
+
+
+.header{
+	background-color:#1ea4ca;
+	border-radius:0px 0px 5px 5px;
+}
+
+
+.header_logo{
+	color:white;
+	float:left;
+	display:inline-block;
+	padding:4px;
+	margin-right:100px;
+	margin-top:5px
+}
+
+
+.header_icon{
+	display:block;
+	float:right;
+	padding:20px;
+	display:none;
+}
+
+
+.header_icon span{
+	display:block;
+	height:3px;
+	width:35px;
+	background-color:white;
+	margin-bottom:5px;
+}
+
+
+.header_menu{
+	margin:0;
+	padding:0;
+	float:left;
+	list-style-type:none;	
+}
+
+
+.header_menu .header_item{
+	margin:0;
+	padding:0;
+	float:left;
+	width:100px;
+	height:51px;
+	background-color:#1ea4ca;
+	text-align:center;
+	font-size:15px;
+	list-style-type:none;
+}
+
+
+.header_menu .header_item a{
+	font-family:monospace;
+	font-weight:800;
+	text-decoration:none;
+	padding:22px;
+	margin-right:0px;
+	color:white;
+	text-shadow:1px 1px black;
+	display:block;	
+}
+
+
+ul li ul li{
+	display:none;
+	margin:0;
+	width:160px;
+	margin-left:-40px;
+	background-color:#1ea4ca;
+}
+
+
+ul li:hover ul li{
+	display:block;
+	position:relative;
+	z-index:1000;	
+}
+
+
+ul li a:hover{
+	background-color:#1abbea;	
+}
+
+
+ 
+/*Header Menu dx-------------------------*/
+
+
+.header_menu_dx{
+	float:right;
+	margin-top:5px;	
+	margin-left:100px;
+}
+
+
+.header_item_dx{
+	display:inline-block;
+	
+}
+
+
+.header_item_dx a{
+	font-family:monospace;
+	font-size:15px;
+	font-weight:800;
+	color:white;
+	display:block;	
+	padding:10px;
+	margin-top:9px;
+	text-decoration:none;
+	text-shadow:1px 1px black;
+	border-radius:10px;
+	background-color:#1abbea;
+}
+
+
+.header_item_dx a .numeroProdottiCarrello{
+	display: inline;
+	color: red;
+	font-weight: normal;
+}	
+
+
+.header_item_dx a:hover{
+	opacity:0.85;
+}
+
+
+.clear:after{
+   visibility: hidden;
+   display: block;
+   font-size: 0;
+   content: " ";
+   clear: both;
+   height: 0;
+}
+
+
+
+/*Footer-------------------------*/
+
+
+.footer{
+	clear:both;
+}
+
+.image_footer{
+   width:70%;
+   margin:15%;	
+}
+
+.container-footer{
+	margin-left:14%;
+	margin-top:0%;	
+}
+
+.copyright{
+	text-align:center;
+	font-size:14px;
+}
+
+.footer-terms{
+	text-align:center;
+	font-size:14px;
+}
+
+
+
+
+	
+}

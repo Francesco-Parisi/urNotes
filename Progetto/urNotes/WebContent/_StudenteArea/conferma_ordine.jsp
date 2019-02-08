@@ -175,16 +175,16 @@
 								<p class='adminTitoloPagina'>Info Ordine</p>
 								
 								<div class="info_pagamento">
-									<p><b>Indirizzo di Spedizione</b></p>
+									<p class="row_title"><b>Indirizzo di Spedizione</b></p>
 									<p><%=spedizione %></p>									
 								</div>
 								
 								<div class="info_pagamento">
-									<p><b>Vettore</b></p>
+									<p class="row_title"><b>Vettore</b></p>
 									<p><%=vettore %></p>		
 								</div>
 								<div class="info_pagamento">
-									<p><b>Metodo di Pagamento</b></p>
+									<p class="row_title"><b>Metodo di Pagamento</b></p>
 									<p><%=metodoPagamento %></p>		
 								</div>
 								

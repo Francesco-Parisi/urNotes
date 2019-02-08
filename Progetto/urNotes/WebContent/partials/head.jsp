@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/stile.css" />
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/stile_mobile.css" />
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/stile_tablet.css" />
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/css/stile_tabletXL.css" />
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/engine1/style.css" />
 
 <link rel="icon"  type="image/png" href="/urNotes/images/logo.png">

@@ -944,7 +944,7 @@ margin-left:20%;
 
 .container_come-funziona{
 	width:80%;
-	height:200px;
+	height:100px;
     margin-top: 50px;
 }
 
@@ -986,10 +986,10 @@ margin-left:20%;
 
 .image-section_come-funziona{
 	height:100px;
-	width:200px;
+	width:50%;
 	float:right;
 	margin-top:50px;
-	margin-right:50px;
+	margin-right:20%;
 }
 
 
@@ -1009,7 +1009,7 @@ margin-left:20%;
 
 #faq_button,#faq_button1,#faq_button2,#faq_button3,#faq_button4,#faq_button5{
 	text-align:left;
-	margin-left:0;
+	margin-left:15px;
 	margin-top:15px;
 	font-size:16px;
     width:310px;
@@ -1020,7 +1020,7 @@ margin-left:20%;
 .faq_content,.faq_content1,.faq_content2,.faq_content3,.faq_content4,.faq_content5{
 	font-size:15px;
 	text-align:left;
-	margin-left:0;
+	margin-left:15px;
 	padding:5px;
    	text-shadow: 1px 1px black;
     display: none;
@@ -1052,6 +1052,15 @@ margin-left:20%;
 .logout-img{
 	width:100%;
 	height:100px;
+}
+
+.logout_text{
+	font-family:monospace;
+	font-size:14px;
+	text-align:center;
+	padding:5px 10px;
+	color:white;
+	text-shadow:1px 1px black;
 }
 
 .logout-text{

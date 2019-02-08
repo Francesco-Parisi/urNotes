@@ -126,8 +126,8 @@ ul li a:hover{
 
 
 .header_menu_dx{
-	float:left;
-	margin-left:300px;
+	float:right;
+	margin-left:250px;
 }
 
 
@@ -214,6 +214,14 @@ ul li a:hover{
 	border-radius:5px 5px 0px 0px;
 }
 
+.logout_text{
+	font-family:monospace;
+	font-size:18px;
+	text-align:center;
+	padding:5px 10px;
+	color:white;
+	text-shadow:1px 1px black;
+}
 
 .logout-text{
 	font-family:monospace;
@@ -1149,24 +1157,6 @@ a{
 }
 
 
-
-/*Responsive*/
-@media only screen and (min-width: 1024px){
-#loader{
-	display: none;
-	height: 100%;
-	width: 100%;
-	left: 0;
-	top: 0;
-	overflow: hidden;
-	position: fixed;
-	z-index: 99999;
-	background-color: #e5eff1;
-	opacity: 0.9;	
-	text-align: center;
-	padding-top: 15%;		
- }	
-}
 
 
 

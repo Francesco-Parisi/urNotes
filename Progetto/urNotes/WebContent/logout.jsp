@@ -18,7 +18,7 @@
 
 <div class="logout">
 <img src="/urNotes/images/exit.png" class="logout-img" alt="email">
-<div class="logout-text">
+<div class="logout_text">
 <h3>Logout Effettuato con successo</h3>
 </div>
 </div>
