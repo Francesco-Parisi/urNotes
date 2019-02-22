@@ -87,7 +87,7 @@ public class Accedi extends HttpServlet {
 						risultato = 1;
 					}
 					else {
-						errore = "Utente NON Trovato";
+						errore = "Utente non Trovato. Riprova!";
 						risultato = 0;
 					}						
 				}

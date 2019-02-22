@@ -8,13 +8,13 @@
 </ul>
 </li>
 
-<li class="header_item"><a>Store</a>
+<li class="header_item"><a>Spedizioni</a>
 <ul>
-<li class="drop_item"><a href="<%=request.getContextPath()%>/faq.jsp">FAQ</a></li>
+<li class="drop_item"><a href="<%=request.getContextPath()%>/_GestoreArea/vettoriGestore.jsp">Vettori</a></li>
 </ul>
 </li>
 
-<li class="header_item"><a href="<%=request.getContextPath()%>/_GestoreArea/contattiGestore.jsp">Contatti</a></li>
+<li class="header_item"><a href="<%=request.getContextPath()%>/_GestoreArea/clientiGestore.jsp">Clienti</a></li>
 
 <ul class="header_menu_dx">
 <li class=header_item_dx><a href="<%=request.getContextPath()%>/_GestoreArea/profilo_gestore.jsp">

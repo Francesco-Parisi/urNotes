@@ -27,6 +27,12 @@
 
 .header_icon{
 	display:block;
+	border-radius:10px;
+}
+
+.header_icon:hover{
+	opacity:0.85;
+
 }
 
 .header_menu{
