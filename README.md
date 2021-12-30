@@ -1,6 +1,6 @@
-# urNotes
+# Descrizione
 
-![urNotes ](images/homepage.png)
+![Descrizione ](images/homepage.png)
 
 urNotes è una piattaforma che opera nell’istruzione, in particolare nel campo Universitario.
 La Scelta del nome, “urNotes” serve a delineare il concetto di relazione tra lo studente e gli appunti, dove lo scopo non è solo quello di fornire materiale didattico allo studente per supportarlo nel percorso universitario, ma anche di dare la possibilità di condividere i propri appunti con altri studenti.
